@@ -40,6 +40,8 @@ import regionalCaseStudy from "@/assets/regional-case-study.jpg.asset.json";
 import lehighCaseStudy from "@/assets/lehigh-case-study.jpg.asset.json";
 import schneckCaseStudy from "@/assets/schneck-case-study.jpg.asset.json";
 import appRationalizationStory from "@/assets/app-rationalization-story.jpg.asset.json";
+import eventNetworking from "@/assets/event-networking.png.asset.json";
+import cerecoreHumanTouch from "@/assets/cerecore-human-touch.png.asset.json";
 
 export const img = {
   portrait: portrait.url,
