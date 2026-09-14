@@ -147,7 +147,6 @@ export const projects: Project[] = [
     tags: ["Email Marketing", "Editorial", "Demand Generation", "HubSpot", "Healthcare IT"],
     featured: true,
     visibility: "Public",
-    cover: { src: img.mentorBestPractices, alt: "CereCore newsletter and communications materials" },
     visualNote:
       "Issue covers, email design examples and analytics screenshots are available on request. Published examples are linked below.",
     links: [
@@ -782,7 +781,6 @@ export const projects: Project[] = [
     headlineResult: "Practical AI adoption across marketing and communications workflows",
     tags: ["AI Enablement", "Workflow Design", "Training", "Systems"],
     visibility: "Public with redacted materials",
-    cover: { src: img.boothRecording, alt: "Sierra Langford recording a session with AI-assisted production tools" },
     visualNote: SAMPLE_NOTE,
     related: ["monetizeiq-product-storytelling", "hca-censhare"],
   },
