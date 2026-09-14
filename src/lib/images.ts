@@ -19,6 +19,17 @@ import himssBoothInterview from "@/assets/himss-booth-interview.png.asset.json";
 import monetizeiqWebinar from "@/assets/monetizeiq-webinar.png.asset.json";
 import internalVideoStill from "@/assets/internal-video-still.png.asset.json";
 import masterclassSession from "@/assets/masterclass-session.png.asset.json";
+import clientUpdate from "@/assets/gd-client-update.png";
+import newsletterStats from "@/assets/gd-newsletter-stats.png";
+import impactReview from "@/assets/gd-impact-review.png";
+import internalAgenda from "@/assets/gd-internal-agenda.png";
+import navigatingPurpose from "@/assets/gd-navigating-purpose.png";
+import connectionOutlines from "@/assets/gd-connection-outlines.png";
+import podcastPipeline from "@/assets/gd-podcast-pipeline.png";
+import blogBalance from "@/assets/gd-blog-balance.png";
+import blogMicrostress from "@/assets/gd-blog-microstress.png";
+import blogMentalHealth from "@/assets/gd-blog-mentalhealth.png";
+import marketingPortfolio from "@/assets/gd-marketing-portfolio.png";
 
 export const img = {
   portrait: portrait.url,
@@ -42,4 +53,15 @@ export const img = {
   monetizeiqWebinar: monetizeiqWebinar.url,
   internalVideoStill: internalVideoStill.url,
   masterclassSession: masterclassSession.url,
+  clientUpdate,
+  newsletterStats,
+  impactReview,
+  internalAgenda,
+  navigatingPurpose,
+  connectionOutlines,
+  podcastPipeline,
+  blogBalance,
+  blogMicrostress,
+  blogMentalHealth,
+  marketingPortfolio,
 };

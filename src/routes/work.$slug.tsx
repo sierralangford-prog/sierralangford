@@ -91,11 +91,10 @@ function ProjectPage() {
         <CoverArt project={project} className="mt-10 h-64 w-full sm:h-80" />
       )}
 
-      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-10 grid gap-5 sm:grid-cols-3">
         <Field label="Role" value={project.role} />
         <Field label="Industry" value={project.industries.join(", ")} />
         <Field label="Date" value={project.period} />
-        <Field label="Visibility" value={project.visibility} />
       </div>
 
       <section className="mt-12 border-t border-border pt-8">
@@ -104,7 +103,6 @@ function ProjectPage() {
       </section>
 
       <List title="What I owned" items={project.owned} />
-      <List title="Audiences served" items={project.audiences} />
       <List title="Deliverables" items={project.deliverables} />
 
       <section className="mt-12 border-t border-border pt-8">
@@ -142,7 +140,7 @@ function ProjectPage() {
             ))}
           </div>
         ) : null}
-        {project.visualNote ? (
+        {project.visualNote && !(project.gallery && project.gallery.length > 0) ? (
           <div className="mt-6 border border-dashed border-border bg-paper p-6">
             <p className="leading-relaxed text-muted-foreground">{project.visualNote}</p>
             <div className="mt-4 flex flex-wrap gap-3">
@@ -178,16 +176,6 @@ function ProjectPage() {
         </section>
       ) : null}
 
-      <section className="mt-12 border-t border-border pt-8">
-        <h2 className="text-3xl">Tags</h2>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {project.tags.map((t) => (
-            <span key={t} className="border border-border px-3 py-1.5 text-sm text-muted-foreground">
-              {t}
-            </span>
-          ))}
-        </div>
-      </section>
 
       {related.length > 0 ? (
         <section className="mt-16 border-t border-border pt-8">
