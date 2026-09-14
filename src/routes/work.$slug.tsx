@@ -130,9 +130,9 @@ function ProjectPage() {
                 href={l.url}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="border border-foreground px-5 py-3 text-sm transition-colors hover:bg-foreground hover:text-primary-foreground"
+                className="border border-foreground px-5 py-3 text-sm underline underline-offset-4 transition-colors hover:bg-foreground hover:text-primary-foreground"
               >
-                {l.label}
+                {l.label} <span aria-hidden>↗</span>
               </a>
             ))}
           </div>
