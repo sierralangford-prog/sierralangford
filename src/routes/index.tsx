@@ -153,6 +153,34 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+          <p className="eyebrow">In the work</p>
+          <h2 className="mt-3 text-4xl leading-tight">Moments from events, studios and stages.</h2>
+          <div className="mt-9 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
+            {[
+              { src: img.cerecoreHumanTouch, alt: "Sierra presenting a brand story session to colleagues in a conference room" },
+              { src: img.himssInnovators, alt: "Sierra with industry colleagues at the HIMSS Innovators You Need To Know booth" },
+              { src: img.himssBoothInterview, alt: "Sierra interviewing a guest on camera at a conference booth" },
+              { src: img.connectionStage, alt: "Sierra on stage during a conference session" },
+              { src: img.boothRecording, alt: "Sierra recording an interview at a trade show booth" },
+              { src: img.videoRig, alt: "Sierra setting up a camera rig for a video shoot" },
+              { src: img.masterclassSession, alt: "Sierra hosting a virtual masterclass session with a colleague" },
+              { src: img.eventNetworking, alt: "Sierra with a client at a networking event" },
+              { src: img.photographyCanon, alt: "Sierra photographing on location with a Canon camera" },
+            ].map((photo) => (
+              <img
+                key={photo.src}
+                src={photo.src}
+                alt={photo.alt}
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
