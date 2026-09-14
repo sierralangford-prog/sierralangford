@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { testimonials, type Testimonial } from "@/data/testimonials";
+import { img } from "@/lib/images";
 
 export const Route = createFileRoute("/recognition")({
   head: () => ({
