@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as RecognitionRouteImport } from './routes/recognition'
 import { Route as ResumeRouteImport } from './routes/resume'
 import { Route as StrengthsRouteImport } from './routes/strengths'
 import { Route as TimelineRouteImport } from './routes/timeline'
@@ -31,6 +32,11 @@ const AboutRoute = AboutRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecognitionRoute = RecognitionRouteImport.update({
+  id: '/recognition',
+  path: '/recognition',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ResumeRoute = ResumeRouteImport.update({
@@ -63,6 +69,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/recognition': typeof RecognitionRoute
   '/resume': typeof ResumeRoute
   '/strengths': typeof StrengthsRoute
   '/timeline': typeof TimelineRoute
@@ -73,6 +80,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/recognition': typeof RecognitionRoute
   '/resume': typeof ResumeRoute
   '/strengths': typeof StrengthsRoute
   '/timeline': typeof TimelineRoute
@@ -84,6 +92,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/recognition': typeof RecognitionRoute
   '/resume': typeof ResumeRoute
   '/strengths': typeof StrengthsRoute
   '/timeline': typeof TimelineRoute
@@ -96,6 +105,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/recognition'
     | '/resume'
     | '/strengths'
     | '/timeline'
@@ -106,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/recognition'
     | '/resume'
     | '/strengths'
     | '/timeline'
@@ -116,6 +127,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/recognition'
     | '/resume'
     | '/strengths'
     | '/timeline'
@@ -127,6 +139,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  RecognitionRoute: typeof RecognitionRoute
   ResumeRoute: typeof ResumeRoute
   StrengthsRoute: typeof StrengthsRoute
   TimelineRoute: typeof TimelineRoute
@@ -155,6 +168,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recognition': {
+      id: '/recognition'
+      path: '/recognition'
+      fullPath: '/recognition'
+      preLoaderRoute: typeof RecognitionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/resume': {
@@ -199,6 +219,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  RecognitionRoute: RecognitionRoute,
   ResumeRoute: ResumeRoute,
   StrengthsRoute: StrengthsRoute,
   TimelineRoute: TimelineRoute,
