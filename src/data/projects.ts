@@ -622,7 +622,7 @@ const rawProjects: Project[] = [
     period: "June 2024 – March 2025",
     role: "Marketing Operations",
     industries: ["Healthcare"],
-    categories: ["Internal Communications", "Executive Communications", "Podcasts and Video"],
+    categories: ["Podcasts and Video", "Internal Communications", "Executive Communications"],
     summary:
       "Supported the enterprise rollout of the Censhare digital asset management platform inside a large matrixed health system, including stakeholder communications, training materials and adoption support.",
     challenge:
@@ -651,8 +651,12 @@ const rawProjects: Project[] = [
     tags: ["Change Management", "Enablement", "DAM", "Training"],
     featured: true,
     visibility: "Public",
-    cover: { src: img.marketingPortfolio, alt: "Portfolio of healthcare marketing and change communications work" },
+    cover: { src: img.censhareNursesVideo, alt: "Still from the Censhare platform overview sizzle reel" },
     links: [
+      {
+        label: "Watch the Censhare sizzle reel",
+        url: "https://drive.google.com/file/d/1iYrFcsV4JYM2sWbvVheUxiDyM6wOIe0j/view?usp=sharing",
+      },
       {
         label: "Open change communications examples",
         url: "https://drive.google.com/drive/folders/1ENSKEChZdrzlr1R9JRAswM1xTK0n14rZ",

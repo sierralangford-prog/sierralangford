@@ -52,6 +52,7 @@ import himssTwoWomen from "@/assets/himss-two-women.png.asset.json";
 import cerecoreBoothTeam from "@/assets/cerecore-booth-team.png.asset.json";
 import teamBoombox from "@/assets/team-boombox.png.asset.json";
 import teamYeehawRestaurant from "@/assets/team-yeehaw-restaurant.jpg.asset.json";
+import censhareNursesVideo from "@/assets/censhare-nurses-video.png.asset.json";
 import teamOutsideBrickBuilding from "@/assets/team-outside-brick-building.jpg.asset.json";
 import mentorBestPracticesSlide from "@/assets/mentor-best-practices-slide.jpg.asset.json";
 import menteeBestPracticesSlide from "@/assets/mentee-best-practices-slide.jpg.asset.json";
@@ -117,6 +118,7 @@ export const img = {
   cerecoreBoothTeam: cerecoreBoothTeam.url,
   teamBoombox: teamBoombox.url,
   teamYeehawRestaurant: teamYeehawRestaurant.url,
+  censhareNursesVideo: censhareNursesVideo.url,
   teamOutsideBrickBuilding: teamOutsideBrickBuilding.url,
   mentorBestPracticesSlide: mentorBestPracticesSlide.url,
   menteeBestPracticesSlide: menteeBestPracticesSlide.url,
