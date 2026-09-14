@@ -88,11 +88,19 @@ function Strengths() {
       </div>
 
       <div className="mt-16 space-y-14">
-        {profiles.map((p) => (
+        {profiles.map((p, index) => (
           <section key={p.label} className="rule-top grid gap-8 pt-6 md:grid-cols-[0.6fr_1.4fr]">
             <div>
               <p className="eyebrow">{p.label}</p>
               <p className="mt-3 font-display text-3xl leading-snug">{p.value}</p>
+              {index === 0 ? (
+                <img
+                  src={img.enneagramResults}
+                  alt="Sierra Langford's Enneagram assessment chart, led by Type 3 with Type 7 also high"
+                  loading="lazy"
+                  className="mt-6 w-full border border-border bg-card object-contain"
+                />
+              ) : null}
             </div>
             <div>
               <p className="leading-relaxed text-foreground/85">{p.meaning}</p>

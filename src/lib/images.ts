@@ -34,6 +34,8 @@ import cyberprotexBootcamp from "@/assets/cyberprotex-bootcamp.png.asset.json";
 import certHubspotSocial from "@/assets/cert-hubspot-social.png.asset.json";
 import certHootsuiteSmm from "@/assets/cert-hootsuite-smm.png.asset.json";
 import certHootsuitePlatform from "@/assets/cert-hootsuite-platform.png.asset.json";
+import enneagramResults from "@/assets/enneagram-results.png.asset.json";
+import boardroomPresentation from "@/assets/sierra-boardroom-presentation.png.asset.json";
 
 export const img = {
   portrait: portrait.url,
@@ -72,4 +74,6 @@ export const img = {
   certHubspotSocial: certHubspotSocial.url,
   certHootsuiteSmm: certHootsuiteSmm.url,
   certHootsuitePlatform: certHootsuitePlatform.url,
+  enneagramResults: enneagramResults.url,
+  boardroomPresentation: boardroomPresentation.url,
 };

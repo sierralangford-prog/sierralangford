@@ -108,7 +108,7 @@ function Home() {
       <section className="border-t border-border bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <div className="flex flex-wrap items-end justify-between gap-4">
-            <p className="eyebrow">Recognition</p>
+            <p className="eyebrow">Testimonials</p>
             <Link to="/recognition" className="link-underline text-sm">
               Read all recommendations
             </Link>
@@ -130,8 +130,8 @@ function Home() {
       <section className="border-t border-border bg-paper">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
           <img
-            src={img.connectionStage}
-            alt="Sierra Langford presenting on stage at the Connection 2026 conference"
+            src={img.boardroomPresentation}
+            alt="Sierra Langford presenting a storytelling workshop to colleagues in a boardroom"
             loading="lazy"
             className="w-full object-cover"
           />

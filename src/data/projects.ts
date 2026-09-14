@@ -227,8 +227,10 @@ const rawProjects: Project[] = [
     tags: ["Internal Comms", "Intranet", "Employee Engagement", "Editorial"],
     featured: true,
     visibility: "Public",
-    cover: { src: img.companyMeeting, alt: "Sierra Langford presenting at a company wide meeting" },
+    cover: { src: img.boardroomPresentation, alt: "Sierra Langford presenting a storytelling workshop in a boardroom" },
     gallery: [
+      { src: img.boardroomPresentation, alt: "Sierra Langford presenting a storytelling workshop to colleagues" },
+      { src: img.companyMeeting, alt: "Sierra Langford presenting at a company wide meeting" },
       { src: img.internalVideoStill, alt: "Still from an internal communications video presentation" },
       { src: img.masterclassSession, alt: "Sierra Langford hosting an internal masterclass session" },
       { src: img.blogBalance, alt: "Internal blog post: Finding Balance While Working from Home" },
