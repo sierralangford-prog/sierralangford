@@ -30,18 +30,17 @@ export type Project = {
   cover?: ProjectImage;
   gallery?: ProjectImage[];
   visualNote?: string;
+  minimal?: boolean;
   links?: ProjectLink[];
   related?: string[];
 };
 
 export const CATEGORIES = [
   "Internal and External Communications",
-  "Healthcare and Customer Stories",
+  "Blogs, Customer Stories, Podcasts & Video",
   "Events and Field Marketing",
-  "Podcasts and Video",
   "AI, Technology and Cybersecurity",
   "Brand, Social and Entrepreneurship",
-  "Photography and Creative Work",
 ] as const;
 
 /** Older, narrower labels are folded into the small set of categories above. */
@@ -49,15 +48,15 @@ const CATEGORY_GROUPS: Record<string, string> = {
   "Internal Communications": "Internal and External Communications",
   "Executive Communications": "Internal and External Communications",
   "Content and Editorial": "Internal and External Communications",
-  "Healthcare and Health Technology": "Healthcare and Customer Stories",
-  "Customer Stories": "Healthcare and Customer Stories",
+  "Healthcare and Health Technology": "Blogs, Customer Stories, Podcasts & Video",
+  "Customer Stories": "Blogs, Customer Stories, Podcasts & Video",
   "Events and Field Marketing": "Events and Field Marketing",
-  "Podcasts and Video": "Podcasts and Video",
+  "Podcasts and Video": "Blogs, Customer Stories, Podcasts & Video",
   "AI and Technology": "AI, Technology and Cybersecurity",
   Cybersecurity: "AI, Technology and Cybersecurity",
   "Social Media and Brand": "Brand, Social and Entrepreneurship",
   Entrepreneurship: "Brand, Social and Entrepreneurship",
-  "Photography and Creative Work": "Photography and Creative Work",
+  "Photography and Creative Work": "Brand, Social and Entrepreneurship",
 };
 
 const groupCategories = (list: string[]) =>
@@ -1102,7 +1101,7 @@ const rawProjects: Project[] = [
         url: "https://drive.google.com/drive/folders/1vPKk2Qi0LDmxD8T9JWcJ4vP8_sNjpk1R",
       },
     ],
-    related: ["realscreen-breaking-in"],
+    related: [],
   },
   {
     slug: "realscreen-breaking-in",
@@ -1132,77 +1131,33 @@ const rawProjects: Project[] = [
         url: "https://jem.utk.edu/2024/03/05/students-attend-realscreen-summit-2024-in-new-orleans",
       },
     ],
-    related: ["bliss-box", "earlier-creative-work"],
+    related: ["bliss-box"],
   },
   {
     slug: "photography",
-    title: "Photography and Shoot Direction",
-    organization: "Strive Society and client work",
+    title: "Professional Brand and Portrait Photography",
+    organization: "Sierra Langford Photography",
     period: "2017 – Present",
-    role: "Photographer and Creative Director",
+    role: "Photographer",
     industries: ["Retail", "Hospitality", "Healthcare", "Professional Services"],
-    categories: ["Photography and Creative Work", "Social Media and Brand"],
-    summary:
-      "Portrait, event, brand and social photography that feeds directly into the content, campaigns and stories I build. Photography is how I learned to see the visual story inside a project.",
-    challenge:
-      "Most marketing content fails visually before anyone reads a word. Being able to shoot means never waiting for a stock image that almost works.",
-    owned: [
-      "Portrait, event and brand photography",
-      "Social media photography",
-      "Photo and video shoot direction",
-      "Editing and asset library management",
-    ],
-    audiences: ["Clients", "Brands", "Event attendees", "Social audiences"],
-    deliverables: ["Brand photo libraries", "Event coverage", "Portraits", "Social ready assets"],
-    tools: ["Canon EOS R5", "Canon EOS R10", "Lightroom", "Adobe Premiere"],
-    results: ["A multi year body of client and event photography used across campaigns and content"],
-    headlineResult: "A working photography practice that supplies the content I strategize",
-    tags: ["Photography", "Creative Direction", "Events", "Portraits"],
+    categories: ["Social Media and Brand"],
+    summary: "Brand and portrait photography.",
+    challenge: "",
+    owned: [],
+    audiences: [],
+    deliverables: [],
+    tools: [],
+    results: [],
+    headlineResult: "Brand and portrait photography.",
+    tags: ["Photography"],
     visibility: "Public",
-    cover: { src: img.photographyCanon, alt: "Sierra Langford holding a Canon camera on a shoot" },
-    gallery: [
-      { src: img.photographyCanon, alt: "Sierra Langford photographing on location" },
-      { src: img.liveEvent, alt: "Live event photography" },
-    ],
-    links: [{ label: "View photography portfolio", url: "https://sierralangfordphotography.mypixieset.com/" }],
-    related: ["strive-society", "digital-motif"],
-  },
-  {
-    slug: "earlier-creative-work",
-    title: "Earlier Creative and Academic Work",
-    organization: "University of Tennessee, Knoxville",
-    period: "2021 – 2024",
-    role: "Student Creator",
-    industries: ["Media", "Education"],
-    categories: ["Photography and Creative Work"],
-    summary:
-      "An archive of earlier creative and academic work, including a stage play, media research projects, mental health advocacy work and songwriting.",
-    challenge:
-      "Early creative work is where the habits form: structure, tension, clarity and knowing when an audience is about to stop listening.",
-    owned: ["Writing", "Research", "Production", "Songwriting and creative media work"],
-    audiences: ["Faculty", "Student audiences", "Workshop participants"],
-    deliverables: [
-      "Trapped, an original play",
-      "Media stereotypes research project",
-      "Mental health priority project",
-      "Beats reporting assignment",
-      "Couples personal development workshop",
-      "Songwriting and creative media projects",
-    ],
-    tools: ["Adobe Premiere", "Word", "Piano"],
-    results: ["A creative foundation that still shapes how I structure stories"],
-    headlineResult: "The creative foundation underneath the professional work",
-    tags: ["Archive", "Creative Writing", "Songwriting", "Academic"],
-    archive: true,
-    visibility: "Archive only",
-    cover: { src: img.boardroomPresentation, alt: "Sierra Langford presenting creative storytelling work" },
+    minimal: true,
     links: [
       {
-        label: "Open the writing sample library",
-        url: "https://drive.google.com/drive/folders/10PoINBpU3fUhLH5d6kowvAprFkK0KdjU",
+        label: "Visit my photography website",
+        url: "https://sierralangfordphotography.mypixieset.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAachRZmvKW417Fj3MtC9qkdlrEaVSn1kiMRbu7PyfiHcBLXb7ztkheVx59fv8Q_aem_xfkehkVKfWmLFKlTmVlpOg",
       },
     ],
-    related: ["realscreen-breaking-in"],
   },
 ];
 
