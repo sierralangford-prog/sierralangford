@@ -12,7 +12,7 @@ export function VisibilityTag({ value }: { value: Project["visibility"] }) {
 }
 
 export function ProjectCard({ project, large = false }: { project: Project; large?: boolean }) {
-  const mediaHeight = large ? "h-64" : "h-52";
+  const mediaHeight = large ? "h-52" : "h-40";
   return (
     <Link
       to="/work/$slug"
@@ -32,11 +32,11 @@ export function ProjectCard({ project, large = false }: { project: Project; larg
         )}
       </div>
 
-      <div className="flex flex-1 flex-col p-6">
+      <div className="flex flex-1 flex-col p-4">
         <p className="eyebrow">{project.organization}</p>
-        <h3 className="mt-2 text-2xl leading-tight group-hover:text-teal">{project.title}</h3>
-        <p className="mt-4 border-l-2 border-coral pl-3 text-sm font-medium">{project.headlineResult}</p>
-        <span className="link-underline mt-auto pt-6 text-sm">View project</span>
+        <h3 className="mt-1 text-lg leading-tight group-hover:text-teal sm:text-xl">{project.title}</h3>
+        <p className="mt-3 border-l-2 border-coral pl-3 text-sm font-medium">{project.headlineResult}</p>
+        <span className="link-underline mt-auto pt-4 text-sm">View project</span>
       </div>
     </Link>
   );
