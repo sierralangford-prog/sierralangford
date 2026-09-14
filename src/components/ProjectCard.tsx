@@ -40,9 +40,7 @@ export function ProjectCard({ project, large = false }: { project: Project; larg
             {project.title}
           </Link>
         </h3>
-        <p className="mt-1 text-sm text-muted-foreground">
-          {project.organization} · {project.period}
-        </p>
+        <p className="mt-1 text-sm text-muted-foreground">{project.organization}</p>
         <p className="mt-3 text-[0.95rem] leading-relaxed text-foreground/85">{project.summary}</p>
         <p className="mt-4 border-l-2 border-coral pl-3 text-sm font-medium">{project.headlineResult}</p>
 

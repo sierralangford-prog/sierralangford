@@ -42,8 +42,8 @@ function About() {
             <p>
               That instinct has taken me through healthcare and health technology, internal and executive
               communications, AI and emerging technology, cybersecurity, field marketing, events, podcasts,
-              newsletters, customer stories, social media and brand work. I started my own marketing practice,
-              Strive Society, in 2017 and have kept it running alongside every role since.
+              newsletters, customer stories, social media and brand work. I also founded and continue to run
+              Strive Society, a creative marketing practice built around long-term client partnerships.
             </p>
             <p>
               In practice, that means I have built a podcast that won a Gold Stevie Award, a client newsletter
@@ -157,8 +157,8 @@ function About() {
               design and interviewing.
             </li>
             <li>
-              <strong>Community and entrepreneurship.</strong> Running my own practice since 2017 keeps me close
-              to what small teams actually need.
+              <strong>Community and entrepreneurship.</strong> Running my own practice keeps me close to what
+              small teams actually need.
             </li>
           </ul>
           <Link to="/work" className="mt-8 inline-block border border-foreground px-5 py-3 text-sm hover:bg-secondary">

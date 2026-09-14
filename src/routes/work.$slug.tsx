@@ -71,9 +71,7 @@ function ProjectPage() {
       <header className="mt-8">
         <p className="eyebrow">{project.categories.join(" · ")}</p>
         <h1 className="mt-4 text-4xl leading-tight sm:text-5xl">{project.title}</h1>
-        <p className="mt-4 text-lg text-muted-foreground">
-          {project.organization} · {project.period}
-        </p>
+        <p className="mt-4 text-lg text-muted-foreground">{project.organization}</p>
         <p className="mt-6 max-w-3xl font-display text-2xl leading-snug">{project.summary}</p>
         <div className="mt-6">
           <VisibilityTag value={project.visibility} />
@@ -91,10 +89,9 @@ function ProjectPage() {
         <CoverArt project={project} className="mt-10 h-64 w-full sm:h-80" />
       )}
 
-      <div className="mt-10 grid gap-5 sm:grid-cols-3">
+      <div className="mt-10 grid gap-5 sm:grid-cols-2">
         <Field label="Role" value={project.role} />
         <Field label="Industry" value={project.industries.join(", ")} />
-        <Field label="Date" value={project.period} />
       </div>
 
       <section className="mt-12 border-t border-border pt-8">
