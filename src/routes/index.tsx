@@ -52,8 +52,8 @@ function Home() {
             >
               View Selected Work
             </Link>
-            <Link to="/resume" className="border border-foreground px-5 py-3 text-sm hover:bg-secondary">
-              View Resume
+            <Link to="/timeline" className="border border-foreground px-5 py-3 text-sm hover:bg-secondary">
+              View Experience
             </Link>
             <Link to="/contact" className="border border-foreground px-5 py-3 text-sm hover:bg-secondary">
               Contact Me
@@ -83,8 +83,8 @@ function Home() {
               </div>
             ))}
           </div>
-          <Link to="/resume" className="link-underline mt-8 inline-block text-sm">
-            See the full picture on my resume
+          <Link to="/timeline" className="link-underline mt-8 inline-block text-sm">
+            See the full picture on my experience page
           </Link>
         </div>
       </section>

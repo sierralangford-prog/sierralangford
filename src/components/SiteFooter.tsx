@@ -19,7 +19,6 @@ export function SiteFooter() {
             <li><Link to="/timeline" className="link-underline">Experience</Link></li>
             <li><Link to="/recognition" className="link-underline">Testimonials</Link></li>
             <li><Link to="/strengths" className="link-underline">Strengths</Link></li>
-            <li><Link to="/resume" className="link-underline">Resume</Link></li>
             <li><Link to="/contact" className="link-underline">Contact</Link></li>
           </ul>
         </div>

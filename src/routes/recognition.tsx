@@ -25,23 +25,57 @@ export const Route = createFileRoute("/recognition")({
   component: Recognition,
 });
 
-function Quote({ t, featured = false }: { t: Testimonial; featured?: boolean }) {
+/** Bolds the marked phrases without altering any wording. */
+function Emphasized({ text, phrases }: { text: string; phrases: string[] }) {
+  const found = phrases.filter((p) => text.includes(p));
+  if (found.length === 0) return <>{text}</>;
+
+  const parts: Array<string | { bold: string }> = [text];
+  for (const phrase of found) {
+    for (let i = 0; i < parts.length; i++) {
+      const part = parts[i];
+      if (typeof part !== "string") continue;
+      const at = part.indexOf(phrase);
+      if (at === -1) continue;
+      parts.splice(i, 1, part.slice(0, at), { bold: phrase }, part.slice(at + phrase.length));
+      break;
+    }
+  }
+
+  return (
+    <>
+      {parts.map((part, i) =>
+        typeof part === "string" ? (
+          <span key={i}>{part}</span>
+        ) : (
+          <strong key={i} className="font-semibold text-foreground">
+            {part.bold}
+          </strong>
+        ),
+      )}
+    </>
+  );
+}
+
+function QuoteCard({ t }: { t: Testimonial }) {
   const initials = t.name
     .split(" ")
     .map((part) => part[0])
     .join("");
 
   return (
-    <figure className={`relative border-t border-border py-8 ${featured ? "md:py-10" : ""}`}>
-      <span aria-hidden className="block text-4xl leading-none text-coral">“</span>
-      <blockquote className={`mt-3 space-y-4 ${featured ? "text-[1.05rem]" : "text-base"}`}>
+    <figure className="flex h-full flex-col border border-border bg-card p-6 sm:p-7">
+      <span aria-hidden className="block font-display text-3xl leading-none text-coral">
+        “
+      </span>
+      <blockquote className="mt-3 flex-1 space-y-4 text-[0.975rem] leading-relaxed text-foreground/85">
         {t.quote.split("\n\n").map((para, index) => (
-          <p key={index} className="leading-relaxed text-foreground/85">
-            {para}
+          <p key={index}>
+            <Emphasized text={para} phrases={t.emphasis ?? []} />
           </p>
         ))}
       </blockquote>
-      <figcaption className="mt-6 flex items-center gap-3 text-sm">
+      <figcaption className="mt-6 flex items-center gap-3 border-t border-border pt-5 text-sm">
         <span
           aria-hidden
           className="flex size-10 shrink-0 items-center justify-center rounded-full bg-secondary font-medium text-teal"
@@ -51,7 +85,6 @@ function Quote({ t, featured = false }: { t: Testimonial; featured?: boolean }) 
         <span>
           <span className="block font-medium text-foreground">{t.name}</span>
           <span className="block text-muted-foreground">{t.title}</span>
-          {t.context ? <span className="block text-xs text-muted-foreground">{t.context}</span> : null}
         </span>
       </figcaption>
     </figure>
@@ -68,19 +101,16 @@ function Recognition() {
       <h1 className="mt-4 max-w-3xl text-4xl leading-tight sm:text-5xl">
         What the people I have worked with say.
       </h1>
-      <p className="mt-5 max-w-2xl leading-relaxed text-foreground/80">
-        Recommendations from colleagues and leaders, plus recognition notes from teammates across
-        podcasts, events, internal communications and advocacy work.
-      </p>
 
-      <section className="mt-14 border-y border-border bg-paper px-5 sm:px-8">
-        <div className="grid gap-x-12 lg:grid-cols-2">
+      <section className="mt-12">
+        <h2 className="text-2xl">Recommendations</h2>
+        <div className="mt-6 grid items-stretch gap-6 lg:grid-cols-2">
           {recs.map((t, i) => (
-            <Quote key={i} t={t} featured />
+            <QuoteCard key={i} t={t} />
           ))}
         </div>
-        <p className="border-t border-border py-5 text-sm text-muted-foreground">
-          These recommendations are published on{" "}
+        <p className="mt-6 text-sm text-muted-foreground">
+          Published on{" "}
           <a
             href="https://www.linkedin.com/in/sierralangford1/"
             target="_blank"
@@ -94,19 +124,17 @@ function Recognition() {
       </section>
 
       <section className="mt-16">
-        <p className="eyebrow">Notes from collaborators</p>
-        <h2 className="mt-3 text-3xl">Recognition at work</h2>
-        <div className="mt-6 grid gap-x-10 md:grid-cols-2 lg:grid-cols-3">
+        <h2 className="text-2xl">Recognition at work</h2>
+        <div className="mt-6 grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
           {notes.map((t, i) => (
-            <Quote key={i} t={t} />
+            <QuoteCard key={i} t={t} />
           ))}
         </div>
       </section>
 
-      <section className="mt-16 border-t border-border pt-12">
-        <p className="eyebrow">Artifacts</p>
-        <h2 className="mt-3 text-3xl">Notes and keepsakes</h2>
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
+      <section className="mt-16">
+        <h2 className="text-2xl">Notes and keepsakes</h2>
+        <div className="mt-6 grid gap-6 md:grid-cols-2">
           <figure className="border border-border bg-card p-5">
             <img
               src={img.devRoyHandwrittenNote}
@@ -126,26 +154,22 @@ function Recognition() {
               className="w-full object-cover"
             />
             <figcaption className="mt-4 text-sm text-muted-foreground">
-              Devjit Roy’s book, <em className="not-italic font-medium">Between Heartbeats and Algorithms</em>,
-              which Sierra supported through advocacy and communications.
+              Devjit Roy’s book, <em className="not-italic font-medium">Between Heartbeats and Algorithms</em>.
             </figcaption>
           </figure>
         </div>
       </section>
 
-      <div className="mt-16 rule-top pt-8">
-        <p className="font-display text-2xl">Want the work behind the words?</p>
-        <div className="mt-5 flex flex-wrap gap-3">
-          <Link
-            to="/work"
-            className="bg-foreground px-5 py-3 text-sm text-primary-foreground transition-opacity hover:opacity-90"
-          >
-            View the work archive
-          </Link>
-          <Link to="/contact" className="border border-foreground px-5 py-3 text-sm hover:bg-secondary">
-            Contact me
-          </Link>
-        </div>
+      <div className="mt-16 rule-top pt-8 flex flex-wrap gap-3">
+        <Link
+          to="/work"
+          className="bg-foreground px-5 py-3 text-sm text-primary-foreground transition-opacity hover:opacity-90"
+        >
+          View the work archive
+        </Link>
+        <Link to="/contact" className="border border-foreground px-5 py-3 text-sm hover:bg-secondary">
+          Contact me
+        </Link>
       </div>
     </div>
   );
