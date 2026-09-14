@@ -185,9 +185,25 @@ const rawProjects: Project[] = [
       },
       {
         label: "Read the August 2025 client update",
+        url: "https://cerecore.net/how-hospitals-are-using-app-rationalization-to-cut-costs-fast-1",
+      },
+      {
+        label: "Read the September 2025 client update",
         url: "https://cerecore.net/youre-a-cerecore-client-important-updates-inside-for-contact.company",
       },
       { label: "Read the October 2025 issue", url: "https://cerecore.net/client-news-oct-2025" },
+      {
+        label: "Read the November 2025 issue",
+        url: "https://cerecore.net/-temporary-slug-13af47d4-426b-4772-a3d0-e1144fc4c28c?hs_preview=jNkQZsfQ-197699330738",
+      },
+      {
+        label: "Read the December 2025 issue",
+        url: "https://cerecore.net/-temporary-slug-0413fe3d-c5f0-44af-8c4b-607ced364200?hs_preview=Lsxzfafo-200325112084",
+      },
+      {
+        label: "Read the spring client update",
+        url: "https://cerecore.net/-temporary-slug-0f96e5c8-e6e7-46ba-8181-12cec8a6b0a9?hs_preview=xaghNIZk-202737326107",
+      },
     ],
     related: ["cerecore-internal-comms", "app-rationalization", "cerecore-podcast"],
   },
@@ -342,6 +358,12 @@ const rawProjects: Project[] = [
       { src: img.mentorBestPractices, alt: "Sierra Langford presenting mentor best practices to a large audience" },
       { src: img.navigatingPurpose, alt: "Navigating With Purpose mentorship schedule and plan document" },
     ],
+    links: [
+      {
+        label: "View the mentorship program deck",
+        url: "https://docs.google.com/presentation/d/1ToJpBzYzcjDxL32NxYqxC64OI3Hc2ycM/edit",
+      },
+    ],
     related: ["cerecore-internal-comms", "marketing-advocacy-group"],
   },
   {
@@ -381,6 +403,12 @@ const rawProjects: Project[] = [
     gallery: [
       { src: img.impactReview, alt: "Title slide of the 2025 communications impact review" },
       { src: img.internalAgenda, alt: "2026 internal meetings agenda and planning calendar" },
+    ],
+    links: [
+      {
+        label: "Open communications examples",
+        url: "https://drive.google.com/drive/folders/1vPKk2Qi0LDmxD8T9JWcJ4vP8_sNjpk1R",
+      },
     ],
     related: ["cerecore-internal-comms", "cerecore-mentorship-program"],
   },
@@ -431,6 +459,7 @@ const rawProjects: Project[] = [
       { src: img.companyMeeting, alt: "Sierra Langford presenting at a company meeting" },
       { src: img.connectionOutlines, alt: "Connection 2026 run of show and session outlines" },
     ],
+    links: [{ label: "View company event work", url: "https://sierralangford.netlify.app/#events" }],
     related: ["himss-2026", "cerecore-internal-comms", "veronica-survivor-story"],
   },
   {
@@ -709,6 +738,13 @@ const rawProjects: Project[] = [
     tags: ["Change Management", "Enablement", "DAM", "Training"],
     featured: true,
     visibility: "Public",
+    cover: { src: img.marketingPortfolio, alt: "Portfolio of healthcare marketing and change communications work" },
+    links: [
+      {
+        label: "Open change communications examples",
+        url: "https://drive.google.com/drive/folders/1ENSKEChZdrzlr1R9JRAswM1xTK0n14rZ",
+      },
+    ],
     visualNote:
       "Training modules, the sizzle reel and migration documentation are collected in the shared example library.",
     related: ["ai-enablement", "cerecore-internal-comms"],
@@ -882,6 +918,13 @@ const rawProjects: Project[] = [
     headlineResult: "Practical AI adoption across marketing and communications workflows",
     tags: ["AI Enablement", "Workflow Design", "Training", "Systems"],
     visibility: "Public",
+    cover: { src: img.boardroomPresentation, alt: "Sierra Langford presenting a practical communications workshop" },
+    links: [
+      {
+        label: "Open AI and workflow examples",
+        url: "https://drive.google.com/drive/folders/18_KRSaVno8giwpuOWfNI-5hIOVj54MPI",
+      },
+    ],
     visualNote: SAMPLE_NOTE,
     related: ["monetizeiq-product-storytelling", "hca-censhare"],
   },
@@ -981,6 +1024,12 @@ const rawProjects: Project[] = [
     tags: ["Entrepreneurship", "Agency", "Brand", "Photography"],
     visibility: "Public",
     cover: { src: img.brandBanner, alt: "Marketing and brand storytelling since 2017 banner" },
+    links: [
+      {
+        label: "Open the client work library",
+        url: "https://drive.google.com/drive/folders/1vPKk2Qi0LDmxD8T9JWcJ4vP8_sNjpk1R",
+      },
+    ],
     related: ["cyberprotex", "digital-motif", "photography"],
   },
   {
@@ -1015,6 +1064,13 @@ const rawProjects: Project[] = [
     headlineResult: "Approximately 225,000 combined followers across 16 managed channels",
     tags: ["Social Media", "Content", "Photography", "Local Brands"],
     visibility: "Archive only",
+    cover: { src: img.photographyCanon, alt: "Sierra Langford directing photography and social content" },
+    links: [
+      {
+        label: "Open client campaign examples",
+        url: "https://drive.google.com/drive/folders/1vPKk2Qi0LDmxD8T9JWcJ4vP8_sNjpk1R",
+      },
+    ],
     visualNote:
       "Former client work. Client examples included Ancient Lore Village, Alewine Pottery, Crafty Bastard Brewery, Smash City Burger, Wagon Wheel Knoxville, Brentwood Jewelry, Roxana's Hair, Knox Brewsters, Elrod Laskey Group, Salsarita's East Tennessee, Advantage Shutters, CyberProtex and Rafael Custom Jewelry. Examples are collected in the shared example library.",
     related: ["strive-society", "abh-connect", "photography"],
@@ -1050,6 +1106,13 @@ const rawProjects: Project[] = [
     headlineResult: "Email and content systems built for 16 clients",
     tags: ["Email Marketing", "SEO", "Systems", "Team Leadership"],
     visibility: "Archive only",
+    cover: { src: img.brandBanner, alt: "Creative marketing and community communications portfolio artwork" },
+    links: [
+      {
+        label: "Open design examples",
+        url: "https://drive.google.com/drive/folders/1vPKk2Qi0LDmxD8T9JWcJ4vP8_sNjpk1R",
+      },
+    ],
     links: [
       {
         label: "Open the client writing samples",
@@ -1111,7 +1174,13 @@ const rawProjects: Project[] = [
     headlineResult: "Approximately 80 care packages distributed and school speaking engagements",
     tags: ["Entrepreneurship", "Mental Health", "Product", "Speaking"],
     visibility: "Public",
-    visualNote: "Care package photos and original branding available on request.",
+    cover: { src: img.navigatingPurpose, alt: "Creative planning materials representing Sierra's early program work" },
+    links: [
+      {
+        label: "Open early creative examples",
+        url: "https://drive.google.com/drive/folders/1vPKk2Qi0LDmxD8T9JWcJ4vP8_sNjpk1R",
+      },
+    ],
     related: ["realscreen-breaking-in"],
   },
   {
@@ -1134,6 +1203,7 @@ const rawProjects: Project[] = [
     headlineResult: "Pitched an original show concept to Netflix and Hulu executives",
     tags: ["Pitching", "Video", "Entertainment", "Storytelling"],
     visibility: "Public",
+    cover: { src: img.videoRig, alt: "Video production setup representing Sierra's pitch and editing work" },
     links: [
       { label: "Watch the video", url: "https://youtu.be/Seat0OVm6D4" },
       {
