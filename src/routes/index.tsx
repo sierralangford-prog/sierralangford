@@ -73,13 +73,16 @@ function Home() {
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <p className="eyebrow">Selected Results</p>
           <div className="mt-8 grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
-            {stats.map((s) => (
+            {stats.slice(0, 6).map((s) => (
               <div key={s.label} className="border-t border-border pt-4">
                 <p className="font-display text-4xl leading-none">{s.value}</p>
                 <p className="mt-2 text-sm leading-snug text-muted-foreground">{s.label}</p>
               </div>
             ))}
           </div>
+          <Link to="/resume" className="link-underline mt-8 inline-block text-sm">
+            See the full picture on my resume
+          </Link>
         </div>
       </section>
 
