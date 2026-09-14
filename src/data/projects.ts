@@ -35,20 +35,35 @@ export type Project = {
 };
 
 export const CATEGORIES = [
-  "Internal Communications",
-  "Executive Communications",
-  "Healthcare and Health Technology",
-  "AI and Technology",
-  "Cybersecurity",
+  "Communications and Content",
+  "Healthcare and Customer Stories",
   "Events and Field Marketing",
-  "Content and Editorial",
-  "Customer Stories",
   "Podcasts and Video",
-  "Social Media and Brand",
-  "Entrepreneurship",
+  "AI, Technology and Cybersecurity",
+  "Brand, Social and Entrepreneurship",
   "Photography and Creative Work",
   "Earlier Career Archive",
 ] as const;
+
+/** Older, narrower labels are folded into the small set of categories above. */
+const CATEGORY_GROUPS: Record<string, string> = {
+  "Internal Communications": "Communications and Content",
+  "Executive Communications": "Communications and Content",
+  "Content and Editorial": "Communications and Content",
+  "Healthcare and Health Technology": "Healthcare and Customer Stories",
+  "Customer Stories": "Healthcare and Customer Stories",
+  "Events and Field Marketing": "Events and Field Marketing",
+  "Podcasts and Video": "Podcasts and Video",
+  "AI and Technology": "AI, Technology and Cybersecurity",
+  Cybersecurity: "AI, Technology and Cybersecurity",
+  "Social Media and Brand": "Brand, Social and Entrepreneurship",
+  Entrepreneurship: "Brand, Social and Entrepreneurship",
+  "Photography and Creative Work": "Photography and Creative Work",
+  "Earlier Career Archive": "Earlier Career Archive",
+};
+
+const groupCategories = (list: string[]) =>
+  Array.from(new Set(list.map((c) => CATEGORY_GROUPS[c] ?? c)));
 
 const SAMPLE_NOTE =
   "More visual examples from this project live in the shared example library.";
