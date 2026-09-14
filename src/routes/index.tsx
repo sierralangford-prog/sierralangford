@@ -159,16 +159,24 @@ function Home() {
           <p className="eyebrow">In the work</p>
           <h2 className="mt-3 text-4xl leading-tight">Moments from events, studios and stages.</h2>
           <div className="mt-9 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
-            {[
+          {[
               { src: img.cerecoreHumanTouch, alt: "Sierra presenting a brand story session to colleagues in a conference room" },
               { src: img.himssInnovators, alt: "Sierra with industry colleagues at the HIMSS Innovators You Need To Know booth" },
               { src: img.himssBoothInterview, alt: "Sierra interviewing a guest on camera at a conference booth" },
               { src: img.connectionStage, alt: "Sierra on stage during a conference session" },
-              { src: img.boothRecording, alt: "Sierra recording an interview at a trade show booth" },
               { src: img.videoRig, alt: "Sierra setting up a camera rig for a video shoot" },
               { src: img.masterclassSession, alt: "Sierra hosting a virtual masterclass session with a colleague" },
               { src: img.eventNetworking, alt: "Sierra with a client at a networking event" },
               { src: img.photographyCanon, alt: "Sierra photographing on location with a Canon camera" },
+              { src: img.eventThreeWomen, alt: "Sierra with colleagues at a professional event" },
+              { src: img.cerecoreNextDoorRecovery, alt: "Sierra volunteering with the CereCore team at The Next Door Recovery" },
+              { src: img.sierraAtDesk, alt: "Sierra at her desk in the office" },
+              { src: img.hcaAnniversary, alt: "Sierra holding an HCA Healthcare one-year anniversary card" },
+              { src: img.graceKrauseInterview, alt: "Sierra interviewing Grace Krause from CereCore at a trade show booth" },
+              { src: img.jamesWellmanInterview, alt: "Sierra interviewing James Wellman, VP & CIO of Nathan Littauer Hospital" },
+              { src: img.himssTwoWomen, alt: "Sierra with a colleague at the HIMSS Global Health Conference" },
+              { src: img.cerecoreBoothTeam, alt: "The CereCore team at a trade show booth" },
+              { src: img.teamBoombox, alt: "Sierra with colleagues around a vintage boombox" },
             ].map((photo) => (
               <img
                 key={photo.src}
