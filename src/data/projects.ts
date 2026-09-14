@@ -101,13 +101,13 @@ export const projects: Project[] = [
     tags: ["Podcast", "Thought Leadership", "Healthcare IT", "Cybersecurity", "AI", "EHR"],
     featured: true,
     visibility: "Public",
-    cover: { src: img.boothRecording, alt: "Sierra Langford recording podcast content at the CereCore booth" },
+    cover: { src: img.podcastArtwork, alt: "The CereCore Podcast cover artwork" },
     gallery: [
+      { src: img.podcastArtwork, alt: "The CereCore Podcast cover artwork" },
+      { src: img.stevieAward, alt: "The American Business Awards 2026 Stevie Award winner graphic" },
       { src: img.boothRecording, alt: "Recording setup at a healthcare conference booth" },
       { src: img.videoRig, alt: "Mobile video production rig used for podcast and interview capture" },
     ],
-    visualNote:
-      "Podcast artwork, guest briefs and the Gold Stevie Award graphic are available on request or on the public show site.",
     links: [{ label: "Listen to the podcast", url: "https://podcast.cerecore.net/" }],
     related: ["himss-2026", "healthcare-customer-stories", "cerecore-client-newsletter"],
   },
