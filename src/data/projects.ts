@@ -974,6 +974,10 @@ const rawProjects: Project[] = [
         label: "Open the client work library",
         url: "https://drive.google.com/drive/folders/1vPKk2Qi0LDmxD8T9JWcJ4vP8_sNjpk1R",
       },
+      {
+        label: "Open the client writing samples",
+        url: "https://drive.google.com/drive/folders/10PoINBpU3fUhLH5d6kowvAprFkK0KdjU",
+      },
     ],
     related: ["cyberprotex", "digital-motif", "photography"],
   },
