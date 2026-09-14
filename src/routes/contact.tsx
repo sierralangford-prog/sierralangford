@@ -71,6 +71,19 @@ function Contact() {
           </p>
         </a>
 
+        <a
+          href="https://drive.google.com/drive/folders/1vPKk2Qi0LDmxD8T9JWcJ4vP8_sNjpk1R?usp=sharing"
+          target="_blank"
+          rel="noreferrer noopener"
+          className="border border-border bg-card p-7 transition-colors hover:border-foreground"
+        >
+          <p className="eyebrow">Examples</p>
+          <p className="mt-3 font-display text-3xl">Open the example library</p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Additional writing, campaign and event samples in one shared folder.
+          </p>
+        </a>
+
         <Link to="/work" className="border border-border bg-card p-7 transition-colors hover:border-foreground">
           <p className="eyebrow">Before you write</p>
           <p className="mt-3 font-display text-3xl">Browse the work archive</p>

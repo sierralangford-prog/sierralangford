@@ -101,13 +101,13 @@ export const projects: Project[] = [
     tags: ["Podcast", "Thought Leadership", "Healthcare IT", "Cybersecurity", "AI", "EHR"],
     featured: true,
     visibility: "Public",
-    cover: { src: img.boothRecording, alt: "Sierra Langford recording podcast content at the CereCore booth" },
+    cover: { src: img.podcastArtwork, alt: "The CereCore Podcast cover artwork" },
     gallery: [
+      { src: img.podcastArtwork, alt: "The CereCore Podcast cover artwork" },
+      { src: img.stevieAward, alt: "The American Business Awards 2026 Stevie Award winner graphic" },
       { src: img.boothRecording, alt: "Recording setup at a healthcare conference booth" },
       { src: img.videoRig, alt: "Mobile video production rig used for podcast and interview capture" },
     ],
-    visualNote:
-      "Podcast artwork, guest briefs and the Gold Stevie Award graphic are available on request or on the public show site.",
     links: [{ label: "Listen to the podcast", url: "https://podcast.cerecore.net/" }],
     related: ["himss-2026", "healthcare-customer-stories", "cerecore-client-newsletter"],
   },
@@ -197,6 +197,10 @@ export const projects: Project[] = [
     featured: true,
     visibility: "Public with redacted materials",
     cover: { src: img.companyMeeting, alt: "Sierra Langford presenting at a company wide meeting" },
+    gallery: [
+      { src: img.internalVideoStill, alt: "Still from an internal communications video presentation" },
+      { src: img.masterclassSession, alt: "Sierra Langford hosting an internal masterclass session" },
+    ],
     visualNote: SAMPLE_NOTE,
     related: ["marketing-advocacy-group", "enterprise-communications-calendar", "cerecore-mentorship-program"],
   },
@@ -401,6 +405,8 @@ export const projects: Project[] = [
       { src: img.himssInterview, alt: "Interview on the HIMSS conference floor" },
       { src: img.himssSuki, alt: "Booth interview at HIMSS 2026" },
       { src: img.himssMeditech, alt: "MEDITECH partner booth interview at HIMSS 2026" },
+      { src: img.himssBoothInterview, alt: "Sierra Langford interviewing a guest at the CereCore booth at HIMSS 2026" },
+      { src: img.himssInnovators, alt: "Sierra Langford with healthcare technology leaders at HIMSS 2026" },
       { src: img.videoRig, alt: "Mobile video production rig used on the conference floor" },
     ],
     links: [{ label: "View event work", url: "https://sierralangford.netlify.app/#events" }],
@@ -661,8 +667,14 @@ export const projects: Project[] = [
     tags: ["AI", "Positioning", "Messaging", "Fintech", "Product Marketing"],
     featured: true,
     visibility: "Private sample available upon request",
+    gallery: [
+      {
+        src: img.monetizeiqWebinar,
+        alt: "MonetizeIQ webinar promotion graphic featuring BankPlus and StrategyCorps speakers",
+      },
+    ],
     visualNote:
-      "Product narrative, messaging documents and product screenshots are client confidential. Sample available upon request.",
+      "Full product narrative and messaging documents are shared on request. Public campaign materials are shown here.",
     related: ["monetizeiq-roadshow", "ai-enablement", "strategycorps-leadership-series"],
   },
   {

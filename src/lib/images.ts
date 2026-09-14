@@ -12,6 +12,13 @@ import mentorBestPractices from "@/assets/mentor-best-practices.jpg.asset.json";
 import boothRecording from "@/assets/booth-recording.jpg.asset.json";
 import photographyCanon from "@/assets/photography-canon.jpg.asset.json";
 import brandBanner from "@/assets/brand-banner.jpg.asset.json";
+import podcastArtwork from "@/assets/podcast-artwork.png.asset.json";
+import stevieAward from "@/assets/stevie-award.jpg.asset.json";
+import himssInnovators from "@/assets/himss-innovators.png.asset.json";
+import himssBoothInterview from "@/assets/himss-booth-interview.png.asset.json";
+import monetizeiqWebinar from "@/assets/monetizeiq-webinar.png.asset.json";
+import internalVideoStill from "@/assets/internal-video-still.png.asset.json";
+import masterclassSession from "@/assets/masterclass-session.png.asset.json";
 
 export const img = {
   portrait: portrait.url,
@@ -28,4 +35,11 @@ export const img = {
   boothRecording: boothRecording.url,
   photographyCanon: photographyCanon.url,
   brandBanner: brandBanner.url,
+  podcastArtwork: podcastArtwork.url,
+  stevieAward: stevieAward.url,
+  himssInnovators: himssInnovators.url,
+  himssBoothInterview: himssBoothInterview.url,
+  monetizeiqWebinar: monetizeiqWebinar.url,
+  internalVideoStill: internalVideoStill.url,
+  masterclassSession: masterclassSession.url,
 };
