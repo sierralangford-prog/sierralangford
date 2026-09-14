@@ -13,7 +13,7 @@ export const testimonials: Testimonial[] = [
       "I had the opportunity to work closely with Sierra during our time at CereCore, where I was in a sales role supported by marketing. Even early in her career, she stood out for her creativity, ambition, and ability to think outside the box in ways that made a real impact.\n\nShe played a key role in communications and was the driving force behind a highly successful, award winning podcast. What set her apart was not just the execution, but the vision. She consistently found innovative ways to engage audiences and elevate the brand. Her work did not just check a box; it created momentum and delivered meaningful results.\n\nBeyond her creativity, she made a genuine effort to understand the sales perspective. She asked smart questions, collaborated closely, and ensured her work aligned with what would actually resonate with prospects and support pipeline growth. That combination of strategic thinking and creativity is rare, especially at an early stage.\n\nShe is proactive, reliable, and brings a level of ownership that makes her a standout contributor. I would confidently recommend her to any team looking for a driven, imaginative marketer who is not afraid to challenge the status quo and deliver exceptional work. She is a ray of sunshine, whose positive attitude has a gravitational pull.",
     name: "Matt McCue",
     title: "Healthcare IT sales",
-    context: "LinkedIn recommendation, May 2026",
+    context: "LinkedIn recommendation",
   },
   {
     group: "Recommendations",
@@ -21,7 +21,7 @@ export const testimonials: Testimonial[] = [
       "Sierra has what it takes. Name the employee engagement, communication, or production project, and she can do it.\n\nTo know her is to be amazed, amused, and impressed by her. I very much enjoyed working with her and would seize any opportunity to partner with her again. Trust her with important work to carry forward with continuity or ask her to imagine or reinvent, and she will deliver beyond the highest expectations.\n\nPeople are drawn to Sierra and for good reason. She is interesting herself and is interested in others, eager to understand a story and to find the right audience and medium for sharing it.\n\nSierra is delightful as a person and is a dependable professional with ambition and ability that make her entirely special.",
     name: "Angela Vaden",
     title: "Senior Communication Specialist, CereCore",
-    context: "LinkedIn recommendation, May 2026",
+    context: "LinkedIn recommendation",
   },
   {
     group: "Recommendations",
@@ -29,7 +29,7 @@ export const testimonials: Testimonial[] = [
       "I recruited Sierra to join our team at CereCore/HCA Healthcare, and she has been such a great addition to our team. She has proven herself time and time again that she is up for any challenge and can adapt quickly to business needs. She always has a smile on her face and is so friendly and accommodating. I would hire her back to our team in a heartbeat. She will be an absolute asset to any future organization.",
     name: "Chris Chmelar",
     title: "Sr. Talent Acquisition, CereCore",
-    context: "LinkedIn recommendation, May 2026",
+    context: "LinkedIn recommendation",
   },
   {
     group: "Recommendations",
@@ -37,7 +37,7 @@ export const testimonials: Testimonial[] = [
       "Every once in a while, you come across a person who leaves a mark, a very positive mark. Sierra is that person. From the start of working at CereCore, her enthusiastic personality and her passion were evident.\n\nAnd she pays attention to little details. I recall an occasion when I was going to take a redeye flight somewhere, and she even gave me a few chocolate covered coffee beans to help me. They were perfect.\n\nSierra is someone who will brighten any room she is in, any office she works in, and any occasion she attends. She is a remarkable person, and I am just glad that I got to work with her.",
     name: "Peyman Zand",
     title: "Chief Strategy Officer, CFCHE",
-    context: "LinkedIn recommendation, May 2026",
+    context: "LinkedIn recommendation",
   },
   {
     group: "Recognition at work",

@@ -24,23 +24,34 @@ export const Route = createFileRoute("/recognition")({
   component: Recognition,
 });
 
-function Quote({ t, large = false }: { t: Testimonial; large?: boolean }) {
+function Quote({ t, featured = false }: { t: Testimonial; featured?: boolean }) {
+  const initials = t.name
+    .split(" ")
+    .map((part) => part[0])
+    .join("");
+
   return (
-    <figure className={`border border-border bg-card p-6 ${large ? "" : "h-full"}`}>
-      <blockquote className={large ? "space-y-4" : ""}>
-        {t.quote.split("\n\n").map((para, i) => (
-          <p
-            key={i}
-            className={`leading-relaxed text-foreground/85 ${large && i === 0 ? "font-display text-xl sm:text-2xl leading-snug text-foreground" : ""}`}
-          >
+    <figure className={`relative border-t border-border py-8 ${featured ? "md:py-10" : ""}`}>
+      <span aria-hidden className="block text-4xl leading-none text-coral">“</span>
+      <blockquote className={`mt-3 space-y-4 ${featured ? "text-[1.05rem]" : "text-base"}`}>
+        {t.quote.split("\n\n").map((para, index) => (
+          <p key={index} className="leading-relaxed text-foreground/85">
             {para}
           </p>
         ))}
       </blockquote>
-      <figcaption className="mt-5 border-l-2 border-coral pl-3 text-sm">
-        <span className="font-medium">{t.name}</span>
-        <span className="block text-muted-foreground">{t.title}</span>
-        {t.context ? <span className="block text-muted-foreground">{t.context}</span> : null}
+      <figcaption className="mt-6 flex items-center gap-3 text-sm">
+        <span
+          aria-hidden
+          className="flex size-10 shrink-0 items-center justify-center rounded-full bg-secondary font-medium text-teal"
+        >
+          {initials}
+        </span>
+        <span>
+          <span className="block font-medium text-foreground">{t.name}</span>
+          <span className="block text-muted-foreground">{t.title}</span>
+          {t.context ? <span className="block text-xs text-muted-foreground">{t.context}</span> : null}
+        </span>
       </figcaption>
     </figure>
   );
@@ -61,14 +72,13 @@ function Recognition() {
         podcasts, events, internal communications and advocacy work.
       </p>
 
-      <section className="mt-14">
-        <h2 className="rule-top pt-5 text-3xl">Recommendations</h2>
-        <div className="mt-6 grid items-start gap-8 lg:grid-cols-2">
+      <section className="mt-14 border-y border-border bg-paper px-5 sm:px-8">
+        <div className="grid gap-x-12 lg:grid-cols-2">
           {recs.map((t, i) => (
-            <Quote key={i} t={t} large />
+            <Quote key={i} t={t} featured />
           ))}
         </div>
-        <p className="mt-6 text-sm text-muted-foreground">
+        <p className="border-t border-border py-5 text-sm text-muted-foreground">
           These recommendations are published on{" "}
           <a
             href="https://www.linkedin.com/in/sierralangford1/"
@@ -83,8 +93,9 @@ function Recognition() {
       </section>
 
       <section className="mt-16">
-        <h2 className="rule-top pt-5 text-3xl">Recognition at work</h2>
-        <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <p className="eyebrow">Notes from collaborators</p>
+        <h2 className="mt-3 text-3xl">Recognition at work</h2>
+        <div className="mt-6 grid gap-x-10 md:grid-cols-2 lg:grid-cols-3">
           {notes.map((t, i) => (
             <Quote key={i} t={t} />
           ))}
