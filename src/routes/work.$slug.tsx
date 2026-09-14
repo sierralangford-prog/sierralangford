@@ -63,6 +63,27 @@ function ProjectPage() {
     .filter((p): p is Project => Boolean(p));
   const primaryLink = project.links?.[0];
 
+  if (project.minimal) {
+    return (
+      <article className="mx-auto max-w-3xl px-5 py-16 sm:px-8">
+        <Link to="/work" className="link-underline text-sm">
+          Back to the work archive
+        </Link>
+        <h1 className="mt-8 text-4xl leading-tight sm:text-5xl">{project.title}</h1>
+        {primaryLink ? (
+          <a
+            href={primaryLink.url}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="mt-8 inline-block bg-foreground px-5 py-3 text-sm text-primary-foreground transition-opacity hover:opacity-85"
+          >
+            {primaryLink.label} <span aria-hidden>↗</span>
+          </a>
+        ) : null}
+      </article>
+    );
+  }
+
   return (
     <article className="mx-auto max-w-5xl px-5 py-14 sm:px-8">
       <Link to="/work" className="link-underline text-sm">
