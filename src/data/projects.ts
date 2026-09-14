@@ -3,7 +3,6 @@ import { img } from "@/lib/images";
 export type Visibility =
   | "Public"
   | "Public with redacted materials"
-  | "Private sample available upon request"
   | "Archive only";
 
 export type ProjectImage = { src: string; alt: string };
@@ -53,7 +52,7 @@ export const CATEGORIES = [
 ] as const;
 
 const SAMPLE_NOTE =
-  "Visual examples for this project contain internal or client information. Sample available upon request.";
+  "More visual examples from this project live in the shared example library.";
 
 export const projects: Project[] = [
   {
@@ -481,7 +480,7 @@ export const projects: Project[] = [
     results: ["Published case study used in sales conversations and campaigns"],
     headlineResult: "Published go live case study used across sales and marketing",
     tags: ["Epic", "EHR", "Case Study"],
-    visibility: "Private sample available upon request",
+    visibility: "Public",
     visualNote: SAMPLE_NOTE,
     related: ["healthcare-customer-stories", "lehigh-regional-ehr"],
   },
@@ -504,7 +503,7 @@ export const projects: Project[] = [
     results: ["Published case study supporting community hospital positioning"],
     headlineResult: "Published transformation story used in community hospital outreach",
     tags: ["EHR", "Case Study", "Community Hospitals"],
-    visibility: "Private sample available upon request",
+    visibility: "Public",
     visualNote: SAMPLE_NOTE,
     related: ["healthcare-customer-stories", "regional-medical-center-epic"],
   },
@@ -527,7 +526,7 @@ export const projects: Project[] = [
     results: ["Published story used across client facing channels"],
     headlineResult: "Published partnership story used across client facing channels",
     tags: ["Case Study", "Healthcare IT"],
-    visibility: "Private sample available upon request",
+    visibility: "Public",
     visualNote: SAMPLE_NOTE,
     related: ["healthcare-customer-stories"],
   },
@@ -626,7 +625,7 @@ export const projects: Project[] = [
     headlineResult: "Supported migration of more than 5,000 digital assets",
     tags: ["Change Management", "Enablement", "DAM", "Training"],
     featured: true,
-    visibility: "Private sample available upon request",
+    visibility: "Public",
     visualNote:
       "Platform screenshots and internal materials are confidential. Redacted samples available upon request with approval.",
     related: ["ai-enablement", "cerecore-internal-comms"],
@@ -666,7 +665,7 @@ export const projects: Project[] = [
     headlineResult: "One product narrative adopted across sales, events and marketing",
     tags: ["AI", "Positioning", "Messaging", "Fintech", "Product Marketing"],
     featured: true,
-    visibility: "Private sample available upon request",
+    visibility: "Public",
     gallery: [
       {
         src: img.monetizeiqWebinar,
@@ -712,7 +711,7 @@ export const projects: Project[] = [
     ],
     headlineResult: "A repeatable national event system built during a product launch",
     tags: ["Field Marketing", "Events", "ABM", "Experience Design"],
-    visibility: "Private sample available upon request",
+    visibility: "Public",
     visualNote: SAMPLE_NOTE,
     related: ["monetizeiq-product-storytelling", "himss-2026"],
   },
@@ -740,7 +739,7 @@ export const projects: Project[] = [
     results: ["11 executive interviews captured", "Reusable brand and anniversary content library"],
     headlineResult: "11 executive interviews turned into a reusable content library",
     tags: ["Executive Comms", "Interviewing", "Brand"],
-    visibility: "Private sample available upon request",
+    visibility: "Public",
     visualNote: SAMPLE_NOTE,
     related: ["monetizeiq-product-storytelling"],
   },
