@@ -35,4 +35,11 @@ export const img = {
   boothRecording: boothRecording.url,
   photographyCanon: photographyCanon.url,
   brandBanner: brandBanner.url,
+  podcastArtwork: podcastArtwork.url,
+  stevieAward: stevieAward.url,
+  himssInnovators: himssInnovators.url,
+  himssBoothInterview: himssBoothInterview.url,
+  monetizeiqWebinar: monetizeiqWebinar.url,
+  internalVideoStill: internalVideoStill.url,
+  masterclassSession: masterclassSession.url,
 };
