@@ -1048,7 +1048,12 @@ const rawProjects: Project[] = [
     headlineResult: "Email and content systems built for 16 clients",
     tags: ["Email Marketing", "SEO", "Systems", "Team Leadership"],
     visibility: "Archive only",
-    visualNote: SAMPLE_NOTE,
+    links: [
+      {
+        label: "Open the client writing samples",
+        url: "https://drive.google.com/drive/folders/10PoINBpU3fUhLH5d6kowvAprFkK0KdjU",
+      },
+    ],
     related: ["digital-motif", "cyberprotex"],
   },
   {
