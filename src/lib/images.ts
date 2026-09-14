@@ -86,4 +86,6 @@ export const img = {
   lehighCaseStudy: lehighCaseStudy.url,
   schneckCaseStudy: schneckCaseStudy.url,
   appRationalizationStory: appRationalizationStory.url,
+  eventNetworking: eventNetworking.url,
+  cerecoreHumanTouch: cerecoreHumanTouch.url,
 };
