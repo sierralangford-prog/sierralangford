@@ -68,7 +68,7 @@ const groupCategories = (list: string[]) =>
 const SAMPLE_NOTE =
   "More visual examples from this project live in the shared example library.";
 
-export const projects: Project[] = [
+const rawProjects: Project[] = [
   {
     slug: "cerecore-podcast",
     title: "The CereCore Podcast",
@@ -1128,6 +1128,11 @@ export const projects: Project[] = [
     related: ["realscreen-breaking-in"],
   },
 ];
+
+export const projects: Project[] = rawProjects.map((p) => ({
+  ...p,
+  categories: groupCategories(p.categories),
+}));
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
 
