@@ -18,6 +18,8 @@ export const Route = createFileRoute("/resume")({
         content: "Experience, skills, education and certifications, with links to real project examples.",
       },
       { property: "og:url", content: "/resume" },
+      { property: "og:type", content: "profile" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/resume" }],
   }),

@@ -36,6 +36,10 @@ import certHootsuiteSmm from "@/assets/cert-hootsuite-smm.png.asset.json";
 import certHootsuitePlatform from "@/assets/cert-hootsuite-platform.png.asset.json";
 import enneagramResults from "@/assets/enneagram-results.png.asset.json";
 import boardroomPresentation from "@/assets/sierra-boardroom-presentation.png.asset.json";
+import regionalCaseStudy from "@/assets/regional-case-study.jpg.asset.json";
+import lehighCaseStudy from "@/assets/lehigh-case-study.jpg.asset.json";
+import schneckCaseStudy from "@/assets/schneck-case-study.jpg.asset.json";
+import appRationalizationStory from "@/assets/app-rationalization-story.jpg.asset.json";
 
 export const img = {
   portrait: portrait.url,
@@ -76,4 +80,8 @@ export const img = {
   certHootsuitePlatform: certHootsuitePlatform.url,
   enneagramResults: enneagramResults.url,
   boardroomPresentation: boardroomPresentation.url,
+  regionalCaseStudy: regionalCaseStudy.url,
+  lehighCaseStudy: lehighCaseStudy.url,
+  schneckCaseStudy: schneckCaseStudy.url,
+  appRationalizationStory: appRationalizationStory.url,
 };
