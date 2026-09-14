@@ -7,14 +7,16 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Get in touch with Sierra Langford about communications strategy, content, events, podcasts, photography or private work samples.",
+          "Get in touch with Sierra Langford about communications strategy, content, events, podcasts, photography or creative consulting.",
       },
       { property: "og:title", content: "Contact Sierra Langford" },
       {
         property: "og:description",
-        content: "Reach out about strategy, storytelling, events, production or private work samples.",
+        content: "Reach out about strategy, storytelling, events, production or creative consulting.",
       },
       { property: "og:url", content: "/contact" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
   }),
@@ -29,8 +31,8 @@ function Contact() {
         I would love to hear what you are building and how I can help.
       </h1>
       <p className="mt-6 max-w-2xl leading-relaxed text-foreground/85">
-        Recruiters, hiring managers, clients and collaborators are all welcome here. If a project on this site
-        you want to see in more detail, message me and I will send the full example.
+        Recruiters, hiring managers, clients and collaborators are all welcome here. Browse the linked work,
+        then reach out if you would like to talk about a role or project.
       </p>
 
       <div className="mt-12 grid gap-6 sm:grid-cols-2">

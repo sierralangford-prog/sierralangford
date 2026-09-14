@@ -21,6 +21,8 @@ export const Route = createFileRoute("/")({
           "Marketing and communications strategist across healthcare, health technology, AI, cybersecurity and small business.",
       },
       { property: "og:url", content: "/" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),

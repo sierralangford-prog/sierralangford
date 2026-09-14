@@ -18,6 +18,8 @@ export const Route = createFileRoute("/about")({
           "A songwriter at heart who builds communications, programs and content across healthcare, AI, cybersecurity and small business.",
       },
       { property: "og:url", content: "/about" },
+      { property: "og:type", content: "profile" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/about" }],
   }),

@@ -578,6 +578,7 @@ const rawProjects: Project[] = [
     headlineResult: "Published go live case study used across sales and marketing",
     tags: ["Epic", "EHR", "Case Study"],
     visibility: "Public",
+    cover: { src: img.regionalCaseStudy, alt: "Regional Medical Center Epic go-live story with the project team" },
     links: [
       { label: "Read the case study", url: "https://drive.google.com/file/d/1OTyBKQceCCv1Dpp8dxUBZ2uK6VJTQ8eC/view" },
     ],
@@ -603,6 +604,7 @@ const rawProjects: Project[] = [
     headlineResult: "Published transformation story used in community hospital outreach",
     tags: ["EHR", "Case Study", "Community Hospitals"],
     visibility: "Public",
+    cover: { src: img.lehighCaseStudy, alt: "Lehigh Regional Medical Center EHR transformation story" },
     links: [
       { label: "Read the case study", url: "https://drive.google.com/file/d/13UBqFYqPYLevWCY32HYCWYZysbL3t3sS/view" },
     ],
@@ -628,6 +630,7 @@ const rawProjects: Project[] = [
     headlineResult: "Published partnership story used across client facing channels",
     tags: ["Case Study", "Healthcare IT"],
     visibility: "Public",
+    cover: { src: img.schneckCaseStudy, alt: "Schneck Medical Center case study cover and results" },
     links: [
       {
         label: "Read the case study",
@@ -656,6 +659,7 @@ const rawProjects: Project[] = [
     headlineResult: "Published feature used as a newsletter lead story",
     tags: ["Editorial", "Healthcare IT", "Cost Reduction"],
     visibility: "Public",
+    cover: { src: img.appRationalizationStory, alt: "Published client newsletter featuring application rationalization" },
     links: [
       {
         label: "Read the article",
@@ -1275,6 +1279,7 @@ const rawProjects: Project[] = [
     tags: ["Archive", "Creative Writing", "Songwriting", "Academic"],
     archive: true,
     visibility: "Archive only",
+    cover: { src: img.boardroomPresentation, alt: "Sierra Langford presenting creative storytelling work" },
     links: [
       {
         label: "Open the writing sample library",
