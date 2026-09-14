@@ -17,7 +17,7 @@ function hash(s: string) {
  * It never imitates a screenshot or invents imagery.
  */
 export function CoverArt({ project, className = "" }: { project: Project; className?: string }) {
-  const p = palettes[hash(project.slug) % palettes.length];
+  const p = palettes[hash(project.slug) % palettes.length]!;
   return (
     <div
       role="img"

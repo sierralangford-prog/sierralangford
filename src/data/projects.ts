@@ -147,6 +147,7 @@ export const projects: Project[] = [
     tags: ["Email Marketing", "Editorial", "Demand Generation", "HubSpot", "Healthcare IT"],
     featured: true,
     visibility: "Public",
+    cover: { src: img.mentorBestPractices, alt: "CereCore newsletter and communications materials" },
     visualNote:
       "Issue covers, email design examples and analytics screenshots are available on request. Published examples are linked below.",
     links: [
@@ -237,6 +238,7 @@ export const projects: Project[] = [
     headlineResult: "34 employee advocates recruited and coached across departments",
     tags: ["Employee Advocacy", "Social", "Enablement", "Program Design"],
     visibility: "Public with redacted materials",
+    cover: { src: img.masterclassSession, alt: "Sierra Langford leading an internal communications masterclass" },
     visualNote: SAMPLE_NOTE,
     related: ["cerecore-internal-comms", "cerecore-mentorship-program"],
   },
@@ -314,6 +316,7 @@ export const projects: Project[] = [
     headlineResult: "Adopted across departments with an estimated 1,468 hours saved annually",
     tags: ["Operations", "Internal Comms", "Process Design"],
     visibility: "Public with redacted materials",
+    cover: { src: img.internalVideoStill, alt: "CereCore communications team planning session on a video call" },
     visualNote: SAMPLE_NOTE,
     related: ["cerecore-internal-comms", "cerecore-mentorship-program"],
   },
@@ -666,6 +669,7 @@ export const projects: Project[] = [
     tags: ["AI", "Positioning", "Messaging", "Fintech", "Product Marketing"],
     featured: true,
     visibility: "Public",
+    cover: { src: img.monetizeiqWebinar, alt: "MonetizeIQ webinar graphic featuring banking executives" },
     gallery: [
       {
         src: img.monetizeiqWebinar,
@@ -712,6 +716,7 @@ export const projects: Project[] = [
     headlineResult: "A repeatable national event system built during a product launch",
     tags: ["Field Marketing", "Events", "ABM", "Experience Design"],
     visibility: "Public",
+    cover: { src: img.liveEvent, alt: "Guests at a MonetizeIQ executive event" },
     visualNote: SAMPLE_NOTE,
     related: ["monetizeiq-product-storytelling", "himss-2026"],
   },
@@ -740,6 +745,7 @@ export const projects: Project[] = [
     headlineResult: "11 executive interviews turned into a reusable content library",
     tags: ["Executive Comms", "Interviewing", "Brand"],
     visibility: "Public",
+    cover: { src: img.videoRig, alt: "Video interview rig set up for a leadership interview series" },
     visualNote: SAMPLE_NOTE,
     related: ["monetizeiq-product-storytelling"],
   },
@@ -776,6 +782,7 @@ export const projects: Project[] = [
     headlineResult: "Practical AI adoption across marketing and communications workflows",
     tags: ["AI Enablement", "Workflow Design", "Training", "Systems"],
     visibility: "Public with redacted materials",
+    cover: { src: img.boothRecording, alt: "Sierra Langford recording a session with AI-assisted production tools" },
     visualNote: SAMPLE_NOTE,
     related: ["monetizeiq-product-storytelling", "hca-censhare"],
   },
