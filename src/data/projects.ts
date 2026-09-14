@@ -105,6 +105,7 @@ export const projects: Project[] = [
       { src: img.stevieAward, alt: "The American Business Awards 2026 Stevie Award winner graphic" },
       { src: img.boothRecording, alt: "Recording setup at a healthcare conference booth" },
       { src: img.videoRig, alt: "Mobile video production rig used for podcast and interview capture" },
+      { src: img.podcastPipeline, alt: "Podcast pipeline planning deck for the 2026 episode slate" },
     ],
     links: [{ label: "Listen to the podcast", url: "https://podcast.cerecore.net/" }],
     related: ["himss-2026", "healthcare-customer-stories", "cerecore-client-newsletter"],
@@ -146,8 +147,11 @@ export const projects: Project[] = [
     tags: ["Email Marketing", "Editorial", "Demand Generation", "HubSpot", "Healthcare IT"],
     featured: true,
     visibility: "Public",
-    visualNote:
-      "Issue covers, email design examples and analytics screenshots are available on request. Published examples are linked below.",
+    cover: { src: img.clientUpdate, alt: "Spring 2026 CereCore client newsletter with client success stories" },
+    gallery: [
+      { src: img.clientUpdate, alt: "Spring edition of the CereCore client newsletter" },
+      { src: img.newsletterStats, alt: "Newsletter performance statistics showing open and click rates" },
+    ],
     links: [
       { label: "Read the newsletter introduction", url: "https://cerecore.net/introducing-the-cerecore-client-newsletter" },
       {
@@ -198,6 +202,9 @@ export const projects: Project[] = [
     gallery: [
       { src: img.internalVideoStill, alt: "Still from an internal communications video presentation" },
       { src: img.masterclassSession, alt: "Sierra Langford hosting an internal masterclass session" },
+      { src: img.blogBalance, alt: "Internal blog post: Finding Balance While Working from Home" },
+      { src: img.blogMicrostress, alt: "Internal blog post: Microstress, the toll we do not have to pay" },
+      { src: img.internalAgenda, alt: "2026 internal meetings agenda planning deck" },
     ],
     visualNote: SAMPLE_NOTE,
     related: ["marketing-advocacy-group", "enterprise-communications-calendar", "cerecore-mentorship-program"],
@@ -278,6 +285,7 @@ export const projects: Project[] = [
     gallery: [
       { src: img.mentorshipToolkit, alt: "Mentorship toolkit presentation" },
       { src: img.mentorBestPractices, alt: "Sierra Langford presenting mentor best practices to a large audience" },
+      { src: img.navigatingPurpose, alt: "Navigating With Purpose mentorship schedule and plan document" },
     ],
     related: ["cerecore-internal-comms", "marketing-advocacy-group"],
   },
@@ -314,8 +322,11 @@ export const projects: Project[] = [
     headlineResult: "Adopted across departments with an estimated 1,468 hours saved annually",
     tags: ["Operations", "Internal Comms", "Process Design"],
     visibility: "Public",
-    cover: { src: img.internalVideoStill, alt: "CereCore communications team planning session on a video call" },
-    visualNote: SAMPLE_NOTE,
+    cover: { src: img.impactReview, alt: "2025 internal and external communications impact review deck" },
+    gallery: [
+      { src: img.impactReview, alt: "Title slide of the 2025 communications impact review" },
+      { src: img.internalAgenda, alt: "2026 internal meetings agenda and planning calendar" },
+    ],
     related: ["cerecore-internal-comms", "cerecore-mentorship-program"],
   },
   {
@@ -363,6 +374,7 @@ export const projects: Project[] = [
       { src: img.connectionStage, alt: "Sierra Langford on stage at Connection 2026" },
       { src: img.liveEvent, alt: "Live event production at a company wide conference" },
       { src: img.companyMeeting, alt: "Sierra Langford presenting at a company meeting" },
+      { src: img.connectionOutlines, alt: "Connection 2026 run of show and session outlines" },
     ],
     related: ["himss-2026", "cerecore-internal-comms", "veronica-survivor-story"],
   },
@@ -974,8 +986,13 @@ export const projects: Project[] = [
     tags: ["SEO", "Blogging", "Email", "Archive"],
     archive: true,
     visibility: "Archive only",
-    visualNote:
-      "Some client links are no longer active and permissions vary. Examples are collected in the shared example library.",
+    cover: { src: img.blogMentalHealth, alt: "Published article: October, Mental Health Awareness Month" },
+    gallery: [
+      { src: img.blogMentalHealth, alt: "Published article on mental health awareness" },
+      { src: img.blogMicrostress, alt: "Published article on microstress" },
+      { src: img.marketingPortfolio, alt: "Cover of Sierra Langford's marketing portfolio document" },
+    ],
+    visualNote: "Some client links are no longer active, so published copies are shown instead.",
     related: ["abh-connect", "cyberprotex"],
   },
   {
