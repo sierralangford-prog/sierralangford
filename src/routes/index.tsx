@@ -177,6 +177,8 @@ function Home() {
               { src: img.himssTwoWomen, alt: "Sierra with a colleague at the HIMSS Global Health Conference" },
               { src: img.cerecoreBoothTeam, alt: "The CereCore team at a trade show booth" },
               { src: img.teamBoombox, alt: "Sierra with colleagues around a vintage boombox" },
+              { src: img.teamYeehawRestaurant, alt: "Sierra with colleagues at a team lunch" },
+              { src: img.teamOutsideBrickBuilding, alt: "Sierra with teammates outside a brick building" },
             ].map((photo) => (
               <img
                 key={photo.src}
