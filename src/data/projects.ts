@@ -122,7 +122,17 @@ const rawProjects: Project[] = [
       { src: img.videoRig, alt: "Mobile video production rig used for podcast and interview capture" },
       { src: img.podcastPipeline, alt: "Podcast pipeline planning deck for the 2026 episode slate" },
     ],
-    links: [{ label: "Listen to the podcast", url: "https://podcast.cerecore.net/" }],
+    links: [
+      { label: "Listen to the podcast", url: "https://podcast.cerecore.net/" },
+      { label: "Guest brief: Dr. Devjit Roy", url: "https://drive.google.com/file/d/11zrA5weo4MEV4FGDZVZgRN5IdqeUeX27/view" },
+      { label: "Guest brief: Craig Rice", url: "https://drive.google.com/file/d/1bHq9rWyFr_ZZ9Q-dJSi7AnUgC7Xpk8A1/view" },
+      { label: "Guest brief: Paula Blomquist", url: "https://drive.google.com/file/d/1jIH2ayzOmDQadGjibDg08vjlzDupNsym/view" },
+      { label: "Guest brief: James Wellman", url: "https://drive.google.com/file/d/1JKz8xSumpDZnrrH5BUjSvcqLLu6K_Ax9/view" },
+      { label: "Guest brief: David Singer", url: "https://drive.google.com/file/d/1-q_4K4SGRLywFZgZoHuyxuQw0w4EBhyg/view" },
+      { label: "Guest brief: Tiffany Laurenz", url: "https://drive.google.com/file/d/1ngvnbd1pBxMc9YdDyn3NgWdgw-2hw_iR/view" },
+      { label: "Guest brief: Julie Demaree", url: "https://drive.google.com/file/d/1YA576EqTKMPpV-mVyNL3TCz2M6jPYjpO/view" },
+      { label: "Guest brief: Judy Krupala", url: "https://drive.google.com/file/d/1uesz8zf8H9xXEp0Ru2IsNmUUgq9ySSr5/view" },
+    ],
     related: ["himss-2026", "healthcare-customer-stories", "cerecore-client-newsletter"],
   },
   {
@@ -744,8 +754,16 @@ const rawProjects: Project[] = [
         alt: "MonetizeIQ webinar promotion graphic featuring BankPlus and StrategyCorps speakers",
       },
     ],
-    visualNote:
-      "Full product narrative and messaging documents are shared on request. Public campaign materials are shown here.",
+    links: [
+      {
+        label: "Read the product story and video script",
+        url: "https://docs.google.com/document/d/1LluIc2Pm4BpC8byMsg5TVERrQtI6iqcQYxX5bpBcXD0/edit",
+      },
+      {
+        label: "View the StrategyCorps brand refresh overview",
+        url: "https://drive.google.com/file/d/177rIn_IO9K94fpUeydYozrwJBw-vlDiG/view",
+      },
+    ],
     related: ["monetizeiq-roadshow", "ai-enablement", "strategycorps-leadership-series"],
   },
   {
@@ -785,6 +803,12 @@ const rawProjects: Project[] = [
     tags: ["Field Marketing", "Events", "ABM", "Experience Design"],
     visibility: "Public",
     cover: { src: img.liveEvent, alt: "Guests at a MonetizeIQ executive event" },
+    links: [
+      {
+        label: "Open the field marketing and events library",
+        url: "https://drive.google.com/drive/folders/18_KRSaVno8giwpuOWfNI-5hIOVj54MPI",
+      },
+    ],
     visualNote: SAMPLE_NOTE,
     related: ["monetizeiq-product-storytelling", "himss-2026"],
   },
