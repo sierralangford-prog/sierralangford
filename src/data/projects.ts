@@ -405,6 +405,8 @@ export const projects: Project[] = [
       { src: img.himssInterview, alt: "Interview on the HIMSS conference floor" },
       { src: img.himssSuki, alt: "Booth interview at HIMSS 2026" },
       { src: img.himssMeditech, alt: "MEDITECH partner booth interview at HIMSS 2026" },
+      { src: img.himssBoothInterview, alt: "Sierra Langford interviewing a guest at the CereCore booth at HIMSS 2026" },
+      { src: img.himssInnovators, alt: "Sierra Langford with healthcare technology leaders at HIMSS 2026" },
       { src: img.videoRig, alt: "Mobile video production rig used on the conference floor" },
     ],
     links: [{ label: "View event work", url: "https://sierralangford.netlify.app/#events" }],
