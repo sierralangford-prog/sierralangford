@@ -667,8 +667,14 @@ export const projects: Project[] = [
     tags: ["AI", "Positioning", "Messaging", "Fintech", "Product Marketing"],
     featured: true,
     visibility: "Private sample available upon request",
+    gallery: [
+      {
+        src: img.monetizeiqWebinar,
+        alt: "MonetizeIQ webinar promotion graphic featuring BankPlus and StrategyCorps speakers",
+      },
+    ],
     visualNote:
-      "Product narrative, messaging documents and product screenshots are client confidential. Sample available upon request.",
+      "Full product narrative and messaging documents are shared on request. Public campaign materials are shown here.",
     related: ["monetizeiq-roadshow", "ai-enablement", "strategycorps-leadership-series"],
   },
   {
