@@ -13,7 +13,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as RecognitionRouteImport } from './routes/recognition'
-import { Route as ResumeRouteImport } from './routes/resume'
 import { Route as StrengthsRouteImport } from './routes/strengths'
 import { Route as TimelineRouteImport } from './routes/timeline'
 import { Route as WorkIndexRouteImport } from './routes/work.index'
@@ -37,11 +36,6 @@ const ContactRoute = ContactRouteImport.update({
 const RecognitionRoute = RecognitionRouteImport.update({
   id: '/recognition',
   path: '/recognition',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ResumeRoute = ResumeRouteImport.update({
-  id: '/resume',
-  path: '/resume',
   getParentRoute: () => rootRouteImport,
 } as any)
 const StrengthsRoute = StrengthsRouteImport.update({
@@ -70,7 +64,6 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/recognition': typeof RecognitionRoute
-  '/resume': typeof ResumeRoute
   '/strengths': typeof StrengthsRoute
   '/timeline': typeof TimelineRoute
   '/work/$slug': typeof WorkSlugRoute
@@ -81,7 +74,6 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/recognition': typeof RecognitionRoute
-  '/resume': typeof ResumeRoute
   '/strengths': typeof StrengthsRoute
   '/timeline': typeof TimelineRoute
   '/work/$slug': typeof WorkSlugRoute
@@ -93,7 +85,6 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/recognition': typeof RecognitionRoute
-  '/resume': typeof ResumeRoute
   '/strengths': typeof StrengthsRoute
   '/timeline': typeof TimelineRoute
   '/work/$slug': typeof WorkSlugRoute
@@ -106,7 +97,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/recognition'
-    | '/resume'
     | '/strengths'
     | '/timeline'
     | '/work/$slug'
@@ -117,7 +107,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/recognition'
-    | '/resume'
     | '/strengths'
     | '/timeline'
     | '/work/$slug'
@@ -128,7 +117,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/recognition'
-    | '/resume'
     | '/strengths'
     | '/timeline'
     | '/work/$slug'
@@ -140,7 +128,6 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   RecognitionRoute: typeof RecognitionRoute
-  ResumeRoute: typeof ResumeRoute
   StrengthsRoute: typeof StrengthsRoute
   TimelineRoute: typeof TimelineRoute
   WorkSlugRoute: typeof WorkSlugRoute
@@ -175,13 +162,6 @@ declare module '@tanstack/react-router' {
       path: '/recognition'
       fullPath: '/recognition'
       preLoaderRoute: typeof RecognitionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/resume': {
-      id: '/resume'
-      path: '/resume'
-      fullPath: '/resume'
-      preLoaderRoute: typeof ResumeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/strengths': {
@@ -220,7 +200,6 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   RecognitionRoute: RecognitionRoute,
-  ResumeRoute: ResumeRoute,
   StrengthsRoute: StrengthsRoute,
   TimelineRoute: TimelineRoute,
   WorkSlugRoute: WorkSlugRoute,
