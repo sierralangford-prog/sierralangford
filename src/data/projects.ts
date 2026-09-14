@@ -985,7 +985,7 @@ export const projects: Project[] = [
     archive: true,
     visibility: "Archive only",
     visualNote: SAMPLE_NOTE,
-    related: ["earlier-writing-archive"],
+    related: ["abh-connect"],
   },
   {
     slug: "bliss-box",
