@@ -142,9 +142,19 @@ function ProjectPage() {
         {project.visualNote ? (
           <div className="mt-6 border border-dashed border-border bg-paper p-6">
             <p className="leading-relaxed text-muted-foreground">{project.visualNote}</p>
-            <Link to="/contact" className="mt-4 inline-block border border-foreground px-4 py-2 text-sm hover:bg-secondary">
-              Request private sample
-            </Link>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <Link to="/contact" className="inline-block border border-foreground px-4 py-2 text-sm hover:bg-secondary">
+                Request private sample
+              </Link>
+              <a
+                href="https://drive.google.com/drive/folders/1vPKk2Qi0LDmxD8T9JWcJ4vP8_sNjpk1R?usp=sharing"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-block border border-foreground px-4 py-2 text-sm hover:bg-secondary"
+              >
+                Open the example library
+              </a>
+            </div>
           </div>
         ) : null}
       </section>
