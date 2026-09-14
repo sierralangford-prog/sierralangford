@@ -1,8 +1,6 @@
-# Sierra Langford Portfolio Roadmap
+# Roadmap
 
-## Done
-- Add 10 newly uploaded photos across homepage gallery, mentorship project, StrategyCorps projects, and recognition page.
-- Recategorize Censhare Change Communications to appear under Podcasts and Video (still visible under Internal and External Communications too).
-
-## Open
-- None.
+- [x] Censhare: nurses video still as header thumbnail + sizzle reel link first
+- [x] Work page: each project listed once under its primary category
+- [x] Remove "Earlier Career Archive" section; redistribute its 4 projects
+- [ ] Optional: add LinkedIn post URLs to homepage gallery photos (waiting on URLs from Sierra)

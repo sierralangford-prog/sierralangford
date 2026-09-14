@@ -42,7 +42,6 @@ export const CATEGORIES = [
   "AI, Technology and Cybersecurity",
   "Brand, Social and Entrepreneurship",
   "Photography and Creative Work",
-  "Earlier Career Archive",
 ] as const;
 
 /** Older, narrower labels are folded into the small set of categories above. */
@@ -59,7 +58,6 @@ const CATEGORY_GROUPS: Record<string, string> = {
   "Social Media and Brand": "Brand, Social and Entrepreneurship",
   Entrepreneurship: "Brand, Social and Entrepreneurship",
   "Photography and Creative Work": "Photography and Creative Work",
-  "Earlier Career Archive": "Earlier Career Archive",
 };
 
 const groupCategories = (list: string[]) =>
@@ -622,7 +620,7 @@ const rawProjects: Project[] = [
     period: "June 2024 – March 2025",
     role: "Marketing Operations",
     industries: ["Healthcare"],
-    categories: ["Internal Communications", "Executive Communications", "Podcasts and Video"],
+    categories: ["Podcasts and Video", "Internal Communications", "Executive Communications"],
     summary:
       "Supported the enterprise rollout of the Censhare digital asset management platform inside a large matrixed health system, including stakeholder communications, training materials and adoption support.",
     challenge:
@@ -651,8 +649,12 @@ const rawProjects: Project[] = [
     tags: ["Change Management", "Enablement", "DAM", "Training"],
     featured: true,
     visibility: "Public",
-    cover: { src: img.marketingPortfolio, alt: "Portfolio of healthcare marketing and change communications work" },
+    cover: { src: img.censhareNursesVideo, alt: "Still from the Censhare platform overview sizzle reel" },
     links: [
+      {
+        label: "Watch the Censhare sizzle reel",
+        url: "https://drive.google.com/file/d/1iYrFcsV4JYM2sWbvVheUxiDyM6wOIe0j/view?usp=sharing",
+      },
       {
         label: "Open change communications examples",
         url: "https://drive.google.com/drive/folders/1ENSKEChZdrzlr1R9JRAswM1xTK0n14rZ",
@@ -1040,7 +1042,7 @@ const rawProjects: Project[] = [
     period: "August 2021 – August 2022",
     role: "Creative Designer",
     industries: ["Nonprofit", "Education"],
-    categories: ["Earlier Career Archive", "Social Media and Brand"],
+    categories: ["Social Media and Brand"],
     summary:
       "Supported marketing strategies and communications for a national organization, with visual communication work focused on alumni and community connection.",
     challenge:
@@ -1071,7 +1073,7 @@ const rawProjects: Project[] = [
     period: "2019 – 2021",
     role: "Founder",
     industries: ["Mental Health", "Consumer"],
-    categories: ["Entrepreneurship", "Earlier Career Archive"],
+    categories: ["Entrepreneurship"],
     summary:
       "Created a mental health wellness care package with coping tools for anxiety and stress, funded and mentored through a county entrepreneurship program.",
     challenge:
@@ -1109,7 +1111,7 @@ const rawProjects: Project[] = [
     period: "2024",
     role: "Creator and Editor",
     industries: ["Entertainment", "Media"],
-    categories: ["Earlier Career Archive", "Podcasts and Video", "Photography and Creative Work"],
+    categories: ["Podcasts and Video", "Photography and Creative Work"],
     summary:
       "Pitched an original television concept called Breaking In to Netflix and Hulu executives at the Real Screen Summit in New Orleans, backed by a pitch deck and a sizzle reel I wrote, shot and edited.",
     challenge:
@@ -1172,7 +1174,7 @@ const rawProjects: Project[] = [
     period: "2021 – 2024",
     role: "Student Creator",
     industries: ["Media", "Education"],
-    categories: ["Earlier Career Archive", "Photography and Creative Work"],
+    categories: ["Photography and Creative Work"],
     summary:
       "An archive of earlier creative and academic work, including a stage play, media research projects, mental health advocacy work and songwriting.",
     challenge:
