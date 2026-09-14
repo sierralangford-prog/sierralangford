@@ -97,4 +97,13 @@ export const img = {
   appRationalizationStory: appRationalizationStory.url,
   eventNetworking: eventNetworking.url,
   cerecoreHumanTouch: cerecoreHumanTouch.url,
+  eventThreeWomen: eventThreeWomen.url,
+  cerecoreNextDoorRecovery: cerecoreNextDoorRecovery.url,
+  sierraAtDesk: sierraAtDesk.url,
+  hcaAnniversary: hcaAnniversary.url,
+  graceKrauseInterview: graceKrauseInterview.url,
+  jamesWellmanInterview: jamesWellmanInterview.url,
+  himssTwoWomen: himssTwoWomen.url,
+  cerecoreBoothTeam: cerecoreBoothTeam.url,
+  teamBoombox: teamBoombox.url,
 };
