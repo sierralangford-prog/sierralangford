@@ -510,14 +510,14 @@ const rawProjects: Project[] = [
   },
   {
     slug: "healthcare-customer-stories",
-    title: "Healthcare Customer Story Program",
+    title: "Healthcare Stories and Blogs",
     organization: "CereCore, an HCA Healthcare company",
     period: "2025 – 2026",
     role: "Storyteller and Case Study Lead",
     industries: ["Healthcare", "Health Technology"],
     categories: ["Customer Stories", "Healthcare and Health Technology", "Content and Editorial"],
     summary:
-      "Interviewed hospital leaders, clients and subject matter experts to turn complex health IT implementations into clear human stories used across marketing, sales and leadership communications.",
+      "Interviewed hospital leaders, clients and subject matter experts to turn complex health IT implementations into clear human stories, published as case studies, blogs and feature articles used across marketing, sales and leadership communications.",
     challenge:
       "Implementation stories were written as technical summaries. They were accurate and forgettable, and they never showed the people affected by the work.",
     owned: [
@@ -529,7 +529,7 @@ const rawProjects: Project[] = [
     audiences: ["Prospective hospital clients", "Current clients", "Sales teams", "Employees", "Leadership"],
     deliverables: [
       "18 healthcare case studies",
-      "More than 82 published stories",
+      "More than 82 published stories and blogs",
       "Sales-ready one pagers and excerpts",
       "Social and newsletter adaptations",
     ],
@@ -540,134 +540,39 @@ const rawProjects: Project[] = [
       "Stories reused across sales conversations, newsletters and leadership messaging",
     ],
     headlineResult: "18 case studies and more than 82 published stories",
-    tags: ["Case Studies", "Interviewing", "Healthcare IT", "Writing"],
+    tags: ["Case Studies", "Blogs", "Interviewing", "Healthcare IT", "Writing"],
     featured: true,
     visibility: "Public",
     cover: { src: img.veronica, alt: "A healthcare story subject with her son" },
+    gallery: [
+      { src: img.regionalCaseStudy, alt: "Regional Medical Center Epic go-live story with the project team" },
+      { src: img.lehighCaseStudy, alt: "Lehigh Regional Medical Center EHR transformation story" },
+      { src: img.schneckCaseStudy, alt: "Schneck Medical Center case study cover and results" },
+      { src: img.appRationalizationStory, alt: "Published article on application rationalization in hospitals" },
+    ],
     links: [
       {
-        label: "View case study",
+        label: "Regional Medical Center Epic go live",
+        url: "https://drive.google.com/file/d/1OTyBKQceCCv1Dpp8dxUBZ2uK6VJTQ8eC/view",
+      },
+      {
+        label: "Lehigh Regional EHR transformation",
+        url: "https://drive.google.com/file/d/13UBqFYqPYLevWCY32HYCWYZysbL3t3sS/view",
+      },
+      {
+        label: "Schneck Medical Center story",
+        url: "https://docs.google.com/document/d/1OmZxwCl2-X8nQjA7LkxY2gdTf4-BwvNI/edit",
+      },
+      {
+        label: "App rationalization feature article",
         url: "https://cerecore.net/how-hospitals-are-using-app-rationalization-to-cut-costs-fast",
       },
     ],
     visualNote:
       "Published case studies and interview source documents are collected in the shared example library.",
-    related: ["regional-medical-center-epic", "lehigh-regional-ehr", "schneck-medical-center", "app-rationalization"],
+    related: ["cerecore-client-newsletter", "cerecore-internal-comms", "veronica-survivor-story"],
   },
-  {
-    slug: "regional-medical-center-epic",
-    title: "Regional Medical Center Epic Go Live",
-    organization: "CereCore, an HCA Healthcare company",
-    period: "2025",
-    role: "Writer and Interviewer",
-    industries: ["Healthcare", "Health Technology"],
-    categories: ["Customer Stories", "Healthcare and Health Technology"],
-    summary:
-      "A case study on a hospital Epic go live, built from interviews with the people who carried the transition through the first clinical shifts.",
-    challenge:
-      "An EHR go live is measured in tickets and downtime hours. The story that mattered was how clinicians kept caring for patients while the system underneath them changed.",
-    owned: [
-      "Interviews with hospital and project leaders",
-      "Narrative structure and writing",
-      "Client review and approval",
-    ],
-    audiences: ["Hospital executives", "Prospective clients", "Sales teams"],
-    deliverables: ["Published case study", "Sales excerpt", "Social and newsletter adaptations"],
-    tools: ["HubSpot", "Word", "Teams"],
-    results: ["Published case study used in sales conversations and campaigns"],
-    headlineResult: "Published go live case study used across sales and marketing",
-    tags: ["Epic", "EHR", "Case Study"],
-    visibility: "Public",
-    cover: { src: img.regionalCaseStudy, alt: "Regional Medical Center Epic go-live story with the project team" },
-    links: [
-      { label: "Read the case study", url: "https://drive.google.com/file/d/1OTyBKQceCCv1Dpp8dxUBZ2uK6VJTQ8eC/view" },
-    ],
-    related: ["healthcare-customer-stories", "lehigh-regional-ehr"],
-  },
-  {
-    slug: "lehigh-regional-ehr",
-    title: "Lehigh Regional Medical Center EHR Transformation",
-    organization: "CereCore, an HCA Healthcare company",
-    period: "2025",
-    role: "Writer and Interviewer",
-    industries: ["Healthcare", "Health Technology"],
-    categories: ["Customer Stories", "Healthcare and Health Technology"],
-    summary:
-      "A case study on an EHR transformation at a community hospital, focused on what changed for the staff and patients rather than the platform specifications.",
-    challenge:
-      "A smaller hospital needed enterprise grade capability without an enterprise budget or staff. The story had to be honest about the constraints.",
-    owned: ["Leadership interviews", "Story development and writing", "Approvals and publication"],
-    audiences: ["Community hospital leaders", "Prospective clients", "Sales teams"],
-    deliverables: ["Published case study", "Campaign excerpts"],
-    tools: ["HubSpot", "Word"],
-    results: ["Published case study supporting community hospital positioning"],
-    headlineResult: "Published transformation story used in community hospital outreach",
-    tags: ["EHR", "Case Study", "Community Hospitals"],
-    visibility: "Public",
-    cover: { src: img.lehighCaseStudy, alt: "Lehigh Regional Medical Center EHR transformation story" },
-    links: [
-      { label: "Read the case study", url: "https://drive.google.com/file/d/13UBqFYqPYLevWCY32HYCWYZysbL3t3sS/view" },
-    ],
-    related: ["healthcare-customer-stories", "regional-medical-center-epic"],
-  },
-  {
-    slug: "schneck-medical-center",
-    title: "Schneck Medical Center Story",
-    organization: "CereCore, an HCA Healthcare company",
-    period: "2025",
-    role: "Writer and Interviewer",
-    industries: ["Healthcare", "Health Technology"],
-    categories: ["Customer Stories", "Healthcare and Health Technology"],
-    summary:
-      "A customer story built around a hospital partnership, written from interviews with the leaders responsible for the day to day outcome.",
-    challenge:
-      "The partnership involved several technical workstreams that were difficult to explain without losing the reader in acronyms.",
-    owned: ["Interviews", "Narrative structure and writing", "Client approval"],
-    audiences: ["Hospital leaders", "Prospective clients"],
-    deliverables: ["Published customer story", "Excerpts for sales and social"],
-    tools: ["HubSpot", "Word"],
-    results: ["Published story used across client facing channels"],
-    headlineResult: "Published partnership story used across client facing channels",
-    tags: ["Case Study", "Healthcare IT"],
-    visibility: "Public",
-    cover: { src: img.schneckCaseStudy, alt: "Schneck Medical Center case study cover and results" },
-    links: [
-      {
-        label: "Read the case study",
-        url: "https://docs.google.com/document/d/1OmZxwCl2-X8nQjA7LkxY2gdTf4-BwvNI/edit",
-      },
-    ],
-    related: ["healthcare-customer-stories"],
-  },
-  {
-    slug: "app-rationalization",
-    title: "App Rationalization Feature Story",
-    organization: "CereCore, an HCA Healthcare company",
-    period: "2025",
-    role: "Writer and Editor",
-    industries: ["Healthcare", "Health Technology"],
-    categories: ["Customer Stories", "Content and Editorial", "Healthcare and Health Technology"],
-    summary:
-      "A published feature on how hospitals use application rationalization to cut costs quickly, translating a dense IT discipline into a practical executive read.",
-    challenge:
-      "Application rationalization is a finance and IT conversation that most executives postpone. The story had to make the cost of waiting concrete.",
-    owned: ["Subject matter expert interviews", "Writing and editing", "Distribution across newsletter and social"],
-    audiences: ["Hospital CIOs and CFOs", "Clients", "Prospects"],
-    deliverables: ["Published feature article", "Newsletter feature", "Social promotion"],
-    tools: ["HubSpot", "Word", "LinkedIn"],
-    results: ["Published publicly and featured as a newsletter lead story"],
-    headlineResult: "Published feature used as a newsletter lead story",
-    tags: ["Editorial", "Healthcare IT", "Cost Reduction"],
-    visibility: "Public",
-    cover: { src: img.appRationalizationStory, alt: "Published client newsletter featuring application rationalization" },
-    links: [
-      {
-        label: "Read the article",
-        url: "https://cerecore.net/how-hospitals-are-using-app-rationalization-to-cut-costs-fast",
-      },
-    ],
-    related: ["cerecore-client-newsletter", "healthcare-customer-stories"],
-  },
+
   {
     slug: "veronica-survivor-story",
     title: "Veronica's Survivor Story",
