@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { testimonials, type Testimonial } from "@/data/testimonials";
+import { img } from "@/lib/images";
 
 export const Route = createFileRoute("/recognition")({
   head: () => ({
@@ -99,6 +100,36 @@ function Recognition() {
           {notes.map((t, i) => (
             <Quote key={i} t={t} />
           ))}
+        </div>
+      </section>
+
+      <section className="mt-16 border-t border-border pt-12">
+        <p className="eyebrow">Artifacts</p>
+        <h2 className="mt-3 text-3xl">Notes and keepsakes</h2>
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          <figure className="border border-border bg-card p-5">
+            <img
+              src={img.devRoyHandwrittenNote}
+              alt="Handwritten note from Devjit Roy thanking Sierra for being a voice in healthcare"
+              loading="lazy"
+              className="w-full object-cover"
+            />
+            <figcaption className="mt-4 text-sm text-muted-foreground">
+              Handwritten note from Devjit Roy, MD — “Thank you for being a voice in healthcare.”
+            </figcaption>
+          </figure>
+          <figure className="border border-border bg-card p-5">
+            <img
+              src={img.betweenHeartbeatsAlgorithmsBook}
+              alt="Book cover for Between Heartbeats and Algorithms by Devjit Roy"
+              loading="lazy"
+              className="w-full object-cover"
+            />
+            <figcaption className="mt-4 text-sm text-muted-foreground">
+              Devjit Roy’s book, <em className="not-italic font-medium">Between Heartbeats and Algorithms</em>,
+              which Sierra supported through advocacy and communications.
+            </figcaption>
+          </figure>
         </div>
       </section>
 

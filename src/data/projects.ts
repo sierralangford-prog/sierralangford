@@ -352,8 +352,12 @@ const rawProjects: Project[] = [
     headlineResult: "A program built from scratch that outlasted my tenure",
     tags: ["Program Design", "Culture", "Enablement"],
     visibility: "Public",
-    cover: { src: img.mentorshipToolkit, alt: "CereCore Mentorship Toolkit presentation slide" },
+    cover: { src: img.cerecoreMentorshipToolkitCover, alt: "CereCore Mentorship Toolkit presentation cover" },
     gallery: [
+      { src: img.cerecoreMentorshipToolkitCover, alt: "CereCore Mentorship Toolkit presentation cover" },
+      { src: img.mentorBestPracticesSlide, alt: "Mentor best practices slide from the CereCore mentorship session" },
+      { src: img.menteeBestPracticesSlide, alt: "Mentee best practices slide from the CereCore mentorship session" },
+      { src: img.cerecoreMentorshipSlido, alt: "CereCore mentorship monthly meetup using Slido interaction" },
       { src: img.mentorshipToolkit, alt: "Mentorship toolkit presentation" },
       { src: img.mentorBestPractices, alt: "Sierra Langford presenting mentor best practices to a large audience" },
       { src: img.navigatingPurpose, alt: "Navigating With Purpose mentorship schedule and plan document" },
@@ -618,7 +622,7 @@ const rawProjects: Project[] = [
     period: "June 2024 – March 2025",
     role: "Marketing Operations",
     industries: ["Healthcare"],
-    categories: ["Internal Communications", "AI and Technology", "Executive Communications"],
+    categories: ["Internal Communications", "Executive Communications", "Podcasts and Video"],
     summary:
       "Supported the enterprise rollout of the Censhare digital asset management platform inside a large matrixed health system, including stakeholder communications, training materials and adoption support.",
     challenge:
@@ -700,6 +704,7 @@ const rawProjects: Project[] = [
         src: img.monetizeiqWebinar,
         alt: "MonetizeIQ webinar promotion graphic featuring BankPlus and StrategyCorps speakers",
       },
+      { src: img.strategycorpsTeamPage, alt: "StrategyCorps team page featuring Sierra Langford as Field Marketing Lead" },
     ],
     links: [
       {
@@ -757,7 +762,11 @@ const rawProjects: Project[] = [
     headlineResult: "A repeatable national event system built during a product launch",
     tags: ["Field Marketing", "Events", "ABM", "Experience Design"],
     visibility: "Public",
-    cover: { src: img.liveEvent, alt: "Guests at a MonetizeIQ executive event" },
+    cover: { src: img.strategycorpsRoadshowCities, alt: "StrategyCorps MonetizeIQ roadshow schedule across 16 cities" },
+    gallery: [
+      { src: img.strategycorpsRoadshowCities, alt: "StrategyCorps MonetizeIQ roadshow schedule across 16 cities" },
+      { src: img.liveEvent, alt: "Guests at a MonetizeIQ executive event" },
+    ],
     links: [
       {
         label: "Read the ABA Bank Marketing and YETI event campaign",
