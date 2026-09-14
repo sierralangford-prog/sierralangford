@@ -414,7 +414,7 @@ const rawProjects: Project[] = [
   },
   {
     slug: "connection-2026",
-    title: "Connection 2026",
+    title: "Planned Connection 2026 Nashville Conference",
     organization: "CereCore, an HCA Healthcare company",
     period: "2026",
     role: "Communications and Content Lead",
