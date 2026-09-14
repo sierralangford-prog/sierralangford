@@ -42,6 +42,15 @@ import schneckCaseStudy from "@/assets/schneck-case-study.jpg.asset.json";
 import appRationalizationStory from "@/assets/app-rationalization-story.jpg.asset.json";
 import eventNetworking from "@/assets/event-networking.png.asset.json";
 import cerecoreHumanTouch from "@/assets/cerecore-human-touch.png.asset.json";
+import eventThreeWomen from "@/assets/event-three-women.jpg.asset.json";
+import cerecoreNextDoorRecovery from "@/assets/cerecore-next-door-recovery.jpg.asset.json";
+import sierraAtDesk from "@/assets/sierra-at-desk.jpg.asset.json";
+import hcaAnniversary from "@/assets/hca-anniversary.jpg.asset.json";
+import graceKrauseInterview from "@/assets/grace-krause-interview.png.asset.json";
+import jamesWellmanInterview from "@/assets/james-wellman-interview.png.asset.json";
+import himssTwoWomen from "@/assets/himss-two-women.png.asset.json";
+import cerecoreBoothTeam from "@/assets/cerecore-booth-team.png.asset.json";
+import teamBoombox from "@/assets/team-boombox.png.asset.json";
 
 export const img = {
   portrait: portrait.url,
@@ -88,4 +97,13 @@ export const img = {
   appRationalizationStory: appRationalizationStory.url,
   eventNetworking: eventNetworking.url,
   cerecoreHumanTouch: cerecoreHumanTouch.url,
+  eventThreeWomen: eventThreeWomen.url,
+  cerecoreNextDoorRecovery: cerecoreNextDoorRecovery.url,
+  sierraAtDesk: sierraAtDesk.url,
+  hcaAnniversary: hcaAnniversary.url,
+  graceKrauseInterview: graceKrauseInterview.url,
+  jamesWellmanInterview: jamesWellmanInterview.url,
+  himssTwoWomen: himssTwoWomen.url,
+  cerecoreBoothTeam: cerecoreBoothTeam.url,
+  teamBoombox: teamBoombox.url,
 };
