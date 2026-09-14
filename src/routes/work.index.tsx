@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { projects, CATEGORIES, allIndustries, allOrganizations } from "@/data/projects";
+import { projects, CATEGORIES } from "@/data/projects";
 import { ProjectCard } from "@/components/ProjectCard";
+
 
 export const Route = createFileRoute("/work/")({
   head: () => ({
