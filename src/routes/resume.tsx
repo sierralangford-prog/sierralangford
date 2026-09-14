@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { roles, skills } from "@/data/career";
 import { getProject } from "@/data/projects";
+import { img } from "@/lib/images";
 
 export const Route = createFileRoute("/resume")({
   head: () => ({
@@ -133,9 +134,29 @@ function Resume() {
         <ul className="mt-4 space-y-2 leading-relaxed text-foreground/85">
           <li>Gold Stevie Award, Technology Shows, for The CereCore Podcast</li>
           <li>CereCore AI Steering Committee member</li>
-          <li>HubSpot email and content marketing platform experience</li>
+          <li>HubSpot Academy, Social Media Certified</li>
+          <li>Hootsuite Academy, Social Media Marketing Certification</li>
+          <li>Hootsuite Academy, Hootsuite Platform Certification</li>
           <li>Selected to represent the University of Tennessee at the Real Screen Summit</li>
         </ul>
+        <div className="mt-8 grid gap-5 sm:grid-cols-3 print:hidden">
+          {[
+            { src: img.certHubspotSocial, alt: "HubSpot Academy Social Media Certified certificate" },
+            { src: img.certHootsuiteSmm, alt: "Hootsuite Academy Social Media Marketing Certification" },
+            { src: img.certHootsuitePlatform, alt: "Hootsuite Academy Platform Certification" },
+          ].map((c) => (
+            <img
+              key={c.alt}
+              src={c.src}
+              alt={c.alt}
+              loading="lazy"
+              className="w-full border border-border object-cover"
+            />
+          ))}
+        </div>
+        <p className="mt-3 text-sm text-muted-foreground print:hidden">
+          Certificates are issued under my maiden name, Sierra Scott.
+        </p>
       </section>
 
       <section className="mt-12 border-t border-border pt-8 print:hidden">
