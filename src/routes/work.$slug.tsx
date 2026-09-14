@@ -121,8 +121,8 @@ function ProjectPage() {
 
       {project.links && project.links.length > 0 ? (
         <section className="mt-12 border-t border-border pt-8" aria-labelledby="examples-heading">
-          <p className="eyebrow">Proof of work</p>
-          <h2 id="examples-heading" className="mt-2 text-3xl">Open the examples</h2>
+          <h2 id="examples-heading" className="text-3xl">Examples</h2>
+          <p className="mt-2 text-sm text-muted-foreground">Each one opens the real work in a new tab.</p>
           <div className="mt-5 flex flex-wrap gap-3">
             {project.links.map((l) => (
               <a
@@ -130,9 +130,9 @@ function ProjectPage() {
                 href={l.url}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="border border-foreground px-5 py-3 text-sm transition-colors hover:bg-foreground hover:text-primary-foreground"
+                className="border border-foreground px-5 py-3 text-sm underline underline-offset-4 transition-colors hover:bg-foreground hover:text-primary-foreground"
               >
-                {l.label}
+                {l.label} <span aria-hidden>↗</span>
               </a>
             ))}
           </div>

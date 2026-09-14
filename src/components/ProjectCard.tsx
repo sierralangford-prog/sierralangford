@@ -36,8 +36,9 @@ export function ProjectCard({ project, large = false }: { project: Project; larg
         {/client/i.test(project.organization) ? (
           <p className="eyebrow">{project.organization}</p>
         ) : null}
-        <h3 className="mt-1 text-base leading-tight group-hover:text-teal sm:text-lg">{project.title}</h3>
-        <span className="link-underline mt-auto pt-4 text-sm">View project</span>
+        <h3 className="mt-1 text-base leading-tight underline decoration-transparent underline-offset-4 transition-colors group-hover:text-teal group-hover:decoration-teal sm:text-lg">
+          {project.title}
+        </h3>
       </div>
     </Link>
   );
