@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { featuredProjects } from "@/data/projects";
+import { shortTestimonials } from "@/data/testimonials";
 import { stats } from "@/data/career";
 import { ProjectCard } from "@/components/ProjectCard";
 import { img } from "@/lib/images";
@@ -101,6 +102,28 @@ function Home() {
           {featuredProjects.map((p) => (
             <ProjectCard key={p.slug} project={p} />
           ))}
+        </div>
+      </section>
+
+      <section className="border-t border-border bg-paper">
+        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <p className="eyebrow">Recognition</p>
+            <Link to="/recognition" className="link-underline text-sm">
+              Read all recommendations
+            </Link>
+          </div>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {shortTestimonials.map((t) => (
+              <figure key={t.name + t.quote.slice(0, 20)} className="border border-border bg-card p-6">
+                <blockquote className="leading-relaxed text-foreground/85">{t.quote}</blockquote>
+                <figcaption className="mt-5 border-l-2 border-coral pl-3 text-sm">
+                  <span className="font-medium">{t.name}</span>
+                  <span className="block text-muted-foreground">{t.title}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
 
