@@ -798,6 +798,14 @@ const rawProjects: Project[] = [
     ],
     links: [
       {
+        label: "Read the webinar campaign: From Signal to Personalized Campaign",
+        url: "https://docs.google.com/document/d/145zDc-PgsZoaOLu6RsK9VYWdSeZIbDjA/edit",
+      },
+      {
+        label: "Read the webinar moderator script",
+        url: "https://docs.google.com/document/d/1yc8L3tSjASZ19awbH14YBejBuas4C79q/edit",
+      },
+      {
         label: "Read the product story and video script",
         url: "https://docs.google.com/document/d/1LluIc2Pm4BpC8byMsg5TVERrQtI6iqcQYxX5bpBcXD0/edit",
       },
@@ -846,6 +854,34 @@ const rawProjects: Project[] = [
     visibility: "Public",
     cover: { src: img.liveEvent, alt: "Guests at a MonetizeIQ executive event" },
     links: [
+      {
+        label: "Read the ABA Bank Marketing and YETI event campaign",
+        url: "https://docs.google.com/document/d/1ZL96tEdb-p2n9T07zde_EdUpa4Xrxirl/edit",
+      },
+      {
+        label: "View the YETI event landing page",
+        url: "https://www2.strategycorps.com/l/146821/2026-07-14/fshhky",
+      },
+      {
+        label: "Open the ABA and YETI event brief deck",
+        url: "https://drive.google.com/file/d/12Ii7DZXHM5uVvNWjhwRLWmyhgjqf5MfG/view",
+      },
+      {
+        label: "Open the field marketing playbook",
+        url: "https://drive.google.com/file/d/1S2dzEvIKrst4avOPTPfM06lQUYIlKxmP/view",
+      },
+      {
+        label: "Read the executive dinners event brief",
+        url: "https://docs.google.com/document/d/10Nm3hh9uvpX9S9pZl_8EyTz5IcLnMnto/edit",
+      },
+      {
+        label: "View the executive dinner format refresh",
+        url: "https://drive.google.com/file/d/1IWQ7U0BKZ5mKjNYW2cd7Cla81VL0lLL6/view",
+      },
+      {
+        label: "Open the Future Branches event materials",
+        url: "https://drive.google.com/drive/folders/15-nqNDZc6u5JBhYjVF6Vtfgv9j1yeBni",
+      },
       {
         label: "Open the field marketing and events library",
         url: "https://drive.google.com/drive/folders/18_KRSaVno8giwpuOWfNI-5hIOVj54MPI",
