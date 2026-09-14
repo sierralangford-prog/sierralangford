@@ -2,7 +2,6 @@ import { img } from "@/lib/images";
 
 export type Visibility =
   | "Public"
-  | "Public with redacted materials"
   | "Archive only";
 
 export type ProjectImage = { src: string; alt: string };
@@ -456,7 +455,7 @@ export const projects: Project[] = [
       },
     ],
     visualNote:
-      "Additional case study PDFs and interview source documents are private. Sample available upon request.",
+      "Published case studies and interview source documents are collected in the shared example library.",
     related: ["regional-medical-center-epic", "lehigh-regional-ehr", "schneck-medical-center", "app-rationalization"],
   },
   {
@@ -629,7 +628,7 @@ export const projects: Project[] = [
     featured: true,
     visibility: "Public",
     visualNote:
-      "Platform screenshots and internal materials are confidential. Redacted samples available upon request with approval.",
+      "Training modules, the sizzle reel and migration documentation are collected in the shared example library.",
     related: ["ai-enablement", "cerecore-internal-comms"],
   },
   {
@@ -911,7 +910,7 @@ export const projects: Project[] = [
     tags: ["Social Media", "Content", "Photography", "Local Brands"],
     visibility: "Archive only",
     visualNote:
-      "Former client work. Client examples included Ancient Lore Village, Alewine Pottery, Crafty Bastard Brewery, Smash City Burger, Wagon Wheel Knoxville, Brentwood Jewelry, Roxana's Hair, Knox Brewsters, Elrod Laskey Group, Salsarita's East Tennessee, Advantage Shutters, CyberProtex and Rafael Custom Jewelry. Samples available upon request.",
+      "Former client work. Client examples included Ancient Lore Village, Alewine Pottery, Crafty Bastard Brewery, Smash City Burger, Wagon Wheel Knoxville, Brentwood Jewelry, Roxana's Hair, Knox Brewsters, Elrod Laskey Group, Salsarita's East Tennessee, Advantage Shutters, CyberProtex and Rafael Custom Jewelry. Examples are collected in the shared example library.",
     related: ["strive-society", "abh-connect", "photography"],
   },
   {
@@ -976,7 +975,7 @@ export const projects: Project[] = [
     archive: true,
     visibility: "Archive only",
     visualNote:
-      "Some client links are no longer active and permissions vary. Samples available upon request.",
+      "Some client links are no longer active and permissions vary. Examples are collected in the shared example library.",
     related: ["abh-connect", "cyberprotex"],
   },
   {
@@ -1125,7 +1124,7 @@ export const projects: Project[] = [
     tags: ["Archive", "Creative Writing", "Songwriting", "Academic"],
     archive: true,
     visibility: "Archive only",
-    visualNote: "Samples available upon request.",
+    visualNote: "Examples are collected in the shared example library.",
     related: ["realscreen-breaking-in"],
   },
 ];

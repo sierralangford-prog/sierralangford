@@ -30,7 +30,7 @@ function Contact() {
       </h1>
       <p className="mt-6 max-w-2xl leading-relaxed text-foreground/85">
         Recruiters, hiring managers, clients and collaborators are all welcome here. If a project on this site
-        is marked private, message me and I can walk you through a redacted sample.
+        you want to see in more detail, message me and I will send the full example.
       </p>
 
       <div className="mt-12 grid gap-6 sm:grid-cols-2">
@@ -43,7 +43,7 @@ function Contact() {
           <p className="eyebrow">Best way to reach me</p>
           <p className="mt-3 font-display text-3xl">Connect on LinkedIn</p>
           <p className="mt-2 text-sm text-muted-foreground">
-            Messages here get the fastest reply, including private sample requests.
+            Messages here get the fastest reply, including requests for full examples.
           </p>
         </a>
 
