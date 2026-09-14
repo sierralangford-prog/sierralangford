@@ -1,6 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getProject, type Project } from "@/data/projects";
-import { VisibilityTag } from "@/components/ProjectCard";
 import { CoverArt } from "@/components/CoverArt";
 
 export const Route = createFileRoute("/work/$slug")({
@@ -23,6 +22,7 @@ export const Route = createFileRoute("/work/$slug")({
         { property: "og:description", content: description },
         { property: "og:type", content: "article" },
         { property: "og:url", content: `/work/${params.slug}` },
+        { name: "twitter:card", content: "summary_large_image" },
       ],
       links: [{ rel: "canonical", href: `/work/${params.slug}` }],
     };
@@ -61,6 +61,7 @@ function ProjectPage() {
   const related = (project.related ?? [])
     .map((s) => getProject(s))
     .filter((p): p is Project => Boolean(p));
+  const primaryLink = project.links?.[0];
 
   return (
     <article className="mx-auto max-w-5xl px-5 py-14 sm:px-8">
@@ -72,9 +73,21 @@ function ProjectPage() {
         <p className="eyebrow">{project.categories.join(" · ")}</p>
         <h1 className="mt-4 text-4xl leading-tight sm:text-5xl">{project.title}</h1>
         <p className="mt-4 text-lg text-muted-foreground">{project.organization}</p>
-        <p className="mt-6 max-w-3xl font-display text-2xl leading-snug">{project.summary}</p>
-        <div className="mt-6">
-          <VisibilityTag value={project.visibility} />
+        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/85">{project.summary}</p>
+        <div className="mt-7 flex flex-wrap gap-3">
+          {primaryLink ? (
+            <a
+              href={primaryLink.url}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="bg-foreground px-5 py-3 text-sm text-primary-foreground transition-opacity hover:opacity-85"
+            >
+              {primaryLink.label}
+            </a>
+          ) : null}
+          <a href="#details" className="border border-foreground px-5 py-3 text-sm hover:bg-secondary">
+            Read project details
+          </a>
         </div>
       </header>
 
@@ -89,74 +102,27 @@ function ProjectPage() {
         <CoverArt project={project} className="mt-10 h-64 w-full sm:h-80" />
       )}
 
-      <div className="mt-10 grid gap-5 sm:grid-cols-2">
-        <Field label="Role" value={project.role} />
-        <Field label="Industry" value={project.industries.join(", ")} />
-      </div>
-
-      <section className="mt-12 border-t border-border pt-8">
-        <h2 className="text-3xl">The challenge</h2>
-        <p className="mt-4 max-w-3xl leading-relaxed text-foreground/85">{project.challenge}</p>
-      </section>
-
-      <List title="What I owned" items={project.owned} />
-      <List title="Deliverables" items={project.deliverables} />
-
-      <section className="mt-12 border-t border-border pt-8">
-        <h2 className="text-3xl">Results</h2>
+      <section className="mt-10 border-y border-border bg-paper px-5 py-8 sm:px-8">
+        <p className="eyebrow">Result</p>
         <p className="mt-4 border-l-2 border-coral pl-4 font-display text-2xl leading-snug">
           {project.headlineResult}
         </p>
-        <ul className="mt-5 space-y-2.5">
-          {project.results.map((r) => (
-            <li key={r} className="flex gap-3 leading-relaxed text-foreground/85">
-              <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-gold" />
-              <span>{r}</span>
-            </li>
-          ))}
-        </ul>
       </section>
 
-      <section className="mt-12 border-t border-border pt-8">
-        <h2 className="text-3xl">Tools</h2>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {project.tools.map((t) => (
-            <span key={t} className="border border-border bg-secondary px-3 py-1.5 text-sm">
-              {t}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      <section className="mt-12 border-t border-border pt-8">
-        <h2 className="text-3xl">Visual examples</h2>
+      <section className="mt-12">
         {project.gallery && project.gallery.length > 0 ? (
-          <div className="mt-6 grid gap-5 sm:grid-cols-2">
+          <div className="grid gap-5 sm:grid-cols-2">
             {project.gallery.map((g) => (
-              <img key={g.src + g.alt} src={g.src} alt={g.alt} loading="lazy" className="w-full object-cover" />
+              <img key={g.src + g.alt} src={g.src} alt={g.alt} loading="lazy" className="aspect-[4/3] w-full object-cover" />
             ))}
-          </div>
-        ) : null}
-        {project.visualNote && !(project.gallery && project.gallery.length > 0) ? (
-          <div className="mt-6 border border-dashed border-border bg-paper p-6">
-            <p className="leading-relaxed text-muted-foreground">{project.visualNote}</p>
-            <div className="mt-4 flex flex-wrap gap-3">
-              <a
-                href="https://drive.google.com/drive/folders/1vPKk2Qi0LDmxD8T9JWcJ4vP8_sNjpk1R?usp=sharing"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="inline-block border border-foreground px-4 py-2 text-sm hover:bg-secondary"
-              >
-                Open the example library
-              </a>
-            </div>
           </div>
         ) : null}
       </section>
 
       {project.links && project.links.length > 0 ? (
-        <section className="mt-12 border-t border-border pt-8">
-          <h2 className="text-3xl">See it live</h2>
+        <section className="mt-12 border-t border-border pt-8" aria-labelledby="examples-heading">
+          <p className="eyebrow">Proof of work</p>
+          <h2 id="examples-heading" className="mt-2 text-3xl">Open the examples</h2>
           <div className="mt-5 flex flex-wrap gap-3">
             {project.links.map((l) => (
               <a
@@ -164,7 +130,7 @@ function ProjectPage() {
                 href={l.url}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="border border-foreground px-5 py-3 text-sm hover:bg-secondary"
+                className="border border-foreground px-5 py-3 text-sm transition-colors hover:bg-foreground hover:text-primary-foreground"
               >
                 {l.label}
               </a>
@@ -172,6 +138,32 @@ function ProjectPage() {
           </div>
         </section>
       ) : null}
+
+      <div id="details" className="mt-14 grid gap-10 border-t border-border pt-10 lg:grid-cols-[1.4fr_0.6fr]">
+        <div>
+          <section>
+            <h2 className="text-3xl">The challenge</h2>
+            <p className="mt-4 leading-relaxed text-foreground/85">{project.challenge}</p>
+          </section>
+          <List title="What I did" items={project.owned} />
+          <section className="mt-12 border-t border-border pt-8">
+            <h2 className="text-3xl">Results</h2>
+            <ul className="mt-5 space-y-2.5">
+              {project.results.map((result) => (
+                <li key={result} className="flex gap-3 leading-relaxed text-foreground/85">
+                  <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-gold" />
+                  <span>{result}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </div>
+        <aside>
+          <Field label="Role" value={project.role} />
+          <div className="mt-6"><Field label="Industry" value={project.industries.join(", ")} /></div>
+          <div className="mt-6"><Field label="Tools" value={project.tools.join(", ")} /></div>
+        </aside>
+      </div>
 
 
       {related.length > 0 ? (

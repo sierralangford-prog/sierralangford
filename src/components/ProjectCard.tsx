@@ -13,6 +13,7 @@ export function VisibilityTag({ value }: { value: Project["visibility"] }) {
 
 export function ProjectCard({ project, large = false }: { project: Project; large?: boolean }) {
   const mediaHeight = large ? "h-64" : "h-52";
+  const primaryLink = project.links?.[0];
   return (
     <article className="group flex h-full flex-col border border-border bg-card">
       <Link
@@ -41,16 +42,25 @@ export function ProjectCard({ project, large = false }: { project: Project; larg
           </Link>
         </h3>
         <p className="mt-1 text-sm text-muted-foreground">{project.organization}</p>
-        <p className="mt-3 text-[0.95rem] leading-relaxed text-foreground/85">{project.summary}</p>
         <p className="mt-4 border-l-2 border-coral pl-3 text-sm font-medium">{project.headlineResult}</p>
 
-        <div className="mt-5 flex flex-wrap items-center gap-3 pt-1">
+        <div className="mt-auto flex flex-wrap items-center gap-3 pt-6">
+          {primaryLink ? (
+            <a
+              href={primaryLink.url}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="bg-foreground px-4 py-2 text-sm text-primary-foreground transition-opacity hover:opacity-85"
+            >
+              {primaryLink.label}
+            </a>
+          ) : null}
           <Link
             to="/work/$slug"
             params={{ slug: project.slug }}
-            className="border border-foreground px-4 py-2 text-sm transition-colors hover:bg-foreground hover:text-primary-foreground"
+            className="link-underline px-1 py-2 text-sm"
           >
-            View the project
+            Project details
           </Link>
           <VisibilityTag value={project.visibility} />
         </div>

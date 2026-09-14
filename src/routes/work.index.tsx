@@ -18,6 +18,8 @@ export const Route = createFileRoute("/work/")({
         content: "Browse projects by category, industry, organization and skill.",
       },
       { property: "og:url", content: "/work" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/work" }],
   }),
@@ -77,15 +79,14 @@ function WorkIndex() {
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
       <p className="eyebrow">Work</p>
-      <h1 className="mt-4 max-w-3xl text-4xl leading-tight sm:text-5xl">
-        The full archive: every project, what I owned and what it produced.
-      </h1>
+      <h1 className="mt-4 max-w-3xl text-4xl leading-tight sm:text-5xl">Work, organized by what I do.</h1>
       <p className="mt-5 max-w-2xl leading-relaxed text-foreground/80">
-        Grouped by category and filterable by industry or organization. Every project shows what I owned and
-        what it produced, with links to published examples.
+        Start with a real example, then open the details when you want the story behind it.
       </p>
 
-      <div className="mt-10 border border-border bg-paper p-5">
+      <details className="mt-10 border-y border-border bg-paper px-5 py-4">
+        <summary className="cursor-pointer text-sm font-medium">Search and filter projects</summary>
+        <div className="pt-5">
         <label className="block">
           <span className="eyebrow">Search</span>
           <input
@@ -155,7 +156,8 @@ function WorkIndex() {
             Reset filters
           </button>
         </div>
-      </div>
+        </div>
+      </details>
 
       <p className="mt-6 text-sm text-muted-foreground">
         {results.length} {results.length === 1 ? "project" : "projects"}
