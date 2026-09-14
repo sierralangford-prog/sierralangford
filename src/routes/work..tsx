@@ -3,7 +3,7 @@ import { getProject, type Project } from "@/data/projects";
 import { VisibilityTag } from "@/components/ProjectCard";
 import { CoverArt } from "@/components/CoverArt";
 
-export const Route = createFileRoute("/work/$slug")({
+export const Route = createFileRoute("/work/")({
   loader: ({ params }) => {
     const project = getProject(params.slug);
     if (!project) throw notFound();
