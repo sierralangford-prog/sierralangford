@@ -1109,12 +1109,6 @@ const rawProjects: Project[] = [
     cover: { src: img.brandBanner, alt: "Creative marketing and community communications portfolio artwork" },
     links: [
       {
-        label: "Open design examples",
-        url: "https://drive.google.com/drive/folders/1vPKk2Qi0LDmxD8T9JWcJ4vP8_sNjpk1R",
-      },
-    ],
-    links: [
-      {
         label: "Open the client writing samples",
         url: "https://drive.google.com/drive/folders/10PoINBpU3fUhLH5d6kowvAprFkK0KdjU",
       },
@@ -1142,6 +1136,13 @@ const rawProjects: Project[] = [
     tags: ["Design", "Community", "Nonprofit"],
     archive: true,
     visibility: "Archive only",
+    cover: { src: img.brandBanner, alt: "Creative marketing and community communications portfolio artwork" },
+    links: [
+      {
+        label: "Open design examples",
+        url: "https://drive.google.com/drive/folders/1vPKk2Qi0LDmxD8T9JWcJ4vP8_sNjpk1R",
+      },
+    ],
     visualNote: SAMPLE_NOTE,
     related: ["abh-connect"],
   },
