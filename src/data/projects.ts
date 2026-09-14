@@ -114,7 +114,7 @@ const rawProjects: Project[] = [
     tags: ["Podcast", "Thought Leadership", "Healthcare IT", "Cybersecurity", "AI", "EHR"],
     featured: true,
     visibility: "Public",
-    cover: { src: img.podcastArtwork, alt: "The CereCore Podcast cover artwork" },
+    cover: { src: img.stevieAward, alt: "The American Business Awards 2026 Gold Stevie Award winner graphic for The CereCore Podcast" },
     gallery: [
       { src: img.podcastArtwork, alt: "The CereCore Podcast cover artwork" },
       { src: img.stevieAward, alt: "The American Business Awards 2026 Stevie Award winner graphic" },
