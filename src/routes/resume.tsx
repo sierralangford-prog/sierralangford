@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { roles, skills } from "@/data/career";
-import { getProject } from "@/data/projects";
+import { skills } from "@/data/career";
 import { img } from "@/lib/images";
 import linkedinPdf from "@/assets/linkedin-pdf.asset.json";
 
@@ -70,7 +69,7 @@ function Resume() {
           small business. I find the human story underneath complicated work, then build the communications,
           programs, content and experiences that help people understand it and care. Award winning podcast
           producer, internal communications lead, customer story writer, event producer and founder of a
-          creative marketing practice running since 2017.
+          creative marketing practice serving clients across multiple industries.
         </p>
       </section>
 
@@ -87,45 +86,19 @@ function Resume() {
       </section>
 
       <section className="mt-12 border-t border-border pt-8">
-        <h2 className="text-3xl">Experience</h2>
-        <div className="mt-6 space-y-9">
-          {roles.map((role) => (
-            <div key={`${role.organization}-${role.title}-${role.start}`}>
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="text-2xl">{role.title}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {role.start} – {role.end}
-                </p>
-              </div>
-              <p className="text-muted-foreground">{role.organization}</p>
-              <ul className="mt-3 space-y-1.5 text-[0.98rem] leading-relaxed text-foreground/85">
-                {role.highlights.map((h) => (
-                  <li key={h} className="flex gap-3">
-                    <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-teal" />
-                    <span>{h}</span>
-                  </li>
-                ))}
-              </ul>
-              {role.projects && role.projects.length > 0 ? (
-                <div className="mt-3 flex flex-wrap gap-2 print:hidden">
-                  {role.projects.map((slug) => {
-                    const p = getProject(slug);
-                    if (!p) return null;
-                    return (
-                      <Link
-                        key={slug}
-                        to="/work/$slug"
-                        params={{ slug }}
-                        className="link-underline text-sm text-muted-foreground"
-                      >
-                        {p.title}
-                      </Link>
-                    );
-                  })}
-                </div>
-              ) : null}
-            </div>
-          ))}
+        <h2 className="text-3xl">Experience at a glance</h2>
+        <p className="mt-4 max-w-3xl leading-relaxed text-foreground/85">
+          Substantial experience spanning in-house communications, healthcare technology, field marketing,
+          agency leadership and entrepreneurship. The portfolio documents the organizations, responsibilities,
+          deliverables and measurable outcomes behind that work.
+        </p>
+        <div className="mt-6 flex flex-wrap gap-3 print:hidden">
+          <Link to="/timeline" className="border border-foreground px-5 py-3 text-sm hover:bg-secondary">
+            View experience
+          </Link>
+          <Link to="/work" className="border border-foreground px-5 py-3 text-sm hover:bg-secondary">
+            Browse project proof
+          </Link>
         </div>
       </section>
 

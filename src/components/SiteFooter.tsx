@@ -16,7 +16,7 @@ export function SiteFooter() {
           <ul className="mt-3 space-y-2 text-sm">
             <li><Link to="/about" className="link-underline">About</Link></li>
             <li><Link to="/work" className="link-underline">Work</Link></li>
-            <li><Link to="/timeline" className="link-underline">Career Timeline</Link></li>
+            <li><Link to="/timeline" className="link-underline">Experience</Link></li>
             <li><Link to="/recognition" className="link-underline">Testimonials</Link></li>
             <li><Link to="/strengths" className="link-underline">Strengths</Link></li>
             <li><Link to="/resume" className="link-underline">Resume</Link></li>
