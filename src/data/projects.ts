@@ -197,6 +197,10 @@ export const projects: Project[] = [
     featured: true,
     visibility: "Public with redacted materials",
     cover: { src: img.companyMeeting, alt: "Sierra Langford presenting at a company wide meeting" },
+    gallery: [
+      { src: img.internalVideoStill, alt: "Still from an internal communications video presentation" },
+      { src: img.masterclassSession, alt: "Sierra Langford hosting an internal masterclass session" },
+    ],
     visualNote: SAMPLE_NOTE,
     related: ["marketing-advocacy-group", "enterprise-communications-calendar", "cerecore-mentorship-program"],
   },
