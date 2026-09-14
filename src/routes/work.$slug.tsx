@@ -91,11 +91,10 @@ function ProjectPage() {
         <CoverArt project={project} className="mt-10 h-64 w-full sm:h-80" />
       )}
 
-      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-10 grid gap-5 sm:grid-cols-3">
         <Field label="Role" value={project.role} />
         <Field label="Industry" value={project.industries.join(", ")} />
         <Field label="Date" value={project.period} />
-        <Field label="Visibility" value={project.visibility} />
       </div>
 
       <section className="mt-12 border-t border-border pt-8">
