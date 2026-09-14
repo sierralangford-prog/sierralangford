@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getProject, type Project } from "@/data/projects";
 import { VisibilityTag } from "@/components/ProjectCard";
+import { CoverArt } from "@/components/CoverArt";
 
 export const Route = createFileRoute("/work/$slug")({
   loader: ({ params }) => {
@@ -86,7 +87,9 @@ function ProjectPage() {
           className="mt-10 w-full object-cover"
           loading="lazy"
         />
-      ) : null}
+      ) : (
+        <CoverArt project={project} className="mt-10 h-64 w-full sm:h-80" />
+      )}
 
       <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         <Field label="Role" value={project.role} />
@@ -143,9 +146,6 @@ function ProjectPage() {
           <div className="mt-6 border border-dashed border-border bg-paper p-6">
             <p className="leading-relaxed text-muted-foreground">{project.visualNote}</p>
             <div className="mt-4 flex flex-wrap gap-3">
-              <Link to="/contact" className="inline-block border border-foreground px-4 py-2 text-sm hover:bg-secondary">
-                Request private sample
-              </Link>
               <a
                 href="https://drive.google.com/drive/folders/1vPKk2Qi0LDmxD8T9JWcJ4vP8_sNjpk1R?usp=sharing"
                 target="_blank"
