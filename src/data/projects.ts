@@ -2,8 +2,6 @@ import { img } from "@/lib/images";
 
 export type Visibility =
   | "Public"
-  | "Public with redacted materials"
-  | "Private sample available upon request"
   | "Archive only";
 
 export type ProjectImage = { src: string; alt: string };
@@ -53,7 +51,7 @@ export const CATEGORIES = [
 ] as const;
 
 const SAMPLE_NOTE =
-  "Visual examples for this project contain internal or client information. Sample available upon request.";
+  "More visual examples from this project live in the shared example library.";
 
 export const projects: Project[] = [
   {
@@ -195,7 +193,7 @@ export const projects: Project[] = [
     headlineResult: "Approximately 3,200 monthly views and 82 internal stories published",
     tags: ["Internal Comms", "Intranet", "Employee Engagement", "Editorial"],
     featured: true,
-    visibility: "Public with redacted materials",
+    visibility: "Public",
     cover: { src: img.companyMeeting, alt: "Sierra Langford presenting at a company wide meeting" },
     gallery: [
       { src: img.internalVideoStill, alt: "Still from an internal communications video presentation" },
@@ -237,7 +235,8 @@ export const projects: Project[] = [
     ],
     headlineResult: "34 employee advocates recruited and coached across departments",
     tags: ["Employee Advocacy", "Social", "Enablement", "Program Design"],
-    visibility: "Public with redacted materials",
+    visibility: "Public",
+    cover: { src: img.masterclassSession, alt: "Sierra Langford leading an internal communications masterclass" },
     visualNote: SAMPLE_NOTE,
     related: ["cerecore-internal-comms", "cerecore-mentorship-program"],
   },
@@ -274,7 +273,7 @@ export const projects: Project[] = [
     ],
     headlineResult: "A program built from scratch that outlasted my tenure",
     tags: ["Program Design", "Culture", "Enablement"],
-    visibility: "Public with redacted materials",
+    visibility: "Public",
     cover: { src: img.mentorshipToolkit, alt: "CereCore Mentorship Toolkit presentation slide" },
     gallery: [
       { src: img.mentorshipToolkit, alt: "Mentorship toolkit presentation" },
@@ -314,7 +313,8 @@ export const projects: Project[] = [
     ],
     headlineResult: "Adopted across departments with an estimated 1,468 hours saved annually",
     tags: ["Operations", "Internal Comms", "Process Design"],
-    visibility: "Public with redacted materials",
+    visibility: "Public",
+    cover: { src: img.internalVideoStill, alt: "CereCore communications team planning session on a video call" },
     visualNote: SAMPLE_NOTE,
     related: ["cerecore-internal-comms", "cerecore-mentorship-program"],
   },
@@ -446,7 +446,7 @@ export const projects: Project[] = [
     headlineResult: "18 case studies and more than 82 published stories",
     tags: ["Case Studies", "Interviewing", "Healthcare IT", "Writing"],
     featured: true,
-    visibility: "Public with redacted materials",
+    visibility: "Public",
     cover: { src: img.veronica, alt: "A healthcare story subject with her son" },
     links: [
       {
@@ -455,7 +455,7 @@ export const projects: Project[] = [
       },
     ],
     visualNote:
-      "Additional case study PDFs and interview source documents are private. Sample available upon request.",
+      "Published case studies and interview source documents are collected in the shared example library.",
     related: ["regional-medical-center-epic", "lehigh-regional-ehr", "schneck-medical-center", "app-rationalization"],
   },
   {
@@ -481,7 +481,7 @@ export const projects: Project[] = [
     results: ["Published case study used in sales conversations and campaigns"],
     headlineResult: "Published go live case study used across sales and marketing",
     tags: ["Epic", "EHR", "Case Study"],
-    visibility: "Private sample available upon request",
+    visibility: "Public",
     visualNote: SAMPLE_NOTE,
     related: ["healthcare-customer-stories", "lehigh-regional-ehr"],
   },
@@ -504,7 +504,7 @@ export const projects: Project[] = [
     results: ["Published case study supporting community hospital positioning"],
     headlineResult: "Published transformation story used in community hospital outreach",
     tags: ["EHR", "Case Study", "Community Hospitals"],
-    visibility: "Private sample available upon request",
+    visibility: "Public",
     visualNote: SAMPLE_NOTE,
     related: ["healthcare-customer-stories", "regional-medical-center-epic"],
   },
@@ -527,7 +527,7 @@ export const projects: Project[] = [
     results: ["Published story used across client facing channels"],
     headlineResult: "Published partnership story used across client facing channels",
     tags: ["Case Study", "Healthcare IT"],
-    visibility: "Private sample available upon request",
+    visibility: "Public",
     visualNote: SAMPLE_NOTE,
     related: ["healthcare-customer-stories"],
   },
@@ -586,7 +586,7 @@ export const projects: Project[] = [
     ],
     headlineResult: "A company wide story that connected technical work to patient survival",
     tags: ["Video", "Storytelling", "Internal Comms"],
-    visibility: "Public with redacted materials",
+    visibility: "Public",
     cover: { src: img.veronica, alt: "Story subject with her son making heart shapes with their hands" },
     visualNote: "Published with subject approval. Full video available on request where approvals allow.",
     related: ["connection-2026", "healthcare-customer-stories"],
@@ -626,9 +626,9 @@ export const projects: Project[] = [
     headlineResult: "Supported migration of more than 5,000 digital assets",
     tags: ["Change Management", "Enablement", "DAM", "Training"],
     featured: true,
-    visibility: "Private sample available upon request",
+    visibility: "Public",
     visualNote:
-      "Platform screenshots and internal materials are confidential. Redacted samples available upon request with approval.",
+      "Training modules, the sizzle reel and migration documentation are collected in the shared example library.",
     related: ["ai-enablement", "cerecore-internal-comms"],
   },
   {
@@ -666,7 +666,8 @@ export const projects: Project[] = [
     headlineResult: "One product narrative adopted across sales, events and marketing",
     tags: ["AI", "Positioning", "Messaging", "Fintech", "Product Marketing"],
     featured: true,
-    visibility: "Private sample available upon request",
+    visibility: "Public",
+    cover: { src: img.monetizeiqWebinar, alt: "MonetizeIQ webinar graphic featuring banking executives" },
     gallery: [
       {
         src: img.monetizeiqWebinar,
@@ -712,7 +713,8 @@ export const projects: Project[] = [
     ],
     headlineResult: "A repeatable national event system built during a product launch",
     tags: ["Field Marketing", "Events", "ABM", "Experience Design"],
-    visibility: "Private sample available upon request",
+    visibility: "Public",
+    cover: { src: img.liveEvent, alt: "Guests at a MonetizeIQ executive event" },
     visualNote: SAMPLE_NOTE,
     related: ["monetizeiq-product-storytelling", "himss-2026"],
   },
@@ -740,7 +742,8 @@ export const projects: Project[] = [
     results: ["11 executive interviews captured", "Reusable brand and anniversary content library"],
     headlineResult: "11 executive interviews turned into a reusable content library",
     tags: ["Executive Comms", "Interviewing", "Brand"],
-    visibility: "Private sample available upon request",
+    visibility: "Public",
+    cover: { src: img.videoRig, alt: "Video interview rig set up for a leadership interview series" },
     visualNote: SAMPLE_NOTE,
     related: ["monetizeiq-product-storytelling"],
   },
@@ -776,7 +779,7 @@ export const projects: Project[] = [
     ],
     headlineResult: "Practical AI adoption across marketing and communications workflows",
     tags: ["AI Enablement", "Workflow Design", "Training", "Systems"],
-    visibility: "Public with redacted materials",
+    visibility: "Public",
     visualNote: SAMPLE_NOTE,
     related: ["monetizeiq-product-storytelling", "hca-censhare"],
   },
@@ -907,7 +910,7 @@ export const projects: Project[] = [
     tags: ["Social Media", "Content", "Photography", "Local Brands"],
     visibility: "Archive only",
     visualNote:
-      "Former client work. Client examples included Ancient Lore Village, Alewine Pottery, Crafty Bastard Brewery, Smash City Burger, Wagon Wheel Knoxville, Brentwood Jewelry, Roxana's Hair, Knox Brewsters, Elrod Laskey Group, Salsarita's East Tennessee, Advantage Shutters, CyberProtex and Rafael Custom Jewelry. Samples available upon request.",
+      "Former client work. Client examples included Ancient Lore Village, Alewine Pottery, Crafty Bastard Brewery, Smash City Burger, Wagon Wheel Knoxville, Brentwood Jewelry, Roxana's Hair, Knox Brewsters, Elrod Laskey Group, Salsarita's East Tennessee, Advantage Shutters, CyberProtex and Rafael Custom Jewelry. Examples are collected in the shared example library.",
     related: ["strive-society", "abh-connect", "photography"],
   },
   {
@@ -972,7 +975,7 @@ export const projects: Project[] = [
     archive: true,
     visibility: "Archive only",
     visualNote:
-      "Some client links are no longer active and permissions vary. Samples available upon request.",
+      "Some client links are no longer active and permissions vary. Examples are collected in the shared example library.",
     related: ["abh-connect", "cyberprotex"],
   },
   {
@@ -1027,7 +1030,7 @@ export const projects: Project[] = [
     ],
     headlineResult: "Approximately 80 care packages distributed and school speaking engagements",
     tags: ["Entrepreneurship", "Mental Health", "Product", "Speaking"],
-    visibility: "Public with redacted materials",
+    visibility: "Public",
     visualNote: "Care package photos and original branding available on request.",
     related: ["realscreen-breaking-in"],
   },
@@ -1121,7 +1124,7 @@ export const projects: Project[] = [
     tags: ["Archive", "Creative Writing", "Songwriting", "Academic"],
     archive: true,
     visibility: "Archive only",
-    visualNote: "Samples available upon request.",
+    visualNote: "Examples are collected in the shared example library.",
     related: ["realscreen-breaking-in"],
   },
 ];

@@ -58,6 +58,19 @@ function WorkIndex() {
     });
   }, [query, category, industry, organization, featuredOnly, showArchive]);
 
+  const grouped = useMemo(() => {
+    const map = new Map<string, typeof results>();
+    const key = (p: (typeof results)[number]) =>
+      category !== "All" ? category : (p.categories[0] ?? "Other");
+    for (const p of results) {
+      const k = key(p);
+      map.set(k, [...(map.get(k) ?? []), p]);
+    }
+    return [...map.entries()].sort(
+      (a, b) => CATEGORIES.indexOf(a[0] as never) - CATEGORIES.indexOf(b[0] as never),
+    );
+  }, [results, category]);
+
   const selectClass =
     "w-full border border-border bg-card px-3 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-ring";
 
@@ -68,8 +81,8 @@ function WorkIndex() {
         The full archive: every project, what I owned and what it produced.
       </h1>
       <p className="mt-5 max-w-2xl leading-relaxed text-foreground/80">
-        Browse by category, industry or organization. Confidential client and internal materials are labeled
-        rather than published, and samples are available on request.
+        Grouped by category and filterable by industry or organization. Every project shows what I owned and
+        what it produced, with links to published examples.
       </p>
 
       <div className="mt-10 border border-border bg-paper p-5">
@@ -151,9 +164,16 @@ function WorkIndex() {
       {results.length === 0 ? (
         <p className="mt-10 font-display text-2xl">No projects match those filters yet.</p>
       ) : (
-        <div className="mt-6 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {results.map((p) => (
-            <ProjectCard key={p.slug} project={p} />
+        <div className="mt-6 space-y-16">
+          {grouped.map(([groupName, items]) => (
+            <section key={groupName}>
+              <h2 className="rule-top pt-5 text-3xl">{groupName}</h2>
+              <div className="mt-6 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {items.map((p) => (
+                  <ProjectCard key={p.slug} project={p} />
+                ))}
+              </div>
+            </section>
           ))}
         </div>
       )}
