@@ -35,7 +35,7 @@ export type Project = {
 };
 
 export const CATEGORIES = [
-  "Communications and Content",
+  "Internal and External Communications",
   "Healthcare and Customer Stories",
   "Events and Field Marketing",
   "Podcasts and Video",
@@ -47,9 +47,9 @@ export const CATEGORIES = [
 
 /** Older, narrower labels are folded into the small set of categories above. */
 const CATEGORY_GROUPS: Record<string, string> = {
-  "Internal Communications": "Communications and Content",
-  "Executive Communications": "Communications and Content",
-  "Content and Editorial": "Communications and Content",
+  "Internal Communications": "Internal and External Communications",
+  "Executive Communications": "Internal and External Communications",
+  "Content and Editorial": "Internal and External Communications",
   "Healthcare and Health Technology": "Healthcare and Customer Stories",
   "Customer Stories": "Healthcare and Customer Stories",
   "Events and Field Marketing": "Events and Field Marketing",
@@ -179,7 +179,7 @@ const rawProjects: Project[] = [
   },
   {
     slug: "cerecore-internal-comms",
-    title: "CereCore Internal Communications and Intranet",
+    title: "CereCore Internal and External Communications",
     organization: "CereCore, an HCA Healthcare company",
     period: "2025 – 2026",
     role: "Communications Lead, then Marketing Communications Strategist",
