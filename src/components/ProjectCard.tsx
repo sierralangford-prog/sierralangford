@@ -1,16 +1,18 @@
 import { Link } from "@tanstack/react-router";
 import type { Project } from "@/data/projects";
+import { CoverArt } from "@/components/CoverArt";
 
 export function VisibilityTag({ value }: { value: Project["visibility"] }) {
   if (value === "Public") return null;
   return (
     <span className="inline-block border border-border bg-secondary px-2 py-1 text-[0.68rem] uppercase tracking-wider text-muted-foreground">
-      {value === "Private sample available upon request" ? "Sample available upon request" : value}
+      {value}
     </span>
   );
 }
 
 export function ProjectCard({ project, large = false }: { project: Project; large?: boolean }) {
+  const mediaHeight = large ? "h-64" : "h-52";
   return (
     <article className="group flex h-full flex-col border border-border bg-card">
       <Link
@@ -24,19 +26,10 @@ export function ProjectCard({ project, large = false }: { project: Project; larg
             src={project.cover.src}
             alt={project.cover.alt}
             loading="lazy"
-            className={`w-full object-cover transition-transform duration-500 group-hover:scale-[1.02] ${
-              large ? "h-64" : "h-52"
-            }`}
+            className={`w-full object-cover transition-transform duration-500 group-hover:scale-[1.02] ${mediaHeight}`}
           />
         ) : (
-          <div
-            className={`flex w-full items-center justify-center px-6 text-center ${large ? "h-64" : "h-52"}`}
-            style={{ background: "var(--color-paper)" }}
-          >
-            <span className="font-display text-xl leading-snug text-muted-foreground">
-              {project.visibility === "Public" ? project.organization : "Sample available upon request"}
-            </span>
-          </div>
+          <CoverArt project={project} className={`w-full ${mediaHeight}`} />
         )}
       </Link>
 
