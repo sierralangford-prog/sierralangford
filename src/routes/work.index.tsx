@@ -28,43 +28,39 @@ export const Route = createFileRoute("/work/")({
 });
 
 function WorkIndex() {
-  const [category, setCategory] = useState<string>("All");
-
-  const results = useMemo(() => {
-    if (category === "All") return projects.filter((p) => !p.archive);
-    return projects.filter((p) => p.categories.includes(category));
-  }, [category]);
-
-  const tabs = ["All", ...CATEGORIES];
+  const groups = useMemo(
+    () =>
+      CATEGORIES.map((category) => ({
+        category,
+        items: projects.filter((p) => p.categories.includes(category)),
+      })).filter((g) => g.items.length > 0),
+    [],
+  );
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
       <p className="eyebrow">Work</p>
       <h1 className="mt-4 max-w-3xl text-4xl leading-tight sm:text-5xl">Work, organized by what I do.</h1>
       <p className="mt-5 max-w-2xl leading-relaxed text-foreground/80">
-        Pick a type of work, then open a project to see the story and the real examples.
+        Open a section, then open a project to see the story and the real examples.
       </p>
 
-      <div className="mt-10 flex flex-wrap gap-2 border-t border-border pt-6">
-        {tabs.map((t) => (
-          <button
-            key={t}
-            type="button"
-            onClick={() => setCategory(t)}
-            className={`border px-3 py-2 text-sm transition-colors ${
-              category === t
-                ? "border-foreground bg-foreground text-primary-foreground"
-                : "border-border hover:border-foreground"
-            }`}
-          >
-            {t}
-          </button>
-        ))}
-      </div>
-
-      <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {results.map((p) => (
-          <ProjectCard key={p.slug} project={p} />
+      <div className="mt-10 border-t border-border">
+        {groups.map((g, i) => (
+          <details key={g.category} open={i === 0} className="group border-b border-border py-5">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
+              <span className="text-xl sm:text-2xl">{g.category}</span>
+              <span className="text-sm text-muted-foreground">
+                {g.items.length}
+                <span className="ml-3 inline-block transition-transform group-open:rotate-45">+</span>
+              </span>
+            </summary>
+            <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {g.items.map((p) => (
+                <ProjectCard key={p.slug} project={p} />
+              ))}
+            </div>
+          </details>
         ))}
       </div>
     </div>
