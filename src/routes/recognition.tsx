@@ -63,7 +63,7 @@ function Recognition() {
 
       <section className="mt-14">
         <h2 className="rule-top pt-5 text-3xl">Recommendations</h2>
-        <div className="mt-6 grid gap-8 lg:grid-cols-2">
+        <div className="mt-6 grid items-start gap-8 lg:grid-cols-2">
           {recs.map((t, i) => (
             <Quote key={i} t={t} large />
           ))}
