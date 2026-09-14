@@ -35,7 +35,7 @@ export type Project = {
 };
 
 export const CATEGORIES = [
-  "Communications and Content",
+  "Internal and External Communications",
   "Healthcare and Customer Stories",
   "Events and Field Marketing",
   "Podcasts and Video",
@@ -47,9 +47,9 @@ export const CATEGORIES = [
 
 /** Older, narrower labels are folded into the small set of categories above. */
 const CATEGORY_GROUPS: Record<string, string> = {
-  "Internal Communications": "Communications and Content",
-  "Executive Communications": "Communications and Content",
-  "Content and Editorial": "Communications and Content",
+  "Internal Communications": "Internal and External Communications",
+  "Executive Communications": "Internal and External Communications",
+  "Content and Editorial": "Internal and External Communications",
   "Healthcare and Health Technology": "Healthcare and Customer Stories",
   "Customer Stories": "Healthcare and Customer Stories",
   "Events and Field Marketing": "Events and Field Marketing",
@@ -122,7 +122,17 @@ const rawProjects: Project[] = [
       { src: img.videoRig, alt: "Mobile video production rig used for podcast and interview capture" },
       { src: img.podcastPipeline, alt: "Podcast pipeline planning deck for the 2026 episode slate" },
     ],
-    links: [{ label: "Listen to the podcast", url: "https://podcast.cerecore.net/" }],
+    links: [
+      { label: "Listen to the podcast", url: "https://podcast.cerecore.net/" },
+      { label: "Guest brief: Dr. Devjit Roy", url: "https://drive.google.com/file/d/11zrA5weo4MEV4FGDZVZgRN5IdqeUeX27/view" },
+      { label: "Guest brief: Craig Rice", url: "https://drive.google.com/file/d/1bHq9rWyFr_ZZ9Q-dJSi7AnUgC7Xpk8A1/view" },
+      { label: "Guest brief: Paula Blomquist", url: "https://drive.google.com/file/d/1jIH2ayzOmDQadGjibDg08vjlzDupNsym/view" },
+      { label: "Guest brief: James Wellman", url: "https://drive.google.com/file/d/1JKz8xSumpDZnrrH5BUjSvcqLLu6K_Ax9/view" },
+      { label: "Guest brief: David Singer", url: "https://drive.google.com/file/d/1-q_4K4SGRLywFZgZoHuyxuQw0w4EBhyg/view" },
+      { label: "Guest brief: Tiffany Laurenz", url: "https://drive.google.com/file/d/1ngvnbd1pBxMc9YdDyn3NgWdgw-2hw_iR/view" },
+      { label: "Guest brief: Julie Demaree", url: "https://drive.google.com/file/d/1YA576EqTKMPpV-mVyNL3TCz2M6jPYjpO/view" },
+      { label: "Guest brief: Judy Krupala", url: "https://drive.google.com/file/d/1uesz8zf8H9xXEp0Ru2IsNmUUgq9ySSr5/view" },
+    ],
     related: ["himss-2026", "healthcare-customer-stories", "cerecore-client-newsletter"],
   },
   {
@@ -168,10 +178,14 @@ const rawProjects: Project[] = [
       { src: img.newsletterStats, alt: "Newsletter performance statistics showing open and click rates" },
     ],
     links: [
-      { label: "Read the newsletter introduction", url: "https://cerecore.net/introducing-the-cerecore-client-newsletter" },
+      { label: "Read the first issue, June 2025", url: "https://cerecore.net/introducing-the-cerecore-client-newsletter" },
       {
-        label: "Read the app rationalization feature",
+        label: "Read the July 2025 issue: app rationalization",
         url: "https://cerecore.net/how-hospitals-are-using-app-rationalization-to-cut-costs-fast",
+      },
+      {
+        label: "Read the August 2025 client update",
+        url: "https://cerecore.net/youre-a-cerecore-client-important-updates-inside-for-contact.company",
       },
       { label: "Read the October 2025 issue", url: "https://cerecore.net/client-news-oct-2025" },
     ],
@@ -179,7 +193,7 @@ const rawProjects: Project[] = [
   },
   {
     slug: "cerecore-internal-comms",
-    title: "CereCore Internal Communications and Intranet",
+    title: "CereCore Internal and External Communications",
     organization: "CereCore, an HCA Healthcare company",
     period: "2025 – 2026",
     role: "Communications Lead, then Marketing Communications Strategist",
@@ -221,6 +235,24 @@ const rawProjects: Project[] = [
       { src: img.blogMicrostress, alt: "Internal blog post: Microstress, the toll we do not have to pay" },
       { src: img.internalAgenda, alt: "2026 internal meetings agenda planning deck" },
     ],
+    links: [
+      {
+        label: "Read the March 2026 CereCore Link newsletter",
+        url: "https://drive.google.com/file/d/1jprVY_LBttRuUqg9QdlAqI3YLHEZnX6t/view",
+      },
+      {
+        label: "Read an issue on AI, go lives and employee updates",
+        url: "https://drive.google.com/file/d/1F-djRPpwWRFfpX9s2-vJqIikxiqSEXP1/view",
+      },
+      {
+        label: "View the weekly social plan",
+        url: "https://drive.google.com/file/d/1-rhxviqgE-FBPDQ_4igqjJti5oAIKGj9/view",
+      },
+      {
+        label: "Open the executive and change communications library",
+        url: "https://drive.google.com/drive/folders/1ENSKEChZdrzlr1R9JRAswM1xTK0n14rZ",
+      },
+    ],
     visualNote: SAMPLE_NOTE,
     related: ["marketing-advocacy-group", "enterprise-communications-calendar", "cerecore-mentorship-program"],
   },
@@ -259,6 +291,12 @@ const rawProjects: Project[] = [
     tags: ["Employee Advocacy", "Social", "Enablement", "Program Design"],
     visibility: "Public",
     cover: { src: img.masterclassSession, alt: "Sierra Langford leading an internal communications masterclass" },
+    links: [
+      {
+        label: "Open the advocacy program deck",
+        url: "https://docs.google.com/presentation/d/1ToJpBzYzcjDxL32NxYqxC64OI3Hc2ycM/edit",
+      },
+    ],
     visualNote: SAMPLE_NOTE,
     related: ["cerecore-internal-comms", "cerecore-mentorship-program"],
   },
@@ -509,7 +547,9 @@ const rawProjects: Project[] = [
     headlineResult: "Published go live case study used across sales and marketing",
     tags: ["Epic", "EHR", "Case Study"],
     visibility: "Public",
-    visualNote: SAMPLE_NOTE,
+    links: [
+      { label: "Read the case study", url: "https://drive.google.com/file/d/1OTyBKQceCCv1Dpp8dxUBZ2uK6VJTQ8eC/view" },
+    ],
     related: ["healthcare-customer-stories", "lehigh-regional-ehr"],
   },
   {
@@ -532,7 +572,9 @@ const rawProjects: Project[] = [
     headlineResult: "Published transformation story used in community hospital outreach",
     tags: ["EHR", "Case Study", "Community Hospitals"],
     visibility: "Public",
-    visualNote: SAMPLE_NOTE,
+    links: [
+      { label: "Read the case study", url: "https://drive.google.com/file/d/13UBqFYqPYLevWCY32HYCWYZysbL3t3sS/view" },
+    ],
     related: ["healthcare-customer-stories", "regional-medical-center-epic"],
   },
   {
@@ -555,7 +597,12 @@ const rawProjects: Project[] = [
     headlineResult: "Published partnership story used across client facing channels",
     tags: ["Case Study", "Healthcare IT"],
     visibility: "Public",
-    visualNote: SAMPLE_NOTE,
+    links: [
+      {
+        label: "Read the case study",
+        url: "https://docs.google.com/document/d/1OmZxwCl2-X8nQjA7LkxY2gdTf4-BwvNI/edit",
+      },
+    ],
     related: ["healthcare-customer-stories"],
   },
   {
@@ -615,7 +662,13 @@ const rawProjects: Project[] = [
     tags: ["Video", "Storytelling", "Internal Comms"],
     visibility: "Public",
     cover: { src: img.veronica, alt: "Story subject with her son making heart shapes with their hands" },
-    visualNote: "Published with subject approval. Full video available on request where approvals allow.",
+    links: [
+      {
+        label: "Watch the published story",
+        url: "https://www.linkedin.com/feed/update/urn:li:activity:7319019919994458115/",
+      },
+    ],
+    visualNote: "Published with subject approval.",
     related: ["connection-2026", "healthcare-customer-stories"],
   },
   {
@@ -701,8 +754,16 @@ const rawProjects: Project[] = [
         alt: "MonetizeIQ webinar promotion graphic featuring BankPlus and StrategyCorps speakers",
       },
     ],
-    visualNote:
-      "Full product narrative and messaging documents are shared on request. Public campaign materials are shown here.",
+    links: [
+      {
+        label: "Read the product story and video script",
+        url: "https://docs.google.com/document/d/1LluIc2Pm4BpC8byMsg5TVERrQtI6iqcQYxX5bpBcXD0/edit",
+      },
+      {
+        label: "View the StrategyCorps brand refresh overview",
+        url: "https://drive.google.com/file/d/177rIn_IO9K94fpUeydYozrwJBw-vlDiG/view",
+      },
+    ],
     related: ["monetizeiq-roadshow", "ai-enablement", "strategycorps-leadership-series"],
   },
   {
@@ -742,6 +803,12 @@ const rawProjects: Project[] = [
     tags: ["Field Marketing", "Events", "ABM", "Experience Design"],
     visibility: "Public",
     cover: { src: img.liveEvent, alt: "Guests at a MonetizeIQ executive event" },
+    links: [
+      {
+        label: "Open the field marketing and events library",
+        url: "https://drive.google.com/drive/folders/18_KRSaVno8giwpuOWfNI-5hIOVj54MPI",
+      },
+    ],
     visualNote: SAMPLE_NOTE,
     related: ["monetizeiq-product-storytelling", "himss-2026"],
   },
@@ -771,6 +838,12 @@ const rawProjects: Project[] = [
     tags: ["Executive Comms", "Interviewing", "Brand"],
     visibility: "Public",
     cover: { src: img.videoRig, alt: "Video interview rig set up for a leadership interview series" },
+    links: [
+      {
+        label: "Read the leadership interview series",
+        url: "https://docs.google.com/document/d/1ZuAfEmrjQHvbHvLQ5gEw1rscaiuLkhrz/edit",
+      },
+    ],
     visualNote: SAMPLE_NOTE,
     related: ["monetizeiq-product-storytelling"],
   },
@@ -975,7 +1048,12 @@ const rawProjects: Project[] = [
     headlineResult: "Email and content systems built for 16 clients",
     tags: ["Email Marketing", "SEO", "Systems", "Team Leadership"],
     visibility: "Archive only",
-    visualNote: SAMPLE_NOTE,
+    links: [
+      {
+        label: "Open the client writing samples",
+        url: "https://drive.google.com/drive/folders/10PoINBpU3fUhLH5d6kowvAprFkK0KdjU",
+      },
+    ],
     related: ["digital-motif", "cyberprotex"],
   },
   {
@@ -1124,7 +1202,12 @@ const rawProjects: Project[] = [
     tags: ["Archive", "Creative Writing", "Songwriting", "Academic"],
     archive: true,
     visibility: "Archive only",
-    visualNote: "Examples are collected in the shared example library.",
+    links: [
+      {
+        label: "Open the writing sample library",
+        url: "https://drive.google.com/drive/folders/10PoINBpU3fUhLH5d6kowvAprFkK0KdjU",
+      },
+    ],
     related: ["realscreen-breaking-in"],
   },
 ];
