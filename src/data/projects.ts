@@ -622,7 +622,7 @@ const rawProjects: Project[] = [
     period: "June 2024 – March 2025",
     role: "Marketing Operations",
     industries: ["Healthcare"],
-    categories: ["Internal Communications", "AI and Technology", "Executive Communications"],
+    categories: ["Internal Communications", "Executive Communications", "Podcasts and Video"],
     summary:
       "Supported the enterprise rollout of the Censhare digital asset management platform inside a large matrixed health system, including stakeholder communications, training materials and adoption support.",
     challenge:
