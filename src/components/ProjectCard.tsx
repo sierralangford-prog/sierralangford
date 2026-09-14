@@ -33,9 +33,10 @@ export function ProjectCard({ project, large = false }: { project: Project; larg
       </div>
 
       <div className="flex flex-1 flex-col p-4">
-        <p className="eyebrow">{project.organization}</p>
-        <h3 className="mt-1 text-lg leading-tight group-hover:text-teal sm:text-xl">{project.title}</h3>
-        <p className="mt-3 border-l-2 border-coral pl-3 text-sm font-medium">{project.headlineResult}</p>
+        {/client/i.test(project.organization) ? (
+          <p className="eyebrow">{project.organization}</p>
+        ) : null}
+        <h3 className="mt-1 text-base leading-tight group-hover:text-teal sm:text-lg">{project.title}</h3>
         <span className="link-underline mt-auto pt-4 text-sm">View project</span>
       </div>
     </Link>
