@@ -1,7 +1,8 @@
 # Sierra Langford Portfolio Roadmap
 
-## In progress
+## Done
 - Add 10 newly uploaded photos across homepage gallery, mentorship project, StrategyCorps projects, and recognition page.
+- Recategorize Censhare Change Communications to appear under Podcasts and Video (still visible under Internal and External Communications too).
 
 ## Open
-- Add new project: Censhare Change Communications (under Blogs/Video or Internal and External Communications).
+- None.
