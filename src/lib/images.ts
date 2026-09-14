@@ -30,6 +30,10 @@ import blogBalance from "@/assets/gd-blog-balance.png";
 import blogMicrostress from "@/assets/gd-blog-microstress.png";
 import blogMentalHealth from "@/assets/gd-blog-mentalhealth.png";
 import marketingPortfolio from "@/assets/gd-marketing-portfolio.png";
+import cyberprotexBootcamp from "@/assets/cyberprotex-bootcamp.png.asset.json";
+import certHubspotSocial from "@/assets/cert-hubspot-social.png.asset.json";
+import certHootsuiteSmm from "@/assets/cert-hootsuite-smm.png.asset.json";
+import certHootsuitePlatform from "@/assets/cert-hootsuite-platform.png.asset.json";
 
 export const img = {
   portrait: portrait.url,
@@ -64,4 +68,8 @@ export const img = {
   blogMicrostress,
   blogMentalHealth,
   marketingPortfolio,
+  cyberprotexBootcamp: cyberprotexBootcamp.url,
+  certHubspotSocial: certHubspotSocial.url,
+  certHootsuiteSmm: certHootsuiteSmm.url,
+  certHootsuitePlatform: certHootsuitePlatform.url,
 };
