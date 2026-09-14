@@ -838,6 +838,12 @@ const rawProjects: Project[] = [
     tags: ["Executive Comms", "Interviewing", "Brand"],
     visibility: "Public",
     cover: { src: img.videoRig, alt: "Video interview rig set up for a leadership interview series" },
+    links: [
+      {
+        label: "Read the leadership interview series",
+        url: "https://docs.google.com/document/d/1ZuAfEmrjQHvbHvLQ5gEw1rscaiuLkhrz/edit",
+      },
+    ],
     visualNote: SAMPLE_NOTE,
     related: ["monetizeiq-product-storytelling"],
   },
@@ -1191,7 +1197,12 @@ const rawProjects: Project[] = [
     tags: ["Archive", "Creative Writing", "Songwriting", "Academic"],
     archive: true,
     visibility: "Archive only",
-    visualNote: "Examples are collected in the shared example library.",
+    links: [
+      {
+        label: "Open the writing sample library",
+        url: "https://drive.google.com/drive/folders/10PoINBpU3fUhLH5d6kowvAprFkK0KdjU",
+      },
+    ],
     related: ["realscreen-breaking-in"],
   },
 ];
