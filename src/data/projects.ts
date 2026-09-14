@@ -798,6 +798,14 @@ const rawProjects: Project[] = [
     ],
     links: [
       {
+        label: "Read the webinar campaign: From Signal to Personalized Campaign",
+        url: "https://docs.google.com/document/d/145zDc-PgsZoaOLu6RsK9VYWdSeZIbDjA/edit",
+      },
+      {
+        label: "Read the webinar moderator script",
+        url: "https://docs.google.com/document/d/1yc8L3tSjASZ19awbH14YBejBuas4C79q/edit",
+      },
+      {
         label: "Read the product story and video script",
         url: "https://docs.google.com/document/d/1LluIc2Pm4BpC8byMsg5TVERrQtI6iqcQYxX5bpBcXD0/edit",
       },
