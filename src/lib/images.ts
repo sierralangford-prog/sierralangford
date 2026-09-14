@@ -51,6 +51,16 @@ import jamesWellmanInterview from "@/assets/james-wellman-interview.png.asset.js
 import himssTwoWomen from "@/assets/himss-two-women.png.asset.json";
 import cerecoreBoothTeam from "@/assets/cerecore-booth-team.png.asset.json";
 import teamBoombox from "@/assets/team-boombox.png.asset.json";
+import teamYeehawRestaurant from "@/assets/team-yeehaw-restaurant.jpg.asset.json";
+import teamOutsideBrickBuilding from "@/assets/team-outside-brick-building.jpg.asset.json";
+import mentorBestPracticesSlide from "@/assets/mentor-best-practices-slide.jpg.asset.json";
+import menteeBestPracticesSlide from "@/assets/mentee-best-practices-slide.jpg.asset.json";
+import cerecoreMentorshipSlido from "@/assets/cerecore-mentorship-slido.jpg.asset.json";
+import cerecoreMentorshipToolkitCover from "@/assets/cerecore-mentorship-toolkit-cover.jpg.asset.json";
+import strategycorpsTeamPage from "@/assets/strategycorps-team-page.png.asset.json";
+import strategycorpsRoadshowCities from "@/assets/strategycorps-roadshow-cities.png.asset.json";
+import devRoyHandwrittenNote from "@/assets/dev-roy-handwritten-note.png.asset.json";
+import betweenHeartbeatsAlgorithmsBook from "@/assets/between-heartbeats-algorithms-book.png.asset.json";
 
 export const img = {
   portrait: portrait.url,
@@ -106,4 +116,14 @@ export const img = {
   himssTwoWomen: himssTwoWomen.url,
   cerecoreBoothTeam: cerecoreBoothTeam.url,
   teamBoombox: teamBoombox.url,
+  teamYeehawRestaurant: teamYeehawRestaurant.url,
+  teamOutsideBrickBuilding: teamOutsideBrickBuilding.url,
+  mentorBestPracticesSlide: mentorBestPracticesSlide.url,
+  menteeBestPracticesSlide: menteeBestPracticesSlide.url,
+  cerecoreMentorshipSlido: cerecoreMentorshipSlido.url,
+  cerecoreMentorshipToolkitCover: cerecoreMentorshipToolkitCover.url,
+  strategycorpsTeamPage: strategycorpsTeamPage.url,
+  strategycorpsRoadshowCities: strategycorpsRoadshowCities.url,
+  devRoyHandwrittenNote: devRoyHandwrittenNote.url,
+  betweenHeartbeatsAlgorithmsBook: betweenHeartbeatsAlgorithmsBook.url,
 };
