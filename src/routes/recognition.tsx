@@ -4,13 +4,13 @@ import { testimonials, type Testimonial } from "@/data/testimonials";
 export const Route = createFileRoute("/recognition")({
   head: () => ({
     meta: [
-      { title: "Recognition and References — Sierra Langford" },
+      { title: "Testimonials — Sierra Langford" },
       {
         name: "description",
         content:
-          "Recommendations and recognition from colleagues and leaders at CereCore, HCA Healthcare and beyond, about storytelling, podcasts, events and internal communications.",
+          "Testimonials from colleagues and leaders about Sierra Langford's storytelling, podcasts, events and communications work.",
       },
-      { property: "og:title", content: "Recognition and References — Sierra Langford" },
+      { property: "og:title", content: "Testimonials — Sierra Langford" },
       {
         property: "og:description",
         content: "What the people Sierra Langford has worked with say about her work.",
@@ -52,7 +52,7 @@ function Recognition() {
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-      <p className="eyebrow">Recognition</p>
+      <p className="eyebrow">Testimonials</p>
       <h1 className="mt-4 max-w-3xl text-4xl leading-tight sm:text-5xl">
         What the people I have worked with say.
       </h1>
