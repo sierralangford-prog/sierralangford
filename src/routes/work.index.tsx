@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { projects, CATEGORIES } from "@/data/projects";
 import { ProjectCard } from "@/components/ProjectCard";
 
