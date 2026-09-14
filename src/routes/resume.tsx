@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { roles, skills } from "@/data/career";
 import { getProject } from "@/data/projects";
 import { img } from "@/lib/images";
+import linkedinPdf from "@/assets/linkedin-pdf.asset.json";
 
 export const Route = createFileRoute("/resume")({
   head: () => ({
@@ -41,8 +42,16 @@ function Resume() {
             onClick={() => window.print()}
             className="bg-foreground px-5 py-3 text-sm text-primary-foreground hover:opacity-90"
           >
-            Download resume
+            Print this resume
           </button>
+          <a
+            href={linkedinPdf.url}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="border border-foreground px-5 py-3 text-sm hover:bg-secondary"
+          >
+            Download PDF
+          </a>
           <a
             href="https://www.linkedin.com/in/sierralangford1/"
             target="_blank"
