@@ -28,14 +28,21 @@ export const Route = createFileRoute("/work/")({
 });
 
 function WorkIndex() {
-  const groups = useMemo(
-    () =>
-      CATEGORIES.map((category) => ({
-        category,
-        items: projects.filter((p) => p.categories.includes(category)),
-      })).filter((g) => g.items.length > 0),
-    [],
-  );
+  // Each project appears exactly once, under its primary (first) category.
+  const groups = useMemo(() => {
+    const byCategory = new Map<string, typeof projects>();
+    for (const p of projects) {
+      const primary = p.categories[0];
+      if (!primary) continue;
+      const list = byCategory.get(primary) ?? [];
+      list.push(p);
+      byCategory.set(primary, list);
+    }
+    return CATEGORIES.map((category) => ({
+      category,
+      items: byCategory.get(category) ?? [],
+    })).filter((g) => g.items.length > 0);
+  }, []);
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
