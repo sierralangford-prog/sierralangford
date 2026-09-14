@@ -205,7 +205,7 @@ const rawProjects: Project[] = [
         url: "https://cerecore.net/-temporary-slug-0f96e5c8-e6e7-46ba-8181-12cec8a6b0a9?hs_preview=xaghNIZk-202737326107",
       },
     ],
-    related: ["cerecore-internal-comms", "app-rationalization", "cerecore-podcast"],
+    related: ["cerecore-internal-comms", "healthcare-customer-stories", "cerecore-podcast"],
   },
   {
     slug: "cerecore-internal-comms",
@@ -920,11 +920,11 @@ const rawProjects: Project[] = [
       src: img.cyberprotexBootcamp,
       alt: "CyberProtex CISSP Exam Prep Bootcamp promotional graphic with instructor headshot",
     },
-    related: ["strive-society", "abh-connect"],
+    related: ["strive-society", "digital-motif"],
   },
   {
     slug: "strive-society",
-    title: "Strive Society",
+    title: "Strive Society Creative",
     organization: "Strive Society",
     period: "August 2017 – Present",
     role: "Founder and Creative Marketing Partner",
@@ -1018,47 +1018,7 @@ const rawProjects: Project[] = [
     ],
     visualNote:
       "Former client work. Client examples included Ancient Lore Village, Alewine Pottery, Crafty Bastard Brewery, Smash City Burger, Wagon Wheel Knoxville, Brentwood Jewelry, Roxana's Hair, Knox Brewsters, Elrod Laskey Group, Salsarita's East Tennessee, Advantage Shutters, CyberProtex and Rafael Custom Jewelry. Examples are collected in the shared example library.",
-    related: ["strive-society", "abh-connect", "photography"],
-  },
-  {
-    slug: "abh-connect",
-    title: "Building a Content System for Multiple Clients",
-    organization: "ABH Connect",
-    period: "November 2022 – December 2023",
-    role: "Business Development and Marketing Manager",
-    industries: ["Professional Services", "Retail", "Real Estate"],
-    categories: ["Content and Editorial", "Social Media and Brand", "Entrepreneurship"],
-    summary:
-      "Built email marketing systems, annual content calendars and campaign templates for 16 clients, and managed a three person team delivering the work.",
-    challenge:
-      "Every client was being served ad hoc. Without shared templates and calendars, quality depended on who had time that week.",
-    owned: [
-      "Email marketing systems for 16 clients",
-      "Annual content calendars and campaign templates",
-      "Monthly SEO blog writing",
-      "Social content management",
-      "Photography and video shoot direction",
-      "B2B outreach and client relationships",
-      "Managing a three person team",
-    ],
-    audiences: ["Small business owners", "B2B prospects", "Client customer lists"],
-    deliverables: ["Newsletter programs", "Content calendars", "SEO blog library", "Campaign templates"],
-    tools: ["Mailchimp", "WordPress", "Google Analytics", "Canva"],
-    results: [
-      "16 client email systems built and running on templates",
-      "A repeatable content model delivered by a three person team",
-    ],
-    headlineResult: "Email and content systems built for 16 clients",
-    tags: ["Email Marketing", "SEO", "Systems", "Team Leadership"],
-    visibility: "Archive only",
-    cover: { src: img.brandBanner, alt: "Creative marketing and community communications portfolio artwork" },
-    links: [
-      {
-        label: "Open the client writing samples",
-        url: "https://drive.google.com/drive/folders/10PoINBpU3fUhLH5d6kowvAprFkK0KdjU",
-      },
-    ],
-    related: ["digital-motif", "cyberprotex"],
+    related: ["strive-society", "photography"],
   },
   {
     slug: "national-panhellenic-conference",
@@ -1089,7 +1049,7 @@ const rawProjects: Project[] = [
       },
     ],
     visualNote: SAMPLE_NOTE,
-    related: ["abh-connect"],
+    related: ["strive-society"],
   },
   {
     slug: "bliss-box",

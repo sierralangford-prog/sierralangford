@@ -95,7 +95,7 @@ export const roles: Role[] = [
       "Wrote monthly SEO blogs and managed social content",
       "Managed a three person team and long term client relationships",
     ],
-    projects: ["abh-connect"],
+    projects: [],
   },
   {
     organization: "National Panhellenic Conference",
