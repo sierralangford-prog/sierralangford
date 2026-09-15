@@ -35,8 +35,8 @@ function Home() {
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 md:grid-cols-[1.1fr_0.9fr] md:py-24">
         <div className="fade-up">
           <p className="eyebrow">Franklin, Tennessee</p>
-          <h1 className="mt-4 text-5xl leading-[1.05] sm:text-6xl">Sierra Langford</h1>
-          <p className="mt-3 text-lg text-muted-foreground">Marketing and Communications Strategist</p>
+          <h1 className="mt-4 text-5xl leading-[1.05] sm:text-6xl">Hi there! I'm Sierra Langford.</h1>
+          <p className="mt-3 text-lg text-muted-foreground">Builder, innovator and creative.</p>
           <p className="mt-8 max-w-xl font-display text-2xl leading-snug sm:text-3xl">
             I find the human story underneath complicated work, then build the communications, programs,
             content and experiences that help people understand it and care.
@@ -65,7 +65,7 @@ function Home() {
           <img
             src={img.portrait}
             alt="Portrait of Sierra Langford, marketing and communications strategist"
-            className="w-full object-cover shadow-[0_18px_40px_-28px_rgba(20,30,60,0.55)]"
+            className="aspect-square w-full rounded-full object-cover shadow-[0_18px_40px_-28px_rgba(20,30,60,0.55)]"
             width={1000}
             height={1000}
           />
