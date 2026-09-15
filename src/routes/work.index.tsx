@@ -6,16 +6,16 @@ import { projects, CATEGORIES, type Project } from "@/data/projects";
 export const Route = createFileRoute("/work/")({
   head: () => ({
     meta: [
-      { title: "Work Archive — Sierra Langford" },
+      { title: "Selected Work — Sierra Langford" },
       {
         name: "description",
         content:
-          "A searchable archive of communications, content, event, podcast, AI and cybersecurity projects across healthcare, fintech and small business.",
+          "Selected communications, content, event, podcast, AI, brand and creative work by Sierra Langford.",
       },
-      { property: "og:title", content: "Work Archive — Sierra Langford" },
+      { property: "og:title", content: "Selected Work — Sierra Langford" },
       {
         property: "og:description",
-        content: "Browse projects by category, industry, organization and skill.",
+        content: "Browse Sierra Langford’s selected projects and examples by type of work.",
       },
       { property: "og:url", content: "/work" },
       { property: "og:type", content: "website" },
@@ -56,8 +56,8 @@ function WorkIndex() {
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-      <p className="eyebrow">Work</p>
-      <h1 className="mt-4 max-w-3xl text-4xl leading-tight sm:text-5xl">Work, organized by what I do.</h1>
+      <p className="eyebrow">Portfolio</p>
+      <h1 className="mt-4 max-w-3xl text-4xl leading-tight sm:text-5xl">Selected Work</h1>
 
       <div className="mt-10 space-y-12">
         {groups.map((g) => (
