@@ -171,6 +171,7 @@ const rawProjects: Project[] = [
     featured: true,
     visibility: "Public",
     hideCover: true,
+    cover: { src: img.clientUpdate, alt: "Spring 2026 CereCore client newsletter with client success stories" },
     links: [
       {
         label: "June 2025 — Introducing the CereCore Client Newsletter",
