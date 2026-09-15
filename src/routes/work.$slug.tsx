@@ -35,7 +35,7 @@ function ProjectPage() {
   return (
     <article className="mx-auto max-w-5xl px-5 py-14 sm:px-8">
       <Link to="/work" className="link-underline text-sm">
-        Back to the work archive
+        Work Archive
       </Link>
       <div className="mt-8">
         <ProjectDetails project={project} titleAs="h1" />

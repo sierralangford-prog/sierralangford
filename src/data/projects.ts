@@ -5,7 +5,7 @@ export type Visibility =
   | "Archive only";
 
 export type ProjectImage = { src: string; alt: string };
-export type ProjectLink = { label: string; url: string; thumb?: ProjectImage; description?: string };
+export type ProjectLink = { label: string; url: string; thumb?: ProjectImage };
 
 export type Project = {
   slug: string;
@@ -37,31 +37,13 @@ export type Project = {
 };
 
 export const CATEGORIES = [
-  "Internal and External Communications",
-  "Blogs, Customer Stories, Podcasts & Video",
-  "Events and Field Marketing",
-  "AI, Technology and Cybersecurity",
-  "Brand, Social and Entrepreneurship",
+  "B2B Client & Audience Marketing",
+  "Internal & Executive Communications",
+  "Healthcare & Technical Storytelling",
+  "Campaigns, Programs & Events",
+  "Podcast, Video & Content Production",
+  "Brand, Social & Entrepreneurship",
 ] as const;
-
-/** Older, narrower labels are folded into the small set of categories above. */
-const CATEGORY_GROUPS: Record<string, string> = {
-  "Internal Communications": "Internal and External Communications",
-  "Executive Communications": "Internal and External Communications",
-  "Content and Editorial": "Internal and External Communications",
-  "Healthcare and Health Technology": "Blogs, Customer Stories, Podcasts & Video",
-  "Customer Stories": "Blogs, Customer Stories, Podcasts & Video",
-  "Events and Field Marketing": "Events and Field Marketing",
-  "Podcasts and Video": "Blogs, Customer Stories, Podcasts & Video",
-  "AI and Technology": "AI, Technology and Cybersecurity",
-  Cybersecurity: "AI, Technology and Cybersecurity",
-  "Social Media and Brand": "Brand, Social and Entrepreneurship",
-  Entrepreneurship: "Brand, Social and Entrepreneurship",
-  "Photography and Creative Work": "Brand, Social and Entrepreneurship",
-};
-
-const groupCategories = (list: string[]) =>
-  Array.from(new Set(list.map((c) => CATEGORY_GROUPS[c] ?? c)));
 
 const SAMPLE_NOTE =
   "More visual examples from this project live in the shared example library.";
@@ -74,7 +56,7 @@ const rawProjects: Project[] = [
     period: "2025 – 2026",
     role: "Sole Producer and Host Support",
     industries: ["Healthcare", "Health Technology"],
-    categories: ["Podcasts and Video", "Healthcare and Health Technology", "Content and Editorial"],
+    categories: ["Podcast, Video & Content Production"],
     summary:
       "Built and produced a healthcare IT thought leadership podcast end to end, from show concept and guest strategy through publishing and promotion.",
     challenge:
@@ -122,14 +104,6 @@ const rawProjects: Project[] = [
     ],
     links: [
       { label: "Listen to the podcast", url: "https://podcast.cerecore.net/" },
-      { label: "Guest brief: Dr. Devjit Roy", url: "https://drive.google.com/file/d/11zrA5weo4MEV4FGDZVZgRN5IdqeUeX27/view" },
-      { label: "Guest brief: Craig Rice", url: "https://drive.google.com/file/d/1bHq9rWyFr_ZZ9Q-dJSi7AnUgC7Xpk8A1/view" },
-      { label: "Guest brief: Paula Blomquist", url: "https://drive.google.com/file/d/1jIH2ayzOmDQadGjibDg08vjlzDupNsym/view" },
-      { label: "Guest brief: James Wellman", url: "https://drive.google.com/file/d/1JKz8xSumpDZnrrH5BUjSvcqLLu6K_Ax9/view" },
-      { label: "Guest brief: David Singer", url: "https://drive.google.com/file/d/1-q_4K4SGRLywFZgZoHuyxuQw0w4EBhyg/view" },
-      { label: "Guest brief: Tiffany Laurenz", url: "https://drive.google.com/file/d/1ngvnbd1pBxMc9YdDyn3NgWdgw-2hw_iR/view" },
-      { label: "Guest brief: Julie Demaree", url: "https://drive.google.com/file/d/1YA576EqTKMPpV-mVyNL3TCz2M6jPYjpO/view" },
-      { label: "Guest brief: Judy Krupala", url: "https://drive.google.com/file/d/1uesz8zf8H9xXEp0Ru2IsNmUUgq9ySSr5/view" },
     ],
     related: ["himss-2026", "healthcare-customer-stories", "cerecore-client-newsletter"],
   },
@@ -140,7 +114,7 @@ const rawProjects: Project[] = [
     period: "2025 – 2026",
     role: "Marketing Communications Strategist",
     industries: ["Healthcare", "Health Technology"],
-    categories: ["Content and Editorial", "Healthcare and Health Technology", "Internal Communications"],
+    categories: ["B2B Client & Audience Marketing"],
     summary:
       "Built the client newsletter from zero, including the editorial plan, voice, production process and distribution system, and ran it as a demand generation product rather than a broadcast channel.",
     challenge:
@@ -177,49 +151,36 @@ const rawProjects: Project[] = [
         label: "June 2025 — Introducing the CereCore Client Newsletter",
         url: "https://cerecore.net/introducing-the-cerecore-client-newsletter",
         thumb: { src: img.newsletterJune2025, alt: "June 2025 issue: Celebrating Client Success with Mary Rutan Health" },
-        description: "The launch issue, opening with a client success story from Mary Rutan Health.",
       },
       {
         label: "July 2025 — How Hospitals Are Using App Rationalization to Cut Costs Fast",
         url: "https://cerecore.net/how-hospitals-are-using-app-rationalization-to-cut-costs-fast",
         thumb: { src: img.newsletterJuly2025, alt: "July 2025 issue: 4...Weeks, Go-Lives, and Healthcare Settings" },
-        description: "A feature on how hospitals use app rationalization to cut costs across go-lives and care settings.",
       },
       {
         label: "August 2025 — CereCore & Rural Health: Emphasis on Care Delivery",
         url: "https://cerecore.net/how-hospitals-are-using-app-rationalization-to-cut-costs-fast-1",
         thumb: { src: img.newsletterAugust2025, alt: "August 2025 issue: CereCore & Rural Health" },
-        description: "A look at CereCore's rural health work and its focus on care delivery.",
       },
       {
         label: "September 2025 — You're a CereCore Client: Important Updates Inside for Your Organization",
         url: "https://cerecore.net/youre-a-cerecore-client-important-updates-inside-for-contact.company",
         thumb: { src: img.newsletterSeptember2025, alt: "September 2025 issue: Oklahoma Heart Hospital client story" },
-        description: "Client updates alongside a feature on the Oklahoma Heart Hospital partnership.",
       },
       {
         label: "October 2025 — You've Seen CereCore in Action — Now See What's Next",
         url: "https://cerecore.net/client-news-oct-2025",
         thumb: { src: img.newsletterOctober2025, alt: "October 2025 issue: Recognizing Cybersecurity Awareness Month" },
-        description: "A forward-looking issue marking Cybersecurity Awareness Month.",
       },
       {
-        label: "November 2025 — For our clients: Oracle partnership, Cybersecurity Insights, and CHIME",
-        url: "https://cerecore.net/-temporary-slug-13af47d4-426b-4772-a3d0-e1144fc4c28c?hs_preview=jNkQZsfQ-197699330738",
-        thumb: { src: img.newsletterNovember2025, alt: "November 2025 issue: CereCore joins Oracle Partner Program" },
-        description: "News on the Oracle Partner Program alongside cybersecurity insights and CHIME coverage.",
+        label: "Read a client newsletter issue",
+        url: "https://drive.google.com/file/d/1p5ntCfZ4so0y9EmjqFlpQTqBgIv3xC1p/view",
+        thumb: { src: img.newsletterStats, alt: "CereCore client newsletter performance snapshot" },
       },
       {
-        label: "December 2025 — For our clients: this year's top resources",
-        url: "https://cerecore.net/-temporary-slug-0413fe3d-c5f0-44af-8c4b-607ced364200?hs_preview=Lsxzfafo-200325112084",
-        thumb: { src: img.newsletterDecember2025, alt: "December 2025 issue: Best Resources of The Year" },
-        description: "A roundup of the year's most useful client resources.",
-      },
-      {
-        label: "Spring 2026 — CereCore's Spring 2026 Client Update",
-        url: "https://cerecore.net/-temporary-slug-0f96e5c8-e6e7-46ba-8181-12cec8a6b0a9?hs_preview=xaghNIZk-202737326107",
-        thumb: { src: img.newsletterSpring2026, alt: "Spring 2026 issue: Client Success Stories" },
-        description: "A seasonal client update spotlighting recent success stories.",
+        label: "Browse client newsletter PDFs",
+        url: "https://drive.google.com/drive/folders/1yqzajcuk8xorADXvV_Gk10D6OlXNPcTP",
+        thumb: { src: img.clientUpdate, alt: "CereCore client newsletter issue" },
       },
     ],
     related: ["cerecore-internal-comms", "healthcare-customer-stories", "cerecore-podcast"],
@@ -231,7 +192,7 @@ const rawProjects: Project[] = [
     period: "2025 – 2026",
     role: "Communications Lead, then Marketing Communications Strategist",
     industries: ["Healthcare", "Health Technology"],
-    categories: ["Internal Communications", "Content and Editorial", "Executive Communications"],
+    categories: ["Internal & Executive Communications"],
     summary:
       "Ran the internal communications rhythm for a company of approximately 1,000 people, including a biweekly newsletter, roughly 82 internal stories and a rebuilt SharePoint intranet experience.",
     challenge:
@@ -276,14 +237,6 @@ const rawProjects: Project[] = [
         url: "https://drive.google.com/file/d/1jprVY_LBttRuUqg9QdlAqI3YLHEZnX6t/view",
       },
       {
-        label: "Read an issue on AI, go lives and employee updates",
-        url: "https://drive.google.com/file/d/1F-djRPpwWRFfpX9s2-vJqIikxiqSEXP1/view",
-      },
-      {
-        label: "View the weekly social plan",
-        url: "https://drive.google.com/file/d/1-rhxviqgE-FBPDQ_4igqjJti5oAIKGj9/view",
-      },
-      {
         label: "Open the executive and change communications library",
         url: "https://drive.google.com/drive/folders/1ENSKEChZdrzlr1R9JRAswM1xTK0n14rZ",
       },
@@ -298,7 +251,7 @@ const rawProjects: Project[] = [
     period: "2025 – 2026",
     role: "Founder and Program Lead",
     industries: ["Healthcare", "Health Technology"],
-    categories: ["Internal Communications", "Social Media and Brand"],
+    categories: ["Campaigns, Programs & Events"],
     summary:
       "Founded an employee advocacy program, recruited and coached 34 members across departments, and helped them surface and tell accurate stories from their own teams.",
     challenge:
@@ -342,7 +295,7 @@ const rawProjects: Project[] = [
     period: "2025 – 2026",
     role: "Program Creator",
     industries: ["Healthcare", "Health Technology"],
-    categories: ["Internal Communications", "Entrepreneurship"],
+    categories: ["Internal & Executive Communications"],
     summary:
       "Built a company mentorship program from scratch, including structure, toolkit, recruitment and launch communications, and designed it to keep running without me.",
     challenge:
@@ -394,7 +347,7 @@ const rawProjects: Project[] = [
     period: "2025 – 2026",
     role: "Communications Strategist",
     industries: ["Healthcare", "Health Technology"],
-    categories: ["Internal Communications", "Executive Communications"],
+    categories: ["Internal & Executive Communications"],
     summary:
       "Identified a coordination gap across departments and built a centralized enterprise communications calendar with a repeatable planning process that departments adopted.",
     challenge:
@@ -440,7 +393,7 @@ const rawProjects: Project[] = [
     period: "2026",
     role: "Communications and Content Lead",
     industries: ["Healthcare", "Health Technology"],
-    categories: ["Events and Field Marketing", "Executive Communications", "Podcasts and Video"],
+    categories: ["Campaigns, Programs & Events"],
     summary:
       "Planned and executed the flagship company wide event for approximately 1,000 attendees in person and virtual, owning communication strategy, content, run of show, executive scripts and onsite execution.",
     challenge:
@@ -480,7 +433,16 @@ const rawProjects: Project[] = [
       { src: img.companyMeeting, alt: "Sierra Langford presenting at a company meeting" },
       { src: img.connectionOutlines, alt: "Connection 2026 run of show and session outlines" },
     ],
-    links: [{ label: "View company event work", url: "https://sierralangford.netlify.app/#events" }],
+    links: [
+      {
+        label: "Connection 2026 Strategy and Content",
+        url: "https://drive.google.com/file/d/1TeXuXIKWxWUkYqXk1IgA6Uh2VQ8D1Ps5/view",
+      },
+      {
+        label: "Connection 2026 Event Feedback and Results",
+        url: "https://drive.google.com/file/d/1oGdZiWQzjiHw8uUA0gVuU2xK6tpzj7o1/view",
+      },
+    ],
     related: ["himss-2026", "cerecore-internal-comms", "veronica-survivor-story"],
   },
   {
@@ -490,7 +452,7 @@ const rawProjects: Project[] = [
     period: "2026",
     role: "Field Marketing and Content Producer",
     industries: ["Healthcare", "Health Technology"],
-    categories: ["Events and Field Marketing", "Podcasts and Video", "Healthcare and Health Technology"],
+    categories: ["Campaigns, Programs & Events"],
     summary:
       "Represented the company at HIMSS in Las Vegas and produced a short form interview series on the conference floor with a hospital CIO, a CNO, a health technology CMO and a MEDITECH partner.",
     challenge:
@@ -526,7 +488,6 @@ const rawProjects: Project[] = [
       { src: img.himssInnovators, alt: "Sierra Langford with healthcare technology leaders at HIMSS 2026" },
       { src: img.videoRig, alt: "Mobile video production rig used on the conference floor" },
     ],
-    links: [{ label: "View event work", url: "https://sierralangford.netlify.app/#events" }],
     related: ["connection-2026", "cerecore-podcast"],
   },
   {
@@ -536,7 +497,7 @@ const rawProjects: Project[] = [
     period: "2025 – 2026",
     role: "Storyteller and Case Study Lead",
     industries: ["Healthcare", "Health Technology"],
-    categories: ["Customer Stories", "Healthcare and Health Technology", "Content and Editorial"],
+    categories: ["Healthcare & Technical Storytelling"],
     summary:
       "Interviewed hospital leaders, clients and subject matter experts to turn complex health IT implementations into clear human stories, published as case studies, blogs and feature articles used across marketing, sales and leadership communications.",
     challenge:
@@ -564,7 +525,7 @@ const rawProjects: Project[] = [
     tags: ["Case Studies", "Blogs", "Interviewing", "Healthcare IT", "Writing"],
     featured: true,
     visibility: "Public",
-    cover: { src: img.veronica, alt: "A healthcare story subject with her son" },
+    cover: { src: img.jamesWellmanInterview, alt: "Sierra Langford interviewing a hospital CIO for a healthcare customer story" },
     gallery: [
       { src: img.regionalCaseStudy, alt: "Regional Medical Center Epic go-live story with the project team" },
       { src: img.lehighCaseStudy, alt: "Lehigh Regional Medical Center EHR transformation story" },
@@ -601,7 +562,7 @@ const rawProjects: Project[] = [
     period: "2025",
     role: "Concept, Interviewer and Producer",
     industries: ["Healthcare"],
-    categories: ["Podcasts and Video", "Customer Stories", "Internal Communications"],
+    categories: ["Healthcare & Technical Storytelling"],
     summary:
       "Interviewed a colleague who nearly died and produced a company wide video that connected employees' daily technology work to patient survival.",
     challenge:
@@ -639,7 +600,7 @@ const rawProjects: Project[] = [
     period: "June 2024 – March 2025",
     role: "Marketing Operations",
     industries: ["Healthcare"],
-    categories: ["Podcasts and Video", "Internal Communications", "Executive Communications"],
+    categories: ["Internal & Executive Communications"],
     summary:
       "Supported the enterprise rollout of the Censhare digital asset management platform inside a large matrixed health system, including stakeholder communications, training materials and adoption support.",
     challenge:
@@ -672,11 +633,7 @@ const rawProjects: Project[] = [
     links: [
       {
         label: "Watch the Censhare sizzle reel",
-        url: "https://drive.google.com/file/d/1iYrFcsV4JYM2sWbvVheUxiDyM6wOIe0j/view?usp=sharing",
-      },
-      {
-        label: "Open change communications examples",
-        url: "https://drive.google.com/drive/folders/1ENSKEChZdrzlr1R9JRAswM1xTK0n14rZ",
+        url: "https://drive.google.com/file/d/1iYrFcsV4JYM2sWbvVheUxiDyM6wOIe0j/view",
       },
     ],
     visualNote:
@@ -690,7 +647,7 @@ const rawProjects: Project[] = [
     period: "May 2026 – August 2026",
     role: "Field Marketing Lead",
     industries: ["Financial Services", "AI and Emerging Technology"],
-    categories: ["AI and Technology", "Social Media and Brand", "Content and Editorial"],
+    categories: ["B2B Client & Audience Marketing"],
     summary:
       "Shaped how the market would understand MonetizeIQ, an AI platform for banks and credit unions, from hero statement and product narrative through voice guidance and video pitch concepts.",
     challenge:
@@ -754,7 +711,7 @@ const rawProjects: Project[] = [
     period: "May 2026 – August 2026",
     role: "Field Marketing Lead",
     industries: ["Financial Services", "AI and Emerging Technology"],
-    categories: ["Events and Field Marketing", "AI and Technology"],
+    categories: ["Campaigns, Programs & Events"],
     summary:
       "Built the field marketing foundation for an AI product launch: conference activations, roadshows, executive dinners, webinars and advisory board concepts, all supported by repeatable briefs and SOPs.",
     challenge:
@@ -832,7 +789,7 @@ const rawProjects: Project[] = [
     period: "2026",
     role: "Creator and Interviewer",
     industries: ["Financial Services"],
-    categories: ["Executive Communications", "Content and Editorial", "Podcasts and Video"],
+    categories: ["Podcast, Video & Content Production"],
     summary:
       "Created a leadership interview series with 11 executives to capture company history and perspective, and turned it into reusable brand content.",
     challenge:
@@ -867,7 +824,7 @@ const rawProjects: Project[] = [
     period: "2025 – 2026",
     role: "AI Steering Committee Member and Practitioner",
     industries: ["Healthcare", "Financial Services", "AI and Emerging Technology"],
-    categories: ["AI and Technology", "Internal Communications"],
+    categories: ["Internal & Executive Communications"],
     summary:
       "Helped teams adopt AI in practical, role relevant ways: training colleagues on everyday tools and designing assisted workflows that removed real administrative work.",
     challenge:
@@ -910,7 +867,7 @@ const rawProjects: Project[] = [
     period: "June 2023 – January 2024",
     role: "Sales and Marketing Strategist",
     industries: ["Cybersecurity", "Government", "Technology"],
-    categories: ["Cybersecurity", "AI and Technology", "Content and Editorial"],
+    categories: ["B2B Client & Audience Marketing"],
     summary:
       "Led marketing for a cybersecurity training and managed security services firm, from brand positioning and go to market content through lead generation and signed contracts.",
     challenge:
@@ -967,7 +924,7 @@ const rawProjects: Project[] = [
       "Hospitality",
       "Professional Services",
     ],
-    categories: ["Entrepreneurship", "Social Media and Brand", "Photography and Creative Work"],
+    categories: ["Brand, Social & Entrepreneurship"],
     summary:
       "Founded and still run a creative marketing practice with 16 long term client partnerships across healthcare, cybersecurity, technology, real estate, retail, hospitality and professional services.",
     challenge:
@@ -1001,6 +958,11 @@ const rawProjects: Project[] = [
     cover: { src: img.brandBanner, alt: "Marketing and brand storytelling since 2017 banner" },
     links: [
       {
+        label: "View the marketing portfolio",
+        url: "https://drive.google.com/file/d/1qzryhF4vjF1LP1AFZPUHuy_Ucjmanmco/view",
+        thumb: { src: img.marketingPortfolio, alt: "Sierra Langford marketing portfolio overview" },
+      },
+      {
         label: "Open the client work library",
         url: "https://drive.google.com/drive/folders/1vPKk2Qi0LDmxD8T9JWcJ4vP8_sNjpk1R",
       },
@@ -1018,7 +980,7 @@ const rawProjects: Project[] = [
     period: "January 2024 – June 2024",
     role: "Marketing Communications Manager",
     industries: ["Retail", "Hospitality", "Real Estate", "Food and Beverage"],
-    categories: ["Social Media and Brand", "Photography and Creative Work", "Content and Editorial"],
+    categories: ["Brand, Social & Entrepreneurship"],
     summary:
       "Managed strategy and content for 13 client accounts and 16 social channels supporting approximately 225,000 combined followers, while directing photo and video shoots.",
     challenge:
@@ -1061,7 +1023,7 @@ const rawProjects: Project[] = [
     period: "August 2021 – August 2022",
     role: "Creative Designer",
     industries: ["Nonprofit", "Education"],
-    categories: ["Social Media and Brand"],
+    categories: ["Brand, Social & Entrepreneurship"],
     summary:
       "Supported marketing strategies and communications for a national organization, with visual communication work focused on alumni and community connection.",
     challenge:
@@ -1092,7 +1054,7 @@ const rawProjects: Project[] = [
     period: "2019 – 2021",
     role: "Founder",
     industries: ["Mental Health", "Consumer"],
-    categories: ["Entrepreneurship"],
+    categories: ["Brand, Social & Entrepreneurship"],
     summary:
       "Created a mental health wellness care package with coping tools for anxiety and stress, funded and mentored through a county entrepreneurship program.",
     challenge:
@@ -1130,7 +1092,7 @@ const rawProjects: Project[] = [
     period: "2024",
     role: "Creator and Editor",
     industries: ["Entertainment", "Media"],
-    categories: ["Podcasts and Video", "Photography and Creative Work"],
+    categories: ["Brand, Social & Entrepreneurship"],
     summary:
       "Pitched an original television concept called Breaking In to Netflix and Hulu executives at the Real Screen Summit in New Orleans, backed by a pitch deck and a sizzle reel I wrote, shot and edited.",
     challenge:
@@ -1160,7 +1122,7 @@ const rawProjects: Project[] = [
     period: "2017 – Present",
     role: "Photographer",
     industries: ["Retail", "Hospitality", "Healthcare", "Professional Services"],
-    categories: ["Social Media and Brand"],
+    categories: ["Brand, Social & Entrepreneurship"],
     summary: "Brand and portrait photography.",
     challenge: "",
     owned: [],
@@ -1175,16 +1137,65 @@ const rawProjects: Project[] = [
     links: [
       {
         label: "Visit my photography website",
-        url: "https://sierralangfordphotography.mypixieset.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAachRZmvKW417Fj3MtC9qkdlrEaVSn1kiMRbu7PyfiHcBLXb7ztkheVx59fv8Q_aem_xfkehkVKfWmLFKlTmVlpOg",
+        url: "https://sierralangfordphotography.mypixieset.com/",
+      },
+    ],
+  },
+  {
+    slug: "hca-email-performance",
+    title: "HCA Email Performance",
+    organization: "",
+    period: "",
+    role: "",
+    industries: [],
+    categories: ["B2B Client & Audience Marketing"],
+    summary: "",
+    challenge: "",
+    owned: [],
+    audiences: [],
+    deliverables: [],
+    tools: [],
+    results: [],
+    headlineResult: "",
+    tags: [],
+    visibility: "Public",
+    minimal: true,
+    links: [
+      {
+        label: "View HCA Email Performance",
+        url: "https://drive.google.com/file/d/13TZk8g3vZ2V7nfFmQqTczHuNcXbO3Nvw/view",
+      },
+    ],
+  },
+  {
+    slug: "brattleboro-retreat-golive",
+    title: "Brattleboro Retreat Go-Live Success",
+    organization: "",
+    period: "",
+    role: "",
+    industries: [],
+    categories: ["Healthcare & Technical Storytelling"],
+    summary: "",
+    challenge: "",
+    owned: [],
+    audiences: [],
+    deliverables: [],
+    tools: [],
+    results: [],
+    headlineResult: "",
+    tags: [],
+    visibility: "Public",
+    minimal: true,
+    links: [
+      {
+        label: "View Brattleboro Retreat Go-Live Success",
+        url: "https://drive.google.com/file/d/1DHTGDbLGYNXv9Sp09JdhThHu-jEzXv1n/view",
       },
     ],
   },
 ];
 
-export const projects: Project[] = rawProjects.map((p) => ({
-  ...p,
-  categories: groupCategories(p.categories),
-}));
+export const projects: Project[] = rawProjects;
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
 
@@ -1209,12 +1220,13 @@ export const getDisplayPhotos = (project: Project, max = 1): ProjectImage[] => {
 };
 
 export const featuredSlugs = [
-  "cerecore-podcast",
-  "cerecore-internal-comms",
+  "cerecore-client-newsletter",
+  "hca-email-performance",
+  "brattleboro-retreat-golive",
   "connection-2026",
-  "monetizeiq-product-storytelling",
+  "marketing-advocacy-group",
   "healthcare-customer-stories",
-  "hca-censhare",
+  "cerecore-podcast",
 ];
 
 export const featuredProjects = featuredSlugs

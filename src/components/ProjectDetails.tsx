@@ -35,7 +35,8 @@ function List({ title, items }: { title: string; items: string[] }) {
   );
 }
 
-function LinkRow({ link }: { link: ProjectLink }) {
+/** Example card: thumbnail (when we have one) + linked title only. No blurb. */
+function LinkCard({ link }: { link: ProjectLink }) {
   return (
     <a
       href={link.url}
@@ -53,35 +54,28 @@ function LinkRow({ link }: { link: ProjectLink }) {
           />
         </span>
       ) : null}
-      <span className="flex flex-col gap-1">
-        <span className="text-sm underline underline-offset-4 group-hover:text-teal">
-          {link.label} <span aria-hidden>↗</span>
-        </span>
-        {link.description ? (
-          <span className="text-sm leading-snug text-foreground/70">{link.description}</span>
-        ) : null}
+      <span className="text-sm underline underline-offset-4 group-hover:text-teal">
+        {link.label} <span aria-hidden>↗</span>
       </span>
     </a>
   );
 }
 
 /**
- * The full story for a single project: photo, examples and details.
+ * The full story for a single project, in a fixed order used on every
+ * project page: title, role, examples, challenge, what I did, results.
  * Shared by the standalone /work/$slug page and the inline toggle on the
  * work archive, so both stay in sync.
  */
 export function ProjectDetails({ project, titleAs = "h2" }: { project: Project; titleAs?: "h1" | "h2" }) {
-  const primaryLink = project.links?.[0];
-  const hasThumbs = Boolean(project.links?.some((l) => l.thumb));
   const photo = getDisplayPhotos(project)[0];
   const Title = titleAs;
   const allLinks = project.links ?? [];
-  // Only the plain-text link list gets truncated — the thumbnailed list
-  // (photo + description) is meant to be seen in full.
-  const visibleLinks = hasThumbs ? allLinks : allLinks.slice(0, MAX_VISIBLE_LINKS);
-  const hiddenLinks = hasThumbs ? [] : allLinks.slice(MAX_VISIBLE_LINKS);
+  const visibleLinks = allLinks.slice(0, MAX_VISIBLE_LINKS);
+  const hiddenLinks = allLinks.slice(MAX_VISIBLE_LINKS);
 
   if (project.minimal) {
+    const primaryLink = project.links?.[0];
     return (
       <div>
         <Title className="text-4xl leading-tight sm:text-5xl">{project.title}</Title>
@@ -102,24 +96,11 @@ export function ProjectDetails({ project, titleAs = "h2" }: { project: Project; 
   return (
     <div>
       <header>
-        <p className="eyebrow">{project.categories.join(" · ")}</p>
-        <Title className="mt-4 text-4xl leading-tight sm:text-5xl">{project.title}</Title>
+        <Title className="text-4xl leading-tight sm:text-5xl">{project.title}</Title>
         {project.organization ? (
-          <p className="mt-4 text-lg text-muted-foreground">{project.organization}</p>
+          <p className="mt-3 text-lg text-muted-foreground">{project.organization}</p>
         ) : null}
-        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/85">{project.summary}</p>
-        {primaryLink && !hasThumbs ? (
-          <div className="mt-7">
-            <a
-              href={primaryLink.url}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="inline-block bg-foreground px-5 py-3 text-sm text-primary-foreground transition-opacity hover:opacity-85"
-            >
-              {primaryLink.label}
-            </a>
-          </div>
-        ) : null}
+        {project.role ? <p className="mt-1 text-base text-foreground/80">{project.role}</p> : null}
       </header>
 
       {photo ? (
@@ -127,69 +108,40 @@ export function ProjectDetails({ project, titleAs = "h2" }: { project: Project; 
           src={photo.src}
           alt={photo.alt}
           loading="lazy"
-          className="mt-10 aspect-[4/3] w-full object-cover sm:aspect-[16/9]"
+          className="mt-8 aspect-[4/3] w-full object-cover sm:aspect-[16/9]"
         />
       ) : (
-        <CoverArt project={project} className="mt-10 h-64 w-full sm:h-80" />
+        <CoverArt project={project} className="mt-8 h-64 w-full sm:h-80" />
       )}
 
-      <section className="mt-10 border-y border-border bg-paper px-5 py-8 sm:px-8">
-        <p className="eyebrow">Result</p>
-        <p className="mt-4 border-l-2 border-coral pl-4 font-display text-2xl leading-snug">
-          {project.headlineResult}
-        </p>
-      </section>
-
       {visibleLinks.length > 0 ? (
-        <section className="mt-12 border-t border-border pt-8" aria-labelledby={`examples-${project.slug}`}>
+        <section className="mt-10" aria-labelledby={`examples-${project.slug}`}>
           <h3 id={`examples-${project.slug}`} className="text-3xl">Examples</h3>
-          {hasThumbs ? (
-            <ul className="mt-6 space-y-3">
-              {visibleLinks.map((l) => (
-                <li key={l.url}>
-                  <LinkRow link={l} />
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <div className="mt-5 flex flex-wrap items-start gap-3">
-              {visibleLinks.map((l) => (
-                <a
-                  key={l.url}
-                  href={l.url}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="border border-foreground px-5 py-3 text-sm underline underline-offset-4 transition-colors hover:bg-foreground hover:text-primary-foreground"
-                >
-                  {l.label} <span aria-hidden>↗</span>
-                </a>
-              ))}
-              {hiddenLinks.length > 0 ? (
-                <details className="inline-block">
-                  <summary className="cursor-pointer border border-border px-5 py-3 text-sm underline underline-offset-4 text-foreground/70 hover:border-foreground hover:text-teal">
-                    +{hiddenLinks.length} more
-                  </summary>
-                  <div className="mt-3 flex flex-wrap gap-3">
-                    {hiddenLinks.map((l) => (
-                      <a
-                        key={l.url}
-                        href={l.url}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        className="border border-foreground px-5 py-3 text-sm underline underline-offset-4 transition-colors hover:bg-foreground hover:text-primary-foreground"
-                      >
-                        {l.label} <span aria-hidden>↗</span>
-                      </a>
-                    ))}
-                  </div>
-                </details>
-              ) : null}
-            </div>
-          )}
+          <ul className="mt-5 space-y-3">
+            {visibleLinks.map((l) => (
+              <li key={l.url}>
+                <LinkCard link={l} />
+              </li>
+            ))}
+          </ul>
+          {hiddenLinks.length > 0 ? (
+            <details className="mt-3">
+              <summary className="cursor-pointer text-sm underline underline-offset-4 text-foreground/70 hover:text-teal">
+                +{hiddenLinks.length} more
+              </summary>
+              <ul className="mt-3 space-y-3">
+                {hiddenLinks.map((l) => (
+                  <li key={l.url}>
+                    <LinkCard link={l} />
+                  </li>
+                ))}
+              </ul>
+            </details>
+          ) : null}
         </section>
       ) : null}
 
-      <div className="mt-14 border-t border-border pt-10">
+      <div className="mt-12 border-t border-border pt-10">
         <div className="grid gap-10 sm:grid-cols-2">
           <section>
             <h3 className="text-3xl">The challenge</h3>
@@ -197,18 +149,22 @@ export function ProjectDetails({ project, titleAs = "h2" }: { project: Project; 
           </section>
           <List title="What I did" items={project.owned} />
         </div>
-        <section className="mt-12 border-t border-border pt-8">
-          <h3 className="text-3xl">Results</h3>
-          <ul className="mt-5 space-y-2.5">
-            {project.results.slice(0, MAX_LIST_ITEMS).map((result) => (
-              <li key={result} className="flex gap-3 leading-relaxed text-foreground/85">
-                <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-gold" />
-                <span>{result}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
       </div>
+
+      <section className="mt-12 border-t border-border pt-8">
+        <h3 className="text-3xl">Results</h3>
+        <p className="mt-4 border-l-2 border-coral pl-4 font-display text-2xl leading-snug">
+          {project.headlineResult}
+        </p>
+        <ul className="mt-6 space-y-2.5">
+          {project.results.slice(0, MAX_LIST_ITEMS).map((result) => (
+            <li key={result} className="flex gap-3 leading-relaxed text-foreground/85">
+              <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-gold" />
+              <span>{result}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
     </div>
   );
 }

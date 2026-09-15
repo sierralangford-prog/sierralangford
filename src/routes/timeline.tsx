@@ -62,12 +62,7 @@ function Experience() {
         <div className="space-y-10">
           {roles.map((role) => (
             <article key={`${role.organization}-${role.title}`}>
-              <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
-                <h2 className="text-2xl leading-snug">{role.title}</h2>
-                <p className="text-sm text-muted-foreground">
-                  {role.start} – {role.end}
-                </p>
-              </div>
+              <h2 className="text-2xl leading-snug">{role.title}</h2>
               <p className="mt-1 text-sm text-muted-foreground">{role.organization}</p>
               <ul className="mt-3 space-y-2">
                 {role.highlights.slice(0, 3).map((highlight) => (

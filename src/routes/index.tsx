@@ -93,7 +93,7 @@ function Home() {
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="eyebrow">Featured Work</p>
-            <h2 className="mt-3 text-4xl">Six projects that show how I work.</h2>
+            <h2 className="mt-3 text-4xl">Projects that show how I work.</h2>
           </div>
           <Link to="/work" className="link-underline text-sm">
             Browse the full work archive
