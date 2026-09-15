@@ -44,7 +44,7 @@ function Home() {
               to="/work"
               className="bg-foreground px-5 py-3 text-sm text-primary-foreground transition-opacity hover:opacity-90"
             >
-              View Work
+              View Selected Work
             </Link>
             <Link to="/contact" className="border border-foreground px-5 py-3 text-sm hover:bg-secondary">
               Contact Me
@@ -67,11 +67,11 @@ function Home() {
         <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="eyebrow">Featured Work</p>
-            <h2 className="mt-3 text-4xl">Selected work</h2>
+            <p className="eyebrow">Portfolio</p>
+            <h2 className="mt-3 text-4xl">Selected Work</h2>
           </div>
           <Link to="/work" className="link-underline text-sm">
-            Browse the full work archive
+            Browse Selected Work
           </Link>
         </div>
 
