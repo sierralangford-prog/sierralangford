@@ -1186,12 +1186,15 @@ export const projects: Project[] = rawProjects.map((project) => {
     return true;
   });
 
-  return {
+  const normalized: Project = {
     ...project,
     categories: groupCategories(project.categories),
-    cover,
-    gallery: gallery?.length ? gallery : undefined,
   };
+  delete normalized.cover;
+  delete normalized.gallery;
+  if (cover) normalized.cover = cover;
+  if (gallery?.length) normalized.gallery = gallery;
+  return normalized;
 });
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
