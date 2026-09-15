@@ -68,8 +68,7 @@ const profiles = [
 function Strengths() {
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-      <div className="grid gap-12 md:grid-cols-[1fr_0.7fr] md:items-start">
-        <div>
+      <div className="max-w-3xl">
           <p className="eyebrow">Personality and Strengths</p>
           <h1 className="mt-4 text-4xl leading-tight sm:text-5xl">
             How I work, and why teams tend to hand me the thing nobody owns yet.
@@ -78,13 +77,6 @@ function Strengths() {
             I find assessments useful for one reason: they make it easier for a team to work with me quickly.
             Here is the honest version, including what I have to manage.
           </p>
-        </div>
-        <img
-          src={img.connectionStage}
-          alt="Sierra Langford presenting on stage at a company wide conference"
-          loading="lazy"
-          className="w-full object-cover"
-        />
       </div>
 
       <div className="mt-16 space-y-14">

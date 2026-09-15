@@ -1173,10 +1173,29 @@ const rawProjects: Project[] = [
   },
 ];
 
-export const projects: Project[] = rawProjects.map((p) => ({
-  ...p,
-  categories: groupCategories(p.categories),
-}));
+// A supplied image belongs to one project only. Later projects fall back to
+// typographic art rather than repeating an unrelated or already-used photo.
+const usedProjectImages = new Set<string>();
+export const projects: Project[] = rawProjects.map((project) => {
+  const cover = project.cover && !usedProjectImages.has(project.cover.src) ? project.cover : undefined;
+  if (cover) usedProjectImages.add(cover.src);
+
+  const gallery = project.gallery?.filter((image) => {
+    if (usedProjectImages.has(image.src)) return false;
+    usedProjectImages.add(image.src);
+    return true;
+  });
+
+  const normalized: Project = {
+    ...project,
+    categories: groupCategories(project.categories),
+  };
+  delete normalized.cover;
+  delete normalized.gallery;
+  if (cover) normalized.cover = cover;
+  if (gallery?.length) normalized.gallery = gallery;
+  return normalized;
+});
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
 
