@@ -97,24 +97,21 @@ function ProjectPage() {
           <p className="mt-4 text-lg text-muted-foreground">{project.organization}</p>
         ) : null}
         <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/85">{project.summary}</p>
-        <div className="mt-7 flex flex-wrap gap-3">
-          {primaryLink ? (
+        {primaryLink && !hasThumbs ? (
+          <div className="mt-7">
             <a
               href={primaryLink.url}
               target="_blank"
               rel="noreferrer noopener"
-              className="bg-foreground px-5 py-3 text-sm text-primary-foreground transition-opacity hover:opacity-85"
+              className="inline-block bg-foreground px-5 py-3 text-sm text-primary-foreground transition-opacity hover:opacity-85"
             >
               {primaryLink.label}
             </a>
-          ) : null}
-          <a href="#details" className="border border-foreground px-5 py-3 text-sm hover:bg-secondary">
-            Read project details
-          </a>
-        </div>
+          </div>
+        ) : null}
       </header>
 
-      {project.cover ? (
+      {project.hideCover ? null : project.cover ? (
         <img
           src={project.cover.src}
           alt={project.cover.alt}
