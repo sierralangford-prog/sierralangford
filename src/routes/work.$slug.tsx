@@ -143,7 +143,6 @@ function ProjectPage() {
       {project.links && project.links.length > 0 ? (
         <section className="mt-12 border-t border-border pt-8" aria-labelledby="examples-heading">
           <h2 id="examples-heading" className="text-3xl">Examples</h2>
-          <p className="mt-2 text-sm text-muted-foreground">Each one opens the real work in a new tab.</p>
           {project.links.some((l) => l.thumb) ? (
             <ul className="mt-6 space-y-3">
               {project.links.map((l) => (
