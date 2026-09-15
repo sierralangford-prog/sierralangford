@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { getProject, type Project } from "@/data/projects";
-import { CoverArt } from "@/components/CoverArt";
+import { getProject } from "@/data/projects";
+import { ProjectDetails } from "@/components/ProjectDetails";
 
 export const Route = createFileRoute("/work/$slug")({
   loader: ({ params }) => {
@@ -30,205 +30,16 @@ export const Route = createFileRoute("/work/$slug")({
   component: ProjectPage,
 });
 
-function Field({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="border-t border-border pt-3">
-      <p className="eyebrow">{label}</p>
-      <p className="mt-1.5 text-sm leading-snug">{value}</p>
-    </div>
-  );
-}
-
-function List({ title, items }: { title: string; items: string[] }) {
-  if (items.length === 0) return null;
-  return (
-    <section className="mt-12 border-t border-border pt-8">
-      <h2 className="text-3xl">{title}</h2>
-      <ul className="mt-5 space-y-2.5">
-        {items.map((i) => (
-          <li key={i} className="flex gap-3 leading-relaxed text-foreground/85">
-            <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-teal" />
-            <span>{i}</span>
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
-}
-
 function ProjectPage() {
   const { project } = Route.useLoaderData();
-  const related = (project.related ?? [])
-    .map((s) => getProject(s))
-    .filter((p): p is Project => Boolean(p));
-  const primaryLink = project.links?.[0];
-  const hasThumbs = Boolean(project.links?.some((l) => l.thumb));
-
-  if (project.minimal) {
-    return (
-      <article className="mx-auto max-w-3xl px-5 py-16 sm:px-8">
-        <Link to="/work" className="link-underline text-sm">
-          Back to the work archive
-        </Link>
-        <h1 className="mt-8 text-4xl leading-tight sm:text-5xl">{project.title}</h1>
-        {primaryLink ? (
-          <a
-            href={primaryLink.url}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="mt-8 inline-block bg-foreground px-5 py-3 text-sm text-primary-foreground transition-opacity hover:opacity-85"
-          >
-            {primaryLink.label} <span aria-hidden>↗</span>
-          </a>
-        ) : null}
-      </article>
-    );
-  }
-
   return (
     <article className="mx-auto max-w-5xl px-5 py-14 sm:px-8">
       <Link to="/work" className="link-underline text-sm">
         Back to the work archive
       </Link>
-
-      <header className="mt-8">
-        <p className="eyebrow">{project.categories.join(" · ")}</p>
-        <h1 className="mt-4 text-4xl leading-tight sm:text-5xl">{project.title}</h1>
-        {project.organization ? (
-          <p className="mt-4 text-lg text-muted-foreground">{project.organization}</p>
-        ) : null}
-        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/85">{project.summary}</p>
-        {primaryLink && !hasThumbs ? (
-          <div className="mt-7">
-            <a
-              href={primaryLink.url}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="inline-block bg-foreground px-5 py-3 text-sm text-primary-foreground transition-opacity hover:opacity-85"
-            >
-              {primaryLink.label}
-            </a>
-          </div>
-        ) : null}
-      </header>
-
-      {project.hideCover ? null : project.cover ? (
-        <img
-          src={project.cover.src}
-          alt={project.cover.alt}
-          className="mt-10 w-full object-cover"
-          loading="lazy"
-        />
-      ) : (
-        <CoverArt project={project} className="mt-10 h-64 w-full sm:h-80" />
-      )}
-
-      <section className="mt-10 border-y border-border bg-paper px-5 py-8 sm:px-8">
-        <p className="eyebrow">Result</p>
-        <p className="mt-4 border-l-2 border-coral pl-4 font-display text-2xl leading-snug">
-          {project.headlineResult}
-        </p>
-      </section>
-
-      <section className="mt-12">
-        {project.gallery && project.gallery.length > 0 ? (
-          <div className="grid gap-5 sm:grid-cols-2">
-            {project.gallery.map((g) => (
-              <img key={g.src + g.alt} src={g.src} alt={g.alt} loading="lazy" className="aspect-[4/3] w-full object-cover" />
-            ))}
-          </div>
-        ) : null}
-      </section>
-
-      {project.links && project.links.length > 0 ? (
-        <section className="mt-12 border-t border-border pt-8" aria-labelledby="examples-heading">
-          <h2 id="examples-heading" className="text-3xl">Examples</h2>
-          {project.links.some((l) => l.thumb) ? (
-            <ul className="mt-6 space-y-3">
-              {project.links.map((l) => (
-                <li key={l.url}>
-                  <a
-                    href={l.url}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="group flex items-center gap-4 border border-border bg-card p-2 transition-colors hover:border-foreground"
-                  >
-                    {l.thumb ? (
-                      <span className="block h-16 w-24 shrink-0 overflow-hidden border border-border">
-                        <img
-                          src={l.thumb.src}
-                          alt={l.thumb.alt}
-                          loading="lazy"
-                          className="h-full w-full scale-[1.9] object-cover object-center"
-                        />
-                      </span>
-                    ) : null}
-                    <span className="text-sm underline underline-offset-4 group-hover:text-teal">
-                      {l.label} <span aria-hidden>↗</span>
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <div className="mt-5 flex flex-wrap gap-3">
-              {project.links.map((l) => (
-                <a
-                  key={l.url}
-                  href={l.url}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="border border-foreground px-5 py-3 text-sm underline underline-offset-4 transition-colors hover:bg-foreground hover:text-primary-foreground"
-                >
-                  {l.label} <span aria-hidden>↗</span>
-                </a>
-              ))}
-            </div>
-          )}
-        </section>
-      ) : null}
-
-      <div id="details" className="mt-14 grid gap-10 border-t border-border pt-10 lg:grid-cols-[1.4fr_0.6fr]">
-        <div>
-          <section>
-            <h2 className="text-3xl">The challenge</h2>
-            <p className="mt-4 leading-relaxed text-foreground/85">{project.challenge}</p>
-          </section>
-          <List title="What I did" items={project.owned} />
-          <section className="mt-12 border-t border-border pt-8">
-            <h2 className="text-3xl">Results</h2>
-            <ul className="mt-5 space-y-2.5">
-              {project.results.map((result) => (
-                <li key={result} className="flex gap-3 leading-relaxed text-foreground/85">
-                  <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-gold" />
-                  <span>{result}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-        </div>
-        <aside>
-          <Field label="Role" value={project.role} />
-          <div className="mt-6"><Field label="Industry" value={project.industries.join(", ")} /></div>
-          <div className="mt-6"><Field label="Tools" value={project.tools.join(", ")} /></div>
-        </aside>
+      <div className="mt-8">
+        <ProjectDetails project={project} titleAs="h1" />
       </div>
-
-
-      {related.length > 0 ? (
-        <section className="mt-16 border-t border-border pt-8">
-          <h2 className="text-3xl">Related projects</h2>
-          <ul className="mt-5 space-y-2">
-            {related.map((r) => (
-              <li key={r.slug}>
-                <Link to="/work/$slug" params={{ slug: r.slug }} className="link-underline text-lg">
-                  {r.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
     </article>
   );
 }

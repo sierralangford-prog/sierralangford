@@ -5,7 +5,7 @@ export type Visibility =
   | "Archive only";
 
 export type ProjectImage = { src: string; alt: string };
-export type ProjectLink = { label: string; url: string; thumb?: ProjectImage };
+export type ProjectLink = { label: string; url: string; thumb?: ProjectImage; description?: string };
 
 export type Project = {
   slug: string;
@@ -177,41 +177,49 @@ const rawProjects: Project[] = [
         label: "June 2025 — Introducing the CereCore Client Newsletter",
         url: "https://cerecore.net/introducing-the-cerecore-client-newsletter",
         thumb: { src: img.newsletterJune2025, alt: "June 2025 issue: Celebrating Client Success with Mary Rutan Health" },
+        description: "The launch issue, opening with a client success story from Mary Rutan Health.",
       },
       {
         label: "July 2025 — How Hospitals Are Using App Rationalization to Cut Costs Fast",
         url: "https://cerecore.net/how-hospitals-are-using-app-rationalization-to-cut-costs-fast",
         thumb: { src: img.newsletterJuly2025, alt: "July 2025 issue: 4...Weeks, Go-Lives, and Healthcare Settings" },
+        description: "A feature on how hospitals use app rationalization to cut costs across go-lives and care settings.",
       },
       {
         label: "August 2025 — CereCore & Rural Health: Emphasis on Care Delivery",
         url: "https://cerecore.net/how-hospitals-are-using-app-rationalization-to-cut-costs-fast-1",
         thumb: { src: img.newsletterAugust2025, alt: "August 2025 issue: CereCore & Rural Health" },
+        description: "A look at CereCore's rural health work and its focus on care delivery.",
       },
       {
         label: "September 2025 — You're a CereCore Client: Important Updates Inside for Your Organization",
         url: "https://cerecore.net/youre-a-cerecore-client-important-updates-inside-for-contact.company",
         thumb: { src: img.newsletterSeptember2025, alt: "September 2025 issue: Oklahoma Heart Hospital client story" },
+        description: "Client updates alongside a feature on the Oklahoma Heart Hospital partnership.",
       },
       {
         label: "October 2025 — You've Seen CereCore in Action — Now See What's Next",
         url: "https://cerecore.net/client-news-oct-2025",
         thumb: { src: img.newsletterOctober2025, alt: "October 2025 issue: Recognizing Cybersecurity Awareness Month" },
+        description: "A forward-looking issue marking Cybersecurity Awareness Month.",
       },
       {
         label: "November 2025 — For our clients: Oracle partnership, Cybersecurity Insights, and CHIME",
         url: "https://cerecore.net/-temporary-slug-13af47d4-426b-4772-a3d0-e1144fc4c28c?hs_preview=jNkQZsfQ-197699330738",
         thumb: { src: img.newsletterNovember2025, alt: "November 2025 issue: CereCore joins Oracle Partner Program" },
+        description: "News on the Oracle Partner Program alongside cybersecurity insights and CHIME coverage.",
       },
       {
         label: "December 2025 — For our clients: this year's top resources",
         url: "https://cerecore.net/-temporary-slug-0413fe3d-c5f0-44af-8c4b-607ced364200?hs_preview=Lsxzfafo-200325112084",
         thumb: { src: img.newsletterDecember2025, alt: "December 2025 issue: Best Resources of The Year" },
+        description: "A roundup of the year's most useful client resources.",
       },
       {
         label: "Spring 2026 — CereCore's Spring 2026 Client Update",
         url: "https://cerecore.net/-temporary-slug-0f96e5c8-e6e7-46ba-8181-12cec8a6b0a9?hs_preview=xaghNIZk-202737326107",
         thumb: { src: img.newsletterSpring2026, alt: "Spring 2026 issue: Client Success Stories" },
+        description: "A seasonal client update spotlighting recent success stories.",
       },
     ],
     related: ["cerecore-internal-comms", "healthcare-customer-stories", "cerecore-podcast"],
@@ -1179,6 +1187,26 @@ export const projects: Project[] = rawProjects.map((p) => ({
 }));
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
+
+/**
+ * The photos shown on a project's page: cover + gallery, deduped by src,
+ * capped at 2 so pages stay light instead of turning into a photo dump.
+ */
+export const getDisplayPhotos = (project: Project, max = 2): ProjectImage[] => {
+  const candidates = [
+    ...(project.hideCover ? [] : project.cover ? [project.cover] : []),
+    ...(project.gallery ?? []),
+  ];
+  const seen = new Set<string>();
+  const deduped: ProjectImage[] = [];
+  for (const image of candidates) {
+    if (seen.has(image.src)) continue;
+    seen.add(image.src);
+    deduped.push(image);
+    if (deduped.length >= max) break;
+  }
+  return deduped;
+};
 
 export const featuredSlugs = [
   "cerecore-podcast",

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo } from "react";
 import { projects, CATEGORIES } from "@/data/projects";
-import { ProjectCard } from "@/components/ProjectCard";
+import { ProjectToggle } from "@/components/ProjectToggle";
 
 
 export const Route = createFileRoute("/work/")({
@@ -49,7 +49,7 @@ function WorkIndex() {
       <p className="eyebrow">Work</p>
       <h1 className="mt-4 max-w-3xl text-4xl leading-tight sm:text-5xl">Work, organized by what I do.</h1>
       <p className="mt-5 max-w-2xl leading-relaxed text-foreground/80">
-        Open a section, then open a project to see the story and the real examples.
+        Open a section, then open a project to see the story and the real examples right here.
       </p>
 
       <div className="mt-10 border-t border-border">
@@ -62,9 +62,9 @@ function WorkIndex() {
                 <span className="ml-3 inline-block transition-transform group-open:rotate-45">+</span>
               </span>
             </summary>
-            <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-6 space-y-3">
               {g.items.map((p) => (
-                <ProjectCard key={p.slug} project={p} />
+                <ProjectToggle key={p.slug} project={p} />
               ))}
             </div>
           </details>
