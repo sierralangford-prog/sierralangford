@@ -1,9 +1,5 @@
 import { img } from "@/lib/images";
 
-export type Visibility =
-  | "Public"
-  | "Archive only";
-
 export type ProjectImage = { src: string; alt: string };
 export type ProjectLink = { label: string; url: string; thumb?: ProjectImage };
 
@@ -11,110 +7,37 @@ export type Project = {
   slug: string;
   title: string;
   organization: string;
-  period: string;
-  role: string;
-  industries: string[];
   categories: string[];
+  /** Only used for the Email & Newsletters category, to split it into two clearly labeled groups. */
+  subsection?: string;
+  /** Used only for SEO meta description, not shown on the page. */
   summary: string;
   challenge: string;
   owned: string[];
-  audiences: string[];
-  deliverables: string[];
-  tools: string[];
   results: string[];
   headlineResult: string;
-  tags: string[];
-  featured?: boolean;
-  archive?: boolean;
-  visibility: Visibility;
   cover?: ProjectImage;
   gallery?: ProjectImage[];
-  visualNote?: string;
-  minimal?: boolean;
-  hideCover?: boolean;
   links?: ProjectLink[];
-  related?: string[];
 };
 
 export const CATEGORIES = [
-  "B2B Client & Audience Marketing",
-  "Internal & Executive Communications",
+  "Email & Newsletters",
   "Healthcare & Technical Storytelling",
+  "Internal, Executive & Change Communications",
   "Campaigns, Programs & Events",
-  "Podcast, Video & Content Production",
-  "Brand, Social & Entrepreneurship",
+  "Podcast, Video & Interviews",
+  "Strive Society Client Work",
+  "Brand, Creative & Entrepreneurship",
 ] as const;
-
-const SAMPLE_NOTE =
-  "More visual examples from this project live in the shared example library.";
 
 const rawProjects: Project[] = [
   {
-    slug: "cerecore-podcast",
-    title: "The CereCore Podcast",
-    organization: "CereCore, an HCA Healthcare company",
-    period: "2025 – 2026",
-    role: "Sole Producer and Host Support",
-    industries: ["Healthcare", "Health Technology"],
-    categories: ["Podcast, Video & Content Production"],
-    summary:
-      "Built and produced a healthcare IT thought leadership podcast end to end, from show concept and guest strategy through publishing and promotion.",
-    challenge:
-      "Healthcare IT leaders are surrounded by vendor noise. The company needed a **genuinely useful conversation** with hospital and health technology leaders that did not sound like a sales pitch.",
-    owned: [
-      "Show concept, positioning and episode architecture",
-      "Guest strategy, outreach systems and scheduling",
-      "Guest briefs, research and interview question sets",
-      "Recording coordination and production direction",
-      "Transcript cleanup, episode writing and editing",
-      "Publishing, show notes and promotion across channels",
-    ],
-    audiences: [
-      "Hospital CIOs and IT leaders",
-      "Clinical leaders",
-      "Health technology partners",
-      "Clients and prospects",
-      "Employees",
-    ],
-    deliverables: [
-      "12 published episodes",
-      "Guest brief and question set templates",
-      "Episode artwork and promotional cards",
-      "Show notes and transcript-based articles",
-      "Social and newsletter promotion kits",
-    ],
-    tools: ["Riverside", "Descript", "HubSpot", "Canva", "LinkedIn", "Adobe Premiere"],
-    results: [
-      "22,973 views across 12 episodes",
-      "Top episode reached 3,219 views",
-      "Approximately 37 healthcare and health technology leaders featured",
-      "Gold Stevie Award, Technology Shows category",
-    ],
-    headlineResult: "22,973 views across 12 episodes and a Gold Stevie Award",
-    tags: ["Podcast", "Thought Leadership", "Healthcare IT", "Cybersecurity", "AI", "EHR"],
-    featured: true,
-    visibility: "Public",
-    cover: { src: img.stevieAward, alt: "The American Business Awards 2026 Gold Stevie Award winner graphic for The CereCore Podcast" },
-    gallery: [
-      { src: img.podcastArtwork, alt: "The CereCore Podcast cover artwork" },
-      { src: img.stevieAward, alt: "The American Business Awards 2026 Stevie Award winner graphic" },
-      { src: img.boothRecording, alt: "Recording setup at a healthcare conference booth" },
-      { src: img.videoRig, alt: "Mobile video production rig used for podcast and interview capture" },
-      { src: img.podcastPipeline, alt: "Podcast pipeline planning deck for the 2026 episode slate" },
-    ],
-    links: [
-      { label: "Listen to the podcast", url: "https://podcast.cerecore.net/" },
-    ],
-    related: ["himss-2026", "healthcare-customer-stories", "cerecore-client-newsletter"],
-  },
-  {
     slug: "cerecore-client-newsletter",
-    title: "CereCore Client Newsletter",
-    organization: "",
-    period: "2025 – 2026",
-    role: "Marketing Communications Strategist",
-    industries: ["Healthcare", "Health Technology"],
-    categories: ["B2B Client & Audience Marketing"],
+    title: "Built a Client Newsletter Program",
+    organization: "CereCore, an HCA Healthcare company",
+    categories: ["Email & Newsletters"],
+    subsection: "External / Client Newsletters",
     summary:
       "Built the client newsletter from zero, including the editorial plan, voice, production process and distribution system, and ran it as a demand generation product rather than a broadcast channel.",
     challenge:
@@ -124,54 +47,15 @@ const rawProjects: Project[] = [
       "Production calendar and approval workflow",
       "Writing and producing every issue",
       "HubSpot build, segmentation and distribution",
-      "Performance reporting and iteration",
     ],
-    audiences: ["Hospital and health system clients", "Client executives", "Internal account teams"],
-    deliverables: [
-      "Recurring newsletter issues",
-      "Editorial calendar and intake process",
-      "Email templates and design system",
-      "Feature articles on healthcare technology topics",
-    ],
-    tools: ["HubSpot", "SharePoint", "Canva", "Excel"],
     results: [
       "Grew to 3,307 recipients within six months",
-      "70 percent average open rate",
-      "Approximately 17 points above the 53 percent industry benchmark",
+      "70 percent average open rate, about 17 points above the industry benchmark",
       "Became a recurring source of client conversations for account teams",
     ],
     headlineResult: "3,307 recipients and a 70 percent average open rate in six months",
-    tags: ["Email Marketing", "Editorial", "Demand Generation", "HubSpot", "Healthcare IT"],
-    featured: true,
-    visibility: "Public",
-    hideCover: true,
-    cover: { src: img.clientUpdate, alt: "Spring 2026 CereCore client newsletter with client success stories" },
+    cover: { src: img.clientUpdate, alt: "CereCore client newsletter issue with client success stories" },
     links: [
-      {
-        label: "June 2025 — Introducing the CereCore Client Newsletter",
-        url: "https://cerecore.net/introducing-the-cerecore-client-newsletter",
-        thumb: { src: img.newsletterJune2025, alt: "June 2025 issue: Celebrating Client Success with Mary Rutan Health" },
-      },
-      {
-        label: "July 2025 — How Hospitals Are Using App Rationalization to Cut Costs Fast",
-        url: "https://cerecore.net/how-hospitals-are-using-app-rationalization-to-cut-costs-fast",
-        thumb: { src: img.newsletterJuly2025, alt: "July 2025 issue: 4...Weeks, Go-Lives, and Healthcare Settings" },
-      },
-      {
-        label: "August 2025 — CereCore & Rural Health: Emphasis on Care Delivery",
-        url: "https://cerecore.net/how-hospitals-are-using-app-rationalization-to-cut-costs-fast-1",
-        thumb: { src: img.newsletterAugust2025, alt: "August 2025 issue: CereCore & Rural Health" },
-      },
-      {
-        label: "September 2025 — You're a CereCore Client: Important Updates Inside for Your Organization",
-        url: "https://cerecore.net/youre-a-cerecore-client-important-updates-inside-for-contact.company",
-        thumb: { src: img.newsletterSeptember2025, alt: "September 2025 issue: Oklahoma Heart Hospital client story" },
-      },
-      {
-        label: "October 2025 — You've Seen CereCore in Action — Now See What's Next",
-        url: "https://cerecore.net/client-news-oct-2025",
-        thumb: { src: img.newsletterOctober2025, alt: "October 2025 issue: Recognizing Cybersecurity Awareness Month" },
-      },
       {
         label: "Read a client newsletter issue",
         url: "https://drive.google.com/file/d/1p5ntCfZ4so0y9EmjqFlpQTqBgIv3xC1p/view",
@@ -183,216 +67,242 @@ const rawProjects: Project[] = [
         thumb: { src: img.clientUpdate, alt: "CereCore client newsletter issue" },
       },
     ],
-    related: ["cerecore-internal-comms", "healthcare-customer-stories", "cerecore-podcast"],
   },
   {
-    slug: "cerecore-internal-comms",
-    title: "CereCore Internal and External Communications",
+    slug: "internal-employee-newsletters",
+    title: "Developed Internal Employee Newsletters",
     organization: "CereCore, an HCA Healthcare company",
-    period: "2025 – 2026",
-    role: "Communications Lead, then Marketing Communications Strategist",
-    industries: ["Healthcare", "Health Technology"],
-    categories: ["Internal & Executive Communications"],
+    categories: ["Email & Newsletters"],
+    subsection: "Internal / Employee Newsletters",
     summary:
-      "Ran the internal communications rhythm for a company of approximately 1,000 people, including a biweekly newsletter, roughly 82 internal stories and a rebuilt SharePoint intranet experience.",
+      "Wrote and produced the biweekly internal newsletter that kept about 1,000 employees across the United States and United Kingdom informed between company wide updates.",
     challenge:
-      "News, employee stories and operational updates lived in scattered inboxes and team channels. Employees across the United States and United Kingdom had **no reliable place** to understand what was happening.",
+      "News, employee stories and operational updates lived in scattered inboxes and team channels. Employees had **no reliable place** to understand what was happening.",
     owned: [
       "The CereCore Link biweekly internal newsletter",
       "Editorial calendar and story sourcing across departments",
       "Writing and publishing internal blogs and employee stories",
-      "SharePoint intranet structure, navigation and content experience",
-      "Leadership messaging and internal announcement support",
     ],
-    audiences: ["All employees", "People leaders", "Executive leadership", "Remote and UK teams"],
-    deliverables: [
-      "Biweekly internal newsletter",
-      "Approximately 82 internal blogs and stories",
-      "Rebuilt intranet pages and navigation",
-      "Announcement and leadership message templates",
-    ],
-    tools: ["SharePoint", "Microsoft Teams", "Outlook", "Poppulo", "Canva"],
     results: [
       "Approximately 3,200 monthly intranet views",
-      "Approximately 82 internal stories published",
       "A consistent communication rhythm for roughly 1,000 employees",
     ],
-    headlineResult: "Approximately 3,200 monthly views and 82 internal stories published",
-    tags: ["Internal Comms", "Intranet", "Employee Engagement", "Editorial"],
-    featured: true,
-    visibility: "Public",
-    cover: { src: img.boardroomPresentation, alt: "Sierra Langford presenting a storytelling workshop in a boardroom" },
-    gallery: [
-      { src: img.boardroomPresentation, alt: "Sierra Langford presenting a storytelling workshop to colleagues" },
-      { src: img.companyMeeting, alt: "Sierra Langford presenting at a company wide meeting" },
-      { src: img.internalVideoStill, alt: "Still from an internal communications video presentation" },
-      { src: img.masterclassSession, alt: "Sierra Langford hosting an internal masterclass session" },
-      { src: img.blogBalance, alt: "Internal blog post: Finding Balance While Working from Home" },
-      { src: img.blogMicrostress, alt: "Internal blog post: Microstress, the toll we do not have to pay" },
-      { src: img.internalAgenda, alt: "2026 internal meetings agenda planning deck" },
-    ],
+    headlineResult: "A biweekly newsletter read by roughly 1,000 employees across two countries",
+    cover: { src: img.boardroomPresentation, alt: "Sierra Langford presenting an internal communications workshop" },
     links: [
       {
         label: "Read the March 2026 CereCore Link newsletter",
         url: "https://drive.google.com/file/d/1jprVY_LBttRuUqg9QdlAqI3YLHEZnX6t/view",
       },
       {
-        label: "Open the executive and change communications library",
-        url: "https://drive.google.com/drive/folders/1ENSKEChZdrzlr1R9JRAswM1xTK0n14rZ",
+        label: "Read an internal newsletter issue",
+        url: "https://drive.google.com/file/d/1F-djRPpwWRFfpX9s2-vJqIikxiqSEXP1/view",
+      },
+      {
+        label: "View the internal social and content plan",
+        url: "https://drive.google.com/file/d/1-rhxviqgE-FBPDQ_4igqjJti5oAIKGj9/view",
       },
     ],
-    visualNote: SAMPLE_NOTE,
-    related: ["marketing-advocacy-group", "enterprise-communications-calendar", "cerecore-mentorship-program"],
   },
   {
-    slug: "marketing-advocacy-group",
-    title: "Marketing Advocacy Group",
+    slug: "healthcare-customer-stories",
+    title: "Created Healthcare Go-Live and Transformation Stories",
     organization: "CereCore, an HCA Healthcare company",
-    period: "2025 – 2026",
-    role: "Founder and Program Lead",
-    industries: ["Healthcare", "Health Technology"],
-    categories: ["Campaigns, Programs & Events"],
+    categories: ["Healthcare & Technical Storytelling"],
     summary:
-      "Founded an employee advocacy program, recruited and coached 34 members across departments, and helped them surface and tell accurate stories from their own teams.",
+      "Interviewed hospital leaders, clients and subject matter experts to turn complex health IT implementations into clear human stories, published as case studies, blogs and feature articles.",
     challenge:
-      "The people closest to the work had the best stories and **the least confidence sharing them**. Marketing could not be the only voice representing a technical, credibility driven business.",
+      "Implementation stories were written as technical summaries. They were **accurate and forgettable**, and they never showed the people affected by the work.",
     owned: [
-      "Program design, recruitment and onboarding",
-      "Coaching sessions and story sourcing prompts",
-      "Messaging guidance and approval guardrails",
-      "Connecting advocates to campaigns, events and content",
+      "Interviewing hospital leaders, clients and internal experts",
+      "Story structure and writing",
+      "Adaptation for web, newsletter, social, sales and leadership use",
     ],
-    audiences: ["Employees across departments", "Sales and delivery teams", "External social audiences"],
-    deliverables: [
-      "Advocacy program structure and charter",
-      "Monthly prompts and ready to use messaging",
-      "Coaching sessions and polling",
-      "Campaign and event amplification kits",
-    ],
-    tools: ["LinkedIn", "Microsoft Teams", "SharePoint", "Canva"],
     results: [
-      "34 employee advocates recruited and coached",
-      "Consistent employee generated content tied to campaigns and events",
-      "More stories sourced directly from delivery teams",
+      "18 healthcare case studies produced",
+      "More than 82 published stories",
+      "Stories reused across sales conversations, newsletters and leadership messaging",
     ],
-    headlineResult: "34 employee advocates recruited and coached across departments",
-    tags: ["Employee Advocacy", "Social", "Enablement", "Program Design"],
-    visibility: "Public",
-    cover: { src: img.masterclassSession, alt: "Sierra Langford leading an internal communications masterclass" },
+    headlineResult: "18 case studies and more than 82 published stories",
+    cover: { src: img.jamesWellmanInterview, alt: "Sierra Langford interviewing a hospital CIO for a healthcare customer story" },
     links: [
       {
-        label: "Open the advocacy program deck",
-        url: "https://docs.google.com/presentation/d/1ToJpBzYzcjDxL32NxYqxC64OI3Hc2ycM/edit",
+        label: "Regional Medical Center Epic go live",
+        url: "https://drive.google.com/file/d/1OTyBKQceCCv1Dpp8dxUBZ2uK6VJTQ8eC/view",
+        thumb: { src: img.regionalCaseStudy, alt: "Regional Medical Center Epic go-live story" },
+      },
+      {
+        label: "Lehigh Regional EHR transformation",
+        url: "https://drive.google.com/file/d/13UBqFYqPYLevWCY32HYCWYZysbL3t3sS/view",
+        thumb: { src: img.lehighCaseStudy, alt: "Lehigh Regional Medical Center EHR transformation story" },
+      },
+      {
+        label: "Schneck Medical Center story",
+        url: "https://docs.google.com/document/d/1OmZxwCl2-X8nQjA7LkxY2gdTf4-BwvNI/edit",
+        thumb: { src: img.schneckCaseStudy, alt: "Schneck Medical Center case study" },
+      },
+      {
+        label: "Brattleboro Retreat go-live success",
+        url: "https://drive.google.com/file/d/1DHTGDbLGYNXv9Sp09JdhThHu-jEzXv1n/view",
+      },
+      {
+        label: "Additional healthcare go-live story",
+        url: "https://drive.google.com/file/d/1omKT5yMwuQiIL1Gd0lRftqQ8_pnmAIpd/view",
       },
     ],
-    visualNote: SAMPLE_NOTE,
-    related: ["cerecore-internal-comms", "cerecore-mentorship-program"],
+  },
+  {
+    slug: "veronica-survivor-story",
+    title: "Produced a Healthcare Survivor Story",
+    organization: "CereCore, an HCA Healthcare company",
+    categories: ["Healthcare & Technical Storytelling"],
+    summary:
+      "Interviewed a colleague who nearly died and produced a company wide video that connected employees' daily technology work to patient survival.",
+    challenge:
+      "Employees who support hospital systems **rarely see a patient**. The connection between their work and clinical outcomes was abstract.",
+    owned: ["Story concept and approach", "Interview with the subject", "Video production and edit direction"],
+    results: ["Shown company wide", "Employees reported finally understanding why their work mattered"],
+    headlineResult: "A company wide story that connected technical work to patient survival",
+    cover: { src: img.veronica, alt: "Story subject with her son making heart shapes with their hands" },
+    links: [
+      {
+        label: "Watch the published story",
+        url: "https://www.linkedin.com/feed/update/urn:li:activity:7319019919994458115/",
+      },
+    ],
+  },
+  {
+    slug: "cerecore-internal-comms",
+    title: "Created an Internal Communications Program",
+    organization: "CereCore, an HCA Healthcare company",
+    categories: ["Internal, Executive & Change Communications"],
+    summary:
+      "Built and ran the internal communications program for a company of approximately 1,000 people, including editorial strategy, SharePoint intranet structure and an enterprise communications calendar adopted across departments.",
+    challenge:
+      "Departments planned communications independently, so employees received overlapping messages one week and silence the next. There was **no single view** of what was going out or where to find it.",
+    owned: [
+      "Editorial calendar and story sourcing across departments",
+      "SharePoint intranet structure, navigation and content experience",
+      "Centralized enterprise communications calendar and intake process",
+      "Leadership messaging and internal announcement support",
+    ],
+    results: [
+      "Approximately 82 internal stories published",
+      "Communications calendar adopted across departments",
+      "Estimated annual time savings of 1,468 hours",
+    ],
+    headlineResult: "Approximately 82 internal stories published and 1,468 estimated hours saved annually",
+    cover: { src: img.boardroomPresentation, alt: "Sierra Langford presenting a storytelling workshop in a boardroom" },
+    links: [
+      {
+        label: "Internal communications program overview",
+        url: "https://drive.google.com/file/d/1EmM9XFPtF7yh1e9Z7xxNV_fyIGItPzqo/view",
+      },
+      {
+        label: "2025 Communication Impact Review",
+        url: "https://docs.google.com/presentation/d/18_1JbXGvvB8fEOHvd91-VN-G-kUXP7SN/edit",
+        thumb: { src: img.impactReview, alt: "2025 internal and external communications impact review deck" },
+      },
+    ],
   },
   {
     slug: "cerecore-mentorship-program",
-    title: "CereCore Mentorship Program",
+    title: "Built a Mentorship Program Toolkit",
     organization: "CereCore, an HCA Healthcare company",
-    period: "2025 – 2026",
-    role: "Program Creator",
-    industries: ["Healthcare", "Health Technology"],
-    categories: ["Internal & Executive Communications"],
+    categories: ["Internal, Executive & Change Communications"],
     summary:
       "Built a company mentorship program from scratch, including structure, toolkit, recruitment and launch communications, and designed it to keep running without me.",
     challenge:
       "Employees wanted growth and connection across a distributed company, but there was **no structure for pairing people** or supporting mentors once they were matched.",
-    owned: [
-      "Program framework and matching structure",
-      "Mentor and mentee toolkit",
-      "Participant recruitment process",
-      "Launch communications and enrollment campaign",
-      "Mentor best practices session and materials",
-    ],
-    audiences: ["Employees", "People leaders", "Executive sponsors"],
-    deliverables: [
-      "Mentorship toolkit",
-      "Program framework documentation",
-      "Launch communication plan",
-      "Mentor best practices presentation",
-    ],
-    tools: ["SharePoint", "Microsoft Teams", "PowerPoint", "Outlook"],
+    owned: ["Program framework and matching structure", "Mentor and mentee toolkit", "Launch communications and enrollment campaign"],
     results: [
       "Program launched company wide and continued after my departure",
       "Mentor best practices session delivered to an audience of 245 plus",
     ],
     headlineResult: "A program built from scratch that outlasted my tenure",
-    tags: ["Program Design", "Culture", "Enablement"],
-    visibility: "Public",
     cover: { src: img.cerecoreMentorshipToolkitCover, alt: "CereCore Mentorship Toolkit presentation cover" },
-    gallery: [
-      { src: img.cerecoreMentorshipToolkitCover, alt: "CereCore Mentorship Toolkit presentation cover" },
-      { src: img.mentorBestPracticesSlide, alt: "Mentor best practices slide from the CereCore mentorship session" },
-      { src: img.menteeBestPracticesSlide, alt: "Mentee best practices slide from the CereCore mentorship session" },
-      { src: img.cerecoreMentorshipSlido, alt: "CereCore mentorship monthly meetup using Slido interaction" },
-      { src: img.mentorshipToolkit, alt: "Mentorship toolkit presentation" },
-      { src: img.mentorBestPractices, alt: "Sierra Langford presenting mentor best practices to a large audience" },
-      { src: img.navigatingPurpose, alt: "Navigating With Purpose mentorship schedule and plan document" },
-    ],
     links: [
       {
-        label: "View the mentorship program deck",
-        url: "https://docs.google.com/presentation/d/1ToJpBzYzcjDxL32NxYqxC64OI3Hc2ycM/edit",
+        label: "View the mentorship program toolkit",
+        url: "https://drive.google.com/file/d/1DENUTuSB7SINUmh8O-LqqDTtBk9-Qoel/view",
+        thumb: { src: img.mentorshipToolkit, alt: "CereCore mentorship toolkit presentation" },
       },
     ],
-    related: ["cerecore-internal-comms", "marketing-advocacy-group"],
   },
   {
-    slug: "enterprise-communications-calendar",
-    title: "Enterprise Communications Calendar",
-    organization: "CereCore, an HCA Healthcare company",
-    period: "2025 – 2026",
-    role: "Communications Strategist",
-    industries: ["Healthcare", "Health Technology"],
-    categories: ["Internal & Executive Communications"],
+    slug: "hca-censhare",
+    title: "Created Change Communications for a System Transition",
+    organization: "HCA Healthcare",
+    categories: ["Internal, Executive & Change Communications"],
     summary:
-      "Identified a coordination gap across departments and built a centralized enterprise communications calendar with a repeatable planning process that departments adopted.",
+      "Supported the enterprise rollout of the Censhare digital asset management platform inside a large matrixed health system, including stakeholder communications, training materials and adoption support.",
     challenge:
-      "Departments planned communications independently, so employees received overlapping messages in the same week while other weeks went quiet. Nobody had **a single view** of what was going out.",
-    owned: [
-      "Discovery interviews with each department",
-      "Calendar structure and taxonomy",
-      "Intake and planning process",
-      "Rollout, training and adoption support",
-    ],
-    audiences: ["Department leads", "HR and operations", "Executive leadership", "All employees"],
-    deliverables: [
-      "Centralized communications calendar",
-      "Repeatable planning and intake process",
-      "Governance guidance for message timing",
-    ],
-    tools: ["SharePoint", "Microsoft Teams", "Excel", "Outlook"],
+      "Thousands of digital assets and dozens of teams had to move to a new platform. Adoption depended on **communication and training, not the software**.",
+    owned: ["Stakeholder communication plans", "Articulate training module development", "Adoption and change communications"],
     results: [
-      "Adopted across departments",
-      "Estimated annual time savings of 1,468 hours (estimate)",
-      "Described by leadership as a significant enabler across teams",
+      "Supported migration of more than 5,000 digital assets",
+      "Tagged 318 assets in a single week during migration",
     ],
-    headlineResult: "Adopted across departments with an estimated 1,468 hours saved annually",
-    tags: ["Operations", "Internal Comms", "Process Design"],
-    visibility: "Public",
-    cover: { src: img.impactReview, alt: "2025 internal and external communications impact review deck" },
-    gallery: [
-      { src: img.impactReview, alt: "Title slide of the 2025 communications impact review" },
-      { src: img.internalAgenda, alt: "2026 internal meetings agenda and planning calendar" },
-    ],
+    headlineResult: "Supported migration of more than 5,000 digital assets",
+    cover: { src: img.censhareNursesVideo, alt: "Still from the Censhare platform overview sizzle reel" },
     links: [
       {
-        label: "Open communications examples",
-        url: "https://drive.google.com/drive/folders/1vPKk2Qi0LDmxD8T9JWcJ4vP8_sNjpk1R",
+        label: "Watch the Censhare sizzle reel",
+        url: "https://drive.google.com/file/d/1iYrFcsV4JYM2sWbvVheUxiDyM6wOIe0j/view",
+        thumb: { src: img.censhareNursesVideo, alt: "Censhare platform overview sizzle reel" },
       },
     ],
-    related: ["cerecore-internal-comms", "cerecore-mentorship-program"],
+  },
+  {
+    slug: "ai-enablement",
+    title: "Created AI Enablement Content",
+    organization: "CereCore and StrategyCorps",
+    categories: ["Internal, Executive & Change Communications"],
+    summary:
+      "Helped teams adopt AI in practical, role relevant ways: training colleagues on everyday tools and designing assisted workflows that removed real administrative work.",
+    challenge:
+      "**AI enthusiasm outpaced AI usefulness**. People needed permission, guardrails and concrete examples tied to their own jobs.",
+    owned: ["Serving on the AI Steering Committee", "Teaching colleagues practical AI tools", "Designing role relevant AI workflows"],
+    results: [
+      "Teams using AI in daily workflows rather than in experiments",
+      "Follow up and task capture automated across Microsoft tools and Asana",
+    ],
+    headlineResult: "Practical AI adoption across marketing and communications workflows",
+    cover: { src: img.boardroomPresentation, alt: "Sierra Langford presenting a practical communications workshop" },
+    links: [
+      {
+        label: "View the AI enablement presentation",
+        url: "https://docs.google.com/presentation/d/1PpQymdNHli_m4vkbn12TkQrXW56yWWlH/edit",
+      },
+    ],
+  },
+  {
+    slug: "marketing-advocacy-group",
+    title: "Created a 34-Person Marketing Advocacy Group",
+    organization: "CereCore, an HCA Healthcare company",
+    categories: ["Campaigns, Programs & Events"],
+    summary:
+      "Founded an employee advocacy program, recruited and coached 34 members across departments, and helped them surface and tell accurate stories from their own teams.",
+    challenge:
+      "The people closest to the work had the best stories and **the least confidence sharing them**. Marketing could not be the only voice representing a technical, credibility driven business.",
+    owned: ["Program design, recruitment and onboarding", "Coaching sessions and story sourcing prompts", "Messaging guidance and approval guardrails"],
+    results: [
+      "34 employee advocates recruited and coached",
+      "Consistent employee generated content tied to campaigns and events",
+    ],
+    headlineResult: "34 employee advocates recruited and coached across departments",
+    cover: { src: img.masterclassSession, alt: "Sierra Langford leading an internal communications masterclass" },
+    links: [
+      {
+        label: "View the marketing advocacy program deck",
+        url: "https://drive.google.com/file/d/1RKVpd8ZfYzezZM-Moh1Q8b1v597QO4HV/view",
+      },
+    ],
   },
   {
     slug: "connection-2026",
-    title: "Planned Connection 2026 Nashville Conference",
+    title: "Planned Connection 2026",
     organization: "CereCore, an HCA Healthcare company",
-    period: "2026",
-    role: "Communications and Content Lead",
-    industries: ["Healthcare", "Health Technology"],
     categories: ["Campaigns, Programs & Events"],
     summary:
       "Planned and executed the flagship company wide event for approximately 1,000 attendees in person and virtual, owning communication strategy, content, run of show, executive scripts and onsite execution.",
@@ -400,58 +310,44 @@ const rawProjects: Project[] = [
       "A distributed company across the United States and United Kingdom needed one event that actually connected people, communicated strategy clearly and **did not feel like a day of slides**.",
     owned: [
       "Communication strategy and attendee journey",
-      "Content plan and session structure",
-      "Run of show and stage direction",
+      "Content plan, run of show and stage direction",
       "Executive scripts and speaker coaching",
-      "Award video production",
-      "Co writing and acting in the mockumentary style opening film",
-      "Onsite execution and AV coordination",
+      "Award video production and opening film",
     ],
-    audiences: ["All employees", "Executive leadership", "Virtual attendees", "UK teams"],
-    deliverables: [
-      "Run of show",
-      "Executive scripts",
-      "Opening film",
-      "Award videos",
-      "Session content and stage graphics",
-      "Pre-event and post-event communications",
-    ],
-    tools: ["PowerPoint", "Adobe Premiere", "Canva", "Microsoft Teams", "Survey tooling"],
     results: [
       "Approximately 500 in person and 500 virtual attendees",
       "95 percent of respondents rated the event 4 or 5 out of 5",
       "Feedback described it as the best Connection event yet",
     ],
     headlineResult: "Approximately 1,000 attendees and 95 percent top ratings",
-    tags: ["Events", "Production", "Scriptwriting", "Executive Comms"],
-    featured: true,
-    visibility: "Public",
     cover: { src: img.connectionStage, alt: "Sierra Langford presenting on stage at Connection 2026" },
-    gallery: [
-      { src: img.connectionStage, alt: "Sierra Langford on stage at Connection 2026" },
-      { src: img.liveEvent, alt: "Live event production at a company wide conference" },
-      { src: img.companyMeeting, alt: "Sierra Langford presenting at a company meeting" },
-      { src: img.connectionOutlines, alt: "Connection 2026 run of show and session outlines" },
-    ],
     links: [
       {
-        label: "Connection 2026 Strategy and Content",
+        label: "Connection 2026 strategy and content",
         url: "https://drive.google.com/file/d/1TeXuXIKWxWUkYqXk1IgA6Uh2VQ8D1Ps5/view",
       },
       {
-        label: "Connection 2026 Event Feedback and Results",
+        label: "Connection 2026 event feedback and results",
         url: "https://drive.google.com/file/d/1oGdZiWQzjiHw8uUA0gVuU2xK6tpzj7o1/view",
       },
+      {
+        label: "Connection 2026 additional event materials",
+        url: "https://drive.google.com/file/d/1j9PaBosp7sLSd0xU7xE-iDTIZxIcfnMD/view",
+      },
+      {
+        label: "Connection 2026 run of show",
+        url: "https://drive.google.com/file/d/1SDfGWIHt9eR8BBYkOAloPhgDWNVHDTsJ/view",
+      },
+      {
+        label: "Connection 2026 executive scripts",
+        url: "https://drive.google.com/file/d/11e6J4yoztMYnX21N2HzA8cGcLnTlD-xN/view",
+      },
     ],
-    related: ["himss-2026", "cerecore-internal-comms", "veronica-survivor-story"],
   },
   {
     slug: "himss-2026",
-    title: "HIMSS 2026 Conference Interview Series",
+    title: "Produced the HIMSS 2026 Interview Series",
     organization: "CereCore, an HCA Healthcare company",
-    period: "2026",
-    role: "Field Marketing and Content Producer",
-    industries: ["Healthcare", "Health Technology"],
     categories: ["Campaigns, Programs & Events"],
     summary:
       "Represented the company at HIMSS in Las Vegas and produced a short form interview series on the conference floor with a hospital CIO, a CNO, a health technology CMO and a MEDITECH partner.",
@@ -461,352 +357,96 @@ const rawProjects: Project[] = [
       "Interview subject outreach and preparation",
       "Question development and on camera interviewing",
       "Onsite capture with phone, tripod and microphone",
-      "Client dinner coordination and booth activation support",
-      "Repurposing footage across social, newsletter and podcast content",
     ],
-    audiences: ["Hospital executives", "Clients and prospects", "Partners", "Social audiences"],
-    deliverables: [
-      "Short form interview series",
-      "Booth activation support materials",
-      "Client dinner coordination",
-      "Social clips and follow up content",
-    ],
-    tools: ["iPhone", "Lavalier microphone", "Adobe Premiere", "Descript", "LinkedIn"],
     results: [
       "Four executive interviews captured in two days",
       "Footage repurposed across social, newsletter and podcast channels",
     ],
     headlineResult: "Four executive interviews captured onsite and repurposed across every channel",
-    tags: ["Trade Show", "Video", "Field Marketing", "Healthcare IT"],
-    visibility: "Public",
     cover: { src: img.himssInterview, alt: "Sierra Langford interviewing a physician leader at HIMSS 2026" },
-    gallery: [
-      { src: img.himssInterview, alt: "Interview on the HIMSS conference floor" },
-      { src: img.himssSuki, alt: "Booth interview at HIMSS 2026" },
-      { src: img.himssMeditech, alt: "MEDITECH partner booth interview at HIMSS 2026" },
-      { src: img.himssBoothInterview, alt: "Sierra Langford interviewing a guest at the CereCore booth at HIMSS 2026" },
-      { src: img.himssInnovators, alt: "Sierra Langford with healthcare technology leaders at HIMSS 2026" },
-      { src: img.videoRig, alt: "Mobile video production rig used on the conference floor" },
-    ],
-    related: ["connection-2026", "cerecore-podcast"],
-  },
-  {
-    slug: "healthcare-customer-stories",
-    title: "Healthcare Stories and Blogs",
-    organization: "CereCore, an HCA Healthcare company",
-    period: "2025 – 2026",
-    role: "Storyteller and Case Study Lead",
-    industries: ["Healthcare", "Health Technology"],
-    categories: ["Healthcare & Technical Storytelling"],
-    summary:
-      "Interviewed hospital leaders, clients and subject matter experts to turn complex health IT implementations into clear human stories, published as case studies, blogs and feature articles used across marketing, sales and leadership communications.",
-    challenge:
-      "Implementation stories were written as technical summaries. They were **accurate and forgettable**, and they never showed the people affected by the work.",
-    owned: [
-      "Interviewing hospital leaders, clients and internal experts",
-      "Story structure and writing",
-      "Approvals with clients and legal",
-      "Adaptation for web, newsletter, social, sales and leadership use",
-    ],
-    audiences: ["Prospective hospital clients", "Current clients", "Sales teams", "Employees", "Leadership"],
-    deliverables: [
-      "18 healthcare case studies",
-      "More than 82 published stories and blogs",
-      "Sales-ready one pagers and excerpts",
-      "Social and newsletter adaptations",
-    ],
-    tools: ["HubSpot", "SharePoint", "Word", "Canva"],
-    results: [
-      "18 healthcare case studies produced",
-      "More than 82 published stories",
-      "Stories reused across sales conversations, newsletters and leadership messaging",
-    ],
-    headlineResult: "18 case studies and more than 82 published stories",
-    tags: ["Case Studies", "Blogs", "Interviewing", "Healthcare IT", "Writing"],
-    featured: true,
-    visibility: "Public",
-    cover: { src: img.jamesWellmanInterview, alt: "Sierra Langford interviewing a hospital CIO for a healthcare customer story" },
-    gallery: [
-      { src: img.regionalCaseStudy, alt: "Regional Medical Center Epic go-live story with the project team" },
-      { src: img.lehighCaseStudy, alt: "Lehigh Regional Medical Center EHR transformation story" },
-      { src: img.schneckCaseStudy, alt: "Schneck Medical Center case study cover and results" },
-      { src: img.appRationalizationStory, alt: "Published article on application rationalization in hospitals" },
-    ],
     links: [
       {
-        label: "Regional Medical Center Epic go live",
-        url: "https://drive.google.com/file/d/1OTyBKQceCCv1Dpp8dxUBZ2uK6VJTQ8eC/view",
+        label: "HIMSS 2026 interview series folder",
+        url: "https://drive.google.com/drive/folders/1p_38o4DmlIJqGGBytPPoF_IId4JLQVRX",
+        thumb: { src: img.himssInnovators, alt: "Sierra Langford with healthcare technology leaders at HIMSS 2026" },
       },
       {
-        label: "Lehigh Regional EHR transformation",
-        url: "https://drive.google.com/file/d/13UBqFYqPYLevWCY32HYCWYZysbL3t3sS/view",
-      },
-      {
-        label: "Schneck Medical Center story",
-        url: "https://docs.google.com/document/d/1OmZxwCl2-X8nQjA7LkxY2gdTf4-BwvNI/edit",
-      },
-      {
-        label: "App rationalization feature article",
-        url: "https://cerecore.net/how-hospitals-are-using-app-rationalization-to-cut-costs-fast",
+        label: "HIMSS 2026 interview clip",
+        url: "https://drive.google.com/file/d/1ROQmr15cFuUTRqwMDX-_tUT2d5nZ-N2M/view",
+        thumb: { src: img.himssMeditech, alt: "MEDITECH partner booth interview at HIMSS 2026" },
       },
     ],
-    visualNote:
-      "Published case studies and interview source documents are collected in the shared example library.",
-    related: ["cerecore-client-newsletter", "cerecore-internal-comms", "veronica-survivor-story"],
-  },
-
-  {
-    slug: "veronica-survivor-story",
-    title: "Veronica's Survivor Story",
-    organization: "CereCore, an HCA Healthcare company",
-    period: "2025",
-    role: "Concept, Interviewer and Producer",
-    industries: ["Healthcare"],
-    categories: ["Healthcare & Technical Storytelling"],
-    summary:
-      "Interviewed a colleague who nearly died and produced a company wide video that connected employees' daily technology work to patient survival.",
-    challenge:
-      "Employees who support hospital systems **rarely see a patient**. The connection between their work and clinical outcomes was abstract.",
-    owned: [
-      "Story concept and approach",
-      "Interview with the subject",
-      "Video production and edit direction",
-      "Rollout as a company wide moment",
-    ],
-    audiences: ["All employees", "Leadership"],
-    deliverables: ["Documentary style video", "Company wide screening and follow up communications"],
-    tools: ["Adobe Premiere", "Canon", "Microsoft Teams"],
-    results: [
-      "Shown company wide",
-      "Employees reported finally understanding why their work mattered",
-    ],
-    headlineResult: "A company wide story that connected technical work to patient survival",
-    tags: ["Video", "Storytelling", "Internal Comms"],
-    visibility: "Public",
-    cover: { src: img.veronica, alt: "Story subject with her son making heart shapes with their hands" },
-    links: [
-      {
-        label: "Watch the published story",
-        url: "https://www.linkedin.com/feed/update/urn:li:activity:7319019919994458115/",
-      },
-    ],
-    visualNote: "Published with subject approval.",
-    related: ["connection-2026", "healthcare-customer-stories"],
-  },
-  {
-    slug: "hca-censhare",
-    title: "Censhare Change Communications",
-    organization: "HCA Healthcare",
-    period: "June 2024 – March 2025",
-    role: "Marketing Operations",
-    industries: ["Healthcare"],
-    categories: ["Internal & Executive Communications"],
-    summary:
-      "Supported the enterprise rollout of the Censhare digital asset management platform inside a large matrixed health system, including stakeholder communications, training materials and adoption support.",
-    challenge:
-      "Thousands of digital assets and dozens of teams had to move to a new platform. Adoption depended on **communication and training, not the software**.",
-    owned: [
-      "Stakeholder communication plans",
-      "Articulate training module development",
-      "Sizzle reel overview video",
-      "Adoption and change communications",
-      "Asset migration and tagging support",
-    ],
-    audiences: ["Marketing teams", "Agency partners", "Department stakeholders", "Platform administrators"],
-    deliverables: [
-      "Stakeholder communication plan",
-      "Articulate training modules",
-      "Platform overview sizzle reel",
-      "Migration support documentation",
-    ],
-    tools: ["Censhare", "Articulate", "Adobe Premiere", "SharePoint", "Workfront"],
-    results: [
-      "Supported migration of more than 5,000 digital assets",
-      "Tagged 318 assets in a single week during migration",
-      "Training materials used across the rollout",
-    ],
-    headlineResult: "Supported migration of more than 5,000 digital assets",
-    tags: ["Change Management", "Enablement", "DAM", "Training"],
-    featured: true,
-    visibility: "Public",
-    cover: { src: img.censhareNursesVideo, alt: "Still from the Censhare platform overview sizzle reel" },
-    links: [
-      {
-        label: "Watch the Censhare sizzle reel",
-        url: "https://drive.google.com/file/d/1iYrFcsV4JYM2sWbvVheUxiDyM6wOIe0j/view",
-      },
-    ],
-    visualNote:
-      "Training modules, the sizzle reel and migration documentation are collected in the shared example library.",
-    related: ["ai-enablement", "cerecore-internal-comms"],
   },
   {
     slug: "monetizeiq-product-storytelling",
-    title: "MonetizeIQ AI Product Storytelling",
+    title: "Shaped MonetizeIQ AI Product Storytelling",
     organization: "StrategyCorps",
-    period: "May 2026 – August 2026",
-    role: "Field Marketing Lead",
-    industries: ["Financial Services", "AI and Emerging Technology"],
-    categories: ["B2B Client & Audience Marketing"],
+    categories: ["Campaigns, Programs & Events"],
     summary:
       "Shaped how the market would understand MonetizeIQ, an AI platform for banks and credit unions, from hero statement and product narrative through voice guidance and video pitch concepts.",
     challenge:
       "The product's AI capability was real and technical. Bankers needed to hear **business value, not model architecture**, within the first sentence.",
-    owned: [
-      "Hero statement and core product narrative",
-      "Voice and messaging guidance",
-      "Video pitch concepts and short script",
-      "Translation of technical AI capability into business value",
-      "Field marketing playbooks, templates and repeatable systems",
-    ],
-    audiences: ["Bank and credit union executives", "Sales team", "Prospects", "Partners"],
-    deliverables: [
-      "Product narrative document",
-      "Hero messaging and voice guidance",
-      "Video script",
-      "Presentation and roadshow slides",
-      "Field marketing playbooks",
-    ],
-    tools: ["Notion", "Asana", "Claude", "Canva", "PowerPoint"],
+    owned: ["Hero statement and core product narrative", "Voice and messaging guidance", "Video pitch concepts and short script"],
     results: [
       "A single product narrative adopted across sales, events and marketing",
       "Repeatable field marketing playbooks created for the launch",
     ],
     headlineResult: "One product narrative adopted across sales, events and marketing",
-    tags: ["AI", "Positioning", "Messaging", "Fintech", "Product Marketing"],
-    featured: true,
-    visibility: "Public",
     cover: { src: img.monetizeiqWebinar, alt: "MonetizeIQ webinar graphic featuring banking executives" },
-    gallery: [
-      {
-        src: img.monetizeiqWebinar,
-        alt: "MonetizeIQ webinar promotion graphic featuring BankPlus and StrategyCorps speakers",
-      },
-      { src: img.strategycorpsTeamPage, alt: "StrategyCorps team page featuring Sierra Langford as Field Marketing Lead" },
-    ],
     links: [
       {
-        label: "Read the webinar campaign: From Signal to Personalized Campaign",
-        url: "https://docs.google.com/document/d/145zDc-PgsZoaOLu6RsK9VYWdSeZIbDjA/edit",
-      },
-      {
-        label: "Read the webinar moderator script",
-        url: "https://docs.google.com/document/d/1yc8L3tSjASZ19awbH14YBejBuas4C79q/edit",
-      },
-      {
-        label: "Read the product story and video script",
+        label: "MonetizeIQ product story and video script",
         url: "https://docs.google.com/document/d/1LluIc2Pm4BpC8byMsg5TVERrQtI6iqcQYxX5bpBcXD0/edit",
       },
       {
-        label: "View the StrategyCorps brand refresh overview",
-        url: "https://drive.google.com/file/d/177rIn_IO9K94fpUeydYozrwJBw-vlDiG/view",
+        label: "MonetizeIQ webinar campaign",
+        url: "https://docs.google.com/document/d/145zDc-PgsZoaOLu6RsK9VYWdSeZIbDjA/edit",
       },
     ],
-    related: ["monetizeiq-roadshow", "ai-enablement", "strategycorps-leadership-series"],
   },
   {
     slug: "monetizeiq-roadshow",
-    title: "MonetizeIQ Roadshow and Executive Events",
+    title: "Created MonetizeIQ Roadshow Content",
     organization: "StrategyCorps",
-    period: "May 2026 – August 2026",
-    role: "Field Marketing Lead",
-    industries: ["Financial Services", "AI and Emerging Technology"],
     categories: ["Campaigns, Programs & Events"],
     summary:
       "Built the field marketing foundation for an AI product launch: conference activations, roadshows, executive dinners, webinars and advisory board concepts, all supported by repeatable briefs and SOPs.",
     challenge:
       "A new AI product needed **in-person credibility** with conservative buyers, and the team needed a system they could repeat without rebuilding every event from scratch.",
-    owned: [
-      "Roadshow concepts and city selection support",
-      "Executive dinner concepts and experience design",
-      "Conference and booth activations",
-      "Webinar and Client Advisory Board concepts",
-      "Event briefs, SOPs, templates and workflows",
-      "Attendee communications and follow up",
-    ],
-    audiences: ["Bank and credit union executives", "Prospects", "Clients", "Sales team"],
-    deliverables: [
-      "Roadshows in Indianapolis (Dallara Experience Hub), Chicago (LondonHouse) and Los Angeles (Aquarium of the Pacific)",
-      "Executive dinners in Washington DC (Top of the Town), New York City (Penthouse 45) and Boston (Fenway Park)",
-      "ABA Bank Marketing Conference strategy, booth layout and live demo concept",
-      "VIP YETI Austin experience with personalization and shopping credit",
-      "Account based marketing targeting and attendee communications",
-    ],
-    tools: ["Asana", "Notion", "HubSpot", "Canva", "PowerPoint"],
+    owned: ["Roadshow concepts and city selection support", "Executive dinner concepts and experience design", "Event briefs, SOPs, templates and workflows"],
     results: [
       "A repeatable event system with briefs, SOPs and templates",
       "Programs refined using direct prospect feedback",
     ],
     headlineResult: "A repeatable national event system built during a product launch",
-    tags: ["Field Marketing", "Events", "ABM", "Experience Design"],
-    visibility: "Public",
     cover: { src: img.strategycorpsRoadshowCities, alt: "StrategyCorps MonetizeIQ roadshow schedule across 16 cities" },
-    gallery: [
-      { src: img.strategycorpsRoadshowCities, alt: "StrategyCorps MonetizeIQ roadshow schedule across 16 cities" },
-      { src: img.liveEvent, alt: "Guests at a MonetizeIQ executive event" },
-    ],
     links: [
       {
-        label: "Read the ABA Bank Marketing and YETI event campaign",
-        url: "https://docs.google.com/document/d/1ZL96tEdb-p2n9T07zde_EdUpa4Xrxirl/edit",
+        label: "MonetizeIQ roadshow overview",
+        url: "https://drive.google.com/file/d/1WopDvTdRGugSwfiytE2IdonG038qi5Hd/view",
       },
       {
-        label: "View the YETI event landing page",
-        url: "https://www2.strategycorps.com/l/146821/2026-07-14/fshhky",
+        label: "MonetizeIQ roadshow presentation",
+        url: "https://docs.google.com/presentation/d/1Z-bNpUHAEGenJvcTYnZ8R4hcrG4DVuIs/edit",
       },
       {
-        label: "Open the ABA and YETI event brief deck",
-        url: "https://drive.google.com/file/d/12Ii7DZXHM5uVvNWjhwRLWmyhgjqf5MfG/view",
-      },
-      {
-        label: "Open the field marketing playbook",
-        url: "https://drive.google.com/file/d/1S2dzEvIKrst4avOPTPfM06lQUYIlKxmP/view",
-      },
-      {
-        label: "Read the executive dinners event brief",
-        url: "https://docs.google.com/document/d/10Nm3hh9uvpX9S9pZl_8EyTz5IcLnMnto/edit",
-      },
-      {
-        label: "View the executive dinner format refresh",
-        url: "https://drive.google.com/file/d/1IWQ7U0BKZ5mKjNYW2cd7Cla81VL0lLL6/view",
-      },
-      {
-        label: "Open the Future Branches event materials",
-        url: "https://drive.google.com/drive/folders/15-nqNDZc6u5JBhYjVF6Vtfgv9j1yeBni",
-      },
-      {
-        label: "Open the field marketing and events library",
-        url: "https://drive.google.com/drive/folders/18_KRSaVno8giwpuOWfNI-5hIOVj54MPI",
+        label: "MonetizeIQ roadshow supporting materials",
+        url: "https://drive.google.com/file/d/1f4ij0QgOQYxfj-V-oo2ErpowoO7qn6UF/view",
       },
     ],
-    visualNote: SAMPLE_NOTE,
-    related: ["monetizeiq-product-storytelling", "himss-2026"],
   },
   {
     slug: "strategycorps-leadership-series",
-    title: "25th Anniversary Leadership Interview Series",
+    title: "Produced a 25th Anniversary Leadership Interview Series",
     organization: "StrategyCorps",
-    period: "2026",
-    role: "Creator and Interviewer",
-    industries: ["Financial Services"],
-    categories: ["Podcast, Video & Content Production"],
+    categories: ["Podcast, Video & Interviews"],
     summary:
       "Created a leadership interview series with 11 executives to capture company history and perspective, and turned it into reusable brand content.",
     challenge:
       "Twenty five years of company history lived in the memories of a handful of leaders and had **never been captured** in a usable form.",
-    owned: [
-      "Storytelling framework",
-      "Interview question development",
-      "Interviews with 11 executives",
-      "Editing into reusable brand content",
-    ],
-    audiences: ["Clients", "Prospects", "Employees", "Partners"],
-    deliverables: ["Interview framework", "Question sets", "Edited interview content", "Anniversary campaign assets"],
-    tools: ["Notion", "Descript", "Canva"],
+    owned: ["Storytelling framework", "Interview question development", "Interviews with 11 executives"],
     results: ["11 executive interviews captured", "Reusable brand and anniversary content library"],
     headlineResult: "11 executive interviews turned into a reusable content library",
-    tags: ["Executive Comms", "Interviewing", "Brand"],
-    visibility: "Public",
     cover: { src: img.videoRig, alt: "Video interview rig set up for a leadership interview series" },
     links: [
       {
@@ -814,147 +454,62 @@ const rawProjects: Project[] = [
         url: "https://docs.google.com/document/d/1ZuAfEmrjQHvbHvLQ5gEw1rscaiuLkhrz/edit",
       },
     ],
-    visualNote: SAMPLE_NOTE,
-    related: ["monetizeiq-product-storytelling"],
   },
   {
-    slug: "ai-enablement",
-    title: "AI Enablement and Workflow Design",
-    organization: "CereCore and StrategyCorps",
-    period: "2025 – 2026",
-    role: "AI Steering Committee Member and Practitioner",
-    industries: ["Healthcare", "Financial Services", "AI and Emerging Technology"],
-    categories: ["Internal & Executive Communications"],
+    slug: "cerecore-podcast",
+    title: "Produced The CereCore Podcast",
+    organization: "CereCore, an HCA Healthcare company",
+    categories: ["Podcast, Video & Interviews"],
     summary:
-      "Helped teams adopt AI in practical, role relevant ways: training colleagues on everyday tools and designing assisted workflows that removed real administrative work.",
+      "Built and produced a healthcare IT thought leadership podcast end to end, from show concept and guest strategy through publishing and promotion.",
     challenge:
-      "**AI enthusiasm outpaced AI usefulness**. People needed permission, guardrails and concrete examples tied to their own jobs, not another webinar about the future of work.",
+      "Healthcare IT leaders are surrounded by vendor noise. The company needed a **genuinely useful conversation** with hospital and health technology leaders that did not sound like a sales pitch.",
     owned: [
-      "Serving on the AI Steering Committee",
-      "Teaching colleagues to use ChatGPT, Gemini, Microsoft Copilot, Notion AI, Claude and Perplexity",
-      "Designing role relevant AI workflows",
-      "Building an AI assisted follow up workflow connecting Outlook, Teams, SharePoint and Office to Asana",
-      "Building repeatable marketing systems in Notion, Asana and Claude",
+      "Show concept, positioning and episode architecture",
+      "Guest strategy, outreach systems and scheduling",
+      "Recording coordination and production direction",
+      "Publishing, show notes and promotion across channels",
     ],
-    audiences: ["Marketing teams", "Department leads", "Executives", "Colleagues across functions"],
-    deliverables: [
-      "Enablement sessions and practical guides",
-      "AI assisted follow up workflow",
-      "Repeatable marketing system templates",
-    ],
-    tools: ["ChatGPT", "Claude", "Microsoft Copilot", "Gemini", "Perplexity", "Notion AI", "Asana"],
     results: [
-      "Teams using AI in daily workflows rather than in experiments",
-      "Follow up and task capture automated across Microsoft tools and Asana",
+      "22,973 views across 12 episodes",
+      "Approximately 37 healthcare and health technology leaders featured",
+      "Gold Stevie Award, Technology Shows category",
     ],
-    headlineResult: "Practical AI adoption across marketing and communications workflows",
-    tags: ["AI Enablement", "Workflow Design", "Training", "Systems"],
-    visibility: "Public",
-    cover: { src: img.boardroomPresentation, alt: "Sierra Langford presenting a practical communications workshop" },
+    headlineResult: "22,973 views across 12 episodes and a Gold Stevie Award",
+    cover: { src: img.stevieAward, alt: "The American Business Awards 2026 Gold Stevie Award winner graphic for The CereCore Podcast" },
     links: [
-      {
-        label: "Open AI and workflow examples",
-        url: "https://drive.google.com/drive/folders/18_KRSaVno8giwpuOWfNI-5hIOVj54MPI",
-      },
+      { label: "Listen to the podcast", url: "https://podcast.cerecore.net/", thumb: { src: img.podcastArtwork, alt: "The CereCore Podcast cover artwork" } },
     ],
-    visualNote: SAMPLE_NOTE,
-    related: ["monetizeiq-product-storytelling", "hca-censhare"],
   },
   {
-    slug: "cyberprotex",
-    title: "CyberProtex Cybersecurity Communications",
-    organization: "CyberProtex (Strive Society client)",
-    period: "June 2023 – January 2024",
-    role: "Sales and Marketing Strategist",
-    industries: ["Cybersecurity", "Government", "Technology"],
-    categories: ["B2B Client & Audience Marketing"],
+    slug: "realscreen-breaking-in",
+    title: "Created the Breaking In Campaign Concept",
+    organization: "Real Screen Summit, New Orleans",
+    categories: ["Podcast, Video & Interviews"],
     summary:
-      "Led marketing for a cybersecurity training and managed security services firm, from brand positioning and go to market content through lead generation and signed contracts.",
+      "Pitched an original television concept called Breaking In to Netflix and Hulu executives at the Real Screen Summit in New Orleans, backed by a pitch deck and a sizzle reel I wrote, shot and edited.",
     challenge:
-      "Highly technical certification and managed security offerings were being sold to buyers who needed **plain language, proof and trust** before they would take a meeting.",
-    owned: [
-      "Brand positioning and messaging",
-      "Go to market content",
-      "Ideal customer profile and account based marketing frameworks",
-      "Lead generation through signed contracts",
-      "Email campaigns and social content",
-      "Lunch and Learn webinars and technical demos",
-      "Website maintenance",
+      "The pitch had to hold its own in a room of working producers, which meant the concept and the sizzle reel had to be **genuinely watchable**.",
+    owned: ["Show concept and pitch deck", "Sizzle reel edit in Adobe Premiere", "Live pitch delivery"],
+    results: ["Pitched directly to Netflix and Hulu executives", "Featured in published coverage of the summit"],
+    headlineResult: "Pitched an original show concept to Netflix and Hulu executives",
+    links: [
+      { label: "Watch the sizzle reel", url: "https://youtu.be/Seat0OVm6D4" },
+      { label: "View the Breaking In pitch deck", url: "https://drive.google.com/file/d/1nK-7mzbKjdzkfcNTA1twOFkS1wNLhKBM/view" },
     ],
-    audiences: [
-      "Enterprise security buyers",
-      "Government and defense contacts",
-      "Certification students",
-      "Partners connected to NASA work",
-    ],
-    deliverables: [
-      "Positioning and messaging framework",
-      "Email campaigns and nurture sequences",
-      "Webinar and Lunch and Learn programs",
-      "Social content and website updates",
-      "CISSP and Security Plus program marketing",
-    ],
-    tools: ["WordPress", "Mailchimp", "LinkedIn", "Zoom", "Canva"],
-    results: [
-      "96 percent certification exam pass rate supported by program marketing and enablement",
-      "Pipeline managed from lead generation through signed contracts",
-    ],
-    headlineResult: "96 percent certification exam pass rate and pipeline owned to signed contracts",
-    tags: ["Cybersecurity", "ABM", "Demand Generation", "Webinars"],
-    visibility: "Public",
-    links: [{ label: "Visit the CyberProtex site", url: "https://www.cyberprotex.com/" }],
-    cover: {
-      src: img.cyberprotexBootcamp,
-      alt: "CyberProtex CISSP Exam Prep Bootcamp promotional graphic with instructor headshot",
-    },
-    related: ["strive-society", "digital-motif"],
   },
   {
     slug: "strive-society",
-    title: "Strive Society Creative",
+    title: "Founded Strive Society Creative",
     organization: "Strive Society",
-    period: "August 2017 – Present",
-    role: "Founder and Creative Marketing Partner",
-    industries: [
-      "Healthcare",
-      "Cybersecurity",
-      "Technology",
-      "Real Estate",
-      "Retail",
-      "Hospitality",
-      "Professional Services",
-    ],
-    categories: ["Brand, Social & Entrepreneurship"],
+    categories: ["Strive Society Client Work"],
     summary:
       "Founded and still run a creative marketing practice with 16 long term client partnerships across healthcare, cybersecurity, technology, real estate, retail, hospitality and professional services.",
     challenge:
       "Small and mid sized organizations rarely need an agency retainer. They need **one strategic partner who can think, write, shoot and ship**.",
-    owned: [
-      "Prospecting, pitching and closing accounts independently",
-      "Marketing strategy and go to market plans",
-      "Ideal customer profiles and account based campaigns",
-      "Websites, email campaigns, SEO content and social media",
-      "Photography, video and podcast production",
-      "Webinars and events",
-      "Directing a team of four creatives",
-    ],
-    audiences: ["Small and mid sized business owners", "Executives", "Local and regional customers"],
-    deliverables: [
-      "Brand and go to market strategy",
-      "Websites and content systems",
-      "Email and social programs",
-      "Photography and video libraries",
-      "Podcasts, webinars and events",
-    ],
-    tools: ["Squarespace", "WordPress", "Mailchimp", "HubSpot", "Adobe Creative Suite", "Canon R5 and R10"],
-    results: [
-      "16 long term client partnerships",
-      "A practice sustained alongside full time roles since 2017",
-      "A team of four creatives directed on client work",
-    ],
+    owned: ["Prospecting, pitching and closing accounts independently", "Marketing strategy and go to market plans", "Directing a team of four creatives"],
+    results: ["16 long term client partnerships", "A practice sustained alongside full time roles since 2017"],
     headlineResult: "16 long term client partnerships built since 2017",
-    tags: ["Entrepreneurship", "Agency", "Brand", "Photography"],
-    visibility: "Public",
     cover: { src: img.brandBanner, alt: "Marketing and brand storytelling since 2017 banner" },
     links: [
       {
@@ -971,72 +526,93 @@ const rawProjects: Project[] = [
         url: "https://drive.google.com/drive/folders/10PoINBpU3fUhLH5d6kowvAprFkK0KdjU",
       },
     ],
-    related: ["cyberprotex", "digital-motif", "photography"],
   },
   {
-    slug: "digital-motif",
-    title: "Digital Motif Client Portfolio",
-    organization: "Digital Motif Marketing",
-    period: "January 2024 – June 2024",
-    role: "Marketing Communications Manager",
-    industries: ["Retail", "Hospitality", "Real Estate", "Food and Beverage"],
-    categories: ["Brand, Social & Entrepreneurship"],
-    summary:
-      "Managed strategy and content for 13 client accounts and 16 social channels supporting approximately 225,000 combined followers, while directing photo and video shoots.",
-    challenge:
-      "Thirteen very different local brands needed distinct voices, consistent output and content good enough to **compete with national advertising budgets**.",
-    owned: [
-      "Content strategy for 13 accounts",
-      "Management of 16 social channels",
-      "Photo and video shoot direction",
-      "Campaign planning and reporting",
-    ],
-    audiences: ["Local and regional consumers", "Restaurant and retail customers", "Business owners"],
-    deliverables: [
-      "Monthly content calendars",
-      "Photography and video libraries",
-      "Social campaigns and community management",
-    ],
-    tools: ["Later", "Meta Business Suite", "Canon", "Lightroom", "Canva"],
-    results: [
-      "Approximately 225,000 combined followers supported",
-      "16 social channels managed across 13 accounts",
-    ],
-    headlineResult: "Approximately 225,000 combined followers across 16 managed channels",
-    tags: ["Social Media", "Content", "Photography", "Local Brands"],
-    visibility: "Archive only",
-    cover: { src: img.photographyCanon, alt: "Sierra Langford directing photography and social content" },
+    slug: "tammie-osborne-video",
+    title: "Created Video Content for Tammie Osborne",
+    organization: "Strive Society client",
+    categories: ["Strive Society Client Work"],
+    summary: "Produced video content for Strive Society client Tammie Osborne.",
+    challenge: "",
+    owned: [],
+    results: [],
+    headlineResult: "",
     links: [
       {
-        label: "Open client campaign examples",
-        url: "https://drive.google.com/drive/folders/1vPKk2Qi0LDmxD8T9JWcJ4vP8_sNjpk1R",
+        label: "View the video on LinkedIn",
+        url: "https://www.linkedin.com/feed/update/urn:li:activity:7503872548749680641/",
       },
     ],
-    visualNote:
-      "Former client work. Client examples included Ancient Lore Village, Alewine Pottery, Crafty Bastard Brewery, Smash City Burger, Wagon Wheel Knoxville, Brentwood Jewelry, Roxana's Hair, Knox Brewsters, Elrod Laskey Group, Salsarita's East Tennessee, Advantage Shutters, CyberProtex and Rafael Custom Jewelry. Examples are collected in the shared example library.",
-    related: ["strive-society", "photography"],
+  },
+  {
+    slug: "roxys-hair-salon",
+    title: "Built a Website for Roxy's Hair Salon",
+    organization: "Strive Society client",
+    categories: ["Strive Society Client Work"],
+    summary: "Built the website for Strive Society client Roxy's Hair Salon.",
+    challenge: "",
+    owned: [],
+    results: [],
+    headlineResult: "",
+    links: [{ label: "Visit the Roxy's Hair Salon website", url: "https://roxyshair.netlify.app/" }],
+  },
+  {
+    slug: "salsaritas-social",
+    title: "Created Social Content for Salsarita's East Tennessee",
+    organization: "Strive Society client",
+    categories: ["Strive Society Client Work"],
+    summary: "Created social content for Strive Society client Salsarita's East Tennessee.",
+    challenge: "",
+    owned: [],
+    results: [],
+    headlineResult: "",
+    links: [{ label: "View Salsarita's East Tennessee on Instagram", url: "https://www.instagram.com/salsaritaseasttn/" }],
+  },
+  {
+    slug: "brentwood-jewelry-social",
+    title: "Created Social Content for Brentwood Jewelry",
+    organization: "Strive Society client",
+    categories: ["Strive Society Client Work"],
+    summary: "Created social content for Strive Society client Brentwood Jewelry.",
+    challenge: "",
+    owned: [],
+    results: [],
+    headlineResult: "",
+    links: [{ label: "View Brentwood Jewelry on Instagram", url: "https://www.instagram.com/brentwoodjewelry/" }],
+  },
+  {
+    slug: "cyberprotex",
+    title: "Developed Cybersecurity Marketing Content",
+    organization: "CyberProtex, a Strive Society client",
+    categories: ["Strive Society Client Work"],
+    summary:
+      "Led marketing for a cybersecurity training and managed security services firm, from brand positioning and go to market content through lead generation and signed contracts.",
+    challenge:
+      "Highly technical certification and managed security offerings were being sold to buyers who needed **plain language, proof and trust** before they would take a meeting.",
+    owned: ["Brand positioning and messaging", "Go to market content", "Email campaigns and social content"],
+    results: ["96 percent certification exam pass rate supported by program marketing and enablement"],
+    headlineResult: "96 percent certification exam pass rate and pipeline owned to signed contracts",
+    cover: { src: img.cyberprotexBootcamp, alt: "CyberProtex CISSP Exam Prep Bootcamp promotional graphic" },
+    links: [
+      { label: "Visit the CyberProtex site", url: "https://www.cyberprotex.com/" },
+      {
+        label: "CyberProtex supporting source material",
+        url: "https://drive.google.com/drive/folders/1rkqWpRqggmlWc7IDlV814-aKKRi1ujzX",
+      },
+    ],
   },
   {
     slug: "national-panhellenic-conference",
-    title: "National Panhellenic Conference Creative Design",
+    title: "Led Creative Design for the National Panhellenic Conference",
     organization: "National Panhellenic Conference",
-    period: "August 2021 – August 2022",
-    role: "Creative Designer",
-    industries: ["Nonprofit", "Education"],
-    categories: ["Brand, Social & Entrepreneurship"],
+    categories: ["Brand, Creative & Entrepreneurship"],
     summary:
       "Supported marketing strategies and communications for a national organization, with visual communication work focused on alumni and community connection.",
     challenge:
       "A national membership organization needed communications that **felt personal** to local chapters and alumni.",
     owned: ["Visual design support", "Communications materials", "Community oriented content"],
-    audiences: ["Members", "Alumni", "Chapter leaders"],
-    deliverables: ["Design assets", "Communication materials", "Community campaigns"],
-    tools: ["Adobe Creative Suite", "Canva"],
     results: ["Strengthened alumni and community connection through consistent visual communication"],
     headlineResult: "Communications and design supporting national alumni engagement",
-    tags: ["Design", "Community", "Nonprofit"],
-    archive: true,
-    visibility: "Archive only",
     cover: { src: img.brandBanner, alt: "Creative marketing and community communications portfolio artwork" },
     links: [
       {
@@ -1044,152 +620,49 @@ const rawProjects: Project[] = [
         url: "https://drive.google.com/drive/folders/1vPKk2Qi0LDmxD8T9JWcJ4vP8_sNjpk1R",
       },
     ],
-    visualNote: SAMPLE_NOTE,
-    related: ["strive-society"],
   },
   {
     slug: "bliss-box",
-    title: "Bliss Box",
+    title: "Created the Bliss Box Brand Concept",
     organization: "Williamson County Entrepreneurship and Innovation Campus",
-    period: "2019 – 2021",
-    role: "Founder",
-    industries: ["Mental Health", "Consumer"],
-    categories: ["Brand, Social & Entrepreneurship"],
+    categories: ["Brand, Creative & Entrepreneurship"],
     summary:
       "Created a mental health wellness care package with coping tools for anxiety and stress, funded and mentored through a county entrepreneurship program.",
     challenge:
       "Students and patients dealing with anxiety were given advice but **rarely given anything tangible** to use in the moment.",
-    owned: [
-      "Product concept and contents",
-      "Branding and packaging",
-      "Funding pitch and mentorship program participation",
-      "Distribution to a therapy practice",
-      "Public speaking in Williamson County schools",
-    ],
-    audiences: ["Students", "Therapy practice clients", "School communities"],
-    deliverables: ["Care package product", "Brand identity", "School speaking program"],
-    tools: ["Adobe Illustrator", "Canva"],
+    owned: ["Product concept and contents", "Branding and packaging", "Funding pitch and mentorship program participation"],
     results: [
       "Approximately 80 care packages created and distributed to a therapy practice",
       "Spoke at Williamson County schools on mental health, resilience and entrepreneurship",
     ],
     headlineResult: "Approximately 80 care packages distributed and school speaking engagements",
-    tags: ["Entrepreneurship", "Mental Health", "Product", "Speaking"],
-    visibility: "Public",
-    cover: { src: img.navigatingPurpose, alt: "Creative planning materials representing Sierra's early program work" },
+    cover: { src: img.navigatingPurpose, alt: "Bliss Box brand concept planning materials" },
     links: [
       {
-        label: "Open early creative examples",
-        url: "https://drive.google.com/drive/folders/1vPKk2Qi0LDmxD8T9JWcJ4vP8_sNjpk1R",
+        label: "View the Bliss Box brand deck",
+        url: "https://docs.google.com/presentation/d/1IOaw-Gvb4Z3nai9PtVicuHTzlcgVTAA-1hap3rB4wM4/edit",
       },
-    ],
-    related: [],
-  },
-  {
-    slug: "realscreen-breaking-in",
-    title: "Real Screen Summit and Breaking In",
-    organization: "Real Screen Summit, New Orleans",
-    period: "2024",
-    role: "Creator and Editor",
-    industries: ["Entertainment", "Media"],
-    categories: ["Brand, Social & Entrepreneurship"],
-    summary:
-      "Pitched an original television concept called Breaking In to Netflix and Hulu executives at the Real Screen Summit in New Orleans, backed by a pitch deck and a sizzle reel I wrote, shot and edited.",
-    challenge:
-      "The pitch had to hold its own in a room of working producers, which meant the concept and the sizzle reel had to be **genuinely watchable**.",
-    owned: ["Show concept", "Pitch deck", "Sizzle reel edit in Adobe Premiere", "Live pitch delivery"],
-    audiences: ["Netflix and Hulu executives", "Industry producers"],
-    deliverables: ["Pitch deck", "Sizzle reel", "Live pitch"],
-    tools: ["Adobe Premiere", "Keynote"],
-    results: ["Pitched directly to Netflix and Hulu executives", "Featured in published coverage of the summit"],
-    headlineResult: "Pitched an original show concept to Netflix and Hulu executives",
-    tags: ["Pitching", "Video", "Entertainment", "Storytelling"],
-    visibility: "Public",
-    cover: { src: img.videoRig, alt: "Video production setup representing Sierra's pitch and editing work" },
-    links: [
-      { label: "Watch the video", url: "https://youtu.be/Seat0OVm6D4" },
       {
-        label: "Read the article",
-        url: "https://jem.utk.edu/2024/03/05/students-attend-realscreen-summit-2024-in-new-orleans",
+        label: "Read the Bliss Box brand concept document",
+        url: "https://docs.google.com/document/d/1PuJYefD7KszZXWDbF_fhJbI6DR6CzGO9_1e6XrRf-uc/edit",
       },
     ],
-    related: ["bliss-box"],
   },
   {
     slug: "photography",
     title: "Professional Brand and Portrait Photography",
     organization: "Sierra Langford Photography",
-    period: "2017 – Present",
-    role: "Photographer",
-    industries: ["Retail", "Hospitality", "Healthcare", "Professional Services"],
-    categories: ["Brand, Social & Entrepreneurship"],
+    categories: ["Brand, Creative & Entrepreneurship"],
     summary: "Brand and portrait photography.",
     challenge: "",
     owned: [],
-    audiences: [],
-    deliverables: [],
-    tools: [],
     results: [],
-    headlineResult: "Brand and portrait photography.",
-    tags: ["Photography"],
-    visibility: "Public",
-    minimal: true,
+    headlineResult: "",
+    cover: { src: img.photographyCanon, alt: "Sierra Langford holding her camera" },
     links: [
       {
         label: "Visit my photography website",
         url: "https://sierralangfordphotography.mypixieset.com/",
-      },
-    ],
-  },
-  {
-    slug: "hca-email-performance",
-    title: "HCA Email Performance",
-    organization: "",
-    period: "",
-    role: "",
-    industries: [],
-    categories: ["B2B Client & Audience Marketing"],
-    summary: "",
-    challenge: "",
-    owned: [],
-    audiences: [],
-    deliverables: [],
-    tools: [],
-    results: [],
-    headlineResult: "",
-    tags: [],
-    visibility: "Public",
-    minimal: true,
-    links: [
-      {
-        label: "View HCA Email Performance",
-        url: "https://drive.google.com/file/d/13TZk8g3vZ2V7nfFmQqTczHuNcXbO3Nvw/view",
-      },
-    ],
-  },
-  {
-    slug: "brattleboro-retreat-golive",
-    title: "Brattleboro Retreat Go-Live Success",
-    organization: "",
-    period: "",
-    role: "",
-    industries: [],
-    categories: ["Healthcare & Technical Storytelling"],
-    summary: "",
-    challenge: "",
-    owned: [],
-    audiences: [],
-    deliverables: [],
-    tools: [],
-    results: [],
-    headlineResult: "",
-    tags: [],
-    visibility: "Public",
-    minimal: true,
-    links: [
-      {
-        label: "View Brattleboro Retreat Go-Live Success",
-        url: "https://drive.google.com/file/d/1DHTGDbLGYNXv9Sp09JdhThHu-jEzXv1n/view",
       },
     ],
   },
@@ -1199,15 +672,9 @@ export const projects: Project[] = rawProjects;
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
 
-/**
- * The photos shown on a project's page: cover + gallery, deduped by src,
- * capped at 1 so pages stay light instead of turning into a photo dump.
- */
+/** The photo shown on a project's card: its cover, or the first gallery image. */
 export const getDisplayPhotos = (project: Project, max = 1): ProjectImage[] => {
-  const candidates = [
-    ...(project.hideCover ? [] : project.cover ? [project.cover] : []),
-    ...(project.gallery ?? []),
-  ];
+  const candidates = [...(project.cover ? [project.cover] : []), ...(project.gallery ?? [])];
   const seen = new Set<string>();
   const deduped: ProjectImage[] = [];
   for (const image of candidates) {
@@ -1219,20 +686,8 @@ export const getDisplayPhotos = (project: Project, max = 1): ProjectImage[] => {
   return deduped;
 };
 
-export const featuredSlugs = [
-  "cerecore-client-newsletter",
-  "hca-email-performance",
-  "brattleboro-retreat-golive",
-  "connection-2026",
-  "marketing-advocacy-group",
-  "healthcare-customer-stories",
-  "cerecore-podcast",
-];
+export const featuredSlugs = ["cerecore-client-newsletter", "healthcare-customer-stories", "connection-2026"];
 
 export const featuredProjects = featuredSlugs
   .map((s) => getProject(s))
   .filter((p): p is Project => Boolean(p));
-
-export const allIndustries = Array.from(new Set(projects.flatMap((p) => p.industries))).sort();
-export const allOrganizations = Array.from(new Set(projects.map((p) => p.organization))).sort();
-export const allTags = Array.from(new Set(projects.flatMap((p) => p.tags))).sort();

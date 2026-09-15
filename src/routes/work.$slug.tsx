@@ -35,10 +35,10 @@ function ProjectPage() {
   return (
     <article className="mx-auto max-w-5xl px-5 py-14 sm:px-8">
       <Link to="/work" className="link-underline text-sm">
-        Work Archive
+        Work
       </Link>
       <div className="mt-8">
-        <ProjectDetails project={project} titleAs="h1" />
+        <ProjectDetails project={project} showTitle />
       </div>
     </article>
   );

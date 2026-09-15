@@ -5,12 +5,15 @@ import { ProjectDetails } from "@/components/ProjectDetails";
 /**
  * A project that opens in place instead of navigating to another page.
  */
-export function ProjectToggle({ project }: { project: Project }) {
+export function ProjectToggle({ project, featured = false }: { project: Project; featured?: boolean }) {
   const thumb = getDisplayPhotos(project)[0];
+  const thumbSize = featured
+    ? "h-32 w-48 sm:h-40 sm:w-60"
+    : "h-24 w-36 sm:h-28 sm:w-44";
   return (
     <details className="group border border-border bg-card transition-colors open:border-foreground">
       <summary className="flex cursor-pointer list-none items-center gap-4 p-3">
-        <span className="block h-24 w-36 shrink-0 overflow-hidden bg-secondary sm:h-28 sm:w-44">
+        <span className={`block shrink-0 overflow-hidden bg-secondary ${thumbSize}`}>
           {thumb ? (
             <img src={thumb.src} alt={thumb.alt} loading="lazy" className="h-full w-full object-cover" />
           ) : (
@@ -21,7 +24,9 @@ export function ProjectToggle({ project }: { project: Project }) {
           {/client/i.test(project.organization) ? (
             <span className="eyebrow">{project.organization}</span>
           ) : null}
-          <span className="mt-0.5 text-base leading-tight group-hover:text-teal sm:text-xl">
+          <span
+            className={`mt-0.5 leading-tight group-hover:text-teal ${featured ? "text-lg sm:text-2xl" : "text-base sm:text-xl"}`}
+          >
             {project.title}
           </span>
         </span>
@@ -30,7 +35,7 @@ export function ProjectToggle({ project }: { project: Project }) {
         </span>
       </summary>
       <div className="border-t border-border px-4 pb-8 pt-6 sm:px-6">
-        <ProjectDetails project={project} titleAs="h2" />
+        <ProjectDetails project={project} />
       </div>
     </details>
   );

@@ -2,15 +2,6 @@ import { Link } from "@tanstack/react-router";
 import type { Project } from "@/data/projects";
 import { CoverArt } from "@/components/CoverArt";
 
-export function VisibilityTag({ value }: { value: Project["visibility"] }) {
-  if (value === "Public") return null;
-  return (
-    <span className="inline-block border border-border bg-secondary px-2 py-1 text-[0.68rem] uppercase tracking-wider text-muted-foreground">
-      {value}
-    </span>
-  );
-}
-
 export function ProjectCard({ project, large = false }: { project: Project; large?: boolean }) {
   const mediaHeight = large ? "h-52" : "h-40";
   return (

@@ -1,8 +1,6 @@
-import { getDisplayPhotos, type Project, type ProjectLink } from "@/data/projects";
-import { CoverArt } from "@/components/CoverArt";
+import type { Project, ProjectLink } from "@/data/projects";
 
 const MAX_LIST_ITEMS = 4;
-const MAX_VISIBLE_LINKS = 3;
 
 /** Renders `**text**` segments as bold, everything else as plain text. */
 function withBold(text: string) {
@@ -35,7 +33,27 @@ function List({ title, items }: { title: string; items: string[] }) {
   );
 }
 
-/** Example card: thumbnail (when we have one) + linked title only. No blurb. */
+/** A polished placeholder for a link with no real thumbnail — never a broken image. */
+function LinkThumbPlaceholder() {
+  return (
+    <span
+      className="flex h-16 w-24 shrink-0 items-center justify-center border border-border bg-secondary"
+      aria-hidden
+    >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-muted-foreground">
+        <path
+          d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6v6M10 14 20 4"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </span>
+  );
+}
+
+/** Example card: thumbnail (real, or a polished placeholder) + linked title only. */
 function LinkCard({ link }: { link: ProjectLink }) {
   return (
     <a
@@ -53,7 +71,9 @@ function LinkCard({ link }: { link: ProjectLink }) {
             className="h-full w-full scale-[1.9] object-cover object-center"
           />
         </span>
-      ) : null}
+      ) : (
+        <LinkThumbPlaceholder />
+      )}
       <span className="text-sm underline underline-offset-4 group-hover:text-teal">
         {link.label} <span aria-hidden>↗</span>
       </span>
@@ -62,109 +82,65 @@ function LinkCard({ link }: { link: ProjectLink }) {
 }
 
 /**
- * The full story for a single project, in a fixed order used on every
- * project page: title, role, examples, challenge, what I did, results.
- * Shared by the standalone /work/$slug page and the inline toggle on the
- * work archive, so both stay in sync.
+ * A project's story, starting directly with Examples. Title only shows when
+ * `showTitle` is true — the card already shows it, so the expanded panel
+ * (inside a toggle) skips it to avoid repeating it. Challenge, What I Did
+ * and Results & Impact only render when the project actually has content
+ * for them, so a link-only project doesn't get an empty case-study shell.
  */
-export function ProjectDetails({ project, titleAs = "h2" }: { project: Project; titleAs?: "h1" | "h2" }) {
-  const photo = getDisplayPhotos(project)[0];
-  const Title = titleAs;
-  const allLinks = project.links ?? [];
-  const visibleLinks = allLinks.slice(0, MAX_VISIBLE_LINKS);
-  const hiddenLinks = allLinks.slice(MAX_VISIBLE_LINKS);
-
-  if (project.minimal) {
-    const primaryLink = project.links?.[0];
-    return (
-      <div>
-        <Title className="text-4xl leading-tight sm:text-5xl">{project.title}</Title>
-        {primaryLink ? (
-          <a
-            href={primaryLink.url}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="mt-8 inline-block bg-foreground px-5 py-3 text-sm text-primary-foreground transition-opacity hover:opacity-85"
-          >
-            {primaryLink.label} <span aria-hidden>↗</span>
-          </a>
-        ) : null}
-      </div>
-    );
-  }
+export function ProjectDetails({ project, showTitle = false }: { project: Project; showTitle?: boolean }) {
+  const links = project.links ?? [];
+  const hasResults = project.results.length > 0 || Boolean(project.headlineResult);
 
   return (
     <div>
-      <header>
-        <Title className="text-4xl leading-tight sm:text-5xl">{project.title}</Title>
-        {project.organization ? (
-          <p className="mt-3 text-lg text-muted-foreground">{project.organization}</p>
-        ) : null}
-        {project.role ? <p className="mt-1 text-base text-foreground/80">{project.role}</p> : null}
-      </header>
+      {showTitle ? <h1 className="text-4xl leading-tight sm:text-5xl">{project.title}</h1> : null}
 
-      {photo ? (
-        <img
-          src={photo.src}
-          alt={photo.alt}
-          loading="lazy"
-          className="mt-8 aspect-[4/3] w-full object-cover sm:aspect-[16/9]"
-        />
-      ) : (
-        <CoverArt project={project} className="mt-8 h-64 w-full sm:h-80" />
-      )}
-
-      {visibleLinks.length > 0 ? (
-        <section className="mt-10" aria-labelledby={`examples-${project.slug}`}>
-          <h3 id={`examples-${project.slug}`} className="text-3xl">Examples</h3>
+      {links.length > 0 ? (
+        <section className={showTitle ? "mt-8" : ""}>
+          <h3 className="text-3xl">Examples</h3>
           <ul className="mt-5 space-y-3">
-            {visibleLinks.map((l) => (
+            {links.map((l) => (
               <li key={l.url}>
                 <LinkCard link={l} />
               </li>
             ))}
           </ul>
-          {hiddenLinks.length > 0 ? (
-            <details className="mt-3">
-              <summary className="cursor-pointer text-sm underline underline-offset-4 text-foreground/70 hover:text-teal">
-                +{hiddenLinks.length} more
-              </summary>
-              <ul className="mt-3 space-y-3">
-                {hiddenLinks.map((l) => (
-                  <li key={l.url}>
-                    <LinkCard link={l} />
-                  </li>
-                ))}
-              </ul>
-            </details>
-          ) : null}
         </section>
       ) : null}
 
-      <div className="mt-12 border-t border-border pt-10">
-        <div className="grid gap-10 sm:grid-cols-2">
-          <section>
-            <h3 className="text-3xl">The challenge</h3>
-            <p className="mt-4 leading-relaxed text-foreground/85">{withBold(project.challenge)}</p>
-          </section>
+      {project.challenge || project.owned.length > 0 ? (
+        <div className={`grid gap-10 sm:grid-cols-2 ${links.length > 0 ? "mt-12 border-t border-border pt-10" : ""}`}>
+          {project.challenge ? (
+            <section>
+              <h3 className="text-3xl">The challenge</h3>
+              <p className="mt-4 leading-relaxed text-foreground/85">{withBold(project.challenge)}</p>
+            </section>
+          ) : null}
           <List title="What I did" items={project.owned} />
         </div>
-      </div>
+      ) : null}
 
-      <section className="mt-12 border-t border-border pt-8">
-        <h3 className="text-3xl">Results</h3>
-        <p className="mt-4 border-l-2 border-coral pl-4 font-display text-2xl leading-snug">
-          {project.headlineResult}
-        </p>
-        <ul className="mt-6 space-y-2.5">
-          {project.results.slice(0, MAX_LIST_ITEMS).map((result) => (
-            <li key={result} className="flex gap-3 leading-relaxed text-foreground/85">
-              <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-gold" />
-              <span>{result}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
+      {hasResults ? (
+        <section className="mt-12 border-t border-border pt-8">
+          <h3 className="text-3xl">Results &amp; Impact</h3>
+          {project.headlineResult ? (
+            <p className="mt-4 border-l-2 border-coral pl-4 font-display text-2xl leading-snug">
+              {project.headlineResult}
+            </p>
+          ) : null}
+          {project.results.length > 0 ? (
+            <ul className="mt-6 space-y-2.5">
+              {project.results.slice(0, MAX_LIST_ITEMS).map((result) => (
+                <li key={result} className="flex gap-3 leading-relaxed text-foreground/85">
+                  <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-gold" />
+                  <span>{result}</span>
+                </li>
+              ))}
+            </ul>
+          ) : null}
+        </section>
+      ) : null}
     </div>
   );
 }

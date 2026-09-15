@@ -47,7 +47,7 @@ export const roles: Role[] = [
       "Founded the Marketing Advocacy Group and coached 34 employee advocates",
       "Built the enterprise communications calendar adopted across departments",
     ],
-    projects: ["cerecore-internal-comms", "marketing-advocacy-group", "enterprise-communications-calendar"],
+    projects: ["cerecore-internal-comms", "marketing-advocacy-group"],
   },
   {
     organization: "HCA Healthcare",
@@ -71,7 +71,7 @@ export const roles: Role[] = [
       "Supported approximately 225,000 combined followers",
       "Directed photo and video shoots across retail, hospitality and real estate",
     ],
-    projects: ["digital-motif"],
+    projects: [],
   },
   {
     organization: "CyberProtex",
