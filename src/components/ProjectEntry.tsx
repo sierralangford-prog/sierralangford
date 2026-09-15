@@ -3,15 +3,16 @@ import { CoverArt } from "@/components/CoverArt";
 import { ProjectDetails } from "@/components/ProjectDetails";
 
 /**
- * A project's card — always shows its content directly (no click to expand).
- * Not a toggle: this sits inside a category section, and a toggle inside a
- * toggle makes examples harder to reach, not easier.
+ * A project's card — closed by default, click to reveal its examples and
+ * story. This is the only toggle level on the Work page: categories are
+ * plain, non-collapsible headings, so this never nests inside another
+ * toggle.
  */
 export function ProjectEntry({ project }: { project: Project }) {
   const thumb = getDisplayPhotos(project)[0];
   return (
-    <div className="border border-border bg-card">
-      <div className="flex items-center gap-4 p-3">
+    <details className="group border border-border bg-card transition-colors open:border-foreground">
+      <summary className="flex cursor-pointer list-none items-center gap-4 p-3">
         <span className="block h-24 w-36 shrink-0 overflow-hidden bg-secondary sm:h-28 sm:w-44">
           {thumb ? (
             <img src={thumb.src} alt={thumb.alt} loading="lazy" className="h-full w-full object-cover" />
@@ -23,12 +24,17 @@ export function ProjectEntry({ project }: { project: Project }) {
           {/client/i.test(project.organization) ? (
             <span className="eyebrow">{project.organization}</span>
           ) : null}
-          <span className="mt-0.5 text-base leading-tight sm:text-xl">{project.title}</span>
+          <span className="mt-0.5 text-base leading-tight group-hover:text-teal sm:text-xl">
+            {project.title}
+          </span>
         </span>
-      </div>
+        <span aria-hidden className="shrink-0 text-lg text-muted-foreground transition-transform group-open:rotate-45">
+          +
+        </span>
+      </summary>
       <div className="border-t border-border px-4 pb-8 pt-6 sm:px-6">
         <ProjectDetails project={project} />
       </div>
-    </div>
+    </details>
   );
 }

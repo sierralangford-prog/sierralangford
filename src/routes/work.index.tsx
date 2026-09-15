@@ -60,14 +60,11 @@ function CategorySection({ category, items }: { category: string; items: Project
   const groups = groupBySubsection(visible);
 
   return (
-    <details open className="group border-b border-border py-5">
-      <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
+    <section className="border-b border-border py-5">
+      <div className="flex items-center justify-between gap-4">
         <span className="text-xl sm:text-2xl">{category}</span>
-        <span className="text-sm text-muted-foreground">
-          {items.length}
-          <span className="ml-3 inline-block transition-transform group-open:rotate-45">+</span>
-        </span>
-      </summary>
+        <span className="text-sm text-muted-foreground">{items.length}</span>
+      </div>
       <div className="mt-6 space-y-8">
         {groups.map((g) => (
           <div key={g.subsection ?? "default"}>
@@ -96,7 +93,7 @@ function CategorySection({ category, items }: { category: string; items: Project
           + {remaining} more
         </button>
       ) : null}
-    </details>
+    </section>
   );
 }
 
@@ -121,7 +118,7 @@ function WorkIndex() {
       <p className="eyebrow">Work</p>
       <h1 className="mt-4 max-w-3xl text-4xl leading-tight sm:text-5xl">Work, organized by what I do.</h1>
       <p className="mt-5 max-w-2xl leading-relaxed text-foreground/80">
-        Real examples for every project, shown right here.
+        Open a project to see the real examples right here.
       </p>
 
       <div className="mt-12 border-t border-border">
