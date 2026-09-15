@@ -5,7 +5,7 @@ export type Visibility =
   | "Archive only";
 
 export type ProjectImage = { src: string; alt: string };
-export type ProjectLink = { label: string; url: string };
+export type ProjectLink = { label: string; url: string; thumb?: ProjectImage };
 
 export type Project = {
   slug: string;
@@ -135,7 +135,7 @@ const rawProjects: Project[] = [
   {
     slug: "cerecore-client-newsletter",
     title: "CereCore Client Newsletter",
-    organization: "CereCore, an HCA Healthcare company",
+    organization: "",
     period: "2025 – 2026",
     role: "Marketing Communications Strategist",
     industries: ["Healthcare", "Health Technology"],
@@ -170,36 +170,46 @@ const rawProjects: Project[] = [
     featured: true,
     visibility: "Public",
     cover: { src: img.clientUpdate, alt: "Spring 2026 CereCore client newsletter with client success stories" },
-    gallery: [
-      { src: img.clientUpdate, alt: "Spring edition of the CereCore client newsletter" },
-      { src: img.newsletterStats, alt: "Newsletter performance statistics showing open and click rates" },
-    ],
     links: [
-      { label: "Read the first issue, June 2025", url: "https://cerecore.net/introducing-the-cerecore-client-newsletter" },
       {
-        label: "Read the July 2025 issue: app rationalization",
+        label: "June 2025 — first issue",
+        url: "https://cerecore.net/introducing-the-cerecore-client-newsletter",
+        thumb: { src: img.newsletterJune2025, alt: "Top of the June 2025 newsletter issue" },
+      },
+      {
+        label: "July 2025",
         url: "https://cerecore.net/how-hospitals-are-using-app-rationalization-to-cut-costs-fast",
+        thumb: { src: img.newsletterJuly2025, alt: "Top of the July 2025 newsletter issue" },
       },
       {
-        label: "Read the August 2025 client update",
+        label: "August 2025",
         url: "https://cerecore.net/how-hospitals-are-using-app-rationalization-to-cut-costs-fast-1",
+        thumb: { src: img.newsletterAugust2025, alt: "Top of the August 2025 newsletter issue" },
       },
       {
-        label: "Read the September 2025 client update",
+        label: "September 2025",
         url: "https://cerecore.net/youre-a-cerecore-client-important-updates-inside-for-contact.company",
+        thumb: { src: img.newsletterSeptember2025, alt: "Top of the September 2025 newsletter issue" },
       },
-      { label: "Read the October 2025 issue", url: "https://cerecore.net/client-news-oct-2025" },
       {
-        label: "Read the November 2025 issue",
+        label: "October 2025",
+        url: "https://cerecore.net/client-news-oct-2025",
+        thumb: { src: img.newsletterOctober2025, alt: "Top of the October 2025 newsletter issue" },
+      },
+      {
+        label: "November 2025",
         url: "https://cerecore.net/-temporary-slug-13af47d4-426b-4772-a3d0-e1144fc4c28c?hs_preview=jNkQZsfQ-197699330738",
+        thumb: { src: img.newsletterNovember2025, alt: "Top of the November 2025 newsletter issue" },
       },
       {
-        label: "Read the December 2025 issue",
+        label: "December 2025",
         url: "https://cerecore.net/-temporary-slug-0413fe3d-c5f0-44af-8c4b-607ced364200?hs_preview=Lsxzfafo-200325112084",
+        thumb: { src: img.newsletterDecember2025, alt: "Top of the December 2025 newsletter issue" },
       },
       {
-        label: "Read the spring client update",
+        label: "Spring 2026",
         url: "https://cerecore.net/-temporary-slug-0f96e5c8-e6e7-46ba-8181-12cec8a6b0a9?hs_preview=xaghNIZk-202737326107",
+        thumb: { src: img.newsletterSpring2026, alt: "Top of the Spring 2026 newsletter issue" },
       },
     ],
     related: ["cerecore-internal-comms", "healthcare-customer-stories", "cerecore-podcast"],

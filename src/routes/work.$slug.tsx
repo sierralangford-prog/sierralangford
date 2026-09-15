@@ -93,7 +93,9 @@ function ProjectPage() {
       <header className="mt-8">
         <p className="eyebrow">{project.categories.join(" · ")}</p>
         <h1 className="mt-4 text-4xl leading-tight sm:text-5xl">{project.title}</h1>
-        <p className="mt-4 text-lg text-muted-foreground">{project.organization}</p>
+        {project.organization ? (
+          <p className="mt-4 text-lg text-muted-foreground">{project.organization}</p>
+        ) : null}
         <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/85">{project.summary}</p>
         <div className="mt-7 flex flex-wrap gap-3">
           {primaryLink ? (
@@ -144,19 +146,46 @@ function ProjectPage() {
         <section className="mt-12 border-t border-border pt-8" aria-labelledby="examples-heading">
           <h2 id="examples-heading" className="text-3xl">Examples</h2>
           <p className="mt-2 text-sm text-muted-foreground">Each one opens the real work in a new tab.</p>
-          <div className="mt-5 flex flex-wrap gap-3">
-            {project.links.map((l) => (
-              <a
-                key={l.url}
-                href={l.url}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="border border-foreground px-5 py-3 text-sm underline underline-offset-4 transition-colors hover:bg-foreground hover:text-primary-foreground"
-              >
-                {l.label} <span aria-hidden>↗</span>
-              </a>
-            ))}
-          </div>
+          {project.links.some((l) => l.thumb) ? (
+            <ul className="mt-6 space-y-3">
+              {project.links.map((l) => (
+                <li key={l.url}>
+                  <a
+                    href={l.url}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="group flex items-center gap-4 border border-border bg-card p-2 transition-colors hover:border-foreground"
+                  >
+                    {l.thumb ? (
+                      <img
+                        src={l.thumb.src}
+                        alt={l.thumb.alt}
+                        loading="lazy"
+                        className="h-12 w-24 shrink-0 border border-border object-cover object-top"
+                      />
+                    ) : null}
+                    <span className="text-sm underline underline-offset-4 group-hover:text-teal">
+                      {l.label} <span aria-hidden>↗</span>
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <div className="mt-5 flex flex-wrap gap-3">
+              {project.links.map((l) => (
+                <a
+                  key={l.url}
+                  href={l.url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="border border-foreground px-5 py-3 text-sm underline underline-offset-4 transition-colors hover:bg-foreground hover:text-primary-foreground"
+                >
+                  {l.label} <span aria-hidden>↗</span>
+                </a>
+              ))}
+            </div>
+          )}
         </section>
       ) : null}
 
