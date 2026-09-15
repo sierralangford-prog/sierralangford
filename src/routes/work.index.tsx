@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { projects, featuredProjects, CATEGORIES, type Project } from "@/data/projects";
-import { ProjectToggle } from "@/components/ProjectToggle";
+import { projects, CATEGORIES, type Project } from "@/data/projects";
+import { ProjectEntry } from "@/components/ProjectEntry";
 
 const DRIVE_CTA_URL = "https://drive.google.com/drive/folders/1ENSKEChZdrzlr1R9JRAswM1xTK0n14rZ";
 const VISIBLE_COUNT = 3;
@@ -62,7 +62,7 @@ function CategorySection({ category, items }: { category: string; items: Project
             {g.subsection ? <p className="eyebrow mb-3">{g.subsection}</p> : null}
             <div className="space-y-3">
               {g.items.map((p) => (
-                <ProjectToggle key={p.slug} project={p} />
+                <ProjectEntry key={p.slug} project={p} />
               ))}
             </div>
           </div>
@@ -102,17 +102,8 @@ function WorkIndex() {
       <p className="eyebrow">Work</p>
       <h1 className="mt-4 max-w-3xl text-4xl leading-tight sm:text-5xl">Work, organized by what I do.</h1>
       <p className="mt-5 max-w-2xl leading-relaxed text-foreground/80">
-        Open a project to see the real examples right here.
+        Real examples for every project, shown right here.
       </p>
-
-      <section className="mt-12">
-        <p className="eyebrow">Featured Work</p>
-        <div className="mt-4 space-y-3">
-          {featuredProjects.map((p) => (
-            <ProjectToggle key={p.slug} project={p} featured />
-          ))}
-        </div>
-      </section>
 
       <div className="mt-12 border-t border-border">
         {groups.map((g) => (

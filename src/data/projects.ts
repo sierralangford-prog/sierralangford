@@ -84,10 +84,7 @@ const rawProjects: Project[] = [
       "Editorial calendar and story sourcing across departments",
       "Writing and publishing internal blogs and employee stories",
     ],
-    results: [
-      "Approximately 3,200 monthly intranet views",
-      "A consistent communication rhythm for roughly 1,000 employees",
-    ],
+    results: ["Reached roughly 1,000 employees with about 3,200 monthly intranet views"],
     cover: { src: img.boardroomPresentation, alt: "Sierra Langford presenting an internal communications workshop" },
     links: [
       {
@@ -277,10 +274,7 @@ const rawProjects: Project[] = [
     challenge:
       "Thousands of digital assets and dozens of teams had to move to a new platform. Adoption depended on **communication and training, not the software**.",
     owned: ["Stakeholder communication plans", "Articulate training module development", "Adoption and change communications"],
-    results: [
-      "Supported migration of more than 5,000 digital assets",
-      "Tagged 318 assets in a single week during migration",
-    ],
+    results: ["Supported migration of more than 5,000 digital assets, including tagging 318 in a single week"],
     cover: { src: img.censhareNursesVideo, alt: "Still from the Censhare platform overview sizzle reel" },
     links: [
       {
@@ -336,7 +330,7 @@ const rawProjects: Project[] = [
   },
   {
     slug: "connection-2026",
-    title: "Planned Connection 2026",
+    title: "Planned Connection 2026 Conference for 1,000 People in Nashville",
     organization: "CereCore, an HCA Healthcare company",
     categories: ["Campaigns, Programs & Events"],
     summary:
@@ -476,7 +470,7 @@ const rawProjects: Project[] = [
     challenge:
       "Twenty five years of company history lived in the memories of a handful of leaders and had **never been captured** in a usable form.",
     owned: ["Storytelling framework", "Interview question development", "Interviews with 11 executives"],
-    results: ["11 executive interviews captured", "Reusable brand and anniversary content library"],
+    results: ["11 executive interviews created a reusable brand and anniversary content library"],
     cover: { src: img.videoRig, alt: "Video interview rig set up for a leadership interview series" },
     links: [
       {
