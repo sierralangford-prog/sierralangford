@@ -85,8 +85,8 @@ function Experience() {
                     return (
                       <Link
                         key={slug}
-                        to="/work/$slug"
-                        params={{ slug }}
+                        to="/work"
+                        hash={slug}
                         className="border border-border bg-secondary px-3 py-1.5 text-sm hover:border-foreground"
                       >
                         {project.title}
