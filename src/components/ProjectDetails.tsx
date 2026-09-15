@@ -90,27 +90,39 @@ function LinkCard({ link }: { link: ProjectLink }) {
  */
 export function ProjectDetails({ project, showTitle = false }: { project: Project; showTitle?: boolean }) {
   const links = project.links ?? [];
-  const hasResults = project.results.length > 0 || Boolean(project.headlineResult);
+  const hasExamples = links.length > 0 || Boolean(project.folderLink);
 
   return (
     <div>
       {showTitle ? <h1 className="text-4xl leading-tight sm:text-5xl">{project.title}</h1> : null}
 
-      {links.length > 0 ? (
+      {hasExamples ? (
         <section className={showTitle ? "mt-8" : ""}>
           <h3 className="text-3xl">Examples</h3>
-          <ul className="mt-5 space-y-3">
-            {links.map((l) => (
-              <li key={l.url}>
-                <LinkCard link={l} />
-              </li>
-            ))}
-          </ul>
+          {links.length > 0 ? (
+            <ul className="mt-5 space-y-3">
+              {links.map((l) => (
+                <li key={l.url}>
+                  <LinkCard link={l} />
+                </li>
+              ))}
+            </ul>
+          ) : null}
+          {project.folderLink ? (
+            <a
+              href={project.folderLink.url}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="mt-4 inline-block border border-foreground px-5 py-3 text-sm underline underline-offset-4 transition-colors hover:bg-foreground hover:text-primary-foreground"
+            >
+              {project.folderLink.label} <span aria-hidden>↗</span>
+            </a>
+          ) : null}
         </section>
       ) : null}
 
       {project.challenge || project.owned.length > 0 ? (
-        <div className={`grid gap-10 sm:grid-cols-2 ${links.length > 0 ? "mt-12 border-t border-border pt-10" : ""}`}>
+        <div className={`grid gap-10 sm:grid-cols-2 ${hasExamples ? "mt-12 border-t border-border pt-10" : ""}`}>
           {project.challenge ? (
             <section>
               <h3 className="text-3xl">The challenge</h3>
@@ -121,24 +133,17 @@ export function ProjectDetails({ project, showTitle = false }: { project: Projec
         </div>
       ) : null}
 
-      {hasResults ? (
+      {project.results.length > 0 ? (
         <section className="mt-12 border-t border-border pt-8">
           <h3 className="text-3xl">Results &amp; Impact</h3>
-          {project.headlineResult ? (
-            <p className="mt-4 border-l-2 border-coral pl-4 font-display text-2xl leading-snug">
-              {project.headlineResult}
-            </p>
-          ) : null}
-          {project.results.length > 0 ? (
-            <ul className="mt-6 space-y-2.5">
-              {project.results.slice(0, MAX_LIST_ITEMS).map((result) => (
-                <li key={result} className="flex gap-3 leading-relaxed text-foreground/85">
-                  <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-gold" />
-                  <span>{result}</span>
-                </li>
-              ))}
-            </ul>
-          ) : null}
+          <ul className="mt-5 space-y-2.5">
+            {project.results.slice(0, MAX_LIST_ITEMS).map((result) => (
+              <li key={result} className="flex gap-3 leading-relaxed text-foreground/85">
+                <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-gold" />
+                <span>{result}</span>
+              </li>
+            ))}
+          </ul>
         </section>
       ) : null}
     </div>

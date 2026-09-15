@@ -8,21 +8,23 @@ export type Project = {
   title: string;
   organization: string;
   categories: string[];
-  /** Only used for the Email & Newsletters category, to split it into two clearly labeled groups. */
+  /** Splits a category into clearly labeled groups, e.g. internal vs. external. */
   subsection?: string;
   /** Used only for SEO meta description, not shown on the page. */
   summary: string;
   challenge: string;
   owned: string[];
   results: string[];
-  headlineResult: string;
   cover?: ProjectImage;
   gallery?: ProjectImage[];
   links?: ProjectLink[];
+  /** A "See all X" button separate from individual example links. */
+  folderLink?: { label: string; url: string };
 };
 
 export const CATEGORIES = [
   "Email & Newsletters",
+  "Blogs & Editorial Content",
   "Healthcare & Technical Storytelling",
   "Internal, Executive & Change Communications",
   "Campaigns, Programs & Events",
@@ -53,7 +55,6 @@ const rawProjects: Project[] = [
       "70 percent average open rate, about 17 points above the industry benchmark",
       "Became a recurring source of client conversations for account teams",
     ],
-    headlineResult: "3,307 recipients and a 70 percent average open rate in six months",
     cover: { src: img.clientUpdate, alt: "CereCore client newsletter issue with client success stories" },
     links: [
       {
@@ -87,7 +88,6 @@ const rawProjects: Project[] = [
       "Approximately 3,200 monthly intranet views",
       "A consistent communication rhythm for roughly 1,000 employees",
     ],
-    headlineResult: "A biweekly newsletter read by roughly 1,000 employees across two countries",
     cover: { src: img.boardroomPresentation, alt: "Sierra Langford presenting an internal communications workshop" },
     links: [
       {
@@ -103,6 +103,48 @@ const rawProjects: Project[] = [
         url: "https://drive.google.com/file/d/1-rhxviqgE-FBPDQ_4igqjJti5oAIKGj9/view",
       },
     ],
+  },
+  {
+    slug: "internal-blogs",
+    title: "Developed Internal Blog Content",
+    organization: "CereCore, an HCA Healthcare company",
+    categories: ["Blogs & Editorial Content"],
+    subsection: "Internal Blogs",
+    summary: "Wrote internal blog content for employees at CereCore, an HCA Healthcare company.",
+    challenge: "",
+    owned: [],
+    results: [],
+    cover: { src: img.blogBalance, alt: "Internal blog post: Finding Balance While Working from Home" },
+    folderLink: {
+      label: "See all internal blog issues",
+      url: "https://drive.google.com/drive/folders/1wD8GuL0YqgqcW0Ra73N43n-0yubuvOwr",
+    },
+  },
+  {
+    slug: "external-client-blogs",
+    title: "Created External Client Blog Content",
+    organization: "CereCore, an HCA Healthcare company",
+    categories: ["Blogs & Editorial Content"],
+    subsection: "External / Client Blogs",
+    summary: "Wrote external, client-facing blog content published on the CereCore website.",
+    challenge: "",
+    owned: [],
+    results: [],
+    cover: { src: img.appRationalizationStory, alt: "Published external blog article" },
+    links: [
+      {
+        label: "Read an external client blog article",
+        url: "https://drive.google.com/file/d/1kejRpx14xhptWC3i3KZHCcnMcM1jdxTa/view",
+      },
+      {
+        label: "Read another external client blog article",
+        url: "https://drive.google.com/file/d/1bC8G1YJEraVmeRBxvN9FB9P6ADIwCSA5/view",
+      },
+    ],
+    folderLink: {
+      label: "See all external blog issues",
+      url: "https://drive.google.com/drive/folders/1h5b35GvJmvPDCeGjWEZpz1-OCzul3Z2d",
+    },
   },
   {
     slug: "healthcare-customer-stories",
@@ -123,7 +165,6 @@ const rawProjects: Project[] = [
       "More than 82 published stories",
       "Stories reused across sales conversations, newsletters and leadership messaging",
     ],
-    headlineResult: "18 case studies and more than 82 published stories",
     cover: { src: img.jamesWellmanInterview, alt: "Sierra Langford interviewing a hospital CIO for a healthcare customer story" },
     links: [
       {
@@ -162,7 +203,6 @@ const rawProjects: Project[] = [
       "Employees who support hospital systems **rarely see a patient**. The connection between their work and clinical outcomes was abstract.",
     owned: ["Story concept and approach", "Interview with the subject", "Video production and edit direction"],
     results: ["Shown company wide", "Employees reported finally understanding why their work mattered"],
-    headlineResult: "A company wide story that connected technical work to patient survival",
     cover: { src: img.veronica, alt: "Story subject with her son making heart shapes with their hands" },
     links: [
       {
@@ -191,7 +231,6 @@ const rawProjects: Project[] = [
       "Communications calendar adopted across departments",
       "Estimated annual time savings of 1,468 hours",
     ],
-    headlineResult: "Approximately 82 internal stories published and 1,468 estimated hours saved annually",
     cover: { src: img.boardroomPresentation, alt: "Sierra Langford presenting a storytelling workshop in a boardroom" },
     links: [
       {
@@ -219,7 +258,6 @@ const rawProjects: Project[] = [
       "Program launched company wide and continued after my departure",
       "Mentor best practices session delivered to an audience of 245 plus",
     ],
-    headlineResult: "A program built from scratch that outlasted my tenure",
     cover: { src: img.cerecoreMentorshipToolkitCover, alt: "CereCore Mentorship Toolkit presentation cover" },
     links: [
       {
@@ -243,7 +281,6 @@ const rawProjects: Project[] = [
       "Supported migration of more than 5,000 digital assets",
       "Tagged 318 assets in a single week during migration",
     ],
-    headlineResult: "Supported migration of more than 5,000 digital assets",
     cover: { src: img.censhareNursesVideo, alt: "Still from the Censhare platform overview sizzle reel" },
     links: [
       {
@@ -267,7 +304,6 @@ const rawProjects: Project[] = [
       "Teams using AI in daily workflows rather than in experiments",
       "Follow up and task capture automated across Microsoft tools and Asana",
     ],
-    headlineResult: "Practical AI adoption across marketing and communications workflows",
     cover: { src: img.boardroomPresentation, alt: "Sierra Langford presenting a practical communications workshop" },
     links: [
       {
@@ -290,7 +326,6 @@ const rawProjects: Project[] = [
       "34 employee advocates recruited and coached",
       "Consistent employee generated content tied to campaigns and events",
     ],
-    headlineResult: "34 employee advocates recruited and coached across departments",
     cover: { src: img.masterclassSession, alt: "Sierra Langford leading an internal communications masterclass" },
     links: [
       {
@@ -319,7 +354,6 @@ const rawProjects: Project[] = [
       "95 percent of respondents rated the event 4 or 5 out of 5",
       "Feedback described it as the best Connection event yet",
     ],
-    headlineResult: "Approximately 1,000 attendees and 95 percent top ratings",
     cover: { src: img.connectionStage, alt: "Sierra Langford presenting on stage at Connection 2026" },
     links: [
       {
@@ -362,7 +396,6 @@ const rawProjects: Project[] = [
       "Four executive interviews captured in two days",
       "Footage repurposed across social, newsletter and podcast channels",
     ],
-    headlineResult: "Four executive interviews captured onsite and repurposed across every channel",
     cover: { src: img.himssInterview, alt: "Sierra Langford interviewing a physician leader at HIMSS 2026" },
     links: [
       {
@@ -391,7 +424,6 @@ const rawProjects: Project[] = [
       "A single product narrative adopted across sales, events and marketing",
       "Repeatable field marketing playbooks created for the launch",
     ],
-    headlineResult: "One product narrative adopted across sales, events and marketing",
     cover: { src: img.monetizeiqWebinar, alt: "MonetizeIQ webinar graphic featuring banking executives" },
     links: [
       {
@@ -418,7 +450,6 @@ const rawProjects: Project[] = [
       "A repeatable event system with briefs, SOPs and templates",
       "Programs refined using direct prospect feedback",
     ],
-    headlineResult: "A repeatable national event system built during a product launch",
     cover: { src: img.strategycorpsRoadshowCities, alt: "StrategyCorps MonetizeIQ roadshow schedule across 16 cities" },
     links: [
       {
@@ -446,7 +477,6 @@ const rawProjects: Project[] = [
       "Twenty five years of company history lived in the memories of a handful of leaders and had **never been captured** in a usable form.",
     owned: ["Storytelling framework", "Interview question development", "Interviews with 11 executives"],
     results: ["11 executive interviews captured", "Reusable brand and anniversary content library"],
-    headlineResult: "11 executive interviews turned into a reusable content library",
     cover: { src: img.videoRig, alt: "Video interview rig set up for a leadership interview series" },
     links: [
       {
@@ -475,7 +505,6 @@ const rawProjects: Project[] = [
       "Approximately 37 healthcare and health technology leaders featured",
       "Gold Stevie Award, Technology Shows category",
     ],
-    headlineResult: "22,973 views across 12 episodes and a Gold Stevie Award",
     cover: { src: img.stevieAward, alt: "The American Business Awards 2026 Gold Stevie Award winner graphic for The CereCore Podcast" },
     links: [
       { label: "Listen to the podcast", url: "https://podcast.cerecore.net/", thumb: { src: img.podcastArtwork, alt: "The CereCore Podcast cover artwork" } },
@@ -492,7 +521,6 @@ const rawProjects: Project[] = [
       "The pitch had to hold its own in a room of working producers, which meant the concept and the sizzle reel had to be **genuinely watchable**.",
     owned: ["Show concept and pitch deck", "Sizzle reel edit in Adobe Premiere", "Live pitch delivery"],
     results: ["Pitched directly to Netflix and Hulu executives", "Featured in published coverage of the summit"],
-    headlineResult: "Pitched an original show concept to Netflix and Hulu executives",
     links: [
       { label: "Watch the sizzle reel", url: "https://youtu.be/Seat0OVm6D4" },
       { label: "View the Breaking In pitch deck", url: "https://drive.google.com/file/d/1nK-7mzbKjdzkfcNTA1twOFkS1wNLhKBM/view" },
@@ -509,7 +537,6 @@ const rawProjects: Project[] = [
       "Small and mid sized organizations rarely need an agency retainer. They need **one strategic partner who can think, write, shoot and ship**.",
     owned: ["Prospecting, pitching and closing accounts independently", "Marketing strategy and go to market plans", "Directing a team of four creatives"],
     results: ["16 long term client partnerships", "A practice sustained alongside full time roles since 2017"],
-    headlineResult: "16 long term client partnerships built since 2017",
     cover: { src: img.brandBanner, alt: "Marketing and brand storytelling since 2017 banner" },
     links: [
       {
@@ -536,7 +563,6 @@ const rawProjects: Project[] = [
     challenge: "",
     owned: [],
     results: [],
-    headlineResult: "",
     links: [
       {
         label: "View the video on LinkedIn",
@@ -553,7 +579,6 @@ const rawProjects: Project[] = [
     challenge: "",
     owned: [],
     results: [],
-    headlineResult: "",
     links: [{ label: "Visit the Roxy's Hair Salon website", url: "https://roxyshair.netlify.app/" }],
   },
   {
@@ -565,7 +590,6 @@ const rawProjects: Project[] = [
     challenge: "",
     owned: [],
     results: [],
-    headlineResult: "",
     links: [{ label: "View Salsarita's East Tennessee on Instagram", url: "https://www.instagram.com/salsaritaseasttn/" }],
   },
   {
@@ -577,7 +601,6 @@ const rawProjects: Project[] = [
     challenge: "",
     owned: [],
     results: [],
-    headlineResult: "",
     links: [{ label: "View Brentwood Jewelry on Instagram", url: "https://www.instagram.com/brentwoodjewelry/" }],
   },
   {
@@ -591,7 +614,6 @@ const rawProjects: Project[] = [
       "Highly technical certification and managed security offerings were being sold to buyers who needed **plain language, proof and trust** before they would take a meeting.",
     owned: ["Brand positioning and messaging", "Go to market content", "Email campaigns and social content"],
     results: ["96 percent certification exam pass rate supported by program marketing and enablement"],
-    headlineResult: "96 percent certification exam pass rate and pipeline owned to signed contracts",
     cover: { src: img.cyberprotexBootcamp, alt: "CyberProtex CISSP Exam Prep Bootcamp promotional graphic" },
     links: [
       { label: "Visit the CyberProtex site", url: "https://www.cyberprotex.com/" },
@@ -612,7 +634,6 @@ const rawProjects: Project[] = [
       "A national membership organization needed communications that **felt personal** to local chapters and alumni.",
     owned: ["Visual design support", "Communications materials", "Community oriented content"],
     results: ["Strengthened alumni and community connection through consistent visual communication"],
-    headlineResult: "Communications and design supporting national alumni engagement",
     cover: { src: img.brandBanner, alt: "Creative marketing and community communications portfolio artwork" },
     links: [
       {
@@ -635,7 +656,6 @@ const rawProjects: Project[] = [
       "Approximately 80 care packages created and distributed to a therapy practice",
       "Spoke at Williamson County schools on mental health, resilience and entrepreneurship",
     ],
-    headlineResult: "Approximately 80 care packages distributed and school speaking engagements",
     cover: { src: img.navigatingPurpose, alt: "Bliss Box brand concept planning materials" },
     links: [
       {
@@ -657,7 +677,6 @@ const rawProjects: Project[] = [
     challenge: "",
     owned: [],
     results: [],
-    headlineResult: "",
     cover: { src: img.photographyCanon, alt: "Sierra Langford holding her camera" },
     links: [
       {
