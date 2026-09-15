@@ -78,7 +78,7 @@ const rawProjects: Project[] = [
     summary:
       "Built and produced a healthcare IT thought leadership podcast end to end, from show concept and guest strategy through publishing and promotion.",
     challenge:
-      "Healthcare IT leaders are surrounded by vendor noise. The company needed a credible, genuinely useful conversation with hospital and health technology leaders that did not sound like a sales pitch.",
+      "Healthcare IT leaders are surrounded by vendor noise. The company needed a **genuinely useful conversation** with hospital and health technology leaders that did not sound like a sales pitch.",
     owned: [
       "Show concept, positioning and episode architecture",
       "Guest strategy, outreach systems and scheduling",
@@ -144,7 +144,7 @@ const rawProjects: Project[] = [
     summary:
       "Built the client newsletter from zero, including the editorial plan, voice, production process and distribution system, and ran it as a demand generation product rather than a broadcast channel.",
     challenge:
-      "Clients heard from the company only when something went wrong or when someone was selling. There was no consistent, useful channel that kept hospital leaders informed between projects.",
+      "Clients heard from the company only when something went wrong or when someone was selling. There was **no consistent, useful channel** that kept hospital leaders informed between projects.",
     owned: [
       "Editorial strategy, voice and issue architecture",
       "Production calendar and approval workflow",
@@ -235,7 +235,7 @@ const rawProjects: Project[] = [
     summary:
       "Ran the internal communications rhythm for a company of approximately 1,000 people, including a biweekly newsletter, roughly 82 internal stories and a rebuilt SharePoint intranet experience.",
     challenge:
-      "News, employee stories and operational updates lived in scattered inboxes and team channels. Employees across the United States and United Kingdom had no reliable place to understand what was happening.",
+      "News, employee stories and operational updates lived in scattered inboxes and team channels. Employees across the United States and United Kingdom had **no reliable place** to understand what was happening.",
     owned: [
       "The CereCore Link biweekly internal newsletter",
       "Editorial calendar and story sourcing across departments",
@@ -302,7 +302,7 @@ const rawProjects: Project[] = [
     summary:
       "Founded an employee advocacy program, recruited and coached 34 members across departments, and helped them surface and tell accurate stories from their own teams.",
     challenge:
-      "The people closest to the work had the best stories and the least confidence sharing them. Marketing could not be the only voice representing a technical, credibility driven business.",
+      "The people closest to the work had the best stories and **the least confidence sharing them**. Marketing could not be the only voice representing a technical, credibility driven business.",
     owned: [
       "Program design, recruitment and onboarding",
       "Coaching sessions and story sourcing prompts",
@@ -346,7 +346,7 @@ const rawProjects: Project[] = [
     summary:
       "Built a company mentorship program from scratch, including structure, toolkit, recruitment and launch communications, and designed it to keep running without me.",
     challenge:
-      "Employees wanted growth and connection across a distributed company, but there was no structure for pairing people or supporting mentors once they were matched.",
+      "Employees wanted growth and connection across a distributed company, but there was **no structure for pairing people** or supporting mentors once they were matched.",
     owned: [
       "Program framework and matching structure",
       "Mentor and mentee toolkit",
@@ -398,7 +398,7 @@ const rawProjects: Project[] = [
     summary:
       "Identified a coordination gap across departments and built a centralized enterprise communications calendar with a repeatable planning process that departments adopted.",
     challenge:
-      "Departments planned communications independently, so employees received overlapping messages in the same week while other weeks went quiet. Nobody had a single view of what was going out.",
+      "Departments planned communications independently, so employees received overlapping messages in the same week while other weeks went quiet. Nobody had **a single view** of what was going out.",
     owned: [
       "Discovery interviews with each department",
       "Calendar structure and taxonomy",
@@ -444,7 +444,7 @@ const rawProjects: Project[] = [
     summary:
       "Planned and executed the flagship company wide event for approximately 1,000 attendees in person and virtual, owning communication strategy, content, run of show, executive scripts and onsite execution.",
     challenge:
-      "A distributed company across the United States and United Kingdom needed one event that actually connected people, communicated strategy clearly and did not feel like a day of slides.",
+      "A distributed company across the United States and United Kingdom needed one event that actually connected people, communicated strategy clearly and **did not feel like a day of slides**.",
     owned: [
       "Communication strategy and attendee journey",
       "Content plan and session structure",
@@ -494,7 +494,7 @@ const rawProjects: Project[] = [
     summary:
       "Represented the company at HIMSS in Las Vegas and produced a short form interview series on the conference floor with a hospital CIO, a CNO, a health technology CMO and a MEDITECH partner.",
     challenge:
-      "Conference presence usually produces a booth and a badge scan list. The goal was to leave with content worth publishing for months.",
+      "Conference presence usually produces a booth and a badge scan list. The goal was to leave with **content worth publishing for months**.",
     owned: [
       "Interview subject outreach and preparation",
       "Question development and on camera interviewing",
@@ -540,7 +540,7 @@ const rawProjects: Project[] = [
     summary:
       "Interviewed hospital leaders, clients and subject matter experts to turn complex health IT implementations into clear human stories, published as case studies, blogs and feature articles used across marketing, sales and leadership communications.",
     challenge:
-      "Implementation stories were written as technical summaries. They were accurate and forgettable, and they never showed the people affected by the work.",
+      "Implementation stories were written as technical summaries. They were **accurate and forgettable**, and they never showed the people affected by the work.",
     owned: [
       "Interviewing hospital leaders, clients and internal experts",
       "Story structure and writing",
@@ -605,7 +605,7 @@ const rawProjects: Project[] = [
     summary:
       "Interviewed a colleague who nearly died and produced a company wide video that connected employees' daily technology work to patient survival.",
     challenge:
-      "Employees who support hospital systems rarely see a patient. The connection between their work and clinical outcomes was abstract.",
+      "Employees who support hospital systems **rarely see a patient**. The connection between their work and clinical outcomes was abstract.",
     owned: [
       "Story concept and approach",
       "Interview with the subject",
@@ -643,7 +643,7 @@ const rawProjects: Project[] = [
     summary:
       "Supported the enterprise rollout of the Censhare digital asset management platform inside a large matrixed health system, including stakeholder communications, training materials and adoption support.",
     challenge:
-      "Thousands of digital assets and dozens of teams had to move to a new platform. Adoption depended on communication and training, not on the software.",
+      "Thousands of digital assets and dozens of teams had to move to a new platform. Adoption depended on **communication and training, not the software**.",
     owned: [
       "Stakeholder communication plans",
       "Articulate training module development",
@@ -694,7 +694,7 @@ const rawProjects: Project[] = [
     summary:
       "Shaped how the market would understand MonetizeIQ, an AI platform for banks and credit unions, from hero statement and product narrative through voice guidance and video pitch concepts.",
     challenge:
-      "The product's AI capability was real and technical. Bankers needed to hear business value, not model architecture, within the first sentence.",
+      "The product's AI capability was real and technical. Bankers needed to hear **business value, not model architecture**, within the first sentence.",
     owned: [
       "Hero statement and core product narrative",
       "Voice and messaging guidance",
@@ -758,7 +758,7 @@ const rawProjects: Project[] = [
     summary:
       "Built the field marketing foundation for an AI product launch: conference activations, roadshows, executive dinners, webinars and advisory board concepts, all supported by repeatable briefs and SOPs.",
     challenge:
-      "A new AI product needed in-person credibility with conservative buyers, and the team needed a system they could repeat without rebuilding every event from scratch.",
+      "A new AI product needed **in-person credibility** with conservative buyers, and the team needed a system they could repeat without rebuilding every event from scratch.",
     owned: [
       "Roadshow concepts and city selection support",
       "Executive dinner concepts and experience design",
@@ -836,7 +836,7 @@ const rawProjects: Project[] = [
     summary:
       "Created a leadership interview series with 11 executives to capture company history and perspective, and turned it into reusable brand content.",
     challenge:
-      "Twenty five years of company history lived in the memories of a handful of leaders and had never been captured in a usable form.",
+      "Twenty five years of company history lived in the memories of a handful of leaders and had **never been captured** in a usable form.",
     owned: [
       "Storytelling framework",
       "Interview question development",
@@ -871,7 +871,7 @@ const rawProjects: Project[] = [
     summary:
       "Helped teams adopt AI in practical, role relevant ways: training colleagues on everyday tools and designing assisted workflows that removed real administrative work.",
     challenge:
-      "AI enthusiasm outpaced AI usefulness. People needed permission, guardrails and concrete examples tied to their own jobs, not another webinar about the future of work.",
+      "**AI enthusiasm outpaced AI usefulness**. People needed permission, guardrails and concrete examples tied to their own jobs, not another webinar about the future of work.",
     owned: [
       "Serving on the AI Steering Committee",
       "Teaching colleagues to use ChatGPT, Gemini, Microsoft Copilot, Notion AI, Claude and Perplexity",
@@ -914,7 +914,7 @@ const rawProjects: Project[] = [
     summary:
       "Led marketing for a cybersecurity training and managed security services firm, from brand positioning and go to market content through lead generation and signed contracts.",
     challenge:
-      "Highly technical certification and managed security offerings were being sold to buyers who needed plain language, proof and trust before they would take a meeting.",
+      "Highly technical certification and managed security offerings were being sold to buyers who needed **plain language, proof and trust** before they would take a meeting.",
     owned: [
       "Brand positioning and messaging",
       "Go to market content",
@@ -971,7 +971,7 @@ const rawProjects: Project[] = [
     summary:
       "Founded and still run a creative marketing practice with 16 long term client partnerships across healthcare, cybersecurity, technology, real estate, retail, hospitality and professional services.",
     challenge:
-      "Small and mid sized organizations rarely need an agency retainer. They need one strategic partner who can think, write, shoot and ship.",
+      "Small and mid sized organizations rarely need an agency retainer. They need **one strategic partner who can think, write, shoot and ship**.",
     owned: [
       "Prospecting, pitching and closing accounts independently",
       "Marketing strategy and go to market plans",
@@ -1022,7 +1022,7 @@ const rawProjects: Project[] = [
     summary:
       "Managed strategy and content for 13 client accounts and 16 social channels supporting approximately 225,000 combined followers, while directing photo and video shoots.",
     challenge:
-      "Thirteen very different local brands needed distinct voices, consistent output and content good enough to compete with national advertising budgets.",
+      "Thirteen very different local brands needed distinct voices, consistent output and content good enough to **compete with national advertising budgets**.",
     owned: [
       "Content strategy for 13 accounts",
       "Management of 16 social channels",
@@ -1065,7 +1065,7 @@ const rawProjects: Project[] = [
     summary:
       "Supported marketing strategies and communications for a national organization, with visual communication work focused on alumni and community connection.",
     challenge:
-      "A national membership organization needed communications that felt personal to local chapters and alumni.",
+      "A national membership organization needed communications that **felt personal** to local chapters and alumni.",
     owned: ["Visual design support", "Communications materials", "Community oriented content"],
     audiences: ["Members", "Alumni", "Chapter leaders"],
     deliverables: ["Design assets", "Communication materials", "Community campaigns"],
@@ -1096,7 +1096,7 @@ const rawProjects: Project[] = [
     summary:
       "Created a mental health wellness care package with coping tools for anxiety and stress, funded and mentored through a county entrepreneurship program.",
     challenge:
-      "Students and patients dealing with anxiety were given advice but rarely given anything tangible to use in the moment.",
+      "Students and patients dealing with anxiety were given advice but **rarely given anything tangible** to use in the moment.",
     owned: [
       "Product concept and contents",
       "Branding and packaging",
@@ -1134,7 +1134,7 @@ const rawProjects: Project[] = [
     summary:
       "Pitched an original television concept called Breaking In to Netflix and Hulu executives at the Real Screen Summit in New Orleans, backed by a pitch deck and a sizzle reel I wrote, shot and edited.",
     challenge:
-      "The pitch had to hold its own in a room of working producers, which meant the concept and the sizzle reel had to be genuinely watchable.",
+      "The pitch had to hold its own in a room of working producers, which meant the concept and the sizzle reel had to be **genuinely watchable**.",
     owned: ["Show concept", "Pitch deck", "Sizzle reel edit in Adobe Premiere", "Live pitch delivery"],
     audiences: ["Netflix and Hulu executives", "Industry producers"],
     deliverables: ["Pitch deck", "Sizzle reel", "Live pitch"],
@@ -1190,9 +1190,9 @@ export const getProject = (slug: string) => projects.find((p) => p.slug === slug
 
 /**
  * The photos shown on a project's page: cover + gallery, deduped by src,
- * capped at 2 so pages stay light instead of turning into a photo dump.
+ * capped at 1 so pages stay light instead of turning into a photo dump.
  */
-export const getDisplayPhotos = (project: Project, max = 2): ProjectImage[] => {
+export const getDisplayPhotos = (project: Project, max = 1): ProjectImage[] => {
   const candidates = [
     ...(project.hideCover ? [] : project.cover ? [project.cover] : []),
     ...(project.gallery ?? []),
