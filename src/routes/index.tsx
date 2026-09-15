@@ -79,8 +79,8 @@ function Home() {
           {featuredProjects.map((p) => (
             <Link
               key={p.slug}
-              to="/work/$slug"
-              params={{ slug: p.slug }}
+              to="/work"
+              hash={p.slug}
               className="border-b border-border py-5 pr-6 text-xl transition-colors hover:text-teal md:odd:border-r md:even:pl-6"
             >
               {p.title}
