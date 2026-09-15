@@ -53,7 +53,7 @@ function LinkThumbPlaceholder() {
   );
 }
 
-/** Example card: thumbnail (real, or a polished placeholder) + linked title only. */
+/** A single work-link card: thumbnail (real, or a polished placeholder) + linked title only. */
 export function LinkCard({ link }: { link: ProjectLink }) {
   return (
     <a
@@ -82,23 +82,23 @@ export function LinkCard({ link }: { link: ProjectLink }) {
 }
 
 /**
- * A project's story, starting directly with Examples. Title only shows when
- * `showTitle` is true — the card already shows it, so the expanded panel
- * (inside a toggle) skips it to avoid repeating it. Challenge, What I Did
- * and Results only render when the project actually has content
- * for them, so a link-only project doesn't get an empty case-study shell.
+ * A project's story, starting directly with the work links. Title only shows
+ * when `showTitle` is true — the card already shows it, so the expanded
+ * panel (inside a toggle) skips it to avoid repeating it. Challenge, What I
+ * Did and Results only render when the project actually has content for
+ * them, so a link-only project doesn't get an empty case-study shell.
  */
 export function ProjectDetails({ project, showTitle = false }: { project: Project; showTitle?: boolean }) {
   const links = project.links ?? [];
-  const hasExamples = links.length > 0 || Boolean(project.folderLink);
+  const hasWork = links.length > 0 || Boolean(project.folderLink);
 
   return (
     <div>
       {showTitle ? <h1 className="text-4xl leading-tight sm:text-5xl">{project.title}</h1> : null}
 
-      {hasExamples ? (
+      {hasWork ? (
         <section className={showTitle ? "mt-8" : ""}>
-          <h3 className="text-3xl">Examples</h3>
+          <h3 className="text-3xl">Work</h3>
           {links.length > 0 ? (
             <ul className="mt-5 space-y-3">
               {links.map((l) => (
@@ -122,7 +122,7 @@ export function ProjectDetails({ project, showTitle = false }: { project: Projec
       ) : null}
 
       {project.challenge || project.owned.length > 0 ? (
-        <div className={`grid gap-10 sm:grid-cols-2 ${hasExamples ? "mt-12 border-t border-border pt-10" : ""}`}>
+        <div className={`grid gap-10 sm:grid-cols-2 ${hasWork ? "mt-12 border-t border-border pt-10" : ""}`}>
           {project.challenge ? (
             <section>
               <h3 className="text-3xl">The challenge</h3>

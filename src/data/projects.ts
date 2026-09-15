@@ -18,22 +18,47 @@ export type Project = {
   cover?: ProjectImage;
   gallery?: ProjectImage[];
   links?: ProjectLink[];
-  /** A "See all X" button separate from individual example links. */
+  /** A "See all" button to the complete Drive folder, separate from individual work links. */
   folderLink?: { label: string; url: string };
 };
 
 export const CATEGORIES = [
+  "B2B & Audience Marketing",
   "Email & Newsletters",
-  "Blogs & Editorial Content",
-  "Healthcare & Technical Storytelling",
-  "Internal, Executive & Change Communications",
-  "Campaigns, Programs & Events",
+  "Blogs and Healthcare Storytelling",
+  "Programs I Built From the Ground Up, Campaigns and Events",
   "Podcast, Video & Interviews",
   "Strive Society Client Work",
   "Brand, Creative & Entrepreneurship",
 ] as const;
 
 const rawProjects: Project[] = [
+  {
+    slug: "monetizeiq-product-storytelling",
+    title: "Shaped MonetizeIQ AI Product Storytelling",
+    organization: "StrategyCorps",
+    categories: ["B2B & Audience Marketing"],
+    summary:
+      "Shaped how the market would understand MonetizeIQ, an AI platform for banks and credit unions, from hero statement and product narrative through voice guidance and video pitch concepts.",
+    challenge:
+      "The product's AI capability was real and technical. Bankers needed to hear **business value, not model architecture**, within the first sentence.",
+    owned: ["Hero statement and core product narrative", "Voice and messaging guidance", "Video pitch concepts and short script"],
+    results: [
+      "A single product narrative adopted across sales, events and marketing",
+      "Repeatable field marketing playbooks created for the launch",
+    ],
+    cover: { src: img.monetizeiqWebinar, alt: "MonetizeIQ webinar graphic featuring banking executives" },
+    links: [
+      {
+        label: "MonetizeIQ product story and video script",
+        url: "https://docs.google.com/document/d/1LluIc2Pm4BpC8byMsg5TVERrQtI6iqcQYxX5bpBcXD0/edit",
+      },
+      {
+        label: "MonetizeIQ webinar campaign",
+        url: "https://docs.google.com/document/d/145zDc-PgsZoaOLu6RsK9VYWdSeZIbDjA/edit",
+      },
+    ],
+  },
   {
     slug: "cerecore-client-newsletter",
     title: "Built a Client Newsletter Program",
@@ -62,16 +87,15 @@ const rawProjects: Project[] = [
         url: "https://drive.google.com/file/d/1p5ntCfZ4so0y9EmjqFlpQTqBgIv3xC1p/view",
         thumb: { src: img.newsletterStats, alt: "CereCore client newsletter performance snapshot" },
       },
-      {
-        label: "Browse client newsletter PDFs",
-        url: "https://drive.google.com/drive/folders/1yqzajcuk8xorADXvV_Gk10D6OlXNPcTP",
-        thumb: { src: img.clientUpdate, alt: "CereCore client newsletter issue" },
-      },
     ],
+    folderLink: {
+      label: "See all client newsletters",
+      url: "https://drive.google.com/drive/folders/1yqzajcuk8xorADXvV_Gk10D6OlXNPcTP",
+    },
   },
   {
     slug: "internal-employee-newsletters",
-    title: "Developed Internal Employee Newsletters",
+    title: "Created Internal Employee Newsletters",
     organization: "CereCore, an HCA Healthcare company",
     categories: ["Email & Newsletters"],
     subsection: "Internal / Employee Newsletters",
@@ -92,21 +116,20 @@ const rawProjects: Project[] = [
         url: "https://drive.google.com/file/d/1jprVY_LBttRuUqg9QdlAqI3YLHEZnX6t/view",
       },
       {
-        label: "Read an internal newsletter issue",
-        url: "https://drive.google.com/file/d/1F-djRPpwWRFfpX9s2-vJqIikxiqSEXP1/view",
-      },
-      {
         label: "View the internal social and content plan",
         url: "https://drive.google.com/file/d/1-rhxviqgE-FBPDQ_4igqjJti5oAIKGj9/view",
       },
     ],
+    folderLink: {
+      label: "See all internal newsletters",
+      url: "https://drive.google.com/drive/folders/1ghSZwqAsgRg_Ec_BNn8hjQFflvwATlyd",
+    },
   },
   {
     slug: "internal-blogs",
-    title: "Developed Internal Blog Content",
+    title: "Blogs and Stories",
     organization: "CereCore, an HCA Healthcare company",
-    categories: ["Blogs & Editorial Content"],
-    subsection: "Internal Blogs",
+    categories: ["Blogs and Healthcare Storytelling"],
     summary: "Wrote internal blog content for employees at CereCore, an HCA Healthcare company.",
     challenge: "",
     owned: [],
@@ -118,36 +141,10 @@ const rawProjects: Project[] = [
     },
   },
   {
-    slug: "external-client-blogs",
-    title: "Created External Client Blog Content",
-    organization: "CereCore, an HCA Healthcare company",
-    categories: ["Blogs & Editorial Content"],
-    subsection: "External / Client Blogs",
-    summary: "Wrote external, client-facing blog content published on the CereCore website.",
-    challenge: "",
-    owned: [],
-    results: [],
-    cover: { src: img.appRationalizationStory, alt: "Published external blog article" },
-    links: [
-      {
-        label: "Read an external client blog article",
-        url: "https://drive.google.com/file/d/1kejRpx14xhptWC3i3KZHCcnMcM1jdxTa/view",
-      },
-      {
-        label: "Read another external client blog article",
-        url: "https://drive.google.com/file/d/1bC8G1YJEraVmeRBxvN9FB9P6ADIwCSA5/view",
-      },
-    ],
-    folderLink: {
-      label: "See all external blog issues",
-      url: "https://drive.google.com/drive/folders/1h5b35GvJmvPDCeGjWEZpz1-OCzul3Z2d",
-    },
-  },
-  {
     slug: "healthcare-customer-stories",
     title: "Created Healthcare Go-Live and Transformation Stories",
     organization: "CereCore, an HCA Healthcare company",
-    categories: ["Healthcare & Technical Storytelling"],
+    categories: ["Blogs and Healthcare Storytelling"],
     summary:
       "Interviewed hospital leaders, clients and subject matter experts to turn complex health IT implementations into clear human stories, published as case studies, blogs and feature articles.",
     challenge:
@@ -188,12 +185,16 @@ const rawProjects: Project[] = [
         url: "https://drive.google.com/file/d/1omKT5yMwuQiIL1Gd0lRftqQ8_pnmAIpd/view",
       },
     ],
+    folderLink: {
+      label: "See all healthcare storytelling",
+      url: "https://drive.google.com/drive/folders/1N-zm8Ba9wvmENHrq4D-bH-0_BChcqXq7",
+    },
   },
   {
     slug: "veronica-survivor-story",
     title: "Produced a Healthcare Survivor Story",
     organization: "CereCore, an HCA Healthcare company",
-    categories: ["Healthcare & Technical Storytelling"],
+    categories: ["Blogs and Healthcare Storytelling"],
     summary:
       "Interviewed a colleague who nearly died and produced a company wide video that connected employees' daily technology work to patient survival.",
     challenge:
@@ -209,35 +210,24 @@ const rawProjects: Project[] = [
     ],
   },
   {
-    slug: "cerecore-internal-comms",
-    title: "Created an Internal Communications Program",
+    slug: "marketing-advocacy-group",
+    title: "Created a 34-Person Marketing Advocacy Group",
     organization: "CereCore, an HCA Healthcare company",
-    categories: ["Internal, Executive & Change Communications"],
+    categories: ["Programs I Built From the Ground Up, Campaigns and Events"],
     summary:
-      "Built and ran the internal communications program for a company of approximately 1,000 people, including editorial strategy, SharePoint intranet structure and an enterprise communications calendar adopted across departments.",
+      "Founded an employee advocacy program, recruited and coached 34 members across departments, and helped them surface and tell accurate stories from their own teams.",
     challenge:
-      "Departments planned communications independently, so employees received overlapping messages one week and silence the next. There was **no single view** of what was going out or where to find it.",
-    owned: [
-      "Editorial calendar and story sourcing across departments",
-      "SharePoint intranet structure, navigation and content experience",
-      "Centralized enterprise communications calendar and intake process",
-      "Leadership messaging and internal announcement support",
-    ],
+      "The people closest to the work had the best stories and **the least confidence sharing them**. Marketing could not be the only voice representing a technical, credibility driven business.",
+    owned: ["Program design, recruitment and onboarding", "Coaching sessions and story sourcing prompts", "Messaging guidance and approval guardrails"],
     results: [
-      "Approximately 82 internal stories published",
-      "Communications calendar adopted across departments",
-      "Estimated annual time savings of 1,468 hours",
+      "34 employee advocates recruited and coached",
+      "Consistent employee generated content tied to campaigns and events",
     ],
-    cover: { src: img.boardroomPresentation, alt: "Sierra Langford presenting a storytelling workshop in a boardroom" },
+    cover: { src: img.masterclassSession, alt: "Sierra Langford leading an internal communications masterclass" },
     links: [
       {
-        label: "Internal communications program overview",
-        url: "https://drive.google.com/file/d/1EmM9XFPtF7yh1e9Z7xxNV_fyIGItPzqo/view",
-      },
-      {
-        label: "2025 Communication Impact Review",
-        url: "https://docs.google.com/presentation/d/18_1JbXGvvB8fEOHvd91-VN-G-kUXP7SN/edit",
-        thumb: { src: img.impactReview, alt: "2025 internal and external communications impact review deck" },
+        label: "View the marketing advocacy program deck",
+        url: "https://drive.google.com/file/d/1RKVpd8ZfYzezZM-Moh1Q8b1v597QO4HV/view",
       },
     ],
   },
@@ -245,7 +235,7 @@ const rawProjects: Project[] = [
     slug: "cerecore-mentorship-program",
     title: "Built a Mentorship Program Toolkit",
     organization: "CereCore, an HCA Healthcare company",
-    categories: ["Internal, Executive & Change Communications"],
+    categories: ["Programs I Built From the Ground Up, Campaigns and Events"],
     summary:
       "Built a company mentorship program from scratch, including structure, toolkit, recruitment and launch communications, and designed it to keep running without me.",
     challenge:
@@ -265,10 +255,36 @@ const rawProjects: Project[] = [
     ],
   },
   {
+    slug: "enterprise-communications-calendar",
+    title: "Built an Enterprise Communications Calendar",
+    organization: "CereCore, an HCA Healthcare company",
+    categories: ["Programs I Built From the Ground Up, Campaigns and Events"],
+    summary:
+      "Identified a coordination gap across departments and built a centralized enterprise communications calendar and intake process that departments adopted.",
+    challenge: "",
+    owned: [],
+    results: [
+      "Approximately 82 internal stories published",
+      "Communications calendar adopted across departments",
+      "Estimated annual time savings of 1,468 hours",
+    ],
+    links: [
+      {
+        label: "2025 Communication Impact Review",
+        url: "https://drive.google.com/file/d/1EmM9XFPtF7yh1e9Z7xxNV_fyIGItPzqo/view",
+        thumb: { src: img.impactReview, alt: "2025 internal and external communications impact review deck" },
+      },
+    ],
+    folderLink: {
+      label: "See all communications work",
+      url: "https://drive.google.com/drive/folders/15ochAlt0ql2Y_CANRZ_R5XyrmlrGITyb",
+    },
+  },
+  {
     slug: "hca-censhare",
     title: "Created Change Communications for a System Transition",
     organization: "HCA Healthcare",
-    categories: ["Internal, Executive & Change Communications"],
+    categories: ["Programs I Built From the Ground Up, Campaigns and Events"],
     summary:
       "Supported the enterprise rollout of the Censhare digital asset management platform inside a large matrixed health system, including stakeholder communications, training materials and adoption support.",
     challenge:
@@ -288,11 +304,11 @@ const rawProjects: Project[] = [
     slug: "ai-enablement",
     title: "Created AI Enablement Content",
     organization: "CereCore and StrategyCorps",
-    categories: ["Internal, Executive & Change Communications"],
+    categories: ["Programs I Built From the Ground Up, Campaigns and Events"],
     summary:
       "Helped teams adopt AI in practical, role relevant ways: training colleagues on everyday tools and designing assisted workflows that removed real administrative work.",
     challenge:
-      "**AI enthusiasm outpaced AI usefulness**. People needed permission, guardrails and concrete examples tied to their own jobs.",
+      "**AI enthusiasm outpaced AI usefulness**. People needed permission, guardrails and concrete, job-specific starting points.",
     owned: ["Serving on the AI Steering Committee", "Teaching colleagues practical AI tools", "Designing role relevant AI workflows"],
     results: [
       "Teams using AI in daily workflows rather than in experiments",
@@ -307,32 +323,10 @@ const rawProjects: Project[] = [
     ],
   },
   {
-    slug: "marketing-advocacy-group",
-    title: "Created a 34-Person Marketing Advocacy Group",
-    organization: "CereCore, an HCA Healthcare company",
-    categories: ["Campaigns, Programs & Events"],
-    summary:
-      "Founded an employee advocacy program, recruited and coached 34 members across departments, and helped them surface and tell accurate stories from their own teams.",
-    challenge:
-      "The people closest to the work had the best stories and **the least confidence sharing them**. Marketing could not be the only voice representing a technical, credibility driven business.",
-    owned: ["Program design, recruitment and onboarding", "Coaching sessions and story sourcing prompts", "Messaging guidance and approval guardrails"],
-    results: [
-      "34 employee advocates recruited and coached",
-      "Consistent employee generated content tied to campaigns and events",
-    ],
-    cover: { src: img.masterclassSession, alt: "Sierra Langford leading an internal communications masterclass" },
-    links: [
-      {
-        label: "View the marketing advocacy program deck",
-        url: "https://drive.google.com/file/d/1RKVpd8ZfYzezZM-Moh1Q8b1v597QO4HV/view",
-      },
-    ],
-  },
-  {
     slug: "connection-2026",
     title: "Planned Connection 2026 Conference for 1,000 People in Nashville",
     organization: "CereCore, an HCA Healthcare company",
-    categories: ["Campaigns, Programs & Events"],
+    categories: ["Programs I Built From the Ground Up, Campaigns and Events"],
     summary:
       "Planned and executed the flagship company wide event for approximately 1,000 attendees in person and virtual, owning communication strategy, content, run of show, executive scripts and onsite execution.",
     challenge:
@@ -362,21 +356,17 @@ const rawProjects: Project[] = [
         label: "Connection 2026 additional event materials",
         url: "https://drive.google.com/file/d/1j9PaBosp7sLSd0xU7xE-iDTIZxIcfnMD/view",
       },
-      {
-        label: "Connection 2026 run of show",
-        url: "https://drive.google.com/file/d/1SDfGWIHt9eR8BBYkOAloPhgDWNVHDTsJ/view",
-      },
-      {
-        label: "Connection 2026 executive scripts",
-        url: "https://drive.google.com/file/d/11e6J4yoztMYnX21N2HzA8cGcLnTlD-xN/view",
-      },
     ],
+    folderLink: {
+      label: "See all campaigns and events",
+      url: "https://drive.google.com/drive/folders/1RkWSlTroSVxVvSiLBhe87fu7cHOEQECu",
+    },
   },
   {
     slug: "himss-2026",
     title: "HIMSS 2026 Vegas Work Trip — Interviewed CIOs, CNOs, and Colleagues for Testimonial Video Clips",
     organization: "CereCore, an HCA Healthcare company",
-    categories: ["Campaigns, Programs & Events"],
+    categories: ["Programs I Built From the Ground Up, Campaigns and Events"],
     summary:
       "Represented the company at HIMSS in Las Vegas and produced a short form interview series on the conference floor with a hospital CIO, a CNO, a health technology CMO and a MEDITECH partner.",
     challenge:
@@ -393,48 +383,21 @@ const rawProjects: Project[] = [
     cover: { src: img.himssInterview, alt: "Sierra Langford interviewing a physician leader at HIMSS 2026" },
     links: [
       {
-        label: "HIMSS 2026 interview series folder",
-        url: "https://drive.google.com/drive/folders/1p_38o4DmlIJqGGBytPPoF_IId4JLQVRX",
-        thumb: { src: img.himssInnovators, alt: "Sierra Langford with healthcare technology leaders at HIMSS 2026" },
-      },
-      {
         label: "HIMSS 2026 interview clip",
         url: "https://drive.google.com/file/d/1ROQmr15cFuUTRqwMDX-_tUT2d5nZ-N2M/view",
         thumb: { src: img.himssMeditech, alt: "MEDITECH partner booth interview at HIMSS 2026" },
       },
     ],
-  },
-  {
-    slug: "monetizeiq-product-storytelling",
-    title: "Shaped MonetizeIQ AI Product Storytelling",
-    organization: "StrategyCorps",
-    categories: ["Campaigns, Programs & Events"],
-    summary:
-      "Shaped how the market would understand MonetizeIQ, an AI platform for banks and credit unions, from hero statement and product narrative through voice guidance and video pitch concepts.",
-    challenge:
-      "The product's AI capability was real and technical. Bankers needed to hear **business value, not model architecture**, within the first sentence.",
-    owned: ["Hero statement and core product narrative", "Voice and messaging guidance", "Video pitch concepts and short script"],
-    results: [
-      "A single product narrative adopted across sales, events and marketing",
-      "Repeatable field marketing playbooks created for the launch",
-    ],
-    cover: { src: img.monetizeiqWebinar, alt: "MonetizeIQ webinar graphic featuring banking executives" },
-    links: [
-      {
-        label: "MonetizeIQ product story and video script",
-        url: "https://docs.google.com/document/d/1LluIc2Pm4BpC8byMsg5TVERrQtI6iqcQYxX5bpBcXD0/edit",
-      },
-      {
-        label: "MonetizeIQ webinar campaign",
-        url: "https://docs.google.com/document/d/145zDc-PgsZoaOLu6RsK9VYWdSeZIbDjA/edit",
-      },
-    ],
+    folderLink: {
+      label: "See all HIMSS interviews",
+      url: "https://drive.google.com/drive/folders/1p_38o4DmlIJqGGBytPPoF_IId4JLQVRX",
+    },
   },
   {
     slug: "monetizeiq-roadshow",
     title: "Created MonetizeIQ Roadshow Content",
     organization: "StrategyCorps",
-    categories: ["Campaigns, Programs & Events"],
+    categories: ["Programs I Built From the Ground Up, Campaigns and Events"],
     summary:
       "Built the field marketing foundation for an AI product launch: conference activations, roadshows, executive dinners, webinars and advisory board concepts, all supported by repeatable briefs and SOPs.",
     challenge:
@@ -461,25 +424,6 @@ const rawProjects: Project[] = [
     ],
   },
   {
-    slug: "strategycorps-leadership-series",
-    title: "Produced a 25th Anniversary Leadership Interview Series",
-    organization: "StrategyCorps",
-    categories: ["Podcast, Video & Interviews"],
-    summary:
-      "Created a leadership interview series with 11 executives to capture company history and perspective, and turned it into reusable brand content.",
-    challenge:
-      "Twenty five years of company history lived in the memories of a handful of leaders and had **never been captured** in a usable form.",
-    owned: ["Storytelling framework", "Interview question development", "Interviews with 11 executives"],
-    results: ["11 executive interviews created a reusable brand and anniversary content library"],
-    cover: { src: img.videoRig, alt: "Video interview rig set up for a leadership interview series" },
-    links: [
-      {
-        label: "Read the leadership interview series",
-        url: "https://docs.google.com/document/d/1ZuAfEmrjQHvbHvLQ5gEw1rscaiuLkhrz/edit",
-      },
-    ],
-  },
-  {
     slug: "cerecore-podcast",
     title: "Produced The CereCore Podcast",
     organization: "CereCore, an HCA Healthcare company",
@@ -502,6 +446,29 @@ const rawProjects: Project[] = [
     cover: { src: img.stevieAward, alt: "The American Business Awards 2026 Gold Stevie Award winner graphic for The CereCore Podcast" },
     links: [
       { label: "Listen to the podcast", url: "https://podcast.cerecore.net/", thumb: { src: img.podcastArtwork, alt: "The CereCore Podcast cover artwork" } },
+    ],
+    folderLink: {
+      label: "View the complete podcast work",
+      url: "https://drive.google.com/drive/folders/1wwUZp5RL728AfUpjHtZ4k8OHdOWwCry6",
+    },
+  },
+  {
+    slug: "strategycorps-leadership-series",
+    title: "Produced a 25th Anniversary Leadership Interview Series",
+    organization: "StrategyCorps",
+    categories: ["Podcast, Video & Interviews"],
+    summary:
+      "Created a leadership interview series with 11 executives to capture company history and perspective, and turned it into reusable brand content.",
+    challenge:
+      "Twenty five years of company history lived in the memories of a handful of leaders and had **never been captured** in a usable form.",
+    owned: ["Storytelling framework", "Interview question development", "Interviews with 11 executives"],
+    results: ["11 executive interviews created a reusable brand and anniversary content library"],
+    cover: { src: img.videoRig, alt: "Video interview rig set up for a leadership interview series" },
+    links: [
+      {
+        label: "Read the leadership interview series",
+        url: "https://docs.google.com/document/d/1ZuAfEmrjQHvbHvLQ5gEw1rscaiuLkhrz/edit",
+      },
     ],
   },
   {
@@ -539,14 +506,14 @@ const rawProjects: Project[] = [
         thumb: { src: img.marketingPortfolio, alt: "Sierra Langford marketing portfolio overview" },
       },
       {
-        label: "Open the client work library",
-        url: "https://drive.google.com/drive/folders/1vPKk2Qi0LDmxD8T9JWcJ4vP8_sNjpk1R",
-      },
-      {
         label: "Open the client writing samples",
         url: "https://drive.google.com/drive/folders/10PoINBpU3fUhLH5d6kowvAprFkK0KdjU",
       },
     ],
+    folderLink: {
+      label: "See all Strive Society client work",
+      url: "https://drive.google.com/drive/folders/1rkqWpRqggmlWc7IDlV814-aKKRi1ujzX",
+    },
   },
   {
     slug: "tammie-osborne-video",
@@ -609,13 +576,7 @@ const rawProjects: Project[] = [
     owned: ["Brand positioning and messaging", "Go to market content", "Email campaigns and social content"],
     results: ["96 percent certification exam pass rate supported by program marketing and enablement"],
     cover: { src: img.cyberprotexBootcamp, alt: "CyberProtex CISSP Exam Prep Bootcamp promotional graphic" },
-    links: [
-      { label: "Visit the CyberProtex site", url: "https://www.cyberprotex.com/" },
-      {
-        label: "CyberProtex supporting source material",
-        url: "https://drive.google.com/drive/folders/1rkqWpRqggmlWc7IDlV814-aKKRi1ujzX",
-      },
-    ],
+    links: [{ label: "Visit the CyberProtex site", url: "https://www.cyberprotex.com/" }],
   },
   {
     slug: "national-panhellenic-conference",
@@ -631,7 +592,7 @@ const rawProjects: Project[] = [
     cover: { src: img.brandBanner, alt: "Creative marketing and community communications portfolio artwork" },
     links: [
       {
-        label: "Open design examples",
+        label: "Browse design work",
         url: "https://drive.google.com/drive/folders/1vPKk2Qi0LDmxD8T9JWcJ4vP8_sNjpk1R",
       },
     ],

@@ -47,7 +47,7 @@ export const roles: Role[] = [
       "Founded the Marketing Advocacy Group and coached 34 employee advocates",
       "Built the enterprise communications calendar adopted across departments",
     ],
-    projects: ["cerecore-internal-comms", "marketing-advocacy-group"],
+    projects: ["internal-employee-newsletters", "marketing-advocacy-group", "enterprise-communications-calendar"],
   },
   {
     organization: "HCA Healthcare",

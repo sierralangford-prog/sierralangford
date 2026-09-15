@@ -28,7 +28,7 @@ export const Route = createFileRoute("/work/")({
           "A portfolio of communications, content, event, podcast, healthcare and client marketing work.",
       },
       { property: "og:title", content: "Work — Sierra Langford" },
-      { property: "og:description", content: "Browse work by category, with real examples for each project." },
+      { property: "og:description", content: "Browse work by category, with direct links to the real work for each project." },
       { property: "og:url", content: "/work" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -118,7 +118,7 @@ function WorkIndex() {
       <p className="eyebrow">Work</p>
       <h1 className="mt-4 max-w-3xl text-4xl leading-tight sm:text-5xl">Work, organized by what I do.</h1>
       <p className="mt-5 max-w-2xl leading-relaxed text-foreground/80">
-        Open a project to see the real examples right here.
+        Open a project to see the real work right here.
       </p>
 
       <div className="mt-12 border-t border-border">

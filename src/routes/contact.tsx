@@ -45,7 +45,7 @@ function Contact() {
           <p className="eyebrow">Best way to reach me</p>
           <p className="mt-3 font-display text-3xl">Connect on LinkedIn</p>
           <p className="mt-2 text-sm text-muted-foreground">
-            Messages here get the fastest reply, including requests for full examples.
+            Messages here get the fastest reply, including requests for the complete work library.
           </p>
         </a>
 
@@ -79,8 +79,8 @@ function Contact() {
           rel="noreferrer noopener"
           className="border border-border bg-card p-7 transition-colors hover:border-foreground"
         >
-          <p className="eyebrow">Examples</p>
-          <p className="mt-3 font-display text-3xl">Open the example library</p>
+          <p className="eyebrow">Work</p>
+          <p className="mt-3 font-display text-3xl">View the complete collection</p>
           <p className="mt-2 text-sm text-muted-foreground">
             Additional writing, campaign and event samples in one shared folder.
           </p>

@@ -3,7 +3,7 @@ import { CoverArt } from "@/components/CoverArt";
 import { ProjectDetails } from "@/components/ProjectDetails";
 
 /**
- * A project's card — closed by default, click to reveal its examples and
+ * A project's card — closed by default, click to reveal its work and
  * story. This is the only toggle level on the Work page: categories are
  * plain, non-collapsible headings, so this never nests inside another
  * toggle.
