@@ -3,6 +3,7 @@ import { featuredProjects } from "@/data/projects";
 import { shortTestimonials } from "@/data/testimonials";
 import { stats } from "@/data/career";
 import { ProjectCard } from "@/components/ProjectCard";
+import { Reveal } from "@/components/Reveal";
 import { img } from "@/lib/images";
 
 export const Route = createFileRoute("/")({
@@ -33,9 +34,9 @@ function Home() {
   return (
     <>
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 md:grid-cols-[1.1fr_0.9fr] md:py-24">
-        <div className="fade-up">
+        <Reveal>
           <p className="eyebrow">Franklin, Tennessee</p>
-          <h1 className="mt-4 text-5xl leading-[1.05] sm:text-6xl">Hi there! I'm Sierra Langford.</h1>
+          <h1 className="mt-4 text-5xl leading-[1.05] sm:text-6xl">Sierra Langford</h1>
           <p className="mt-3 text-lg text-muted-foreground">Builder, innovator and creative.</p>
           <p className="mt-8 max-w-xl font-display text-2xl leading-snug sm:text-3xl">
             I find the human story underneath complicated work, then build the communications, programs,
@@ -59,9 +60,9 @@ function Home() {
               Contact Me
             </Link>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="fade-up">
+        <Reveal delayMs={150}>
           <img
             src={img.portrait}
             alt="Portrait of Sierra Langford, marketing and communications strategist"
@@ -69,11 +70,11 @@ function Home() {
             width={1000}
             height={1000}
           />
-        </div>
+        </Reveal>
       </section>
 
       <section className="border-y border-border bg-paper">
-        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+        <Reveal className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <p className="eyebrow">Selected Results</p>
           <div className="mt-8 grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
             {stats.slice(0, 6).map((s) => (
@@ -86,29 +87,31 @@ function Home() {
           <Link to="/timeline" className="link-underline mt-8 inline-block text-sm">
             See the full picture on my experience page
           </Link>
-        </div>
+        </Reveal>
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p className="eyebrow">Featured Work</p>
-            <h2 className="mt-3 text-4xl">Projects that show how I work.</h2>
+        <Reveal>
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="eyebrow">Featured Work</p>
+              <h2 className="mt-3 text-4xl">Projects that show how I work.</h2>
+            </div>
+            <Link to="/work" className="link-underline text-sm">
+              Browse the full work archive
+            </Link>
           </div>
-          <Link to="/work" className="link-underline text-sm">
-            Browse the full work archive
-          </Link>
-        </div>
 
-        <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {featuredProjects.map((p) => (
-            <ProjectCard key={p.slug} project={p} />
-          ))}
-        </div>
+          <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {featuredProjects.map((p) => (
+              <ProjectCard key={p.slug} project={p} />
+            ))}
+          </div>
+        </Reveal>
       </section>
 
       <section className="border-t border-border bg-paper">
-        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+        <Reveal className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <p className="eyebrow">Testimonials</p>
             <Link to="/recognition" className="link-underline text-sm">
@@ -126,11 +129,11 @@ function Home() {
               </figure>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section className="border-t border-border bg-paper">
-        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
+        <Reveal className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
           <img
             src={img.boardroomPresentation}
             alt="Sierra Langford presenting a storytelling workshop to colleagues in a boardroom"
@@ -151,11 +154,11 @@ function Home() {
               Read more about me
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section className="border-t border-border">
-        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+        <Reveal className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <p className="eyebrow">In the work</p>
           <h2 className="mt-3 text-4xl leading-tight">Moments from events, studios and stages.</h2>
           <div className="mt-9 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
@@ -189,7 +192,7 @@ function Home() {
               />
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
     </>
   );

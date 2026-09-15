@@ -54,7 +54,7 @@ function LinkThumbPlaceholder() {
 }
 
 /** Example card: thumbnail (real, or a polished placeholder) + linked title only. */
-function LinkCard({ link }: { link: ProjectLink }) {
+export function LinkCard({ link }: { link: ProjectLink }) {
   return (
     <a
       href={link.url}
@@ -85,7 +85,7 @@ function LinkCard({ link }: { link: ProjectLink }) {
  * A project's story, starting directly with Examples. Title only shows when
  * `showTitle` is true — the card already shows it, so the expanded panel
  * (inside a toggle) skips it to avoid repeating it. Challenge, What I Did
- * and Results & Impact only render when the project actually has content
+ * and Results only render when the project actually has content
  * for them, so a link-only project doesn't get an empty case-study shell.
  */
 export function ProjectDetails({ project, showTitle = false }: { project: Project; showTitle?: boolean }) {
@@ -135,7 +135,7 @@ export function ProjectDetails({ project, showTitle = false }: { project: Projec
 
       {project.results.length > 0 ? (
         <section className="mt-12 border-t border-border pt-8">
-          <h3 className="text-3xl">Results &amp; Impact</h3>
+          <h3 className="text-3xl">Results</h3>
           <ul className="mt-5 space-y-2.5">
             {project.results.slice(0, MAX_LIST_ITEMS).map((result) => (
               <li key={result} className="flex gap-3 leading-relaxed text-foreground/85">

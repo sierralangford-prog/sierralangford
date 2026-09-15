@@ -374,7 +374,7 @@ const rawProjects: Project[] = [
   },
   {
     slug: "himss-2026",
-    title: "Produced the HIMSS 2026 Interview Series",
+    title: "HIMSS 2026 Vegas Work Trip — Interviewed CIOs, CNOs, and Colleagues for Testimonial Video Clips",
     organization: "CereCore, an HCA Healthcare company",
     categories: ["Campaigns, Programs & Events"],
     summary:

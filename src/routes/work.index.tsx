@@ -2,6 +2,18 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { projects, CATEGORIES, type Project } from "@/data/projects";
 import { ProjectEntry } from "@/components/ProjectEntry";
+import { LinkCard } from "@/components/ProjectDetails";
+
+/** A project that's really just one link — no case study to justify a full card. */
+function isSimpleLink(p: Project) {
+  return (
+    !p.challenge &&
+    p.owned.length === 0 &&
+    p.results.length === 0 &&
+    !p.folderLink &&
+    (p.links?.length ?? 0) === 1
+  );
+}
 
 const DRIVE_CTA_URL = "https://drive.google.com/drive/folders/1ENSKEChZdrzlr1R9JRAswM1xTK0n14rZ";
 const VISIBLE_COUNT = 3;
@@ -61,9 +73,16 @@ function CategorySection({ category, items }: { category: string; items: Project
           <div key={g.subsection ?? "default"}>
             {g.subsection ? <p className="eyebrow mb-3">{g.subsection}</p> : null}
             <div className="space-y-3">
-              {g.items.map((p) => (
-                <ProjectEntry key={p.slug} project={p} />
-              ))}
+              {g.items.map((p) =>
+                isSimpleLink(p) ? (
+                  <div key={p.slug}>
+                    <p className="mb-2 text-xs uppercase tracking-wide text-muted-foreground">{p.title}</p>
+                    <LinkCard link={p.links![0]} />
+                  </div>
+                ) : (
+                  <ProjectEntry key={p.slug} project={p} />
+                ),
+              )}
             </div>
           </div>
         ))}
