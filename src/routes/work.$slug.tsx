@@ -62,6 +62,7 @@ function ProjectPage() {
     .map((s) => getProject(s))
     .filter((p): p is Project => Boolean(p));
   const primaryLink = project.links?.[0];
+  const hasThumbs = Boolean(project.links?.some((l) => l.thumb));
 
   if (project.minimal) {
     return (
@@ -97,24 +98,21 @@ function ProjectPage() {
           <p className="mt-4 text-lg text-muted-foreground">{project.organization}</p>
         ) : null}
         <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/85">{project.summary}</p>
-        <div className="mt-7 flex flex-wrap gap-3">
-          {primaryLink ? (
+        {primaryLink && !hasThumbs ? (
+          <div className="mt-7">
             <a
               href={primaryLink.url}
               target="_blank"
               rel="noreferrer noopener"
-              className="bg-foreground px-5 py-3 text-sm text-primary-foreground transition-opacity hover:opacity-85"
+              className="inline-block bg-foreground px-5 py-3 text-sm text-primary-foreground transition-opacity hover:opacity-85"
             >
               {primaryLink.label}
             </a>
-          ) : null}
-          <a href="#details" className="border border-foreground px-5 py-3 text-sm hover:bg-secondary">
-            Read project details
-          </a>
-        </div>
+          </div>
+        ) : null}
       </header>
 
-      {project.cover ? (
+      {project.hideCover ? null : project.cover ? (
         <img
           src={project.cover.src}
           alt={project.cover.alt}
@@ -145,7 +143,6 @@ function ProjectPage() {
       {project.links && project.links.length > 0 ? (
         <section className="mt-12 border-t border-border pt-8" aria-labelledby="examples-heading">
           <h2 id="examples-heading" className="text-3xl">Examples</h2>
-          <p className="mt-2 text-sm text-muted-foreground">Each one opens the real work in a new tab.</p>
           {project.links.some((l) => l.thumb) ? (
             <ul className="mt-6 space-y-3">
               {project.links.map((l) => (
@@ -157,12 +154,14 @@ function ProjectPage() {
                     className="group flex items-center gap-4 border border-border bg-card p-2 transition-colors hover:border-foreground"
                   >
                     {l.thumb ? (
-                      <img
-                        src={l.thumb.src}
-                        alt={l.thumb.alt}
-                        loading="lazy"
-                        className="h-12 w-24 shrink-0 border border-border object-cover object-top"
-                      />
+                      <span className="block h-16 w-24 shrink-0 overflow-hidden border border-border">
+                        <img
+                          src={l.thumb.src}
+                          alt={l.thumb.alt}
+                          loading="lazy"
+                          className="h-full w-full scale-[1.9] object-cover object-center"
+                        />
+                      </span>
                     ) : null}
                     <span className="text-sm underline underline-offset-4 group-hover:text-teal">
                       {l.label} <span aria-hidden>↗</span>
@@ -219,14 +218,12 @@ function ProjectPage() {
       {related.length > 0 ? (
         <section className="mt-16 border-t border-border pt-8">
           <h2 className="text-3xl">Related projects</h2>
-          <ul className="mt-5 grid gap-4 sm:grid-cols-2">
+          <ul className="mt-5 space-y-2">
             {related.map((r) => (
-              <li key={r.slug} className="border border-border bg-card p-5">
-                <p className="eyebrow">{r.categories[0]}</p>
-                <Link to="/work/$slug" params={{ slug: r.slug }} className="mt-2 block font-display text-2xl hover:text-teal">
+              <li key={r.slug}>
+                <Link to="/work/$slug" params={{ slug: r.slug }} className="link-underline text-lg">
                   {r.title}
                 </Link>
-                <p className="mt-2 text-sm text-muted-foreground">{r.headlineResult}</p>
               </li>
             ))}
           </ul>
