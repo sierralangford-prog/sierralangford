@@ -35,14 +35,17 @@ function WorkIndex() {
       const primary = p.categories[0];
       if (!primary) continue;
       const list = byCategory.get(primary) ?? [];
-      list.push({
+      const deduplicated: Project = {
         ...p,
-        links: p.links?.filter((link) => {
+      };
+      if (p.links) {
+        deduplicated.links = p.links.filter((link) => {
           if (usedExamples.has(link.url)) return false;
           usedExamples.add(link.url);
           return true;
-        }),
-      });
+        });
+      }
+      list.push(deduplicated);
       byCategory.set(primary, list);
     }
     return CATEGORIES.map((category) => ({
