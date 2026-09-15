@@ -62,6 +62,7 @@ function ProjectPage() {
     .map((s) => getProject(s))
     .filter((p): p is Project => Boolean(p));
   const primaryLink = project.links?.[0];
+  const hasThumbs = Boolean(project.links?.some((l) => l.thumb));
 
   if (project.minimal) {
     return (
