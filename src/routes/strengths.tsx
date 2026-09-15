@@ -79,12 +79,7 @@ function Strengths() {
             Here is the honest version, including what I have to manage.
           </p>
         </div>
-        <img
-          src={img.connectionStage}
-          alt="Sierra Langford presenting on stage at a company wide conference"
-          loading="lazy"
-          className="w-full object-cover"
-        />
+        <div />
       </div>
 
       <div className="mt-16 space-y-14">

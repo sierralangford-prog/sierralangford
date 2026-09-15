@@ -21,12 +21,12 @@ export function CoverArt({ project, className = "" }: { project: Project; classN
   return (
     <div
       role="img"
-      aria-label={`${project.title}, ${project.organization}`}
+      aria-label={project.title}
       className={`flex flex-col justify-between p-6 ${className}`}
       style={{ background: p.bg }}
     >
       <span className="eyebrow">{project.categories[0]}</span>
-      <span className="font-display text-2xl leading-tight sm:text-3xl">{project.organization}</span>
+      <span className="font-display text-2xl leading-tight sm:text-3xl">{project.title}</span>
       <span className="h-1 w-16" style={{ background: p.accent }} aria-hidden />
     </div>
   );
