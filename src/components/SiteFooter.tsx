@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 export function SiteFooter() {
   return (
     <footer className="mt-24 border-t border-border bg-paper">
-      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:px-8 md:grid-cols-3">
+      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-3">
         <div>
           <p className="font-display text-2xl">Sierra Langford</p>
           <p className="mt-2 max-w-xs text-sm text-muted-foreground">
@@ -14,8 +14,9 @@ export function SiteFooter() {
         <div>
           <p className="eyebrow">Site</p>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><Link to="/work" className="link-underline">Selected Work</Link></li>
             <li><Link to="/about" className="link-underline">About</Link></li>
+            <li><Link to="/work" className="link-underline">Work</Link></li>
+            <li><Link to="/timeline" className="link-underline">Experience</Link></li>
             <li><Link to="/recognition" className="link-underline">Testimonials</Link></li>
             <li><Link to="/strengths" className="link-underline">Strengths</Link></li>
             <li><Link to="/contact" className="link-underline">Contact</Link></li>
@@ -28,6 +29,11 @@ export function SiteFooter() {
             <li>
               <a href="https://www.linkedin.com/in/sierralangford1/" target="_blank" rel="noreferrer" className="link-underline">
                 Connect on LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href="https://podcast.cerecore.net/" target="_blank" rel="noreferrer" className="link-underline">
+                Listen to the podcast
               </a>
             </li>
             <li>

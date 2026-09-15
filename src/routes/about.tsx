@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { img } from "@/lib/images";
 import { skills, industries } from "@/data/career";
 
 export const Route = createFileRoute("/about")({
@@ -28,7 +29,7 @@ export const Route = createFileRoute("/about")({
 function About() {
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-      <div className="max-w-3xl">
+      <div className="grid gap-12 md:grid-cols-[1fr_0.8fr]">
         <div>
           <p className="eyebrow">About</p>
           <h1 className="mt-4 text-4xl leading-tight sm:text-5xl">
@@ -41,6 +42,18 @@ function About() {
               something people understand and remember.
             </p>
             <p>
+              That instinct has taken me through healthcare and health technology, internal and executive
+              communications, AI and emerging technology, cybersecurity, field marketing, events, podcasts,
+              newsletters, customer stories, social media and brand work. I also founded and continue to run
+              Strive Society, a creative marketing practice built around long-term client partnerships.
+            </p>
+            <p>
+              In practice, that means I have built a podcast that won a Gold Stevie Award, a client newsletter
+              that reached 3,307 people at a 70 percent open rate, a company wide event for roughly 1,000
+              attendees, an employee advocacy program with 34 members, 18 healthcare case studies, and a
+              national roadshow and executive dinner program for an AI product launch.
+            </p>
+            <p>
               Songwriting is still how I think about structure. Tension, clarity, the turn, the line that makes
               someone lean in. A case study and a chorus are solving the same problem: give a person one true
               thing they will still remember tomorrow.
@@ -48,6 +61,26 @@ function About() {
           </div>
         </div>
 
+        <div>
+          <img
+            src={img.portrait}
+            alt="Professional portrait of Sierra Langford"
+            className="w-full object-cover"
+            width={1000}
+            height={1000}
+          />
+          <div className="mt-8 border-t border-border pt-6">
+            <p className="eyebrow">Education</p>
+            <p className="mt-3 font-display text-2xl leading-snug">University of Tennessee, Knoxville</p>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Bachelor of Science in Communication, Journalism and Electronic Media
+              <br />
+              Creative Media Concentration
+              <br />
+              Magna Cum Laude · Graduated in three years · GPA 3.81
+            </p>
+          </div>
+        </div>
       </div>
 
       <section className="mt-20 border-t border-border pt-12">
@@ -105,7 +138,7 @@ function About() {
         </div>
       </section>
 
-      <section className="mt-20 border-t border-border pt-12">
+      <section className="mt-20 grid gap-10 border-t border-border pt-12 md:grid-cols-[1fr_0.9fr] md:items-center">
         <div>
           <p className="eyebrow">Outside the work</p>
           <h2 className="mt-4 text-3xl leading-tight">The creative habits that feed the professional ones.</h2>
@@ -134,6 +167,12 @@ function About() {
             See the work
           </Link>
         </div>
+        <img
+          src={img.photographyCanon}
+          alt="Sierra Langford holding a Canon camera while photographing on location"
+          loading="lazy"
+          className="w-full object-cover"
+        />
       </section>
     </div>
   );
