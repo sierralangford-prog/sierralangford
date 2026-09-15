@@ -21,14 +21,14 @@ import internalVideoStill from "@/assets/internal-video-still.png.asset.json";
 import masterclassSession from "@/assets/masterclass-session.png.asset.json";
 import clientUpdate from "@/assets/gd-client-update.png";
 import newsletterStats from "@/assets/gd-newsletter-stats.png";
-import newsletterJune2025 from "@/assets/newsletter-june-2025.jpg.asset.json";
-import newsletterJuly2025 from "@/assets/newsletter-july-2025.jpg.asset.json";
-import newsletterAugust2025 from "@/assets/newsletter-august-2025.jpg.asset.json";
-import newsletterSeptember2025 from "@/assets/newsletter-september-2025.jpg.asset.json";
-import newsletterOctober2025 from "@/assets/newsletter-october-2025.jpg.asset.json";
-import newsletterNovember2025 from "@/assets/newsletter-november-2025.jpg.asset.json";
-import newsletterDecember2025 from "@/assets/newsletter-december-2025.jpg.asset.json";
-import newsletterSpring2026 from "@/assets/newsletter-spring-2026.jpg.asset.json";
+import newsletterJune2025 from "@/assets/newsletter-june-2025-section.png";
+import newsletterJuly2025 from "@/assets/newsletter-july-2025-section.png";
+import newsletterAugust2025 from "@/assets/newsletter-august-2025-section.png";
+import newsletterSeptember2025 from "@/assets/newsletter-september-2025-section.png";
+import newsletterOctober2025 from "@/assets/newsletter-october-2025-section.png";
+import newsletterNovember2025 from "@/assets/newsletter-november-2025-section.png";
+import newsletterDecember2025 from "@/assets/newsletter-december-2025-section.png";
+import newsletterSpring2026 from "@/assets/newsletter-spring-2026-section.png";
 import impactReview from "@/assets/gd-impact-review.png";
 import internalAgenda from "@/assets/gd-internal-agenda.png";
 import navigatingPurpose from "@/assets/gd-navigating-purpose.png";
@@ -95,14 +95,14 @@ export const img = {
   masterclassSession: masterclassSession.url,
   clientUpdate,
   newsletterStats,
-  newsletterJune2025: newsletterJune2025.url,
-  newsletterJuly2025: newsletterJuly2025.url,
-  newsletterAugust2025: newsletterAugust2025.url,
-  newsletterSeptember2025: newsletterSeptember2025.url,
-  newsletterOctober2025: newsletterOctober2025.url,
-  newsletterNovember2025: newsletterNovember2025.url,
-  newsletterDecember2025: newsletterDecember2025.url,
-  newsletterSpring2026: newsletterSpring2026.url,
+  newsletterJune2025,
+  newsletterJuly2025,
+  newsletterAugust2025,
+  newsletterSeptember2025,
+  newsletterOctober2025,
+  newsletterNovember2025,
+  newsletterDecember2025,
+  newsletterSpring2026,
   impactReview,
   internalAgenda,
   navigatingPurpose,
