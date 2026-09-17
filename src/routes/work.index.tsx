@@ -74,7 +74,7 @@ function CategorySection({ category, items }: { category: string; items: Project
                 isSimpleLink(p) ? (
                   <div key={p.slug}>
                     <p className="mb-2 text-xs uppercase tracking-wide text-muted-foreground">{p.title}</p>
-                    <LinkCard link={p.links![0]} fallbackThumb={p.cover} />
+                    {p.links?.[0] ? <LinkCard link={p.links[0]} fallbackThumb={p.cover} /> : null}
                   </div>
                 ) : (
                   <ProjectEntry key={p.slug} project={p} />

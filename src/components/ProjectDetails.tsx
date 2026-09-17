@@ -110,14 +110,9 @@ export function ProjectDetails({ project, showTitle = false }: { project: Projec
             </ul>
           ) : null}
           {project.folderLink ? (
-            <a
-              href={project.folderLink.url}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="mt-4 inline-block border border-foreground px-5 py-3 text-sm underline underline-offset-4 transition-colors hover:bg-foreground hover:text-primary-foreground"
-            >
-              {project.folderLink.label} <span aria-hidden>↗</span>
-            </a>
+            <div className={links.length > 0 ? "mt-3" : "mt-5"}>
+              <LinkCard link={project.folderLink} fallbackThumb={project.cover} />
+            </div>
           ) : null}
         </section>
       ) : null}

@@ -537,6 +537,7 @@ const rawProjects: Project[] = [
       "The pitch had to hold its own in a room of working producers, which meant the concept and the sizzle reel had to be **genuinely watchable**.",
     owned: ["Show concept and pitch deck", "Sizzle reel edit in Adobe Premiere", "Live pitch delivery"],
     results: ["Pitched directly to Netflix and Hulu executives", "Featured in published coverage of the summit"],
+    cover: { src: img.videoRig, alt: "Camera rig used for interview and video production" },
     links: [
       { label: "Watch the sizzle reel", url: "https://youtu.be/Seat0OVm6D4" },
       { label: "View the Breaking In pitch deck", url: "https://drive.google.com/file/d/1nK-7mzbKjdzkfcNTA1twOFkS1wNLhKBM/view" },
@@ -579,6 +580,7 @@ const rawProjects: Project[] = [
     challenge: "",
     owned: [],
     results: [],
+    cover: { src: img.liveEvent, alt: "Professional video production at a live event" },
     links: [
       {
         label: "View the video on LinkedIn",
@@ -595,6 +597,7 @@ const rawProjects: Project[] = [
     challenge: "",
     owned: [],
     results: [],
+    cover: { src: img.sierraAtDesk, alt: "Sierra Langford working at her desk" },
     links: [{ label: "Visit the Roxy's Hair Salon website", url: "https://roxyshair.netlify.app/" }],
   },
   {
@@ -606,6 +609,7 @@ const rawProjects: Project[] = [
     challenge: "",
     owned: [],
     results: [],
+    cover: { src: img.teamYeehawRestaurant, alt: "A group gathered around a restaurant table" },
     links: [{ label: "View Salsarita's East Tennessee on Instagram", url: "https://www.instagram.com/salsaritaseasttn/" }],
   },
   {
@@ -617,6 +621,7 @@ const rawProjects: Project[] = [
     challenge: "",
     owned: [],
     results: [],
+    cover: { src: img.photographyCanon, alt: "Sierra Langford creating brand photography" },
     links: [{ label: "View Brentwood Jewelry on Instagram", url: "https://www.instagram.com/brentwoodjewelry/" }],
   },
   {
