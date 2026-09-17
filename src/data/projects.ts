@@ -209,7 +209,7 @@ const rawProjects: Project[] = [
   },
   {
     slug: "marketing-advocacy-group",
-    title: "Created a 34-Person Marketing Advocacy Group",
+    title: "Built and Led a 34-Person Marketing Advocacy Group",
     organization: "CereCore, an HCA Healthcare company",
     categories: ["Programs I Built"],
     summary:
@@ -247,7 +247,7 @@ const rawProjects: Project[] = [
   },
   {
     slug: "cerecore-mentorship-program",
-    title: "Built a Mentorship Program Toolkit",
+    title: "CereCore Mentorship Program",
     organization: "CereCore, an HCA Healthcare company",
     categories: ["Programs I Built"],
     summary:
@@ -278,7 +278,7 @@ const rawProjects: Project[] = [
       },
       {
         label: "Mentorship program guidelines",
-        url: "https://drive.google.com/file/d/11nE9j3CaKLmjQQsj5mLCtxL7sJd8Icns5B4y/view",
+        url: "https://drive.google.com/file/d/11nE9j3CaKLmjQQsj5mLCtxL7icns5B4y/view",
         thumb: { src: img.mentorBestPracticesSlide, alt: "Mentor best practices from the mentorship program guidelines" },
       },
     ],
@@ -450,17 +450,17 @@ const rawProjects: Project[] = [
       {
         label: "Roadshow repositioning strategy",
         url: "https://drive.google.com/file/d/1RrQiRjqVO_B4YY7HqEb6HU5C04E_1hvY/view",
-        thumb: { src: img.eventNetworking, alt: "Field marketing conversations at an industry event" },
+        thumb: { src: img.eventThreeWomen, alt: "Sierra Langford with colleagues at a professional event" },
       },
       {
         label: "Executive Dinner Series event brief",
         url: "https://drive.google.com/file/d/1XCdjjOj4ZxuHW6R20NVcJRPSL8fyZAMM/view",
-        thumb: { src: img.teamYeehawRestaurant, alt: "Colleagues gathered around a dinner table" },
+        thumb: { src: img.teamBoombox, alt: "Sierra Langford with colleagues at an event venue" },
       },
       {
         label: "Field Marketing Event Playbook",
         url: "https://drive.google.com/file/d/1NWKjesU4pAwnOvoVvl2tn10tDgfoD6kK/view",
-        thumb: { src: img.strategycorpsTeamPage, alt: "StrategyCorps team featured in field marketing materials" },
+        thumb: { src: img.cerecoreBoothTeam, alt: "A field marketing team at a conference booth" },
       },
       {
         label: "Webinar presentation — new AI software",

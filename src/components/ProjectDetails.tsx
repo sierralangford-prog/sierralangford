@@ -69,7 +69,7 @@ export function LinkCard({ link, fallbackThumb }: { link: ProjectLink; fallbackT
             src={thumb.src}
             alt={thumb.alt}
             loading="lazy"
-            className="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-[1.03]"
+            className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.03]"
           />
         </span>
       ) : (
