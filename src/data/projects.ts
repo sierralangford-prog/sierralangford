@@ -297,6 +297,7 @@ const rawProjects: Project[] = [
       "Communications calendar adopted across departments",
       "Estimated annual time savings of 1,468 hours",
     ],
+    cover: { src: img.impactReview, alt: "2025 communications impact review presentation" },
     links: [
       {
         label: "2025 Communication Impact Review",
