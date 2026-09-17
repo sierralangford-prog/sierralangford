@@ -54,7 +54,8 @@ function LinkThumbPlaceholder() {
 }
 
 /** A single work-link card: thumbnail (real, or a polished placeholder) + linked title only. */
-export function LinkCard({ link }: { link: ProjectLink }) {
+export function LinkCard({ link, fallbackThumb }: { link: ProjectLink; fallbackThumb?: Project["cover"] }) {
+  const thumb = link.thumb ?? fallbackThumb;
   return (
     <a
       href={link.url}
@@ -62,13 +63,13 @@ export function LinkCard({ link }: { link: ProjectLink }) {
       rel="noreferrer noopener"
       className="group flex items-center gap-4 border border-border bg-card p-3 transition-colors hover:border-foreground"
     >
-      {link.thumb ? (
-        <span className="block h-16 w-24 shrink-0 overflow-hidden border border-border">
+      {thumb ? (
+        <span className="block h-20 w-28 shrink-0 overflow-hidden bg-secondary sm:w-32">
           <img
-            src={link.thumb.src}
-            alt={link.thumb.alt}
+            src={thumb.src}
+            alt={thumb.alt}
             loading="lazy"
-            className="h-full w-full scale-[1.9] object-cover object-center"
+            className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.03]"
           />
         </span>
       ) : (
@@ -98,25 +99,20 @@ export function ProjectDetails({ project, showTitle = false }: { project: Projec
 
       {hasWork ? (
         <section className={showTitle ? "mt-8" : ""}>
-          <h3 className="text-3xl">Work</h3>
+          <h3 className="text-2xl">Examples</h3>
           {links.length > 0 ? (
             <ul className="mt-5 space-y-3">
               {links.map((l) => (
                 <li key={l.url}>
-                  <LinkCard link={l} />
+                  <LinkCard link={l} fallbackThumb={project.cover} />
                 </li>
               ))}
             </ul>
           ) : null}
           {project.folderLink ? (
-            <a
-              href={project.folderLink.url}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="mt-4 inline-block border border-foreground px-5 py-3 text-sm underline underline-offset-4 transition-colors hover:bg-foreground hover:text-primary-foreground"
-            >
-              {project.folderLink.label} <span aria-hidden>↗</span>
-            </a>
+            <div className={links.length > 0 ? "mt-3" : "mt-5"}>
+              <LinkCard link={project.folderLink} fallbackThumb={project.cover} />
+            </div>
           ) : null}
         </section>
       ) : null}

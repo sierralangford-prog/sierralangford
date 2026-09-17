@@ -26,7 +26,8 @@ export const CATEGORIES = [
   "B2B & Audience Marketing",
   "Email & Newsletters",
   "Blogs and Healthcare Storytelling",
-  "Programs I Built From the Ground Up, Campaigns and Events",
+  "Field Marketing and Event Strategy",
+  "Programs I Built",
   "Podcast, Video & Interviews",
   "Strive Society Client Work",
   "Brand, Creative & Entrepreneurship",
@@ -52,10 +53,7 @@ const rawProjects: Project[] = [
       {
         label: "MonetizeIQ product story and video script",
         url: "https://docs.google.com/document/d/1LluIc2Pm4BpC8byMsg5TVERrQtI6iqcQYxX5bpBcXD0/edit",
-      },
-      {
-        label: "MonetizeIQ webinar campaign",
-        url: "https://docs.google.com/document/d/145zDc-PgsZoaOLu6RsK9VYWdSeZIbDjA/edit",
+        thumb: { src: img.monetizeiqWebinar, alt: "MonetizeIQ AI software webinar campaign" },
       },
     ],
   },
@@ -211,9 +209,9 @@ const rawProjects: Project[] = [
   },
   {
     slug: "marketing-advocacy-group",
-    title: "Created a 34-Person Marketing Advocacy Group",
+    title: "Built and Led a 34-Person Marketing Advocacy Group",
     organization: "CereCore, an HCA Healthcare company",
-    categories: ["Programs I Built From the Ground Up, Campaigns and Events"],
+    categories: ["Programs I Built"],
     summary:
       "Founded an employee advocacy program, recruited and coached 34 members across departments, and helped them surface and tell accurate stories from their own teams.",
     challenge:
@@ -226,16 +224,32 @@ const rawProjects: Project[] = [
     cover: { src: img.masterclassSession, alt: "Sierra Langford leading an internal communications masterclass" },
     links: [
       {
-        label: "View the marketing advocacy program deck",
-        url: "https://drive.google.com/file/d/1RKVpd8ZfYzezZM-Moh1Q8b1v597QO4HV/view",
+        label: "Marketing Advocacy kickoff presentation",
+        url: "https://docs.google.com/presentation/d/1V865xDfKewqRHgx3U2_UHaognMm5uAhQ/edit",
+        thumb: { src: img.masterclassSession, alt: "Marketing advocacy program kickoff session" },
+      },
+      {
+        label: "Marketing Advocacy program guide",
+        url: "https://docs.google.com/presentation/d/1RKVpd8ZfYzezZM-Moh1Q8b1v597QO4HV/edit",
+        thumb: { src: img.boardroomPresentation, alt: "Marketing advocacy program presentation" },
+      },
+      {
+        label: "Marketing Advocacy monthly meetup recording",
+        url: "https://drive.google.com/file/d/1igO6rB2ohFFPBVkfk0k74laJIITIIPWJ/view",
+        thumb: { src: img.internalVideoStill, alt: "Marketing advocacy monthly meetup recording" },
+      },
+      {
+        label: "Story idea collection tool",
+        url: "https://docs.google.com/presentation/d/1Ro3xgvrRpGKMkiBRvsLkQS5A09-KLNBF/edit",
+        thumb: { src: img.cerecoreHumanTouch, alt: "Story development session with colleagues" },
       },
     ],
   },
   {
     slug: "cerecore-mentorship-program",
-    title: "Built a Mentorship Program Toolkit",
+    title: "CereCore Mentorship Program",
     organization: "CereCore, an HCA Healthcare company",
-    categories: ["Programs I Built From the Ground Up, Campaigns and Events"],
+    categories: ["Programs I Built"],
     summary:
       "Built a company mentorship program from scratch, including structure, toolkit, recruitment and launch communications, and designed it to keep running without me.",
     challenge:
@@ -248,9 +262,24 @@ const rawProjects: Project[] = [
     cover: { src: img.cerecoreMentorshipToolkitCover, alt: "CereCore Mentorship Toolkit presentation cover" },
     links: [
       {
-        label: "View the mentorship program toolkit",
+        label: "Company-wide Mentorship Program presentation",
+        url: "https://drive.google.com/file/d/181Sgd3N1Av2DAoI7rSwgzUN1foL9IgnH/view",
+        thumb: { src: img.cerecoreMentorshipSlido, alt: "Company-wide mentorship program presentation" },
+      },
+      {
+        label: "CereCore Mentorship Toolkit",
         url: "https://drive.google.com/file/d/1DENUTuSB7SINUmh8O-LqqDTtBk9-Qoel/view",
         thumb: { src: img.mentorshipToolkit, alt: "CereCore mentorship toolkit presentation" },
+      },
+      {
+        label: "Mentorship overview",
+        url: "https://drive.google.com/file/d/12jd5HDAvQ40nDYXjIcil1S2UZmAuL95O/view",
+        thumb: { src: img.cerecoreMentorshipToolkitCover, alt: "CereCore mentorship program overview" },
+      },
+      {
+        label: "Mentorship program guidelines",
+        url: "https://drive.google.com/file/d/11nE9j3CaKLmjQQsj5mLCtxL7icns5B4y/view",
+        thumb: { src: img.mentorBestPracticesSlide, alt: "Mentor best practices from the mentorship program guidelines" },
       },
     ],
   },
@@ -258,7 +287,7 @@ const rawProjects: Project[] = [
     slug: "enterprise-communications-calendar",
     title: "Built an Enterprise Communications Calendar",
     organization: "CereCore, an HCA Healthcare company",
-    categories: ["Programs I Built From the Ground Up, Campaigns and Events"],
+    categories: ["Programs I Built"],
     summary:
       "Identified a coordination gap across departments and built a centralized enterprise communications calendar and intake process that departments adopted.",
     challenge: "",
@@ -268,6 +297,7 @@ const rawProjects: Project[] = [
       "Communications calendar adopted across departments",
       "Estimated annual time savings of 1,468 hours",
     ],
+    cover: { src: img.impactReview, alt: "2025 communications impact review presentation" },
     links: [
       {
         label: "2025 Communication Impact Review",
@@ -284,7 +314,7 @@ const rawProjects: Project[] = [
     slug: "hca-censhare",
     title: "Created Change Communications for a System Transition",
     organization: "HCA Healthcare",
-    categories: ["Programs I Built From the Ground Up, Campaigns and Events"],
+    categories: ["Programs I Built"],
     summary:
       "Supported the enterprise rollout of the Censhare digital asset management platform inside a large matrixed health system, including stakeholder communications, training materials and adoption support.",
     challenge:
@@ -304,7 +334,7 @@ const rawProjects: Project[] = [
     slug: "ai-enablement",
     title: "Created AI Enablement Content",
     organization: "CereCore and StrategyCorps",
-    categories: ["Programs I Built From the Ground Up, Campaigns and Events"],
+    categories: ["Programs I Built"],
     summary:
       "Helped teams adopt AI in practical, role relevant ways: training colleagues on everyday tools and designing assisted workflows that removed real administrative work.",
     challenge:
@@ -326,7 +356,7 @@ const rawProjects: Project[] = [
     slug: "connection-2026",
     title: "Planned Connection 2026 Conference for 1,000 People in Nashville",
     organization: "CereCore, an HCA Healthcare company",
-    categories: ["Programs I Built From the Ground Up, Campaigns and Events"],
+    categories: ["Field Marketing and Event Strategy"],
     summary:
       "Planned and executed the flagship company wide event for approximately 1,000 attendees in person and virtual, owning communication strategy, content, run of show, executive scripts and onsite execution.",
     challenge:
@@ -347,14 +377,17 @@ const rawProjects: Project[] = [
       {
         label: "Connection 2026 strategy and content",
         url: "https://drive.google.com/file/d/1TeXuXIKWxWUkYqXk1IgA6Uh2VQ8D1Ps5/view",
+        thumb: { src: img.connectionStage, alt: "Sierra Langford presenting on stage at Connection 2026" },
       },
       {
         label: "Connection 2026 event feedback and results",
         url: "https://drive.google.com/file/d/1oGdZiWQzjiHw8uUA0gVuU2xK6tpzj7o1/view",
+        thumb: { src: img.companyMeeting, alt: "Company-wide event audience and presentation" },
       },
       {
         label: "Connection 2026 additional event materials",
         url: "https://drive.google.com/file/d/1j9PaBosp7sLSd0xU7xE-iDTIZxIcfnMD/view",
+        thumb: { src: img.liveEvent, alt: "Live company event production" },
       },
     ],
     folderLink: {
@@ -366,7 +399,7 @@ const rawProjects: Project[] = [
     slug: "himss-2026",
     title: "HIMSS 2026 Vegas Work Trip — Interviewed CIOs, CNOs, and Colleagues for Testimonial Video Clips",
     organization: "CereCore, an HCA Healthcare company",
-    categories: ["Programs I Built From the Ground Up, Campaigns and Events"],
+    categories: ["Field Marketing and Event Strategy"],
     summary:
       "Represented the company at HIMSS in Las Vegas and produced a short form interview series on the conference floor with a hospital CIO, a CNO, a health technology CMO and a MEDITECH partner.",
     challenge:
@@ -397,7 +430,7 @@ const rawProjects: Project[] = [
     slug: "monetizeiq-roadshow",
     title: "Created MonetizeIQ Roadshow Content",
     organization: "StrategyCorps",
-    categories: ["Programs I Built From the Ground Up, Campaigns and Events"],
+    categories: ["Field Marketing and Event Strategy"],
     summary:
       "Built the field marketing foundation for an AI product launch: conference activations, roadshows, executive dinners, webinars and advisory board concepts, all supported by repeatable briefs and SOPs.",
     challenge:
@@ -410,16 +443,39 @@ const rawProjects: Project[] = [
     cover: { src: img.strategycorpsRoadshowCities, alt: "StrategyCorps MonetizeIQ roadshow schedule across 16 cities" },
     links: [
       {
-        label: "MonetizeIQ roadshow overview",
+        label: "Multi-Market Roadshow email journey",
         url: "https://drive.google.com/file/d/1WopDvTdRGugSwfiytE2IdonG038qi5Hd/view",
+        thumb: { src: img.strategycorpsRoadshowCities, alt: "StrategyCorps multi-market roadshow across 16 cities" },
       },
       {
-        label: "MonetizeIQ roadshow presentation",
-        url: "https://docs.google.com/presentation/d/1Z-bNpUHAEGenJvcTYnZ8R4hcrG4DVuIs/edit",
+        label: "Roadshow repositioning strategy",
+        url: "https://drive.google.com/file/d/1RrQiRjqVO_B4YY7HqEb6HU5C04E_1hvY/view",
+        thumb: { src: img.eventThreeWomen, alt: "Sierra Langford with colleagues at a professional event" },
       },
       {
-        label: "MonetizeIQ roadshow supporting materials",
-        url: "https://drive.google.com/file/d/1f4ij0QgOQYxfj-V-oo2ErpowoO7qn6UF/view",
+        label: "Executive Dinner Series event brief",
+        url: "https://drive.google.com/file/d/1XCdjjOj4ZxuHW6R20NVcJRPSL8fyZAMM/view",
+        thumb: { src: img.teamBoombox, alt: "Sierra Langford with colleagues at an event venue" },
+      },
+      {
+        label: "Field Marketing Event Playbook",
+        url: "https://drive.google.com/file/d/1NWKjesU4pAwnOvoVvl2tn10tDgfoD6kK/view",
+        thumb: { src: img.cerecoreBoothTeam, alt: "A field marketing team at a conference booth" },
+      },
+      {
+        label: "Webinar presentation — new AI software",
+        url: "https://docs.google.com/presentation/d/1uantFy-0vv2Ff6ZXXH_MKwz7J-sFHjzn/edit",
+        thumb: { src: img.monetizeiqWebinar, alt: "MonetizeIQ webinar featuring banking and technology leaders" },
+      },
+      {
+        label: "MonetizeIQ webinar moderator script",
+        url: "https://docs.google.com/document/d/1yc8L3tSjASZ19awbH14YBejBuas4C79q/edit",
+        thumb: { src: img.monetizeiqWebinar, alt: "MonetizeIQ webinar moderator and speakers" },
+      },
+      {
+        label: "Webinar abstract",
+        url: "https://docs.google.com/document/d/145zDc-PgsZoaOLu6RsK9VYWdSeZIbDjA/edit",
+        thumb: { src: img.monetizeiqWebinar, alt: "MonetizeIQ AI software webinar campaign" },
       },
     ],
   },
@@ -482,6 +538,7 @@ const rawProjects: Project[] = [
       "The pitch had to hold its own in a room of working producers, which meant the concept and the sizzle reel had to be **genuinely watchable**.",
     owned: ["Show concept and pitch deck", "Sizzle reel edit in Adobe Premiere", "Live pitch delivery"],
     results: ["Pitched directly to Netflix and Hulu executives", "Featured in published coverage of the summit"],
+    cover: { src: img.videoRig, alt: "Camera rig used for interview and video production" },
     links: [
       { label: "Watch the sizzle reel", url: "https://youtu.be/Seat0OVm6D4" },
       { label: "View the Breaking In pitch deck", url: "https://drive.google.com/file/d/1nK-7mzbKjdzkfcNTA1twOFkS1wNLhKBM/view" },
@@ -524,6 +581,7 @@ const rawProjects: Project[] = [
     challenge: "",
     owned: [],
     results: [],
+    cover: { src: img.liveEvent, alt: "Professional video production at a live event" },
     links: [
       {
         label: "View the video on LinkedIn",
@@ -540,6 +598,7 @@ const rawProjects: Project[] = [
     challenge: "",
     owned: [],
     results: [],
+    cover: { src: img.sierraAtDesk, alt: "Sierra Langford working at her desk" },
     links: [{ label: "Visit the Roxy's Hair Salon website", url: "https://roxyshair.netlify.app/" }],
   },
   {
@@ -551,6 +610,7 @@ const rawProjects: Project[] = [
     challenge: "",
     owned: [],
     results: [],
+    cover: { src: img.teamYeehawRestaurant, alt: "A group gathered around a restaurant table" },
     links: [{ label: "View Salsarita's East Tennessee on Instagram", url: "https://www.instagram.com/salsaritaseasttn/" }],
   },
   {
@@ -562,6 +622,7 @@ const rawProjects: Project[] = [
     challenge: "",
     owned: [],
     results: [],
+    cover: { src: img.photographyCanon, alt: "Sierra Langford creating brand photography" },
     links: [{ label: "View Brentwood Jewelry on Instagram", url: "https://www.instagram.com/brentwoodjewelry/" }],
   },
   {
