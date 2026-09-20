@@ -7,3 +7,4 @@
 - [x] Add Field Marketing and Event Strategy examples with visual thumbnails
 - [x] Add Programs I Built examples with visual thumbnails
 - [x] Verify every work example has a thumbnail and no link is duplicated
+- [x] Review uploaded portfolio PDFs, add unique work examples, and remove duplicate destinations

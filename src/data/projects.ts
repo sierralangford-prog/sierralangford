@@ -35,6 +35,24 @@ export const CATEGORIES = [
 
 const rawProjects: Project[] = [
   {
+    slug: "cerecore-healthcare-campaigns",
+    title: "Created Healthcare Campaigns",
+    organization: "CereCore",
+    categories: ["B2B & Audience Marketing"],
+    summary: "Created audience-facing campaign content for Epic, MEDITECH and healthcare IT support services.",
+    challenge: "",
+    owned: [],
+    results: [],
+    cover: { src: img.himssInnovators, alt: "Healthcare technology leaders at HIMSS" },
+    links: [
+      {
+        label: "View Epic, MEDITECH and support campaigns",
+        url: "https://drive.google.com/drive/folders/1aLhZ2d2w_j6QvGzWHP2FQh1-wjHLVnEf",
+        thumb: { src: img.himssInnovators, alt: "Healthcare technology leaders at HIMSS" },
+      },
+    ],
+  },
+  {
     slug: "monetizeiq-product-storytelling",
     title: "Shaped MonetizeIQ AI Product Storytelling",
     organization: "StrategyCorps",
@@ -54,6 +72,11 @@ const rawProjects: Project[] = [
         label: "MonetizeIQ product story and video script",
         url: "https://docs.google.com/document/d/1LluIc2Pm4BpC8byMsg5TVERrQtI6iqcQYxX5bpBcXD0/edit",
         thumb: { src: img.monetizeiqWebinar, alt: "MonetizeIQ AI software webinar campaign" },
+      },
+      {
+        label: "View the AI fintech product campaigns",
+        url: "https://drive.google.com/drive/folders/1sRwW-cohBFv8B7nWhB8MDMwnaII-lwoJ",
+        thumb: { src: img.monetizeiqWebinar, alt: "MonetizeIQ AI software campaign" },
       },
     ],
   },
@@ -181,6 +204,16 @@ const rawProjects: Project[] = [
       {
         label: "Additional healthcare go-live story",
         url: "https://drive.google.com/file/d/1omKT5yMwuQiIL1Gd0lRftqQ8_pnmAIpd/view",
+      },
+      {
+        label: "Browse published CereCore case studies",
+        url: "https://cerecore.net/results",
+        thumb: { src: img.jamesWellmanInterview, alt: "Healthcare leader interview for a customer story" },
+      },
+      {
+        label: "Read a healthcare story draft",
+        url: "https://drive.google.com/file/d/1UwLrib7CQhiQOVNUIK0ImqcRl4cBZYen/view",
+        thumb: { src: img.schneckCaseStudy, alt: "Healthcare customer story draft" },
       },
     ],
     folderLink: {
@@ -380,6 +413,11 @@ const rawProjects: Project[] = [
         thumb: { src: img.connectionStage, alt: "Sierra Langford presenting on stage at Connection 2026" },
       },
       {
+        label: "Event planning, run of show and survey results",
+        url: "https://drive.google.com/drive/folders/1fHT6kfq1ida1ibxEoXa3lEA_N_FwoRUZ",
+        thumb: { src: img.connectionStage, alt: "Connection 2026 event planning and stage presentation" },
+      },
+      {
         label: "Connection 2026 event feedback and results",
         url: "https://drive.google.com/file/d/1oGdZiWQzjiHw8uUA0gVuU2xK6tpzj7o1/view",
         thumb: { src: img.companyMeeting, alt: "Company-wide event audience and presentation" },
@@ -502,6 +540,26 @@ const rawProjects: Project[] = [
     cover: { src: img.stevieAward, alt: "The American Business Awards 2026 Gold Stevie Award winner graphic for The CereCore Podcast" },
     links: [
       { label: "Listen to the podcast", url: "https://podcast.cerecore.net/", thumb: { src: img.podcastArtwork, alt: "The CereCore Podcast cover artwork" } },
+      {
+        label: "Dr. Devjit Roy episode brief",
+        url: "https://drive.google.com/file/d/11zrA5weo4MEV4FGDZVZgRN5IdqeUeX27/view",
+        thumb: { src: img.betweenHeartbeatsAlgorithmsBook, alt: "Between Heartbeats and Algorithms by Dr. Devjit Roy" },
+      },
+      {
+        label: "Craig Rice episode brief",
+        url: "https://drive.google.com/file/d/1bHq9rWyFr_ZZ9Q-dJSi7AnUgC7Xpk8A1/view",
+        thumb: { src: img.podcastArtwork, alt: "The CereCore Podcast artwork" },
+      },
+      {
+        label: "James Wellman episode brief",
+        url: "https://drive.google.com/file/d/1JKz8xSumpDZnrrH5BUjSvcqLLu6K_Ax9/view",
+        thumb: { src: img.jamesWellmanInterview, alt: "Sierra Langford interviewing James Wellman" },
+      },
+      {
+        label: "Watch a client highlight video",
+        url: "https://www.linkedin.com/posts/cerecore-tech_healthit-hipweek26-wearecerecore-activity-7451987369051918336-BUur",
+        thumb: { src: img.jamesWellmanInterview, alt: "Healthcare client highlight interview" },
+      },
     ],
     folderLink: {
       label: "View the complete podcast work",
