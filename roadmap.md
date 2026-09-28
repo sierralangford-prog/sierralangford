@@ -8,3 +8,4 @@
 - [x] Add Programs I Built examples with visual thumbnails
 - [x] Verify every work example has a thumbnail and no link is duplicated
 - [x] Review uploaded portfolio PDFs, add unique work examples, and remove duplicate destinations
+- [x] Show only the uploaded portfolio PDFs' unique example links in a simpler Work archive

@@ -23,14 +23,11 @@ export type Project = {
 };
 
 export const CATEGORIES = [
-  "B2B & Audience Marketing",
-  "Email & Newsletters",
-  "Blogs and Healthcare Storytelling",
-  "Field Marketing and Event Strategy",
-  "Programs I Built",
-  "Podcast, Video & Interviews",
-  "Strive Society Client Work",
-  "Brand, Creative & Entrepreneurship",
+  "Campaigns and Stories",
+  "Newsletters and Communications",
+  "Events and Programs",
+  "Podcasts and Video",
+  "Creative Work",
 ] as const;
 
 const rawProjects: Project[] = [
@@ -761,7 +758,113 @@ const rawProjects: Project[] = [
   },
 ];
 
-export const projects: Project[] = rawProjects;
+// This selection mirrors the links in Sierra's uploaded one-page portfolio.
+// Keep the complete archive above as source material, but show only the PDF's
+// examples publicly. Tracking parameters and repeated destinations are omitted.
+const pdfWork: { slug: string; category: (typeof CATEGORIES)[number]; links: ProjectLink[] }[] = [
+  {
+    slug: "cerecore-healthcare-campaigns",
+    category: "Campaigns and Stories",
+    links: [{ label: "Epic, MEDITECH and support campaigns", url: "https://drive.google.com/drive/folders/1aLhZ2d2w_j6QvGzWHP2FQh1-wjHLVnEf" }],
+  },
+  {
+    slug: "monetizeiq-product-storytelling",
+    category: "Campaigns and Stories",
+    links: [{ label: "Five AI fintech product campaigns", url: "https://drive.google.com/drive/folders/1sRwW-cohBFv8B7nWhB8MDMwnaII-lwoJ" }],
+  },
+  {
+    slug: "healthcare-customer-stories",
+    category: "Campaigns and Stories",
+    links: [
+      { label: "Published CereCore case studies", url: "https://cerecore.net/results" },
+      { label: "Case study draft", url: "https://drive.google.com/file/d/1UwLrib7CQhiQOVNUIK0ImqcRl4cBZYen/view" },
+    ],
+  },
+  {
+    slug: "internal-blogs",
+    category: "Campaigns and Stories",
+    links: [{ label: "Healthcare blogs and stories", url: "https://drive.google.com/drive/folders/1wD8GuL0YqgqcW0Ra73N43n-0yubuvOwr" }],
+  },
+  {
+    slug: "cerecore-client-newsletter",
+    category: "Newsletters and Communications",
+    links: [
+      { label: "Client newsletters", url: "https://drive.google.com/file/d/12OEJZGOuvznuQaNAjHjQq0prfPo9wU0C/view" },
+      { label: "70% open rate", url: "https://drive.google.com/file/d/1CVm6jEX19OpSmmbrtaprjUIxk2n5rj6I/view" },
+      { label: "3,307 active recipients", url: "https://docs.google.com/document/d/1H-T2pHQ_of_i0cSU-MuQnIyroShhb6Xy58I2d7IgoJ4/edit" },
+    ],
+  },
+  {
+    slug: "internal-employee-newsletters",
+    category: "Newsletters and Communications",
+    links: [{ label: "CereCore employee newsletters", url: "https://drive.google.com/drive/folders/1ghSZwqAsgRg_Ec_BNn8hjQFflvwATlyd" }],
+  },
+  {
+    slug: "enterprise-communications-calendar",
+    category: "Newsletters and Communications",
+    links: [{ label: "Communication impact review", url: "https://drive.google.com/file/d/1EmM9XFPtF7yh1e9Z7xxNV_fyIGItPzqo/view" }],
+  },
+  {
+    slug: "connection-2026",
+    category: "Events and Programs",
+    links: [
+      { label: "Event planning, run of show and survey results", url: "https://drive.google.com/drive/folders/1fHT6kfq1ida1ibxEoXa3lEA_N_FwoRUZ" },
+      { label: "Connection 2026 attendee results", url: "https://drive.google.com/file/d/1764sXp5O8VFkuz89quA3fVo_KfMaX602/view" },
+    ],
+  },
+  {
+    slug: "marketing-advocacy-group",
+    category: "Events and Programs",
+    links: [
+      { label: "Marketing Advocacy kickoff presentation", url: "https://docs.google.com/presentation/d/1V865xDfKewqRHgx3U2_UHaognMm5uAhQ/edit" },
+      { label: "Marketing Advocacy Group example", url: "https://drive.google.com/file/d/1FUgkZNE1H4blHAQZ81TmXHxXWiTzBPBY/view" },
+    ],
+  },
+  {
+    slug: "cerecore-podcast",
+    category: "Podcasts and Video",
+    links: [
+      { label: "Listen to The CereCore Podcast", url: "https://podcast.cerecore.net/" },
+      { label: "Podcast work and episodes", url: "https://drive.google.com/drive/folders/1wwUZp5RL728AfUpjHtZ4k8OHdOWwCry6" },
+      { label: "Podcast reach", url: "https://drive.google.com/drive/folders/1G94CkEFEJIOl7RjirBe0ce1uy8Z3Ny5d" },
+      { label: "Podcast post", url: "https://www.linkedin.com/posts/cerecore-tech_patientcare-technology-thecerecorepodcast-activity-7427362915244060672-xD4V" },
+      { label: "Dr. Devjit Roy episode brief", url: "https://drive.google.com/file/d/11zrA5weo4MEV4FGDZVZgRN5IdqeUeX27/view" },
+      { label: "Craig Rice episode brief", url: "https://drive.google.com/file/d/1bHq9rWyFr_ZZ9Q-dJSi7AnUgC7Xpk8A1/view" },
+      { label: "James Wellman episode brief", url: "https://drive.google.com/file/d/1JKz8xSumpDZnrrH5BUjSvcqLLu6K_Ax9/view" },
+    ],
+  },
+  {
+    slug: "himss-2026",
+    category: "Podcasts and Video",
+    links: [{ label: "Client highlight video", url: "https://www.linkedin.com/posts/cerecore-tech_healthit-hipweek26-wearecerecore-activity-7451987369051918336-BUur" }],
+  },
+  {
+    slug: "realscreen-breaking-in",
+    category: "Podcasts and Video",
+    links: [{ label: "Watch the Breaking In sizzle reel", url: "https://youtu.be/Seat0OVm6D4" }],
+  },
+  {
+    slug: "strive-society",
+    category: "Creative Work",
+    links: [
+      { label: "Creative agency video", url: "https://www.tiktok.com/t/ZP8TLg3c4/" },
+      { label: "Creative agency post", url: "https://www.instagram.com/p/C4X_dPlN3uw/" },
+      { label: "Creative agency campaign", url: "https://www.instagram.com/p/DXIi6hIjDGB/" },
+    ],
+  },
+  {
+    slug: "photography",
+    category: "Creative Work",
+    links: [{ label: "Photography website", url: "https://sierralangfordphotography.mypixieset.com/" }],
+  },
+];
+
+export const projects: Project[] = pdfWork.flatMap(({ slug, category, links }) => {
+  const original = rawProjects.find((project) => project.slug === slug);
+  if (!original) return [];
+  const { subsection: _subsection, gallery: _gallery, folderLink: _folderLink, ...project } = original;
+  return [{ ...project, categories: [category], challenge: "", owned: [], results: [], links }];
+});
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
 
@@ -779,7 +882,7 @@ export const getDisplayPhotos = (project: Project, max = 1): ProjectImage[] => {
   return deduped;
 };
 
-export const featuredSlugs = ["cerecore-client-newsletter", "healthcare-customer-stories", "connection-2026"];
+export const featuredSlugs = ["cerecore-client-newsletter", "healthcare-customer-stories", "cerecore-podcast"];
 
 export const featuredProjects = featuredSlugs
   .map((s) => getProject(s))
