@@ -862,7 +862,8 @@ const pdfWork: { slug: string; category: (typeof CATEGORIES)[number]; links: Pro
 export const projects: Project[] = pdfWork.flatMap(({ slug, category, links }) => {
   const original = rawProjects.find((project) => project.slug === slug);
   if (!original) return [];
-  return [{ ...original, categories: [category], subsection: undefined, challenge: "", owned: [], results: [], gallery: undefined, links, folderLink: undefined }];
+  const { subsection: _subsection, gallery: _gallery, folderLink: _folderLink, ...project } = original;
+  return [{ ...project, categories: [category], challenge: "", owned: [], results: [], links }];
 });
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
