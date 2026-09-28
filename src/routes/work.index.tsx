@@ -1,22 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
 import { projects, CATEGORIES, type Project } from "@/data/projects";
-import { ProjectEntry } from "@/components/ProjectEntry";
-import { LinkCard } from "@/components/ProjectDetails";
-
-/** A project that's really just one link — no case study to justify a full card. */
-function isSimpleLink(p: Project) {
-  return (
-    !p.challenge &&
-    p.owned.length === 0 &&
-    p.results.length === 0 &&
-    !p.folderLink &&
-    (p.links?.length ?? 0) === 1
-  );
-}
-
-const DRIVE_CTA_URL = "https://drive.google.com/drive/folders/1ENSKEChZdrzlr1R9JRAswM1xTK0n14rZ";
-const VISIBLE_COUNT = 3;
 
 export const Route = createFileRoute("/work/")({
   head: () => ({
@@ -38,104 +21,49 @@ export const Route = createFileRoute("/work/")({
   component: WorkIndex,
 });
 
-/** A category's project list, split into subsection groups when projects declare one. */
-function groupBySubsection(items: Project[]) {
-  const groups: { subsection: string | null; items: Project[] }[] = [];
-  for (const p of items) {
-    const key = p.subsection ?? null;
-    let group = groups.find((g) => g.subsection === key);
-    if (!group) {
-      group = { subsection: key, items: [] };
-      groups.push(group);
-    }
-    group.items.push(p);
-  }
-  return groups;
-}
-
 function CategorySection({ category, items }: { category: string; items: Project[] }) {
-  const [showAll, setShowAll] = useState(false);
-  const visible = showAll ? items : items.slice(0, VISIBLE_COUNT);
-  const remaining = items.length - visible.length;
-  const groups = groupBySubsection(visible);
-
   return (
-    <section className="border-b border-border py-5">
-      <div className="flex items-center justify-between gap-4">
-        <span className="text-xl sm:text-2xl">{category}</span>
-        <span className="text-sm text-muted-foreground">{items.length}</span>
-      </div>
-      <div className="mt-6 space-y-8">
-        {groups.map((g) => (
-          <div key={g.subsection ?? "default"}>
-            {g.subsection ? <p className="eyebrow mb-3">{g.subsection}</p> : null}
-            <div className="space-y-3">
-              {g.items.map((p) =>
-                isSimpleLink(p) ? (
-                  <div key={p.slug}>
-                    <p className="mb-2 text-xs uppercase tracking-wide text-muted-foreground">{p.title}</p>
-                    {p.links?.[0] ? <LinkCard link={p.links[0]} fallbackThumb={p.cover} /> : null}
-                  </div>
-                ) : (
-                  <ProjectEntry key={p.slug} project={p} />
-                ),
-              )}
+    <section className="border-t border-border py-8">
+      <h2 className="text-2xl">{category}</h2>
+      <div className="mt-5 divide-y divide-border">
+        {items.map((project) => (
+          <article key={project.slug} className="grid gap-4 py-5 sm:grid-cols-[7rem_1fr] sm:gap-6">
+            {project.cover ? (
+              <img src={project.cover.src} alt={project.cover.alt} loading="lazy" className="h-28 w-full max-w-44 object-cover sm:h-24 sm:w-28" />
+            ) : null}
+            <div>
+              <h3 className="text-xl">{project.title}</h3>
+              <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-1.5">
+                {project.links?.map((link) => (
+                  <li key={link.url}>
+                    <a href={link.url} target="_blank" rel="noreferrer noopener" className="text-sm text-teal underline underline-offset-4 hover:text-foreground">
+                      {link.label} <span aria-hidden>↗</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
+          </article>
         ))}
       </div>
-      {!showAll && remaining > 0 ? (
-        <button
-          type="button"
-          onClick={() => setShowAll(true)}
-          className="mt-4 text-sm underline underline-offset-4 text-foreground/70 hover:text-teal"
-        >
-          + {remaining} more
-        </button>
-      ) : null}
     </section>
   );
 }
 
 function WorkIndex() {
-  const groups = useMemo(() => {
-    const byCategory = new Map<string, Project[]>();
-    for (const p of projects) {
-      const primary = p.categories[0];
-      if (!primary) continue;
-      const list = byCategory.get(primary) ?? [];
-      list.push(p);
-      byCategory.set(primary, list);
-    }
-    return CATEGORIES.map((category) => ({
-      category,
-      items: byCategory.get(category) ?? [],
-    })).filter((g) => g.items.length > 0);
-  }, []);
+  const groups = CATEGORIES.map((category) => ({
+    category,
+    items: projects.filter((project) => project.categories[0] === category),
+  })).filter((group) => group.items.length > 0);
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
       <p className="eyebrow">Work</p>
       <h1 className="mt-4 max-w-3xl text-4xl leading-tight sm:text-5xl">Work, organized by what I do.</h1>
-      <p className="mt-5 max-w-2xl leading-relaxed text-foreground/80">
-        Open a project to see the real work right here.
-      </p>
-
-      <div className="mt-12 border-t border-border">
+      <div className="mt-10">
         {groups.map((g) => (
           <CategorySection key={g.category} category={g.category} items={g.items} />
         ))}
-      </div>
-
-      <div className="mt-14 flex justify-center border-t border-border pt-10">
-        <a
-          href={DRIVE_CTA_URL}
-          target="_blank"
-          rel="noreferrer noopener"
-          className="border border-foreground px-6 py-3 text-sm underline underline-offset-4 transition-colors hover:bg-foreground hover:text-primary-foreground"
-        >
-          See all work in Google Drive <span aria-hidden>↗</span>
-        </a>
       </div>
     </div>
   );
